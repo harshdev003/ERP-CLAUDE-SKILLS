@@ -1,4 +1,4 @@
-# ERP-claude_Skill
+# erp-claude-skills
 
 My Claude Code skills and global rules, kept in one place and synced to every machine.
 
@@ -23,14 +23,14 @@ My Claude Code skills and global rules, kept in one place and synced to every ma
 ## Set up on a new machine
 
 ```bash
-git clone https://github.com/harshdev003/ERP-claude_Skill.git ~/ERP-claude_Skill
-bash ~/ERP-claude_Skill/scripts/install.sh
+git clone https://github.com/harshdev003/erp-claude-skills.git ~/erp-claude-skills
+bash ~/erp-claude-skills/scripts/install.sh
 ```
 
 ## Publish a change by hand
 
 ```bash
-bash ~/ERP-claude_Skill/scripts/publish.sh "Describe the change"
+bash ~/erp-claude-skills/scripts/publish.sh "Describe the change"
 ```
 
 ## Skills

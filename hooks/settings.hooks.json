@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$HOME/ERP-claude_Skill/scripts/sync.sh\"",
+            "command": "bash \"$HOME/erp-claude-skills/scripts/sync.sh\"",
             "timeout": 60
           }
         ]

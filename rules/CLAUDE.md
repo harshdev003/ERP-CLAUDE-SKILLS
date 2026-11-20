@@ -1,13 +1,13 @@
-# Global rules (managed by ERP-claude_Skill)
+# Global rules (managed by erp-claude-skills)
 
-> This file is installed from `~/ERP-claude_Skill/rules/CLAUDE.md` at every session start.
+> This file is installed from `~/erp-claude-skills/rules/CLAUDE.md` at every session start.
 > Do NOT edit `~/.claude/CLAUDE.md` directly - edit the repo copy and publish, or the change is overwritten.
 
 ## Skills repository
 
 All my Claude skills and supporting rules live in the GitHub repo
-`https://github.com/harshdev003/ERP-claude_Skill`, cloned at `~/ERP-claude_Skill`
-(`C:\Users\Harshit\ERP-claude_Skill`).
+`https://github.com/harshdev003/erp-claude-skills`, cloned at `~/erp-claude-skills`
+(`C:\Users\Harshit\erp-claude-skills`).
 
 ### GitHub account (strict)
 - Commit and push to this repo ONLY as the GitHub account **harshdev003**
@@ -24,13 +24,13 @@ All my Claude skills and supporting rules live in the GitHub repo
   so the skills are not silently out of date.
 
 ### Creating or changing a skill (always)
-1. Create/edit it in the repo: `~/ERP-claude_Skill/skills/<skill-name>/SKILL.md`
+1. Create/edit it in the repo: `~/erp-claude-skills/skills/<skill-name>/SKILL.md`
    (plus any scripts/references inside that folder). Kebab-case names.
    If a tool (e.g. skill-creator) wrote it to `~/.claude/skills/<name>`, import it
    with the publish script's skill-name argument.
-2. Add/update its row in `~/ERP-claude_Skill/README.md` (Skills table).
+2. Add/update its row in `~/erp-claude-skills/README.md` (Skills table).
 3. Publish - commit, push, reinstall:
-   `bash ~/ERP-claude_Skill/scripts/publish.sh "Add <skill-name> skill" [<skill-name>]`
+   `bash ~/erp-claude-skills/scripts/publish.sh "Add <skill-name> skill" [<skill-name>]`
 4. Confirm to me that it was pushed (or show the error if the push failed).
 
 ### Supporting rules and material
