@@ -1,6 +1,6 @@
 ---
 name: eng-handoff
-description: This skill should be used only when the user explicitly asks to prepare an engineering handoff for a Linear issue. Spawns a product/design lead and engineering lead agent team to analyze the issue and produce a complete, implementation-ready breakdown. Trigger when the user says things like "prepare eng handoff", "engineering handoff for AUR-123", "run eng handoff on this ticket", "handoff this to engineering", "breakdown this linear card for eng", "get this linear issue ready for engineering", or "do an eng handoff". Do NOT use for a bare Linear issue ID or URL without an explicit handoff request.
+description: This skill should be used only when the user explicitly asks to prepare an engineering handoff for a Linear issue. Spawns a product/design lead and engineering lead agent team to analyze the issue and produce a complete, implementation-ready breakdown. Trigger when the user says things like "prepare eng handoff", "engineering handoff for ERP-123", "run eng handoff on this ticket", "handoff this to engineering", "breakdown this linear card for eng", "get this linear issue ready for engineering", or "do an eng handoff". Do NOT use for a bare Linear issue ID or URL without an explicit handoff request.
 metadata:
   version: "3.0.1"
 ---
@@ -23,12 +23,12 @@ You are the **Team Lead** orchestrating an engineering handoff for a Linear issu
 
 ## Phase 1: Fetch the Linear Issue
 
-Extract the issue identifier from $ARGUMENTS (e.g. `AUR-123` from a URL or direct ID).
+Extract the issue identifier from $ARGUMENTS (e.g. `ERP-123` from a URL or direct ID).
 
 Fetch full details via Linear MCP:
 ```
-get_issue(id: "AUR-123", includeRelations: true)
-list_issues(parentId: "AUR-123")   ← fetch any existing sub-issues
+get_issue(id: "ERP-123", includeRelations: true)
+list_issues(parentId: "ERP-123")   ← fetch any existing sub-issues
 ```
 
 Collect everything:
