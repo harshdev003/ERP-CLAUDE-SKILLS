@@ -9,6 +9,11 @@ set -e
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO"
 
+# Only ever commit/push as the harshdev003 account.
+git config user.name harshdev003
+git config user.email 358348782+harshdev003@users.noreply.github.com
+git config credential.https://github.com.username harshdev003
+
 msg="${1:-Update skills and rules}"
 shift || true
 

@@ -9,6 +9,14 @@ All my Claude skills and supporting rules live in the GitHub repo
 `https://github.com/harshdev003/ERP-claude_Skill`, cloned at `~/ERP-claude_Skill`
 (`C:\Users\Harshit\ERP-claude_Skill`).
 
+### GitHub account (strict)
+- Commit and push to this repo ONLY as the GitHub account **harshdev003**
+  (author `harshdev003 <358348782+harshdev003@users.noreply.github.com>`).
+  Never use any other account or identity (e.g. the global git user).
+- `scripts/publish.sh` sets this identity on every run - always go through it.
+- If a push fails with an auth error or the signed-in account is not harshdev003,
+  stop and ask me to sign in; do not switch to another account.
+
 ### Sync on start
 - A SessionStart hook runs `scripts/sync.sh`, which pulls the repo and installs
   `skills/*` into `~/.claude/skills/` and this file into `~/.claude/CLAUDE.md`.
