@@ -1,0 +1,26 @@
+{
+  "name": "marketing",
+  "version": "3.5.3",
+  "description": "Marketing team plugin - skills and commands for ad creative, growth, and campaign workflows",
+  "author": {
+    "name": "AuraHealth",
+    "email": "<redacted-email>"
+  },
+  "repository": "https://github.com/AuraHealth/AINative",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Aura Marketing",
+    "shortDescription": "Marketing and growth workflows for AuraHealth Codex users.",
+    "longDescription": "AuraHealth marketing workflows for ad creative, growth experiments, onboarding audits, campaign analysis, and Aurie web experience research.",
+    "developerName": "AuraHealth",
+    "category": "Productivity",
+    "capabilities": [
+      "Skills"
+    ],
+    "defaultPrompt": [
+      "Audit this onboarding flow.",
+      "Generate onboarding experiment ideas.",
+      "Review Aurie web experiment history."
+    ]
+  }
+}

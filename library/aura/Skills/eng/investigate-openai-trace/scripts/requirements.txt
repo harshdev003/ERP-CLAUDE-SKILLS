@@ -1,0 +1,5 @@
+# investigate-openai-trace Python deps
+# Install with:
+#   python3 -m pip install --user -r ${CLAUDE_PLUGIN_ROOT}/skills/investigate-openai-trace/scripts/requirements.txt
+# (Use `python3 -m pip` not bare `pip` — on macOS they often point to different Pythons.)
+requests>=2.31.0

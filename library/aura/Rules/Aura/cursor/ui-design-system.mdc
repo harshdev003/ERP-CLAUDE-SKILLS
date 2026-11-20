@@ -1,0 +1,124 @@
+---
+description: Aura theme system — fonts, colors, dimensions, responsive sizing
+globs: src/**/*.{js,jsx}
+alwaysApply: false
+---
+
+# UI Design System
+
+The app has a theme object passed via context/props. Every screen receives a `theme` (one of `cleanDark`, `cleanLight`, `light`, `nature`, `newDark`, `newLight`, `rainbowDark`). All visual values come from that theme — **never hardcode colors, font sizes, or pixel values**.
+
+## Theme Shape
+
+```js
+theme = {
+  colors,        // semantic color tokens (textPrimaryMain, backgroundMain, ...)
+  fonts,         // font style objects (font900DefaultSemibold, ...)
+  fontFamily,    // raw family name
+  fontColors,
+  styles,        // per-theme style sheet
+  dimensions,    // r1, r2, r4, ... r64 — pre-scaled responsive dimensions
+  icons,
+  gradients,     // theme.gradients.<name>
+  shadows,       // theme.shadows.<name>
+  borderRadius,  // theme.borderRadius.<size>
+  spaces,        // theme.spaces.<token>
+  keyboardAppearance,
+}
+```
+
+Tokens are defined in `src/styles/globals/` (cross-theme) and `src/styles/<theme>/` (per-theme overrides).
+
+## Text — Always Use `theme.fonts` + `theme.colors`
+
+```js
+// ✅ GOOD
+<Text
+  style={{
+    ...theme.fonts.font900DefaultSemibold,
+    color: theme.colors.textPrimaryMain,
+  }}
+>
+  Hello
+</Text>
+
+// ❌ BAD — hardcoded font + color
+<Text style={{ fontSize: 24, fontWeight: 'bold', color: '#FFFFFF' }}>
+  Hello
+</Text>
+```
+
+The list of fonts is in `src/styles/globals/fonts.js` (and the per-theme `fontStyles.js`). The list of colors is in `src/styles/<theme>/color(s).js`.
+
+**Before using a font or color key, verify it exists.** Don't invent new keys.
+
+## Dimensions — Always Use `responsiveDimension()`
+
+`responsiveDimension(N)` (from `src/styles/dimensions.js`) applies a width-based `moderateScale` (baseline 375pt, factor 0.3) so that pixel values scale across device sizes. The math lives in that file — it used to come from `react-native-size-matters/extend`, which read its baseline out of a gitignored `.env` via `react-native-dotenv` and made a fresh checkout unbuildable (PROD-4975).
+
+```js
+import { responsiveDimension } from '<path>/styles/dimensions'
+
+// ✅ GOOD
+<Text
+  style={{
+    ...theme.fonts.font900DefaultSemibold,
+    color: theme.colors.textPrimaryMain,
+    marginTop: responsiveDimension(20),
+  }}
+>
+  Hello
+</Text>
+
+const styles = {
+  thumbnail: {
+    width: responsiveDimension(80),
+    height: responsiveDimension(80),
+    borderRadius: responsiveDimension(8),
+  },
+}
+
+// ❌ BAD — raw pixel values
+const styles = {
+  thumbnail: {
+    width: 80,
+    height: 80,
+    borderRadius: 8,
+  },
+}
+```
+
+If the same value is used many times, prefer the pre-baked `theme.dimensions.r{N}` constant (e.g. `theme.dimensions.r16`) over re-calling `responsiveDimension(16)`.
+
+## Combined Anti-Pattern (DON'T)
+
+```js
+// ❌ BAD — hardcoded color, hardcoded font, raw pixel marginTop
+name: {
+  color: '#FFFFFF',
+  fontSize: 24,
+  fontWeight: 'bold',
+  marginTop: 16,
+},
+
+// ✅ GOOD
+name: {
+  color: theme.colors.textPrimaryMain,
+  ...theme.fonts.font300DefaultBold,
+  marginTop: responsiveDimension(16),
+},
+```
+
+## Other Theme Tokens
+
+- **Gradients** → `theme.gradients.<name>` with `react-native-linear-gradient`.
+- **Shadows** → spread `...theme.shadows.<name>`.
+- **Border radius** → `theme.borderRadius.<size>` (or `responsiveDimension(N)` for one-offs).
+- **Spaces** → `theme.spaces.<token>` for consistent gaps.
+
+## Checklist Before Submitting UI Code
+
+- [ ] No hardcoded color literals (`'#...'`, `'rgb(...)'`, `'white'`, etc.) outside `src/styles/`
+- [ ] No hardcoded `fontSize` / `fontWeight` outside `src/styles/`
+- [ ] All pixel-style values pass through `responsiveDimension()` or `theme.dimensions.r{N}`
+- [ ] All font keys and color keys you used actually exist in the theme files

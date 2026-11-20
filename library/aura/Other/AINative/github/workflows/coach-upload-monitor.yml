@@ -1,0 +1,37 @@
+name: Coach upload monitor
+
+# Posts a daily Slack alert listing non-podcast coaches who have hit
+# >=8 uploads in the current calendar month. Helps enforce the
+# 10-tracks-per-month coach upload cap (which applies to coaches with
+# >=100 lifetime approved tracks).
+#
+# Output: a single message to #coach-upload-monitor (Slack channel
+# C0B54DA3AT0) via incoming webhook.
+#
+# Secrets required (set under repo Settings -> Secrets and variables -> Actions):
+#   AURA_API_TOKEN    - admin token for services.aurahealth.io
+#   SLACK_WEBHOOK_URL - incoming webhook URL bound to #coach-upload-monitor
+#
+# Manual trigger: Actions tab -> "Coach upload monitor" -> "Run workflow".
+
+on:
+  schedule:
+    - cron: '0 0 * * *'   # daily at 00:00 UTC (= 12am GMT, no DST drift)
+  workflow_dispatch:
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run coach upload monitor
+        env:
+          AURA_API_TOKEN: ${{ secrets.AURA_API_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: python scripts/coach-upload-monitor.py

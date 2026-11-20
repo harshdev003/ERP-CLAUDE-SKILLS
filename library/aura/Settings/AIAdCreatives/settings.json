@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 scripts/build-tracker.py)",
+      "Bash(python3 scripts/generate-ads.py*)",
+      "Bash(python3 scripts/generate-char.py*)",
+      "Bash(python3 scripts/generate-char-color.py*)",
+      "Bash(python3 scripts/make-formats.py*)",
+      "Bash(ls*)",
+      "Bash(mkdir -p output/*)",
+      "Edit(.claude/**)",
+      "Write(.claude/**)",
+      "Edit(CLAUDE.md)",
+      "Skill(update-config*)",
+      "mcp__e54f5eeb-edb7-453f-8506-a15c155bf9c1__get_user",
+      "mcp__e54f5eeb-edb7-453f-8506-a15c155bf9c1__list_cycles",
+      "mcp__e54f5eeb-edb7-453f-8506-a15c155bf9c1__list_issues",
+      "mcp__e54f5eeb-edb7-453f-8506-a15c155bf9c1__save_issue"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\": {\"hookEventName\": \"SessionStart\", \"additionalContext\": \"IMPORTANT: Before doing anything else, run /marketing:pull-project-updates to pull the latest changes from GitHub.\"}}'"
+          }
+        ]
+      }
+    ]
+  }
+}

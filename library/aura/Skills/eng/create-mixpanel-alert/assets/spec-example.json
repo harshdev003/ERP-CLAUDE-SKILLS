@@ -1,0 +1,204 @@
+{
+ "board": "Subscription alerts (PROD-8892)",
+ "ticket": "PROD-8892",
+ "board_description": "Saved reports behind the Mixpanel subscription alerts (renewals stopped, payment pending, purchase failures, refunds).",
+ "alerts": [
+  {
+   "key": "C1",
+   "name": "Aura Stripe renewals stopped 12h",
+   "event": "Subscription Renewed",
+   "unit": "hour",
+   "condition": "below 0.01",
+   "check": "hourly",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts",
+    "#alerts-mixpanel"
+   ],
+   "severity": "critical",
+   "filters": {
+    "provider": "stripe"
+   },
+   "rolling": 12
+  },
+  {
+   "key": "C2",
+   "name": "Aura Apple renewals stopped 12h",
+   "event": "Subscription Renewed",
+   "unit": "hour",
+   "condition": "below 0.01",
+   "check": "hourly",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts",
+    "#alerts-mixpanel"
+   ],
+   "severity": "critical",
+   "filters": {
+    "provider": "apple"
+   },
+   "rolling": 12
+  },
+  {
+   "key": "C3",
+   "name": "Aurie Stripe renewals stopped 24h",
+   "event": "AI Subscription Renewed",
+   "unit": "hour",
+   "condition": "below 0.01",
+   "check": "hourly",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts",
+    "#alerts-mixpanel"
+   ],
+   "severity": "critical",
+   "filters": {
+    "provider": "stripe"
+   },
+   "rolling": 24
+  },
+  {
+   "key": "C4",
+   "name": "Aura payment pending burst",
+   "event": "Subscription Payment Pending",
+   "unit": "hour",
+   "condition": "above 25",
+   "check": "hourly",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts",
+    "#alerts-mixpanel"
+   ],
+   "severity": "critical"
+  },
+  {
+   "key": "N1",
+   "name": "Aura Stripe renewals gap 6h",
+   "event": "Subscription Renewed",
+   "unit": "hour",
+   "condition": "below 0.01",
+   "check": "hourly",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts-mixpanel"
+   ],
+   "severity": "normal",
+   "filters": {
+    "provider": "stripe"
+   },
+   "rolling": 6
+  },
+  {
+   "key": "N2",
+   "name": "Aura Apple renewals gap 6h",
+   "event": "Subscription Renewed",
+   "unit": "hour",
+   "condition": "below 0.01",
+   "check": "hourly",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts-mixpanel"
+   ],
+   "severity": "normal",
+   "filters": {
+    "provider": "apple"
+   },
+   "rolling": 6
+  },
+  {
+   "key": "N3",
+   "name": "Aurie Stripe renewals gap 12h",
+   "event": "AI Subscription Renewed",
+   "unit": "hour",
+   "condition": "below 0.01",
+   "check": "hourly",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts-mixpanel"
+   ],
+   "severity": "normal",
+   "filters": {
+    "provider": "stripe"
+   },
+   "rolling": 12
+  },
+  {
+   "key": "N4",
+   "name": "Aura payment pending high",
+   "event": "Subscription Payment Pending",
+   "unit": "day",
+   "condition": "above 100",
+   "check": "daily",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts-mixpanel"
+   ],
+   "severity": "normal"
+  },
+  {
+   "key": "N5",
+   "name": "Aurie payment pending high",
+   "event": "AI Subscription Payment Pending",
+   "unit": "day",
+   "condition": "above 25",
+   "check": "daily",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts-mixpanel"
+   ],
+   "severity": "normal"
+  },
+  {
+   "key": "N6",
+   "name": "Aura purchase failures high",
+   "event": "Subscription purchase fail",
+   "unit": "day",
+   "condition": "above 200",
+   "check": "daily",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts-mixpanel"
+   ],
+   "severity": "normal"
+  },
+  {
+   "key": "N7",
+   "name": "Aurie Stripe checkout failures high",
+   "event": "AI Stripe Checkout Purchase Failed",
+   "unit": "day",
+   "condition": "above 40",
+   "check": "daily",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts-mixpanel"
+   ],
+   "severity": "normal"
+  },
+  {
+   "key": "N8",
+   "name": "Aura refunds high",
+   "event": "Subscription Refunded",
+   "unit": "day",
+   "condition": "above 50",
+   "check": "daily",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts-mixpanel"
+   ],
+   "severity": "normal"
+  },
+  {
+   "key": "N9",
+   "name": "Aurie revokes high",
+   "event": "AI Subscription Revoked",
+   "unit": "day",
+   "condition": "above 20",
+   "check": "daily",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts-mixpanel"
+   ],
+   "severity": "normal"
+  }
+ ]
+}

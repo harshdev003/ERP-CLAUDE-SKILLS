@@ -1,0 +1,215 @@
+# The rejected-hypothesis register.
+#
+# What has already been tried on Aurie's conversation prompts, what it cost, and
+# what is settled. Every entry was established by measurement, not by opinion, and
+# every one of them is a change somebody reasonable proposed before reading this
+# file.
+#
+# It exists because the loop's most expensive available mistake is laundering the
+# loudest thing users say into a proposed change. Four of the five hard stops here
+# are the obvious response to a real, loudly reported defect. The defect is real.
+# The obvious response is the one that was measured and failed.
+#
+# The human mirror is the `The register` section of Learnings/Loop/Aurie
+# Conversations. This file is the machine copy, and copies of it live in the
+# skills that enforce it -- a skill may not import across plugins. All copies are
+# byte-identical and a test fails when they are not.
+
+register_version: "1.0.0"
+mirrors: "Learnings/Loop/Aurie Conversations - The register"
+
+# hard_stop       a candidate proposing this is refused, with the reason quoted
+# check_first     not a refusal; a precondition that must be answered before the
+#                 candidate is diagnosed at all
+# rewrite_required the aim may be legitimate and the FORM proposed does not work
+# known_fyi       measured, accepted, and not a defect unless Product says so
+verdicts: [hard_stop, check_first, rewrite_required, known_fyi]
+
+entries:
+
+  REG-1:
+    title: "Question rate is not the variable - forward motion is"
+    verdict: hard_stop
+    themes: [question_saturation]
+    applies_to: [coach, quickProcessing, quickProcessingSentinel, companion]
+    refuses:
+      - "Lower Aurie's question rate."
+      - "Ask fewer questions per turn."
+      - "Cap questions at one per response."
+    finding: >-
+      Four configurations were measured on non-final-turn question rate against
+      whether the arc advances. The build with the highest question rate and the
+      build that was rejected are not the same configuration: the rejected one
+      failed because its high rate came bundled with stalling, and the shipped
+      revision runs a higher rate than its predecessor while still landing every
+      fixed arc. The discriminating variable is whether each non-final turn
+      advances - a new angle, reframe, probe, or concrete handhold - not how many
+      turns end in a question mark.
+    also: >-
+      The complaint is bidirectional, which is why no global dial can resolve it.
+      The same cancellation corpus holds users leaving over "I just got asked 1000
+      questions and no help to resolve anything" and over "There was no back and
+      forth, ie questions from the ai" and over "Jumped into advice without
+      understanding". Calibration is per-user, not per-prompt.
+    cost: >-
+      Question-saturation has survived roughly thirty coach-prompter patch
+      versions (0.235.4 to 0.267.1). It is a property of the cadence design, not a
+      regression to bisect, and bisecting it again costs a week.
+    instead: >-
+      Measure forward motion: does each non-final turn add an angle, and does the
+      prompter detect the switch from processing to asking. The scenario where a
+      user explicitly asks for help has the LOWEST question rate in the set, and
+      that is the intended behaviour.
+    reopens_if: >-
+      A measurement shows a configuration that advances the arc on every fixed
+      scenario AND runs a materially lower question rate. That would separate the
+      two variables for the first time.
+    patterns:
+      - '(fewer|less|lower|reduce|reducing|decrease|cut|limit|cap)\s+(the\s+)?(number of\s+)?question'
+      - 'question\s+(rate|frequency|count)\s*(down|lower|reduc|decreas)'
+      - '(stop|avoid)\s+asking\s+so\s+many'
+      - '(one|1|single)\s+question\s+per\s+(turn|response|message)'
+      - 'ask\s+fewer'
+    source: "Conversation evaluation report, 2026-09-04; cancellation corpus, September 2026"
+
+  REG-2:
+    title: "A global instruction cannot see which conversation it is in"
+    verdict: hard_stop
+    themes: [global_instruction]
+    applies_to: [coach, companion, quickProcessing, quickProcessingSentinel, onboarding, chat]
+    refuses:
+      - "Add an instruction that fires in every conversation."
+      - "Always do X on every turn."
+      - "Add an exception list so the global rule is safe."
+    finding: >-
+      Measured across 63 conversations: a global "ask more questions" instruction
+      took the question rate to 100% of turns and closed 0 of 12 conversations,
+      against a 42% / 12-of-12 baseline. It asked a grieving user a question
+      immediately after she said "I'm not looking for advice. I just miss him",
+      and asked another after she had said thank you and goodbye, in three runs
+      out of three.
+    also: >-
+      The same request works when a USER makes it mid-conversation, because it is
+      applied once, at a moment they chose, in a conversation ready for it. And a
+      carefully scoped version with explicit exceptions protected the two
+      situations written into it and still failed the one it had not named -
+      enumeration covers only what it enumerates, and is neither free nor
+      unbounded.
+    cost: "63 conversations measured, 0 of 12 closed, and the line was abandoned."
+    instead: >-
+      Make the behaviour conditional on something the prompt can observe in THIS
+      conversation, or move it to the layer that already knows - the user's own
+      mid-conversation request, or a detector on conversation state.
+    reopens_if: >-
+      The instruction can be conditioned on a signal available at turn time, which
+      makes it no longer global and no longer this hypothesis.
+    patterns:
+      - 'global\s+(instruction|rule|directive|prompt)'
+      - '(always|never)\s+.{0,40}?\bevery\s+(conversation|turn|response)'
+      - 'on\s+every\s+turn'
+      - 'add\s+(an\s+)?exception(s)?\s+(list|for)'
+    source: "Prompt Engineering hub, falsified hypothesis 2"
+
+  REG-3:
+    title: "A prompt has a finite budget for competing instructions"
+    verdict: hard_stop
+    themes: [instruction_budget, patch_accumulation]
+    applies_to: [coach, quickProcessing, quickProcessingSentinel, guardrailsHandler]
+    refuses:
+      - "Add one more rule to raise this behaviour."
+      - "Write more exceptions to fix the scoping failure."
+    finding: >-
+      Past some point, adding a rule to raise one behaviour does not simply add
+      that behaviour - it destabilises rules that were already reliable, and the
+      breakage appears somewhere other than where the pressure was applied.
+      Observed across iterations: verbal tics, turns collapsing into a fixed
+      affirm-insight-question template, question quality going generic or
+      clinical, movement stalling, warmth disappearing.
+    cost: >-
+      In one iteration the Tier 1 crisis and de-escalation path - previously
+      reliable, and untouched by the change - began to fail. That line was stopped
+      and never shipped.
+    instead: >-
+      Diagnose structurally. A candidate that only adds is a candidate that has
+      not found the cause; every candidate must name what it expects to put at
+      risk, and the answer to a scoping failure is not "write more exceptions".
+    reopens_if: "Never as stated. The budget is a property of the medium."
+    patterns:
+      - 'add\s+(a\s+|one\s+)?(more\s+)?(rule|instruction|line|clause)\s+(to|that|telling|saying)'
+      - '(more|additional|further)\s+exceptions'
+      - 'just\s+add\s+(a\s+)?(rule|line|instruction)'
+    source: "Prompt Engineering hub; Safety Suite iteration log"
+
+  REG-4:
+    title: "Check the model before the prompt"
+    verdict: check_first
+    themes: [model_not_prompt]
+    applies_to: [coach, companion, chat, quickProcessing, quickProcessingSentinel, quickProcessingDone, onboarding, guardrailsHandler, userGuardrail, assistantGuardrail]
+    refuses: []
+    finding: >-
+      A behaviour change with no prompt change is a model or reasoning/verbosity
+      change until proven otherwise. When the Conversation prompt moved from
+      gpt-5.2-chat-latest to GPT-5.4 the body was untouched and question frequency
+      fell from 100% of turns to about 43%, because the newer model honoured
+      pacing guidance the older one had effectively ignored.
+    cost: >-
+      A prompt edit written to chase a model-induced change lands on top of the
+      model change and is then impossible to attribute.
+    instead: >-
+      Before diagnosing, read the deployed configuration for the prompter - model,
+      openaiAPI, reasoningEffort, verbosity, tools - and the date it last changed.
+      `prompt_knowledge.py brief <prompter>` prints it. If it moved in the window
+      the defect appeared, the class is model/config, not behavioural.
+    reopens_if: "n/a - this is a precondition, not a hypothesis."
+    patterns:
+      - '(aurie|it|the model)\s+(has\s+)?(changed|started|stopped)\s+\w+ing'
+      - '(suddenly|recently|since last week)\s+\w*\s*(behav|respond|answer|talk)'
+      - 'regression\s+in\s+(tone|pacing|behaviour|behavior)'
+    source: "Prompt Engineering hub; IS release history"
+
+  REG-5:
+    title: "An attitude-level rule is satisfied by declaring compliance"
+    verdict: rewrite_required
+    themes: [attitude_rule]
+    applies_to: [coach, quickProcessing, quickProcessingSentinel, guardrailsHandler, companion]
+    refuses:
+      - "Tell Aurie to be less X."
+      - "Add a rule saying it should not give advice."
+    finding: >-
+      Only behaviour-level wording changes behaviour. A rule that says what not to
+      PROVIDE can be satisfied by disclaiming and then doing it in the same breath
+      - observed directly, where an arm said it could not make the financial
+      decision and then made it. A rule that names the specific OUTPUTS to
+      withhold does not have that escape.
+    cost: >-
+      The rule reads as followed in every transcript and the behaviour is
+      unchanged, so the eval passes and the defect ships.
+    instead: >-
+      Name the outputs, not the attitude. "Do not name a specific product, amount,
+      or timeline" rather than "do not give financial advice".
+    reopens_if: "Never as stated. Rewrite the candidate at behaviour level."
+    patterns:
+      - '(tell|instruct|ask)\s+(aurie|it|the model)\s+to\s+be\s+(more|less)'
+      - '(be\s+)?(less|more)\s+(directive|clinical|preachy|verbose|formal|pushy)'
+      - 'should\s+(not\s+)?(try to\s+)?(sound|feel|come across)'
+      - 'avoid\s+being\s+\w+'
+    source: "Safety Suite report, 2026-09-07"
+
+  REG-6:
+    title: "Forced-choice share is a known FYI, not a defect"
+    verdict: known_fyi
+    themes: [forced_choice]
+    applies_to: [coach]
+    refuses: []
+    finding: >-
+      Either/or questions rose to roughly 55% of questions in the shipped
+      revision. Product read the number and accepted it as a known FYI rather than
+      a blocker.
+    cost: "None yet. It is recorded so it is not re-raised as a discovery."
+    instead: >-
+      Tune it only on a stated product decision to reduce forced choice, and then
+      as a behavioural candidate with its own evidence.
+    reopens_if: "Product states that forced choice should come down."
+    patterns:
+      - '(either/or|forced[- ]choice|binary)\s+question'
+    source: "Conversation evaluation report, 2026-09-04"

@@ -1,0 +1,1102 @@
+[
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "CTRL-flat-1A",
+  "turn": 5,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "no",
+  "forward_move": "",
+  "conv": "CTRL-flat-1A",
+  "turn": 1,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "That's pretty common. People get busy and texting drops off. It's probably not about you at all.",
+  "forward": "no",
+  "forward_move": "",
+  "conv": "CTRL-dismissive-1A",
+  "turn": 3,
+  "dim": "dismissive",
+  "label": "defect"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "PROD-8A",
+  "turn": 3,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "CTRL-flat-1A",
+  "turn": 11,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "Keep it short and it won't sound like an accusation. Something like 'Hey, long time \u2014 free this week?' should do it.",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "CTRL-dismissive-1A",
+  "turn": 15,
+  "dim": "dismissive",
+  "label": "defect"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "no",
+  "forward_move": "",
+  "conv": "CTRL-flat-1A",
+  "turn": 3,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "Try not to take it personally. What would you like to focus on today?",
+  "forward": "yes",
+  "forward_move": "grounded read of another person's behaviour",
+  "conv": "CTRL-dismissive-1A",
+  "turn": 9,
+  "dim": "dismissive",
+  "label": "defect"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "I hope the conversation goes well.",
+  "forward": "no",
+  "forward_move": "",
+  "conv": "CTRL-flat-1A",
+  "turn": 19,
+  "dim": "dismissive",
+  "label": "defect"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "CTRL-flat-8A",
+  "turn": 3,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-8A",
+  "turn": 15,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "PROD-8A",
+  "turn": 9,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "the uncertainty is affecting how you see the friendship",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "CTRL-flat-1A",
+  "turn": 7,
+  "dim": "dismissive",
+  "label": "defect"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "CTRL-flat-1A",
+  "turn": 1,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "why you needed to be the exception. That tends to set people up for this.",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "CTRL-judgmental-1A",
+  "turn": 11,
+  "dim": "judgment",
+  "label": "defect"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "I wouldn't read too much into it. Silence usually means less than we think.",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "CTRL-dismissive-1A",
+  "turn": 7,
+  "dim": "dismissive",
+  "label": "defect"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "CTRL-flat-1A",
+  "turn": 15,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "you're assigning intent you don't have evidence for",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "CTRL-judgmental-1A",
+  "turn": 7,
+  "dim": "judgment",
+  "label": "defect"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "it might be more than it needs to be",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "CTRL-judgmental-1A",
+  "turn": 1,
+  "dim": "judgment",
+  "label": "defect"
+ },
+ {
+  "defect": "borderline",
+  "defect_quote": "maybe I misread something I wanted to believe",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "PROD-1A",
+  "turn": 9,
+  "dim": "judgment",
+  "label": "contested"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-1A",
+  "turn": 1,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "CTRL-flat-1A",
+  "turn": 5,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "CTRL-flat-1A",
+  "turn": 9,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-8A",
+  "turn": 5,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-1A",
+  "turn": 11,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "CTRL-flat-8A",
+  "turn": 15,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "that's something to be grateful for, not everyone gets that",
+  "forward": "no",
+  "forward_move": "",
+  "conv": "CTRL-dismissive-8A",
+  "turn": 13,
+  "dim": "dismissive",
+  "label": "defect"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "You're not needy. Anyway, the good news is this is fixable",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "CTRL-dismissive-1A",
+  "turn": 13,
+  "dim": "dismissive",
+  "label": "defect"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "CTRL-judgmental-1A",
+  "turn": 19,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "PROD-1A",
+  "turn": 15,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-1A",
+  "turn": 3,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "PROD-1A",
+  "turn": 7,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "PROD-1A",
+  "turn": 19,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "the drafting and deleting is its own choice",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "CTRL-judgmental-1A",
+  "turn": 15,
+  "dim": "judgment",
+  "label": "defect"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "CTRL-flat-1A",
+  "turn": 13,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-1A",
+  "turn": 7,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "CTRL-flat-8A",
+  "turn": 11,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "CTRL-flat-8A",
+  "turn": 5,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-1A",
+  "turn": 11,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "CTRL-flat-8A",
+  "turn": 7,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "borderline",
+  "defect_quote": "many people find that part hardest",
+  "forward": "no",
+  "forward_move": "",
+  "conv": "CTRL-dismissive-8A",
+  "turn": 11,
+  "dim": "dismissive",
+  "label": "contested"
+ },
+ {
+  "defect": "borderline",
+  "defect_quote": "Supermarkets catch a lot of people out.",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "CTRL-dismissive-8A",
+  "turn": 3,
+  "dim": "dismissive",
+  "label": "contested"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-8A",
+  "turn": 1,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "PROD-1A",
+  "turn": 15,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "no",
+  "forward_move": "",
+  "conv": "CTRL-flat-1A",
+  "turn": 7,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "CTRL-judgmental-1A",
+  "turn": 9,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "PROD-8A",
+  "turn": 17,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "CTRL-flat-1A",
+  "turn": 15,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "PROD-8A",
+  "turn": 3,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "PROD-8A",
+  "turn": 17,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "you're closing it down again",
+  "forward": "no",
+  "forward_move": "",
+  "conv": "CTRL-judgmental-8A",
+  "turn": 15,
+  "dim": "judgment",
+  "label": "defect"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "PROD-8A",
+  "turn": 13,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-8A",
+  "turn": 7,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "CTRL-dismissive-8A",
+  "turn": 9,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "you're still trying to do this correctly rather than honestly",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "CTRL-judgmental-8A",
+  "turn": 9,
+  "dim": "judgment",
+  "label": "defect"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "Have you considered just texting her and seeing what happens?",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "CTRL-dismissive-1A",
+  "turn": 5,
+  "dim": "dismissive",
+  "label": "defect"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "That habit will make this take longer than it needs to.",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "CTRL-judgmental-8A",
+  "turn": 7,
+  "dim": "judgment",
+  "label": "defect"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-8A",
+  "turn": 7,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "Let's not get stuck on that part.",
+  "forward": "no",
+  "forward_move": "",
+  "conv": "CTRL-dismissive-1A",
+  "turn": 11,
+  "dim": "dismissive",
+  "label": "defect"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "CTRL-flat-8A",
+  "turn": 13,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-1A",
+  "turn": 13,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-8A",
+  "turn": 11,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "The good news is you said you're mostly functioning well \u2014 that's a really positive sign.",
+  "forward": "no",
+  "forward_move": "",
+  "conv": "CTRL-dismissive-8A",
+  "turn": 1,
+  "dim": "dismissive",
+  "label": "defect"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-1A",
+  "turn": 5,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-1A",
+  "turn": 13,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "no",
+  "forward_move": "",
+  "conv": "CTRL-dismissive-1A",
+  "turn": 17,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "PROD-1A",
+  "turn": 17,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "CTRL-judgmental-1A",
+  "turn": 17,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "understandable but not the same as grieving",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "CTRL-judgmental-8A",
+  "turn": 3,
+  "dim": "judgment",
+  "label": "defect"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "'needy' isn't entirely off",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "CTRL-judgmental-1A",
+  "turn": 13,
+  "dim": "judgment",
+  "label": "defect"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "CTRL-flat-8A",
+  "turn": 9,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "you're holding on in ways that make this harder for yourself",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "CTRL-judgmental-8A",
+  "turn": 5,
+  "dim": "judgment",
+  "label": "defect"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "PROD-8A",
+  "turn": 15,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-1A",
+  "turn": 3,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "most people go through this. Have you thought about whether you've both just got busier?",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "CTRL-dismissive-1A",
+  "turn": 1,
+  "dim": "dismissive",
+  "label": "defect"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-1A",
+  "turn": 5,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "That's a normal pattern. Thank you for sharing this with me.",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "CTRL-flat-8A",
+  "turn": 15,
+  "dim": "dismissive",
+  "label": "defect"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-8A",
+  "turn": 1,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "CTRL-flat-8A",
+  "turn": 7,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "no",
+  "forward_move": "",
+  "conv": "CTRL-flat-8A",
+  "turn": 5,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "the honest thing is to ask rather than analyse",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "CTRL-judgmental-1A",
+  "turn": 3,
+  "dim": "judgment",
+  "label": "defect"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "CTRL-flat-1A",
+  "turn": 9,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "no",
+  "forward_move": "",
+  "conv": "CTRL-dismissive-8A",
+  "turn": 15,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "pushing through the big events rather than actually feeling them",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "CTRL-judgmental-8A",
+  "turn": 1,
+  "dim": "judgment",
+  "label": "defect"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "no",
+  "forward_move": "",
+  "conv": "CTRL-flat-8A",
+  "turn": 1,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "PROD-1A",
+  "turn": 19,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "Small triggers are very common, and over time they usually fade. What else has been on your mind this week?",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "CTRL-dismissive-8A",
+  "turn": 7,
+  "dim": "dismissive",
+  "label": "defect"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "understandable, but it does put the whole thing on her",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "CTRL-judgmental-1A",
+  "turn": 5,
+  "dim": "judgment",
+  "label": "defect"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "CTRL-judgmental-8A",
+  "turn": 13,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "CTRL-flat-8A",
+  "turn": 1,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "CTRL-flat-8A",
+  "turn": 13,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "CTRL-flat-8A",
+  "turn": 3,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "you've been avoiding that until now",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "CTRL-judgmental-8A",
+  "turn": 11,
+  "dim": "judgment",
+  "label": "defect"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-8A",
+  "turn": 5,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-8A",
+  "turn": 9,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "CTRL-flat-1A",
+  "turn": 13,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-8A",
+  "turn": 13,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "CTRL-flat-8A",
+  "turn": 9,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-1A",
+  "turn": 1,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "CTRL-flat-8A",
+  "turn": 11,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "PROD-1A",
+  "turn": 9,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "CTRL-flat-1A",
+  "turn": 17,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "yes",
+  "defect_quote": "nothing to worry about",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "CTRL-dismissive-8A",
+  "turn": 5,
+  "dim": "dismissive",
+  "label": "defect"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "no",
+  "forward_move": "",
+  "conv": "CTRL-flat-1A",
+  "turn": 3,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "no",
+  "forward_move": "",
+  "conv": "CTRL-flat-1A",
+  "turn": 19,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "CTRL-dismissive-1A",
+  "turn": 19,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "PROD-1A",
+  "turn": 17,
+  "dim": "dismissive",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "names a pattern the user themselves raised",
+  "conv": "CTRL-flat-1A",
+  "turn": 11,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "proposes a next step",
+  "conv": "CTRL-flat-1A",
+  "turn": 17,
+  "dim": "judgment",
+  "label": "clean"
+ },
+ {
+  "defect": "no",
+  "defect_quote": "",
+  "forward": "yes",
+  "forward_move": "offers a reframe the user could decline",
+  "conv": "PROD-8A",
+  "turn": 11,
+  "dim": "dismissive",
+  "label": "clean"
+ }
+]

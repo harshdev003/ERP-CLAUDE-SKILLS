@@ -1,0 +1,56 @@
+# Logging Standards
+
+Every Aura backend service uses the same `src/logger.js`, `src/utils/redact.js` and `src/context.js`, byte-identical in all 13 services. This file is identical in all 13 too, and its canonical copy is AI Knowledge → Procedures → Engineering → Logging Standards: change that page first, then every copy. What may and may not be logged is set by the security checklist (`security.md`, sections A1 and B5); this file covers how to log.
+
+## Levels
+- **Prod logs at `warn` and above.** `info` and `debug` are dropped in prod, so anything needed for monitoring, alerting or an investigation must be `warn`, `error` or `audit`.
+- **Check a service's actual prod level before calling a line dropped.** The level is `LOGGER_LEVEL` in the deployed env, so read it there and count by severity in Cloud Logging. IntelligenceService runs at `info` in prod, unlike the others, so its `info` lines do reach prod logs (ENGBACK-1897).
+- **`logger.audit(message, meta)` is always written,** whatever the level, with Cloud Logging severity `DEFAULT`. Use it for security-relevant facts you need to count, such as the caller role on a route or a role change.
+- **`logger.warn`:** something was rejected, dropped, fell back, or looked wrong. That includes the log-only phase of a new check: a mismatch it would reject, logged with safe fields only.
+- **`logger.error`:** a failed operation the caller sees. **`logger.crit`:** needs a human now.
+- **`logger.info`:** routine business events, useful in dev only. **`logger.debug`:** step-by-step detail.
+
+## What goes in a log line
+- **Use `context.meta({component, method, ...})` for the metadata.** It carries the transaction id and the caller's `userId`, so don't add them by hand.
+- **Log ids, hosts, counts, status codes and error codes.** Never log:
+  - tokens or keys;
+  - emails or phone numbers;
+  - request or response bodies;
+  - free text (questions, notes, messages);
+  - redeemable codes;
+  - full URLs that carry a secret or an email.
+- **Redaction is a safety net, not a licence.** `redact.js` redacts values under credential and email key names, two levels deep, and replaces Bearer tokens and JWTs inside a log line's text fields (`message`, `errorMessage`, `stack`, `url`, `originalUrl`). It does not catch an email or any other secret inside free text, or a secret under an innocent key name. Don't pass sensitive values to the logger, and build one redacted copy (`safeParameters`) when the same data goes to a log and to an audit row.
+- **Around crypto or key material, log only `errorCode` and `errorName`.** Never log the raw error or its `message` unless PEM blocks, JWTs and the key value have been stripped from it first, because the message can quote the key or the token it failed on. Elsewhere, `error.message` is fine.
+- **Don't prefix the message with the function or component name.** They are already in `meta`: write `logger.warn('Skipping invalid candidate', meta)`.
+- **Don't spread computed values that aren't needed into meta.** An undefined value in a spread can throw, and counts that never trigger an action belong in metrics.
+- **Use `logger.info`/`warn`, never `console.*`.**
+- **A line a skill reads keeps its message and the fields the skill reads.** Leave those unchanged in a logging clean-up, or update the skill in the same change. The service's `service-specific.md` names those lines.
+
+## Timing
+- **Time slow reads, writes and calls with `logger.startTime(label)` and `logger.endTime(memento, meta)`.** `endTime` picks the level from the configured thresholds. Don't hand-roll timers.
+
+## Errors around I/O
+- **Wrap external I/O and DB calls in `try/catch`,** log with `meta`, and either record the error on the context (`context.addError(KEY)`) or rethrow it.
+- **A branch that rejects or drops something logs a warning with safe fields.** Silent drops are invisible in prod.
+
+## Example
+```javascript
+async function retrieve(userId, {context}) {
+  const meta = context.meta({component: 'userModel', method: 'retrieve'});
+  const memento = logger.startTime('retrieve user');
+  try {
+    const user = await postgres.getOneById(USER_TABLE, userId, {context});
+    if (!user) {
+      logger.warn('User not found', meta);
+      context.addError('USER_NOT_FOUND');
+      return null;
+    }
+    return user;
+  } catch (error) {
+    logger.error('Failed to retrieve user', {...meta, errorCode: error.code});
+    throw error;
+  } finally {
+    logger.endTime(memento, meta);
+  }
+}
+```

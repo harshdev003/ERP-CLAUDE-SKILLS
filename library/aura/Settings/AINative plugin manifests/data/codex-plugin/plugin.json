@@ -1,0 +1,26 @@
+{
+  "name": "data",
+  "version": "3.108.1",
+  "description": "Data team plugin - skills and commands for analytics, ML pipelines, and evaluation workflows at AuraHealth",
+  "author": {
+    "name": "AuraHealth Data",
+    "email": "<redacted-email>"
+  },
+  "repository": "https://github.com/AuraHealth/AINative",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Aura Data",
+    "shortDescription": "Analytics and evaluation workflows for AuraHealth Codex users.",
+    "longDescription": "AuraHealth data workflows for analytics, user behavior investigation, experiment analysis, ML pipeline support, reporting, and evaluation workflows.",
+    "developerName": "AuraHealth",
+    "category": "Productivity",
+    "capabilities": [
+      "Skills"
+    ],
+    "defaultPrompt": [
+      "Analyze this experiment.",
+      "Profile this user behavior.",
+      "Report Aurie usage."
+    ]
+  }
+}

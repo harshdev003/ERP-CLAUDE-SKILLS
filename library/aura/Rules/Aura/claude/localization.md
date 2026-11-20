@@ -1,0 +1,142 @@
+---
+description: i18next localization conventions for Aura
+globs: src/**/*.{js,jsx},src/localization/**/*.json
+alwaysApply: false
+---
+
+# Localization (i18next)
+
+Aura supports 7 locales: `en`, `de`, `es`, `fr`, `ja`, `ko`, `pt_BR`. All user-facing strings go through `react-i18next`.
+
+Locale codes, URL forms and conversion rules for every layer are canonical in AI Knowledge → Procedures/Engineering/Locales: store and send `pt_BR`, and convert only at the edge (URL `pt-br`, `Intl` `pt-BR`, moment `pt-br`).
+
+## Using Strings
+
+```js
+import { withTranslation } from 'react-i18next'
+
+const Foo = ({ t }) => <Text>{t('foo.title')}</Text>
+
+export default withTranslation()(Foo)
+```
+
+For functional components, use the `useTranslation` hook:
+
+```js
+import { useTranslation } from 'react-i18next'
+
+const Foo = () => {
+  const { t } = useTranslation()
+  return <Text>{t('foo.title')}</Text>
+}
+```
+
+## Adding a New Key
+
+1. Add the key + English copy to the appropriate file under `src/localization/en/<namespace>.json` (e.g. `miscellaneous.json`, or whichever namespace fits — match what the surrounding screen uses). **Insert it in alphabetical position** — see *Key Ordering* below.
+2. Run the scanner so other locales pick up the new key as a missing-translation entry:
+
+```bash
+npx i18next-scanner --config i18next-scanner.config.js
+```
+
+3. The scanner writes new keys to every locale; non-English values land as the English fallback or empty. Coordinate with the localization team to translate them.
+
+## Key Ordering
+
+Keys within every `src/localization/<locale>/<namespace>.json` file are **sorted alphabetically (A→Z)** by their top-level key. This applies to every locale and every namespace.
+
+- **New keys MUST be inserted in alphabetical position**, not appended to the end of the file. Appending was the historical convention; it makes merges noisy and lets duplicate-key bugs hide.
+- The bulk re-sort that established this rule landed in [PROD-2246](https://linear.app/aura-health/issue/PROD-2246). Don't undo it by appending fresh keys after the last entry.
+
+### Self-check before pushing
+
+```bash
+npm run i18n:check
+```
+
+Verifies every locale JSON file has sorted keys; exits non-zero with a pointer to the first out-of-order key if any file drifts. Pure Node, no dependencies — runs in well under a second.
+
+### Auto-repair drift
+
+```bash
+npm run i18n:sort
+```
+
+Re-sorts every locale JSON file using `jq -S` (dependency: `jq`, install with `brew install jq` on macOS). Pure reorder — values, key counts, and Unicode escapes are preserved. Review the diff and commit.
+
+### CI enforcement
+
+`.github/workflows/i18n-sort-check.yml` runs `npm run i18n:check` on every PR that touches `src/localization/**/*.json` (and on pushes to `master`). The job fails the PR if any file is unsorted — see [ENG-613](https://linear.app/aura-health/issue/ENG-613).
+
+## Conventions
+
+- **Keys are dot-separated namespaces** (`familyPlan.onboarding.cta`). Group by feature.
+- **Never concatenate translated strings** to build a sentence — use placeholders instead: `t('foo.greeting', { name })` with `"greeting": "Hello {{name}}"`.
+- **Pluralization** uses i18next's `_one` / `_other` suffix convention with `{ count }`.
+- **Don't hardcode a user-visible string** in JSX or alerts — even one-off labels go through `t(...)`.
+
+## Don't
+
+- Don't import a locale JSON directly to read a key — always go through `t(...)`.
+- Don't translate inside Reflux stores or `src/logic/` if you can avoid it. Pass the key up and translate in the screen — that way the same key can be reused across locales without re-fetching.
+- Don't reference the global `Translator` (it's blocked by ESLint `no-restricted-globals`). Import from `src/stores/Translator` if you need locale info.
+
+## Default language
+
+**English is the default.** `Translator.init()` derives the locale from the device via
+`getPhoneLocale()` (`react-native-localize`'s `getLocales()`, with `pt` → `pt_BR`). If the
+device language is **not** one of the six supported non-English locales, the app falls back to
+`DEFAULT_LANGUAGE = LOCALES.ENGLISH`. i18next is also configured with `fallbackLng: 'en'`, so a
+missing key in any locale renders the English string rather than the raw key. There is no
+persisted locale override today (`setUserLocale`'s firebase/AsyncStorage persistence is a TODO),
+so the language is re-derived from the device on every launch. `canSwitchLocale()` currently
+returns `true` unconditionally.
+
+## English-only features
+
+A large part of the app is **intentionally gated to English** via `UserController` — each of
+these returns `Translator.getLocale() === LOCALES.ENGLISH`, so in `de/es/fr/ja/ko/pt_BR` the
+feature is **hidden by design** (not a bug, not missing translations):
+
+- `canShowMessageCenter`, `canShowPrograms`, `canShowAuraLive`,
+  `canShowMFY`, `canShowCelebrity` / `canShowCelebrityFeature`, `canShowSeries`,
+  `canShowChallenge`, `canShowIAM`, `canShowTrackReflections`, `canShowGuestPass`,
+  `canShowContinueListening`, `canShowPodcasts`
+  - `canShowGuestPass` gates only the older guest pass upsell on the MeditationDone screens.
+    The guest pass **referral** (sidebar entry, home header gift icon, referral page) uses
+    `GuestPassController.canShowGuestPassReferral()` and ships in every locale on purpose,
+    so a localized "Pass invité" / "Gäste-Pass" entry is expected, not a leak.
+- `canShowCoaching` — English **and** not blocked from the coaching feature
+- `isEnglishUser()` is the shared helper for the same check
+
+Implications:
+- A non-English build is a **reduced surface**. When QA'ing or sim-testing a non-English locale,
+  treat the absence of these features as expected — don't file them as bugs or missing
+  translations. (See `.claude/rules/sim-testing.md` for the sim-test `--locale` flag.)
+- If you add a feature that should be English-only (e.g. content that has no localized catalog),
+  gate it the same way through a `UserController.canShow*` method rather than checking the locale
+  inline in a screen.
+- When one of these features is later localized, removing its English gate is the toggle — keep
+  the gate list here in sync.
+
+## Intentionally branded labels (don't re-translate)
+
+Some content-type labels are **deliberately branded** as a category rather than translated
+literally. The visible label is a per-locale acronym for the same brand concept, not the
+generic word for the underlying activity. Sim-test i18n analyzers and human reviewers
+sometimes flag these as too-narrow translations — they're not.
+
+Current cases:
+
+- **`therapy` content-type → CBT brand.** Renders as `CBT` in `en`/`de`/`ja`/`ko` and `TCC`
+  (= *Thérapie Cognitive et Comportementale* / *Terapia Cognitivo-Comportamental*) in
+  `fr`/`es`/`pt_BR`. The brand is encoded across the codebase:
+  - `src/logic/ContentTypeHelper.js` → `title: 'CBT'` local fallback, `iconName: Icons.CBT`,
+    `tabKey: 'homeTabsCBT'`
+  - CDN `type-<locale>.json` at `localization.cdn.aurahealth.io` ships per-locale acronyms
+  - Confirmed by-design via PROD-2228 F2 (sim-test flagged `TCC`; team confirmed brand)
+
+When you spot a label that looks "too narrow" vs the underlying key, check this list and the
+codebase brand markers (icon name, tab key, local fallback `title`) before treating it as a
+bug. If you add a new branded category, append it here so future reviewers don't re-flag it.

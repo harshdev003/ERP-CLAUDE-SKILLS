@@ -1,0 +1,149 @@
+{
+ "board": "Subscription alerts (PROD-8892)",
+ "board_id": 11664089,
+ "ticket": "PROD-8892",
+ "alerts": [
+  {
+   "key": "S1",
+   "name": "Aurie Stripe new subscriptions stopped 6h",
+   "event": "AI Subscription Paid",
+   "filters": {
+    "provider": "stripe",
+    "isInitialPeriod": true
+   },
+   "unit": "hour",
+   "rolling": 6,
+   "condition": "below 0.01",
+   "check": "hourly",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts",
+    "#alerts-mixpanel"
+   ],
+   "severity": "critical"
+  },
+  {
+   "key": "S2",
+   "name": "Aura Stripe trial starts stopped 2h",
+   "event": "Subscription Trial Started",
+   "filters": {
+    "provider": "stripe"
+   },
+   "unit": "hour",
+   "rolling": 2,
+   "condition": "below 0.01",
+   "check": "hourly",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts",
+    "#alerts-mixpanel"
+   ],
+   "severity": "critical"
+  },
+  {
+   "key": "S3",
+   "name": "Aurie Stripe new subscriptions gap 4h",
+   "event": "AI Subscription Paid",
+   "filters": {
+    "provider": "stripe",
+    "isInitialPeriod": true
+   },
+   "unit": "hour",
+   "rolling": 4,
+   "condition": "below 0.01",
+   "check": "hourly",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts-mixpanel"
+   ],
+   "severity": "normal"
+  },
+  {
+   "key": "S4",
+   "name": "Aurie Apple new subscriptions gap 24h",
+   "event": "AI Subscription Paid",
+   "filters": {
+    "provider": "apple",
+    "isInitialPeriod": true
+   },
+   "unit": "hour",
+   "rolling": 24,
+   "condition": "below 0.01",
+   "check": "hourly",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts-mixpanel"
+   ],
+   "severity": "normal"
+  },
+  {
+   "key": "S5",
+   "name": "Aura Stripe paid starts stopped 6h",
+   "event": "Premium paid start",
+   "filters": {
+    "provider": "stripe"
+   },
+   "unit": "hour",
+   "rolling": 6,
+   "condition": "below 0.01",
+   "check": "hourly",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts",
+    "#alerts-mixpanel"
+   ],
+   "severity": "critical"
+  },
+  {
+   "key": "S6",
+   "name": "Aura Apple trial starts gap 24h",
+   "event": "Subscription Trial Started",
+   "filters": {
+    "provider": "apple"
+   },
+   "unit": "hour",
+   "rolling": 24,
+   "condition": "below 0.01",
+   "check": "hourly",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts-mixpanel"
+   ],
+   "severity": "normal"
+  },
+  {
+   "key": "S7",
+   "name": "Aura Google trial starts gap 24h",
+   "event": "Subscription Trial Started",
+   "filters": {
+    "provider": "google"
+   },
+   "unit": "hour",
+   "rolling": 24,
+   "condition": "below 0.01",
+   "check": "hourly",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts-mixpanel"
+   ],
+   "severity": "normal"
+  },
+  {
+   "key": "S8",
+   "name": "Aura Stripe paid starts gap 3h",
+   "event": "Premium paid start",
+   "filters": {
+    "provider": "stripe"
+   },
+   "unit": "hour",
+   "rolling": 3,
+   "condition": "below 0.01",
+   "check": "hourly",
+   "channels": [
+    "#alerts-subscription",
+    "#alerts-mixpanel"
+   ],
+   "severity": "normal"
+  }
+ ]
+}

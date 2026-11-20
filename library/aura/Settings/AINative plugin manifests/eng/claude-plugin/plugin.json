@@ -1,0 +1,9 @@
+{
+  "name": "eng",
+  "version": "3.347.0",
+  "description": "Engineering team plugin \u2014 skills, commands, and hooks for backend, mobile, and web development at AuraHealth",
+  "author": {
+    "name": "AuraHealth Engineering",
+    "email": "<redacted-email>"
+  }
+}

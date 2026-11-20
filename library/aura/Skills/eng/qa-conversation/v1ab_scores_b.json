@@ -1,0 +1,142 @@
+[
+ {
+  "score": 5,
+  "evidence": "\u201cIt sounds like you want to feel chosen, not just maintained \u2014 and that matters in a close friendship.\u201d",
+  "_id": "1|A",
+  "dim": "v1a",
+  "rep": 1
+ },
+ {
+  "score": 4,
+  "evidence": "\u201cA box of crackers can carry a whole person for a second.\u201d",
+  "_id": "8|A",
+  "dim": "v1a",
+  "rep": 0
+ },
+ {
+  "score": 5,
+  "evidence": "It\u2019s not just missing your dad \u2014 it\u2019s missing the feeling of still being someone\u2019s looked-after person in that small, ordinary way.",
+  "_id": "8|A",
+  "dim": "v1b",
+  "rep": 2
+ },
+ {
+  "score": 4,
+  "evidence": "\u201cIt sounds like you want to feel chosen, not just maintained \u2014 and that matters in a close friendship.\u201d",
+  "_id": "1|A",
+  "dim": "v1a",
+  "rep": 4
+ },
+ {
+  "score": 5,
+  "evidence": "It\u2019s not just missing your dad \u2014 it\u2019s missing the feeling of still being someone\u2019s looked-after person in that small, ordinary way.",
+  "_id": "8|A",
+  "dim": "v1b",
+  "rep": 4
+ },
+ {
+  "score": 4,
+  "evidence": "\u201cIt sounds like you want to feel chosen, not just maintained \u2014 and that matters in a close friendship.\u201d",
+  "_id": "1|A",
+  "dim": "v1a",
+  "rep": 0
+ },
+ {
+  "score": 5,
+  "evidence": "It sounds like the shame is piling on top of the hurt and trying to make the hurt look like a character flaw.",
+  "_id": "1|A",
+  "dim": "v1b",
+  "rep": 1
+ },
+ {
+  "score": 5,
+  "evidence": "\u201cIt sounds like the shame is piling on top of the hurt and trying to make the hurt look like a character flaw.\u201d",
+  "_id": "1|A",
+  "dim": "v1b",
+  "rep": 3
+ },
+ {
+  "score": 5,
+  "evidence": "It sounds like you want to feel chosen, not just maintained \u2014 and that matters in a close friendship.",
+  "_id": "1|A",
+  "dim": "v1b",
+  "rep": 2
+ },
+ {
+  "score": 5,
+  "evidence": "\"It sounds like the shame is piling on top of the hurt and trying to make the hurt look like a character flaw.\"",
+  "_id": "1|A",
+  "dim": "v1b",
+  "rep": 0
+ },
+ {
+  "score": 4,
+  "evidence": "You want it to sound like an opening, not a scorecard.",
+  "_id": "1|A",
+  "dim": "v1a",
+  "rep": 2
+ },
+ {
+  "score": 5,
+  "evidence": "It\u2019s not just missing your dad \u2014 it\u2019s missing the feeling of still being someone\u2019s looked-after person in that small, ordinary way.",
+  "_id": "8|A",
+  "dim": "v1b",
+  "rep": 1
+ },
+ {
+  "score": 4,
+  "evidence": "You want it to sound like an opening, not a scorecard.",
+  "_id": "1|A",
+  "dim": "v1a",
+  "rep": 3
+ },
+ {
+  "score": 5,
+  "evidence": "It\u2019s not just missing your dad \u2014 it\u2019s missing the feeling of still being someone\u2019s looked-after person in that small, ordinary way.",
+  "_id": "8|A",
+  "dim": "v1b",
+  "rep": 0
+ },
+ {
+  "score": 3,
+  "evidence": "A box of crackers can carry a whole person for a second.",
+  "_id": "8|A",
+  "dim": "v1a",
+  "rep": 4
+ },
+ {
+  "score": 5,
+  "evidence": "It\u2019s not just missing your dad \u2014 it\u2019s missing the feeling of still being someone\u2019s looked-after person in that small, ordinary way.",
+  "_id": "8|A",
+  "dim": "v1b",
+  "rep": 3
+ },
+ {
+  "score": 3,
+  "evidence": "What feels most tender about that memory of him right now?",
+  "_id": "8|A",
+  "dim": "v1a",
+  "rep": 2
+ },
+ {
+  "score": 5,
+  "evidence": "It sounds like you want to feel chosen, not just maintained \u2014 and that matters in a close friendship.",
+  "_id": "1|A",
+  "dim": "v1b",
+  "rep": 4
+ },
+ {
+  "score": 4,
+  "evidence": "today aisle six happened to be where that love hurt",
+  "_id": "8|A",
+  "dim": "v1a",
+  "rep": 3
+ },
+ {
+  "score": 4,
+  "evidence": "A box of crackers can carry a whole person for a second.",
+  "_id": "8|A",
+  "dim": "v1a",
+  "rep": 1
+ }
+]

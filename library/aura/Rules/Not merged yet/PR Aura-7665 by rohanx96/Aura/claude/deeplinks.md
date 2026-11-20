@@ -1,0 +1,277 @@
+---
+paths:
+  - "app.js"
+  - "src/components/DeeplinkHandler.js"
+  - "src/models/deeplink.js"
+  - "src/services/AppsFlyerService.js"
+  - "src/logic/Iterable.js"
+  - "src/logic/ReferralLinkHelper.js"
+  - "src/events/ReminderPushController.js"
+  - "test/unit/deeplink.test.js"
+  - "test/unit/DeeplinkHandler.test.js"
+---
+
+# Deep links
+
+## The rule
+
+**Every deep link goes through `DeeplinkHandler`.** That means every way a link,
+push or notification can open something in the app:
+- universal links and the `aurahealth://` scheme, including the link that
+  cold-launches Android
+- Branch, AppsFlyer short links (`onDeepLink`), OneSignal push, Iterable push
+- local reminders and notifications, Sendbird message notifications
+- payment return links
+
+Each one is received by `src/components/DeeplinkHandler.js` and converted by a
+pure parser in `src/models/deeplink.js` into one shape:
+
+```js
+{ destination, objectId, params }
+```
+
+and opened by one router, `handleDeeplinkIntent(destination, objectId, params)`.
+
+Never add a link listener, a URL parse or navigation for a link anywhere else:
+not in `app.js`, a store, a screen or a helper. Two paths for one destination is
+exactly what this replaced. Before it, push, Iterable, Branch and universal links
+each parsed and navigated their own way, and the same email link behaved
+differently depending on where it was tapped (ENGMOB-3228, ENGMOB-3247).
+
+Native code only forwards. `AppDelegate.m` hands URLs to Branch,
+`RCTLinkingManager` or the AppsFlyer SDK and decides nothing. AppsFlyer gets
+Aura's OneLinks (`aurahealth.onelink.me`, resolved from our short links) and
+OneLink's `aurahealth://?af_deeplink=true` fallback, which the Linking handler
+ignores (`isAppsFlyerSchemeLink`).
+
+## One link model: Branch and short links
+
+Branch links and AppsFlyer short links are one model. Each provider has a parser
+in `src/models/deeplink.js` that returns
+`{ link: { destination, objectId, params }, via }`:
+- `branchParamsToLink(params)` reads Branch's `~feature`.
+- `shortLinkToLink(response, { isDeferred, channel, campaign })` reads the
+  EmailService lookup.
+
+`via` says where the link came from: its provider, whether it carries onboarding,
+first open, channel, campaign, locale and open event. `DeeplinkHandler.openLink`
+runs either one. `linkToOnboarding(link, via, context)` returns the attribution
+and login onboarding as plain data, plus the `intent` to route. Everything it
+does is keyed by **destination**, so a Branch link and the short link standing in
+for it run the same flow. Removing Branch (ENGMOB-3212) is then one parser and
+the `branch.subscribe` listener.
+
+### Destinations with onboarding
+
+| Destination | objectId | Branch feature |
+|---|---|---|
+| `referralInvite` | referrerId | `referral2` |
+| `referralWeb` | referrerId | `referral2_noCreditWeb` |
+| `referralLegacy` | the referrer's userId | `referral` |
+| `marketing` | the referrer's userId | `marketing` |
+| `referralGiftbit` | the referrer's userId | `referral_giftbitRewardReferer` |
+| `familyPlanInvite` | primaryUserId | `familyPlanInvite` |
+| `redeemGift` / `redeemBusiness` | none | `redeem_gift` / `redeem_business` |
+| `signup` | none | `signup_web` |
+| `subscribe` | none | `subscribe_web` that names nothing to open: sign in only |
+| `liveEventDetails` / `liveEventReplay` | liveEventId | `coaching-live-event`; also a live-event referral in `data`. A short link to `liveEventReplay` is always plain |
+| `liveTab` | none | `live-tab-preview` |
+| `courseInvite` / `communityInvite` / `eventInvite` | the content id | `course` / `community` / `event` |
+| `challengeDetails` | challengeId | `subscribe_web` / `coaching-session` naming a challenge |
+| `playlistInvite` | playlistId (`coachId` = the owner) | `subscribe_web` with `source: playlistReferral` |
+| `upcomingCoachingSessions` | none | `coaching-session` |
+| `conversation` | none | `subscribe_web` with source `one-one-coaching` |
+| `newCoachDetails` | coachId | none (a short link only) |
+
+The rows from `referralInvite` to `subscribe` are
+`ONBOARDING_ONLY_DESTINATIONS`: they always carry onboarding and open no
+screen. The rest are `RECIPIENT_DESTINATIONS`. A short link to one of those
+carries onboarding only when its data names the recipient (`userId`,
+`userName`, `loginProvider`, `referrerName`, or a live-event referral);
+otherwise it is a plain link. A `source` alone is a label, not a person.
+
+Three tables in `deeplink.js` hold the names other code reads:
+- **`OBJECT_ID_KEYS`:** the name each destination's objectId goes back under
+  for the onboarding screens and stored records (`referrerId`,
+  `primaryUserId`, …).
+- **`LOGIN_ONBOARDING_TYPES`:** the `loginOnboardingType` app.js and
+  Onboarding6 switch on. These are Branch's feature names, kept as they are.
+- **`REFERRER_LABELS`:** the `feature` a stored referrer carries (`referral2`,
+  `referral_giftbitRewardReferer`, …). ReferralHelper, BranchHelper and
+  Firebase referral records read these. They are labels, not routing keys.
+
+Don't rename those values: screens and stored data read them.
+
+### AppsFlyer short links
+
+Our short links resolve to a OneLink that carries only a code
+(`deep_link_value`). `DeeplinkHandler` listens to `appsFlyer.onDeepLink`,
+`appsFlyerDeepLinkToCode` reads the code, `Api.getDeeplink` looks it up on
+EmailService (`GET /deeplinks/:code`, public, no token), and `shortLinkToLink`
+turns the response into a link.
+- **A plain link has no short-link allow-list.** Its destination, objectId and
+  data go to the router as they are, so it behaves exactly like a Branch, push
+  or universal link. The router's entry checks (path-safe ids,
+  `NEEDS_OBJECT_ID`, `canPlayTrack`) are the app's gate for every source. What
+  a short link may carry is decided where it is created: EmailService
+  allow-lists each destination's data (ENGBACK-3055, ENGBACK-3337). The app sets
+  `origin` and `sentFrom` itself, never from the link's data.
+- **A link with onboarding reads only known values.** `SHORT_LINK_DATA_KEYS`
+  lists them. Each is read on its own, never the object whole. The objectId and
+  every id get the router's path check, and a nested live-event referral is
+  read field by field.
+- **It carries personal data, for parity, until ENGBACK-3282.** Every field a
+  flow reads today is read from the link: account ids, names, a family
+  invite's email, and `duration`, which grants premium at sign-up.
+  `/deeplinks` is public, so anyone holding the link can read them. ENGBACK-3282
+  moves them behind an authenticated lookup and makes referral credit and
+  promotions server-side. Never log these values.
+- **The OneLink's channel and campaign** stand in for Branch's `~channel` and
+  `~campaign`, and fill `campaign` where a login onboarding reports one. They
+  arrive empty on a deferred open. A `conversation` or
+  `upcomingCoachingSessions` link without a `source` gets the one its Branch link
+  always carried, so a signed-out tap shows the coach login screen.
+- **Start the SDK through `initAppsFlyerSdk()`** (`src/services/AppsFlyerService.js`),
+  never `appsFlyer.initSdk`. It holds the start until the handler's listener is
+  attached, because the SDK drops a deep link it reports with no listener.
+- **A lookup that finishes after a logout is dropped.** `clearPending()` moves
+  a session epoch on; the tap belonged to the account that signed out, so it
+  neither opens nor parks for the next one.
+- **One tap opens once.** The same code within 10 seconds is one tap; a
+  deferred link (first open, before sign-up) is taken once per launch and parks
+  like any other link until the dashboard is up.
+- **NOT_FOUND is an ordinary open.** ERROR is reported without the SDK's text.
+- What it opens carries `origin: 'appsflyer'`.
+
+### Running a link
+
+- **A link with onboarding waits for `authResolved`,** in one shared slot (the
+  last one wins), because its onboarding shows a login screen or a toast
+  depending on whether someone is signed in. A Branch feature this build doesn't
+  know counts as onboarding, as it may log a referrer or offer an update. `app.js` sets `authResolved` on
+  both platforms once a cold start knows (the profile loaded, or auth came back
+  empty). `clearPending()` drops a held link too. Any other link goes straight
+  to `openLink`, and the router parks it if it has to. So a held onboarding
+  link that arrived first can open after a plain link that arrived later.
+- **Branch is subscribed at mount;** the SDK hands the launch link to the first
+  subscriber.
+- **What it opens is `onboarding.intent`.** It is null when the link only
+  attributes or signs in, or was meant for another account (a live-event
+  referral, a coach thread or the coaching sessions list for someone else). A
+  challenge waits on the challenges tab for a signed-out user.
+- **Every opened link reports `Opened Deeplink From branch`,** Branch's
+  link-open event, with a `Provider` property (`branch` or `appsflyer`). A
+  Branch link reports its own labels. A short link reports the OneLink's `pid`
+  and `c` as `~channel` and `~campaign`, the destination, and a deferred open
+  as `+is_first_session`. A short link that opens nothing (unknown code, failed
+  lookup) still reports its open, with no destination. The code itself is never
+  sent.
+- **A Branch feature this build doesn't know** is marked `unknownFeature`: a
+  first open still logs its referrer, and a link that opens nothing offers an
+  app update. Older emotion emails still open the player.
+
+## Who owns what
+
+| Layer | Owns | Never |
+|---|---|---|
+| `src/models/deeplink.js` | Pure parsers, one per source (`universalDeeplinkToIntent`, `universalWebLinkToIntent`, `paymentReturnLinkToIntent`, `iterablePushToIntent`, `pushNotificationToIntent`, `branchParamsToLink`, and `appsFlyerDeepLinkToCode` + `shortLinkToLink` for short links), plus `linkToOnboarding` for a link's attribution and onboarding as plain data | Imports stores or `Actions`, navigates, reads app state, has side effects |
+| `src/components/DeeplinkHandler.js` | Every link listener, the router, parking, id checks, the paywall, and the side effects `linkToOnboarding` describes (analytics, identify, AsyncStorage, toasts) | Renders anything (it returns `null`) |
+| `app.js` | Renders `<DeeplinkHandler>` once, first in `render`, so it stays mounted through loading screens. Passes `userId`, `profile`, `dashboardRef`, `experimentsLoaded` and `authResolved`. Draws the login-onboarding and referral modals from the state `onLoginOnboarding` sets. Calls `ref.openPending()` when the dashboard is up and `ref.clearPending()` on logout | Parses a link or navigates for one |
+
+A model never navigates. Routing belongs to the component.
+
+## Adding a destination
+
+1. Register the screen in `Dashboard.js` (`navigation.md`, "Adding a new screen").
+2. Add a `case` to `routeDestination` in `DeeplinkHandler.js`, next to its
+   neighbours. Read link values from `params`. Fall back to the value the
+   destination has always reported (`sentFrom || 'notifications'`), so push
+   analytics don't shift.
+3. If it opens nothing without an id, add it to `NEEDS_OBJECT_ID`. A link missing
+   the id is then dropped rather than parked.
+4. If it reads an id or slug from `params`, add that key to `PATH_ID_PARAMS`, so it
+   gets the same path check as `objectId`.
+5. If it finishes a purchase rather than opening a screen, add it to
+   `PAYMENT_RETURN_DESTINATIONS`. Add it to `IMMEDIATE_DESTINATIONS` too only if it
+   must run before a user and the dashboard exist. Something that only Dashboard
+   can show must wait.
+6. Map it in every parser whose source can carry it, and add tests to both files.
+   If a link to it carries onboarding, add it to `ONBOARDING_ONLY_DESTINATIONS`
+   or `RECIPIENT_DESTINATIONS`, give it a case in `linkToOnboarding`, and add its
+   objectId name to `OBJECT_ID_KEYS`. EmailService's allow-list needs the same
+   destination.
+
+## Adding a source
+
+1. Write `<source>ToIntent(input)` in `src/models/deeplink.js`. It returns the
+   intent, or `null` when the input isn't its shape. It's pure, with JSDoc.
+2. Register the listener in a `useEffect` in `DeeplinkHandler`, with cleanup, and
+   call `routeIntent(router, intent)`. Effects read props through refs. Keep their
+   deps stable so nothing re-subscribes.
+3. Test the parser in `test/unit/deeplink.test.js`. Test the listener in
+   `test/unit/DeeplinkHandler.test.js` by capturing the mocked listener and
+   firing it.
+
+## Parking
+
+A link that arrives before there is a signed-in user **and** a mounted dashboard
+waits in one slot. That covers being signed out, and a cold start still restoring
+auth or mounting the dashboard.
+- **The last tap wins.**
+- **It opens on any of these:** `userId` arriving, `ref.openPending()` (from
+  `onDashboardLoaded`, and from `handleBackgroundNotification`, which Dashboard
+  calls on every mount), or the app returning to the foreground.
+- **It opens once.** The slot is cleared before it runs.
+- **`ref.clearPending()` runs on logout** when someone was signed in. It also drops
+  a OneSignal tap still held for `experimentsLoaded`, so a link never opens for
+  the next account.
+- **Only `IMMEDIATE_DESTINATIONS` skip the wait.** Those are the Stripe and Aurie
+  paywall returns, whose paywall can be open during onboarding.
+
+Don't keep a link anywhere else: not `startupNavigateTo`, not app state, not a
+store.
+
+## Validation and privacy
+
+- **Link labels** (`utm_*`, `trackType`, Branch `~feature`) pass `toSafeLabel`
+  (`[A-Za-z0-9_.-]{1,64}`) before they reach analytics or `sentFrom`.
+- **Link booleans** go through `toBoolean`, so `"false"` stays false. Screens test
+  `autoReserve` and similar flags for truthiness.
+- **Ids and slugs** that reach a Firebase path are checked once, at the router's
+  entry, for every source. `/ . # $ [ ]` are refused, as is anything longer than
+  768 characters, Firebase's key limit. Don't add a per-case check instead.
+- **Analytics and `bugsnag.report` get named fields only.** Never send a whole
+  `params`, intent or notification, and never a full URL (a query can carry a token
+  or an email). See `security-review.md` A1.
+- **The paywall goes through `canPlayTrack(trackType)`** for every source. It opens
+  the paywall itself when it returns false.
+
+## Testing on the simulator
+
+The `sim-test` skill builds and installs the app. Then fire one link per source,
+in three states: warm, cold (`xcrun simctl terminate booted com.AuraMobile` first),
+and signed out followed by a login.
+- **Universal link:**
+  `xcrun simctl openurl booted "https://www.aurahealth.io/deeplink/destination/<d>/objectId/<id>?utm_source=…"`.
+  If it opens Safari, tap the link from Notes instead.
+- **Payment return:** `xcrun simctl openurl booted "aurahealth://stripe-redirect/cancel"`
+- **Push:** `xcrun simctl push booted com.AuraMobile payload.apns`, then tap the
+  banner with the app in the background.
+  - OneSignal puts the data under `custom.a`.
+  - Iterable puts it under `itbl.defaultAction` (`type: openUrl`).
+- **Branch:** a real test link (`aura.test-app.link/…`) with the right `~feature`.
+  A link without `source` must still show the correct onboarding screen.
+- **Short link:** a link created on EmailService for the destination. Test
+  each onboarding destination signed out, signed in, and as a deferred first
+  open.
+
+## Don't
+
+- Don't navigate for a link outside `DeeplinkHandler`, or parse one outside
+  `src/models/deeplink.js`.
+- Don't import stores, `Actions` or React into `src/models/deeplink.js`.
+- Don't add a second parking mechanism, or hold a link in `app.js` state.
+- Don't let a destination's `case` skip the router's entry checks by navigating
+  from a listener directly.
+- Don't send link params, URLs or notification payloads whole to analytics or
+  Bugsnag.

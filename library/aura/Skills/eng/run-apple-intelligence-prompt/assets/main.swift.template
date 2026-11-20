@@ -1,0 +1,60 @@
+import Foundation
+import FoundationModels
+
+// An input is free-form text — a single user turn, a multi-turn conversation
+// rendered as text, or a free-form description. It is appended verbatim to
+// the prompt under a `## Input` section before being sent to the model.
+struct Fixture: Codable { let id: String; let input: String }
+struct RunResult: Codable {
+    let id: String
+    let input: String
+    let output: String
+    let latencyMs: Int
+}
+
+@main
+struct App {
+    static func main() async throws {
+        let prompt = ProcessInfo.processInfo.environment["INSTRUCTIONS"] ?? ""
+
+        let path = ProcessInfo.processInfo.environment["FIXTURES"] ?? "fixtures.json"
+        let data = try Data(contentsOf: URL(fileURLWithPath: path))
+        let fixtures = try JSONDecoder().decode([Fixture].self, from: data)
+
+        guard case .available = SystemLanguageModel.default.availability else {
+            FileHandle.standardError.write(Data("Model unavailable on this machine\n".utf8))
+            exit(1)
+        }
+
+        let temperatureEnv = ProcessInfo.processInfo.environment["TEMPERATURE"]
+        let temperature = temperatureEnv.flatMap { Double($0) } ?? 0.0
+
+        var results: [RunResult] = []
+        for f in fixtures {
+            // Prompt + input concatenated under a `## Input` section, sent as
+            // the session's system instructions. A single-space user turn
+            // satisfies the API's non-empty requirement and serves as the
+            // trigger to generate. Pinning the input to a known position in
+            // the system prompt keeps on-device prompt-cache behaviour stable
+            // and matches the Phase 2 iPhone harness (`qa-apple-intelligence-prompt`).
+            let combinedInstructions = prompt + "\n\n## Input\n" + f.input
+            let session = LanguageModelSession(instructions: combinedInstructions)
+            let start = Date()
+            let r = try await session.respond(
+                to: " ",
+                options: GenerationOptions(temperature: temperature)
+            )
+            let latencyMs = Int((Date().timeIntervalSince(start) * 1000).rounded())
+            results.append(.init(id: f.id, input: f.input, output: r.content, latencyMs: latencyMs))
+            print("── \(f.id) ── (\(latencyMs) ms) ──")
+            print("IN :")
+            print(f.input)
+            print("OUT: \(r.content)\n")
+        }
+
+        let outPath = ProcessInfo.processInfo.environment["RESULTS_JSON"] ?? "results.json"
+        let enc = JSONEncoder()
+        enc.outputFormatting = [.prettyPrinted, .sortedKeys]
+        try enc.encode(results).write(to: URL(fileURLWithPath: outPath))
+    }
+}

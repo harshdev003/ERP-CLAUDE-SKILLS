@@ -1,0 +1,26 @@
+{
+  "name": "shared",
+  "version": "3.93.0",
+  "description": "Shared AuraHealth plugin - org-wide skills and commands available to all teams",
+  "author": {
+    "name": "AuraHealth",
+    "email": "<redacted-email>"
+  },
+  "repository": "https://github.com/AuraHealth/AINative",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Aura Shared",
+    "shortDescription": "Org-wide AuraHealth skills for Codex.",
+    "longDescription": "Shared AuraHealth Codex workflows for AI Knowledge, Slack, Linear, setup, and AINative skill authoring. Install this plugin first; team plugins build on these org-wide skills.",
+    "developerName": "AuraHealth",
+    "category": "Productivity",
+    "capabilities": [
+      "Skills"
+    ],
+    "defaultPrompt": [
+      "Reload the Aura skills from GitHub.",
+      "Set up my AINative environment.",
+      "Create a new Aura skill."
+    ]
+  }
+}

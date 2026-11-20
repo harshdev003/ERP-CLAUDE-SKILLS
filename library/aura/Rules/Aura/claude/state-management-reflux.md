@@ -1,0 +1,115 @@
+---
+description: Reflux store + actions conventions for Aura
+globs: src/stores/**/*.js,src/actions.js,src/screens/**/*.js
+alwaysApply: false
+---
+
+# State Management — Reflux
+
+Aura uses **Reflux** (`reflux@6.4.1`) for global state. Stores live in `src/stores/`. The single `src/actions.js` declares every Action.
+
+## Store Skeleton
+
+```js
+import Reflux from 'reflux'
+import Actions from '../actions'
+import { bugsnag } from '../logic/Trackings'
+
+export const FOO_LOADED = 'FOO_LOADED'
+export const FOO_ERROR = 'FOO_ERROR'
+
+const FooStore = Reflux.createStore({
+  listenables: Actions, // method names below matching Action names auto-wire
+
+  foos: [],
+
+  init() {
+    // optional — called once on store creation
+  },
+
+  // matches Actions.loadFoos
+  async loadFoos() {
+    try {
+      const result = await api.fetchFoos()
+      this.foos = result
+      this.trigger(FOO_LOADED, result)
+    } catch (error) {
+      bugsnag.report('FooStore.loadFoos failed', { error: error?.message })
+      this.trigger(FOO_ERROR)
+    }
+  },
+
+  getFoos() {
+    return this.foos
+  },
+})
+
+export default FooStore
+```
+
+## Conventions
+
+- **One file per store** in `src/stores/`. Naming: `{Domain}Store.js` for plain stores, `{Domain}Controller.js` for stores that drive workflows (legacy convention — don't rename existing ones, but follow the existing pattern when adding to a domain).
+- **Actions are global** — declared in `src/actions.js`. Don't create per-feature `actions.js` files.
+- **Event constants** are exported from the store as named exports (`export const FOO_LOADED = 'FOO_LOADED'`). Subscribers import them.
+- **`this.trigger(eventName, payload)`** is the only way to notify subscribers. Don't expose mutators.
+- **State lives on `this.<field>`** — direct mutation is fine inside store methods (Reflux doesn't enforce immutability), but for collections shared with the UI, prefer `seamless-immutable` to prevent accidental external mutation.
+- **Never throw** from a store method — `trigger` an error event instead. Throwing inside a Reflux callback breaks other listeners.
+
+## Subscribing from Components
+
+The canonical pattern in this codebase is **direct `Store.listen(...)`** with the unsubscribe function held on `this`. Do NOT use `Reflux.connect` or `Reflux.listenTo` — neither is used anywhere in `src/screens/` or `src/components/`, and introducing them would diverge from the rest of the code.
+
+```js
+import FooStore, { FOO_LOADED, FOO_ERROR } from '../stores/FooStore'
+import Actions from '../actions'
+
+class FooScreen extends React.Component {
+  componentDidMount() {
+    this.FooStore = FooStore.listen((...args) => {
+      this.onFooStoreChange(...args)
+    })
+    Actions.loadFoos()
+  }
+
+  componentWillUnmount() {
+    this.FooStore?.()
+  }
+
+  onFooStoreChange = (event, payload) => {
+    if (event === FOO_LOADED) this.setState({ foos: payload, loading: false })
+    if (event === FOO_ERROR) this.setState({ loading: false, errored: true })
+  }
+}
+```
+
+Conventions to match (see any large screen like `Dashboard.js` or `SubscriptionModal3.js` for many examples):
+
+- **Field name = store name.** Hold the unsubscribe on `this.<StoreName>` (`this.FooStore`, `this.ThemeStore`, `this.TopicsStore`).
+- **Forward to a named handler.** The listener is a thin `(...args) => this.onSomething(...args)` shim. Real logic goes in the named handler.
+- **Manual cleanup.** Call `this.<StoreName>?.()` in `componentWillUnmount`. There is no auto-unsubscribe mixin.
+
+Functional components: there is **no shared `useStore` / `useReflux` hook** in `src/hooks/` yet. If you need one in a functional component, write a local `useEffect` wrapper that mirrors the lifecycle above:
+
+```js
+useEffect(() => {
+  const unsubscribe = FooStore.listen((...args) => onFooStoreChange(...args))
+  Actions.loadFoos()
+  return () => unsubscribe?.()
+}, [])
+```
+
+Don't add a shared hook to `src/hooks/` for this without coordinating — it's a cross-cutting choice that affects every future subscriber.
+
+## Don't
+
+- **Never** import a store into another store and call methods on it directly. Trigger an Action and let the other store react.
+- **Never** mutate a `seamless-immutable` collection in place (`.push`, `.splice`, `obj.key = ...`). Use `.set`, `.merge`, `.asMutable()`.
+- **Never** call `setState` from a store — stores notify, components render.
+- **Never** store React refs, navigation objects, or component instances in a Reflux store.
+
+## Adding a New Action
+
+1. Add the name to `src/actions.js` (the file uses `Reflux.createActions([...])`).
+2. Implement a method with the same name on the store(s) that should react.
+3. Call `Actions.<name>(args)` from the screen.

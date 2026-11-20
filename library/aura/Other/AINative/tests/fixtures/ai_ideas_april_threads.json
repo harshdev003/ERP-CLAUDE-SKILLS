@@ -1,0 +1,391 @@
+[
+  {
+    "slack_fingerprint": "b0485ab95dc0",
+    "channel": "C0ATUL8T936",
+    "ts": "1776464622.778189",
+    "text": ":bulb: *[AI]* *[welcome_screen]* Add Google/Apple sign-in buttons to welcome screen\n\n*Category:* onboarding · *Lever:* conversion · *Impact:* High · *Effort:* Medium\n\nSurface social sign-in options (Sign in with Apple, Continue with Google) directly on the welcome screen alongside Get Started and Login. Reduces the perceived effort of creating an account by offering one-tap authentication before the user even enters the onboarding funnel.\n\n*Why it lifts the lever:* The current flow requires tapping Get Started, then going through onboarding before reaching account creation. Users who already trust the brand (e.g., from ads or referrals) want the fastest path in. Surfacing social auth on the landing screen captures high-intent users who would otherwise drop off during multi-step onboarding.\n\n*Hypothesis:* If we add Apple/Google sign-in buttons on the welcome screen, then new user registration rate improves by 15-25% because reducing perceived signup friction captures high-intent users immediately.\n\nReact :+1: / :-1: for quick sentiment, or reply in thread with your take. Owners: reply with a clear yes/no when you're ready to decide — approved ideas become Linear cards.\n\n_Idea `b0485ab95dc0` · generated 2026-04-17_",
+    "reactions": [
+      {
+        "name": "-1",
+        "users": [
+          "U1BCYETM2"
+        ],
+        "count": 1
+      }
+    ],
+    "replies": []
+  },
+  {
+    "slack_fingerprint": "edb319769e27",
+    "channel": "C0ATUL8T936",
+    "ts": "1776464721.885459",
+    "text": ":bulb: *[AI]* *[paywall_container_screen]* Add a testimonial or outcome quote above plan cards\n\n*Category:* paywall · *Lever:* conversion · *Impact:* High · *Effort:* Small\n\nInsert a short rotating user testimonial (e.g., 'Aurie helped me feel less alone at 2am - Sarah, 6 months') between the trial timeline and plan cards. Converts the abstract feature list into a relatable human outcome at the moment of highest purchase intent.\n\n*Why it lifts the lever:* The screen lists features and shows '30K+ 5 Stars ratings' but never surfaces what those ratings say. At the hard paywall decision point, users need emotional validation that this works for people like them. Testimonials at the paywall are the highest-converting social proof placement in subscription apps, often lifting trial starts 10-20%. The 30K ratings badge proves the data exists but wastes it as a number.\n\n*Hypothesis:* If we add a rotating testimonial quote above the plan cards, then free trial start rate improves by 10-15% because relatable outcome stories reduce purchase anxiety more effectively than feature lists at the commitment moment.\n\nReact :+1: / :-1: for quick sentiment, or reply in thread with your take. Owners: reply with a clear yes/no when you're ready to decide — approved ideas become Linear cards.\n\n_Idea `edb319769e27` · generated 2026-04-17_",
+    "reactions": [
+      {
+        "name": "+1",
+        "users": [
+          "U1BCYETM2"
+        ],
+        "count": 1
+      }
+    ],
+    "replies": []
+  },
+  {
+    "slack_fingerprint": "6750e2b71f06",
+    "channel": "C0ATUL8T936",
+    "ts": "1776464765.514299",
+    "text": ":bulb: *[AI]* *[paywall_container_screen]* Personalize paywall with quiz results from onboarding\n\n*Category:* paywall · *Lever:* conversion · *Impact:* High · *Effort:* Medium\n\nUse the user's quiz answers (goals, struggles, preferences) to personalize the paywall headline and feature emphasis. E.g., if user selected 'anxiety', show 'Start managing your anxiety with Aurie' and highlight 'Personalized emotional insights' first in the feature list.\n\n*Why it lifts the lever:* The user just completed a multi-step quiz and vibe check, generating rich intent data that is completely unused on the paywall. Personalized paywalls in health/wellness apps show 15-25% conversion lifts because they connect the subscription directly to the user's stated need. The generic 'Start your 7-day free trial with Aurie' headline misses an opportunity to reflect back the problem the user told us they want to solve.\n\n*Hypothesis:* If we personalize the paywall headline and feature ordering based on quiz answers, then trial start rate improves by 15-25% because users see a direct connection between their stated needs and the subscription value.\n\nReact :+1: / :-1: for quick sentiment, or reply in thread with your take. Owners: reply with a clear yes/no when you're ready to decide — approved ideas become Linear cards.\n\n_Idea `6750e2b71f06` · generated 2026-04-17_",
+    "reactions": [
+      {
+        "name": "+1",
+        "users": [
+          "U1BCYETM2"
+        ],
+        "count": 1
+      }
+    ],
+    "replies": []
+  },
+  {
+    "slack_fingerprint": "631534b4400e",
+    "channel": "C0ATUL8T936",
+    "ts": "1776464801.853489",
+    "text": ":bulb: *[AI]* *[home_screen]* Reframe greeting from problem to aspiration\n\n*Category:* activation · *Lever:* retention · *Impact:* High · *Effort:* low\n\nChange 'What are you stuck with right now?' to a warmer, forward-looking prompt like 'What would make today great?' or 'How can I help you today, Kai?' The current negative framing ('stuck') primes anxiety rather than hope. First-time free users who just dismissed a paywall need encouragement, not a reminder they have problems.\n\n*Why it lifts the lever:* This is the very first thing a new free user reads after rejecting the paywall. Negative framing reinforces doubt about the app's value. Aspiration-oriented copy creates a positive emotional anchor that increases the likelihood of a first meaningful interaction (chat, QP, or feed card).\n\n*Hypothesis:* Switching to aspiration-framed greeting copy will increase first-session engagement rate (any action taken on home) by 8-15% among new free users who dismissed the paywall.\n\nReact :+1: / :-1: for quick sentiment, or reply in thread with your take. Owners: reply with a clear yes/no when you're ready to decide — approved ideas become Linear cards.\n\n_Idea `631534b4400e` · generated 2026-04-17_",
+    "reactions": [
+      {
+        "name": "+1",
+        "users": [
+          "U1BCYETM2"
+        ],
+        "count": 1
+      }
+    ],
+    "replies": [
+      {
+        "user": "UEW6170R3",
+        "ts": "1776464853.393549",
+        "text": "+1 I ad the same thoughts today when testing Aurie, I felt it was focusing on the negative. I was in good spirit and then got this question from Aurie :slightly_smiling_face:"
+      },
+      {
+        "user": "U1BCYETM2",
+        "ts": "1776465397.751109",
+        "text": "Agreed. Would love to create a card & run ab test - is this something LLM can do, to choose the best greeting?"
+      },
+      {
+        "user": "UEW6170R3",
+        "ts": "1776466300.663959",
+        "text": "yes - currently we use llm to create a follow up question after each conversation (not currently used, some of them are quite good for my user, I can see them in the database) - Alyssa could review the question generated - we could also have another prompt that generates the question daily (similar to journal), after conversation, etc. [+ <@U06UTCGSVNK>]"
+      },
+      {
+        "user": "U06UTCGSVNK",
+        "ts": "1776466651.623449",
+        "text": "I think that's a great idea to generate personalized greetings."
+      }
+    ]
+  },
+  {
+    "slack_fingerprint": "00f27f60a10f",
+    "channel": "C0ATUL8T936",
+    "ts": "1776464942.073199",
+    "text": ":bulb: *[AI]* *[dailyGrounding_screen]* Let Users Save and Replay Favorite Grounding Tracks\n\n*Category:* personalization · *Lever:* conversion · *Impact:* High · *Effort:* medium\n\nAdd a heart/bookmark icon on the grounding screen to save loved tracks. Surface saved tracks in a 'My Grounding' library accessible from the daily card. The 'Not right?' button implies variety, but no way to revisit a track that resonated. Favorites create personal investment in the content library and increase switching cost for premium subscribers.\n\n*Why it lifts the lever:* Grounding is deeply personal -- a track that calms one user may not work for another. The current daily-rotation model means a perfect-fit track may never resurface. Letting users curate their own set increases perceived premium value and creates an accumulating personal asset that competitors cannot replicate. The 'Not right?' affordance proves track preference variance exists.\n\n*Hypothesis:* A favorites/replay feature will increase grounding track replay rate by 25-30%, improve 90-day premium retention by 4-6% via switching cost, and lift weekly grounding sessions by 20% among users who save at least one track.\n\n_Idea `00f27f60a10f` · generated 2026-04-17_",
+    "reactions": [],
+    "replies": []
+  },
+  {
+    "slack_fingerprint": "434460e15c58",
+    "channel": "C0ATUL8T936",
+    "ts": "1776465017.922739",
+    "text": ":bulb: *[AI]* *[settings_screen]* Add Invite a Friend / Referral CTA in Settings\n\n*Category:* referral · *Lever:* growth · *Impact:* High · *Effort:* medium\n\nInsert an 'Invite a Friend' row between Rate Aurie and About. Premium users are the highest-intent advocates. A share sheet with a referral link and personalized message ('Elena thinks you'd love Aurie') drives organic installs at near-zero CAC. Reward referrer with a free month extension.\n\n*Why it lifts the lever:* Settings is visited by engaged users already invested in the product. A referral CTA here converts satisfaction into distribution. The current menu has no viral loop mechanism despite having community (Slack) and advocacy (Rate) rows already.\n\n*Hypothesis:* Adding a referral row in settings will generate 5-10% tap rate among premium users, with 15-20% of shares converting to installs, increasing organic acquisition by 8-12% within 60 days.\n\n_Idea `434460e15c58` · generated 2026-04-17_",
+    "reactions": [
+      {
+        "name": "+1",
+        "users": [
+          "U1BCYETM2"
+        ],
+        "count": 1
+      }
+    ],
+    "replies": []
+  },
+  {
+    "slack_fingerprint": "303f61c2bb50",
+    "channel": "C0ATUL8T936",
+    "ts": "1776465051.774329",
+    "text": ":bulb: *[AI]* *[affirmationDetail_screen]* Share Affirmation as Branded Story Card\n\n*Category:* shareability · *Lever:* growth · *Impact:* High · *Effort:* low\n\nAfter the press-and-hold reveal, show a 'Share' button that generates a beautiful gradient card with the affirmation text. Personalized affirmations like 'I don't have to hold everything at once to be worthy of care' are inherently shareable self-expression. Instagram Stories and iMessage shares drive organic discovery at zero CAC.\n\n*Why it lifts the lever:* The affirmation detail is a high-emotion moment -- the user just performed an intentional ritual (press-and-hold) and received a personalized message. This is peak emotional resonance, the ideal moment to prompt sharing. The full-screen design already looks like a story card; only a share button and export renderer are needed.\n\n*Hypothesis:* Adding a post-reveal share CTA will achieve 8-12% tap rate (higher than journal share due to emotional peak timing), with each share generating 1-2 app store impressions, driving 3-5% organic install lift within 60 days.\n\n_Idea `303f61c2bb50` · generated 2026-04-17_",
+    "reactions": [
+      {
+        "name": "+1",
+        "users": [
+          "U1BCYETM2"
+        ],
+        "count": 1
+      }
+    ],
+    "replies": [
+      {
+        "user": "UFYS6JYH5",
+        "ts": "1779476727.873329",
+        "text": "Wrote up requirements based on this idea → <https://linear.app/aura-health/issue/PROD-2126/abshareaffirmation-share-affirmation-as-branded-story-card|PROD-2126>: ab:shareAffirmation: Share affirmation as branded story card *Sent using* <@U0AHUSA8WLW>"
+      }
+    ]
+  },
+  {
+    "slack_fingerprint": "2990424c412f",
+    "channel": "C0ATUL8T936",
+    "ts": "1776465095.370319",
+    "text": ":bulb: *[AI]* *[affirmationDetail_screen]* Add Save to Collection and Affirmation Streak\n\n*Category:* habit_formation · *Lever:* retention · *Impact:* High · *Effort:* medium\n\nLet users save affirmations to a personal collection and show a 'daily affirmation streak' counter. The press-and-hold ritual is perfect for habit loops but has no persistence -- yesterday's affirmation is gone. A collection gives users a reason to return daily (new affirmation + streak maintenance) and a library to revisit during tough moments.\n\n*Why it lifts the lever:* The press-and-hold interaction creates a mindful micro-ritual, but there is no reward loop beyond the single moment. Saved collections create an accumulating personal asset that increases switching cost. Streaks leverage loss aversion -- users who have built a 14-day streak will open the app to avoid breaking it.\n\n*Hypothesis:* Adding save-to-collection with streak display will increase daily affirmation open rate by 25-35% and improve 14-day retention by 6-10% among users who engage with the feature at least 3 times.\n\n_Idea `2990424c412f` · generated 2026-04-17_",
+    "reactions": [
+      {
+        "name": "+1",
+        "users": [
+          "U1BCYETM2"
+        ],
+        "count": 1
+      }
+    ],
+    "replies": []
+  },
+  {
+    "slack_fingerprint": "fb5b8ff454cb",
+    "channel": "C0ATUL8T936",
+    "ts": "1776465141.133099",
+    "text": ":bulb: *[AI]* *[conversation_history_screen]* Proactive Check-In Prompt Based on Past Themes\n\n*Category:* re-engagement · *Lever:* retention · *Impact:* High · *Effort:* medium\n\nShow a contextual banner above conversations: 'Last time you talked about feeling overwhelmed at work. Want to check in on that?' Uses AI summaries already available. Personalizes the return experience and gives users a reason to start a new session tied to unresolved themes, converting a passive archive into active re-engagement.\n\n*Why it lifts the lever:* The history screen is passive -- it lists past conversations but provides no forward momentum. Elena has three sessions all centered on overwhelm and caregiving burden, but nothing nudges her to continue processing. A theme-aware prompt leverages existing AI summaries to create a personalized re-entry point.\n\n*Hypothesis:* A personalized check-in prompt on the chat history screen will increase new session starts from this screen by 20-30%, improving weekly active session frequency among returning premium users by 10-15%.\n\n_Idea `fb5b8ff454cb` · generated 2026-04-17_",
+    "reactions": [
+      {
+        "name": "+1",
+        "users": [
+          "U1BCYETM2"
+        ],
+        "count": 1
+      }
+    ],
+    "replies": [
+      {
+        "user": "U1BCYETM2",
+        "ts": "1776465494.103449",
+        "text": "technically in the feed - but not doing a great job."
+      }
+    ]
+  },
+  {
+    "slack_fingerprint": "5b6b55228888",
+    "channel": "C0ATUL8T936",
+    "ts": "1776465223.625259",
+    "text": ":bulb: *[AI]* *[conversation_history_screen]* Emotional Trends Timeline Across Conversations\n\n*Category:* insight · *Lever:* retention · *Impact:* High · *Effort:* high\n\nAdd a collapsible 'Your Patterns' section showing a simple mood/theme trajectory across sessions (e.g., dots for overwhelm, work, self-care). Surfaces longitudinal insight that individual conversations cannot. Makes the therapy journey feel cumulative rather than episodic, reinforcing premium value and differentiating from generic chatbots.\n\n*Why it lifts the lever:* Elena has 3 conversations all centered on overwhelm and caregiving. She cannot see that pattern from the list alone. Therapy apps that surface progress and patterns have 2-3x higher retention because users perceive ongoing value beyond any single session.\n\n*Hypothesis:* An emotional trends visualization will increase 60-day retention among users with 3+ conversations by 12-18%, and reduce premium cancellation by 8-10% by making accumulated insight a visible benefit of continued use.\n\n_Idea `5b6b55228888` · generated 2026-04-17_",
+    "reactions": [
+      {
+        "name": "+1",
+        "users": [
+          "U1BCYETM2"
+        ],
+        "count": 1
+      }
+    ],
+    "replies": []
+  },
+  {
+    "slack_fingerprint": "c78641ce6d46",
+    "channel": "C0ATUL8T936",
+    "ts": "1776465257.916879",
+    "text": ":bulb: *[AI]* *[dailyGrounding_screen]* Post-Track Completion Celebration with Session Count\n\n*Category:* habit_formation · *Lever:* retention · *Impact:* High · *Effort:* low\n\nAfter the grounding track finishes, show a brief inline card: 'Grounding complete -- your 12th session this month.' Pairs the calm post-audio state with a progress stat that reinforces daily habit. No new data needed; session count already tracked. The post-completion moment is peak receptivity for habit reinforcement.\n\n*Why it lifts the lever:* The grounding track ends and users return to the feed with zero acknowledgment. Post-session is the highest-receptivity moment for habit reinforcement -- Calm and Headspace both use post-session stats to drive streaks. The personalized conversation-aware intro already shows Aurie 'knows' the user; a completion stat extends that relationship beyond the session.\n\n*Hypothesis:* A post-track completion celebration with session count will increase next-day grounding return rate by 15-20% and raise weekly grounding sessions from ~2.5 to ~3.5 per active user within 30 days.\n\n_Idea `c78641ce6d46` · generated 2026-04-17_",
+    "reactions": [
+      {
+        "name": "+1",
+        "users": [
+          "U1BCYETM2"
+        ],
+        "count": 1
+      }
+    ],
+    "replies": [
+      {
+        "user": "UEW6170R3",
+        "ts": "1776465289.079779",
+        "text": "+1 I feel we are missing meditation done - prioritization might depend on how many listens we are getting…"
+      },
+      {
+        "user": "U1BCYETM2",
+        "ts": "1776465603.588169",
+        "text": "~10% active users finish a meditation"
+      },
+      {
+        "user": "U1BCYETM2",
+        "ts": "1776465615.275849",
+        "text": "start=20%"
+      },
+      {
+        "user": "U1BCYETM2",
+        "ts": "1776465897.677589",
+        "text": "would be great to integrate with aura - e.g. save meditation, to view in aura, etc. low priority but definitely in the future."
+      }
+    ]
+  },
+  {
+    "slack_fingerprint": "372f78cc0894",
+    "channel": "C0ATUL8T936",
+    "ts": "1776465322.236439",
+    "text": ":bulb: *[AI]* *[journal_screen]* Add Journaling Streak Counter to Journal List\n\n*Category:* engagement · *Lever:* retention · *Impact:* High · *Effort:* low\n\nDisplay a streak badge or count (e.g., '3-day streak') at the top of the journal list. Elena has entries on consecutive days, but nothing celebrates that consistency. A visible streak leverages loss aversion -- users return daily to avoid breaking it. No backend change needed; compute from entry timestamps client-side.\n\n*Why it lifts the lever:* The journal list is purely archival with no motivational hook. Therapy journaling benefits from daily habit formation, and streaks are the most proven lightweight retention mechanic in wellness apps. The data already exists (entry dates); only the UI is missing.\n\n*Hypothesis:* Adding a journaling streak counter will increase daily journal creation rate by 15-20% among active users and reduce 7-day journal-inactive churn by 8-12% within 30 days.\n\n_Idea `372f78cc0894` · generated 2026-04-17_",
+    "reactions": [],
+    "replies": [
+      {
+        "user": "U1BCYETM2",
+        "ts": "1776465636.934129",
+        "text": "would like to add manual journal entires first!"
+      }
+    ]
+  },
+  {
+    "slack_fingerprint": "0fbcae45c2c2",
+    "channel": "C0ATUL8T936",
+    "ts": "1776465439.961579",
+    "text": ":bulb: *[AI]* *[onboardingQP_screen]* Remove close button from first QP intro modal\n\n*Category:* activation · *Lever:* conversion · *Impact:* High · *Effort:* low\n\nRemoving or delaying the X button on the first Quick Processing intro forces engagement with the core value prop. Users who skip QP after paywall dismiss have no aha-moment and churn. Allow dismiss only after 3-5 seconds or via swipe-down, reducing accidental/reflexive closes.\n\n*Why it lifts the lever:* This is the single highest-leverage activation moment. The user just rejected paying -- QP is the free taste that proves value. Every close-tap here is a lost activation.\n\n*Hypothesis:* Removing the close button (or adding a 3s delay) on first QP intro will increase QP start rate by 15-25% and D1 retention by 5-8% among new free users.\n\n_Idea `0fbcae45c2c2` · generated 2026-04-17_",
+    "reactions": [],
+    "replies": [
+      {
+        "user": "U1BCYETM2",
+        "ts": "1776465658.427219",
+        "text": "is this a bug? cc <@U01CPPQ2MNJ>"
+      },
+      {
+        "user": "U01CPPQ2MNJ",
+        "ts": "1776667647.754339",
+        "text": "<@U1BCYETM2> No this is not the bug we have close button that close the onboarding quick processing intro modal"
+      },
+      {
+        "user": "U1BCYETM2",
+        "ts": "1776667873.641989",
+        "text": "Ah, i misread it. Thank you."
+      },
+      {
+        "user": "U01CPPQ2MNJ",
+        "ts": "1776668201.875359",
+        "text": "<@U1BCYETM2> Please let me know if we should remove that button or instead show it with a delay (e.g., 3–5 seconds), as suggested above. OR leave as it is?"
+      },
+      {
+        "user": "U1BCYETM2",
+        "ts": "1776668334.209409",
+        "text": "let's leave as is. thank you."
+      }
+    ]
+  },
+  {
+    "slack_fingerprint": "2567111b672f",
+    "channel": "C0ATUL8T936",
+    "ts": "1776465516.716419",
+    "text": ":bulb: *[AI]* *[onboardingQP_screen]* Default-select Type and auto-start after countdown\n\n*Category:* activation · *Lever:* conversion · *Impact:* High · *Effort:* medium\n\nReplace the two-button choice with a default to Type mode and a 5-second auto-start countdown (\"Starting in 5...\" with cancel option). Reduces decision friction at the moment of highest drop-off. Voice remains accessible via a toggle. Choice paralysis kills activation.\n\n*Why it lifts the lever:* Two equal-weight options create decision paralysis. Most new users are in public/quiet settings and prefer typing. A gentle auto-start with Type as default nudges action over deliberation.\n\n*Hypothesis:* Auto-starting Type mode with a 5s countdown will increase QP completion rate by 10-20% vs the current two-button choice, particularly for users who dismissed the paywall.\n\n_Idea `2567111b672f` · generated 2026-04-17_",
+    "reactions": [
+      {
+        "name": "x",
+        "users": [
+          "UFYS6JYH5"
+        ],
+        "count": 1
+      }
+    ],
+    "replies": []
+  },
+  {
+    "slack_fingerprint": "751ee36c265c",
+    "channel": "C0ATUL8T936",
+    "ts": "1776465574.393439",
+    "text": ":bulb: *[AI]* *[home_screen]* Add streak/reward framing to 0/4 feed progress\n\n*Category:* gamification · *Lever:* retention · *Impact:* High · *Effort:* medium\n\nReplace plain '0 / 4 COMPLETED' with motivational progress framing: 'Complete all 4 to unlock your daily insight' or a visual progress ring. Add a micro-reward (insight card, badge, or streak marker) upon 4/4 completion. The current counter is informational but creates no desire to reach 4/4. New users need a clear reason to engage with all four cards on day one.\n\n*Why it lifts the lever:* The feed cards are the core daily habit loop. Without a reward or goal tied to completion, users cherry-pick one card and leave. A completion reward creates a session goal that drives deeper engagement and builds the daily return habit critical for D7 retention.\n\n*Hypothesis:* Adding a completion reward for 4/4 daily cards will increase average cards completed per session from ~1.5 to ~2.8 and improve D7 retention by 5-10% among new free users.\n\n_Idea `751ee36c265c` · generated 2026-04-17_",
+    "reactions": [
+      {
+        "name": "x",
+        "users": [
+          "UFYS6JYH5"
+        ],
+        "count": 1
+      }
+    ],
+    "replies": []
+  },
+  {
+    "slack_fingerprint": "249c406ec46b",
+    "channel": "C0ATUL8T936",
+    "ts": "1776466452.310969",
+    "text": ":bulb: *[AI]* *[affirmationDetail_screen]* Paywall Teaser for Free Users on Second Affirmation\n\n*Category:* conversion · *Lever:* growth · *Impact:* Medium · *Effort:* low\n\nShow free users their first daily affirmation fully, then soft-gate subsequent ones with a blurred preview and 'Unlock unlimited affirmations with Premium' CTA. The press-and-hold ritual creates curiosity and investment -- interrupting it after the first taste drives higher conversion than a hard gate upfront.\n\n*Why it lifts the lever:* Elena is already premium, but free users hitting this screen see no conversion prompt. The press-and-hold mechanic builds anticipation -- gating after the first reveal exploits the 'endowed progress effect' (users who started a ritual feel compelled to complete it). This is the highest-intent conversion moment in the affirmation flow.\n\n*Hypothesis:* A soft gate after the first free affirmation will convert 4-6% of free users who reach the second affirmation attempt, outperforming upfront hard gates by 2-3x due to the sunk-cost of the ritual interaction.\n\n_Idea `249c406ec46b` · generated 2026-04-17_",
+    "reactions": [],
+    "replies": []
+  },
+  {
+    "slack_fingerprint": "a4b9e349f6c5",
+    "channel": "C0ATUL8T936",
+    "ts": "1776466609.078589",
+    "text": ":bulb: *[AI]* *[onboardingQP_screen]* Add social proof or outcome preview to QP intro\n\n*Category:* social_proof · *Lever:* retention · *Impact:* Medium · *Effort:* low\n\nAdd a single line of social proof (\"Join 2M+ people who started here\") or an outcome preview (\"Here's what Maya discovered about herself\") above the CTA buttons. The current bullet points explain mechanics but don't create desire. Users need emotional motivation, not feature specs.\n\n*Why it lifts the lever:* The three bullet points (private, 2-3 min, personal insight) are functional but uninspiring. Users who just closed a paywall are skeptical -- social proof or a concrete outcome example rebuilds trust and curiosity.\n\n*Hypothesis:* Adding one social proof line above the CTA will increase QP start rate by 8-12% by shifting the frame from 'try this feature' to 'join others who benefited'.\n\n_Idea `a4b9e349f6c5` · generated 2026-04-17_",
+    "reactions": [],
+    "replies": []
+  },
+  {
+    "slack_fingerprint": "31357d18ac76",
+    "channel": "C0ATUL8T936",
+    "ts": "1776466634.120859",
+    "text": ":bulb: *[AI]* *[paywall_container_screen]* Reframe CTA from price ('$0.00') to action benefit\n\n*Category:* copy · *Lever:* conversion · *Impact:* Medium · *Effort:* Small\n\nChange 'Start for $0.00' to 'Start Talking to Aurie Free' or 'Begin Your Free Week'. The current CTA anchors on a dollar amount which primes price sensitivity. A benefit-framed CTA focuses attention on what the user gains (free access to Aurie) rather than what they might eventually pay.\n\n*Why it lifts the lever:* The '$0.00' framing paradoxically reminds users this will cost money later. Subscription apps that reframe trial CTAs around the benefit ('Try free for 7 days', 'Start your journey') rather than price ('$0.00') typically see 5-12% higher tap rates. The timeline already communicates the cost structure clearly, so the CTA doesn't need to repeat it.\n\n*Hypothesis:* If we reframe the CTA button copy from price-anchored to benefit-anchored, then trial start rate improves by 5-10% because users focus on the value they receive rather than the eventual charge.\n\n_Idea `31357d18ac76` · generated 2026-04-17_",
+    "reactions": [],
+    "replies": []
+  },
+  {
+    "slack_fingerprint": "6e68c2035a7b",
+    "channel": "C0ATUL8T936",
+    "ts": "1776466662.603899",
+    "text": ":bulb: *[AI]* *[settings_screen]* Surface Session Streak or Usage Stats in Settings\n\n*Category:* personalization · *Lever:* retention · *Impact:* Medium · *Effort:* low\n\nShow a compact card at the top of settings with the user's streak, total sessions, or 'member since' date. Progress visibility reinforces habit loops and makes the sunk-cost effect work for retention. No new backend needed -- session count and first-login date are already tracked client-side.\n\n*Why it lifts the lever:* The settings screen is purely functional with no emotional hook. Engaged premium users who open settings see nothing that reflects their journey. A lightweight stats nudge transforms a utility screen into a retention touchpoint without adding clutter.\n\n*Hypothesis:* Displaying a session streak or membership duration in settings will reduce 30-day churn among premium users by 3-5% by reinforcing commitment and progress awareness.\n\n_Idea `6e68c2035a7b` · generated 2026-04-17_",
+    "reactions": [
+      {
+        "name": "white_check_mark",
+        "users": [
+          "UFYS6JYH5"
+        ],
+        "count": 1
+      }
+    ],
+    "replies": []
+  },
+  {
+    "slack_fingerprint": "c9081ed0d24a",
+    "channel": "C0ATUL8T936",
+    "ts": "1776466719.527049",
+    "text": ":bulb: *[AI]* *[settings_screen]* Add Notification Preferences Quick Summary\n\n*Category:* engagement · *Lever:* retention · *Impact:* Medium · *Effort:* medium\n\nReplace the plain 'Notifications' row with a smart row showing current state: 'Notifications: Daily check-ins at 9am' or 'Notifications: Off'. Users who see their notification config at a glance are more likely to enable or tune reminders rather than leaving them off, driving re-engagement loops.\n\n*Why it lifts the lever:* Push notifications are the #1 re-engagement lever for therapy apps. The current row gives zero context about notification state, so users with notifications disabled have no prompt to reconsider. A visible summary creates a low-friction nudge toward enabling reminders.\n\n*Hypothesis:* Showing notification state inline will increase notification opt-in rate by 10-15% among users who currently have notifications disabled, improving 7-day return rate by 5-8%.\n\n_Idea `c9081ed0d24a` · generated 2026-04-17_",
+    "reactions": [
+      {
+        "name": "x",
+        "users": [
+          "UFYS6JYH5"
+        ],
+        "count": 1
+      }
+    ],
+    "replies": []
+  },
+  {
+    "slack_fingerprint": "4991ff40db10",
+    "channel": "C0ATUL8T936",
+    "ts": "1776466749.651179",
+    "text": ":bulb: *[AI]* *[welcome_screen]* Add social proof or benefit statement below tagline\n\n*Category:* copy · *Lever:* conversion · *Impact:* Medium · *Effort:* Small\n\nThe tagline 'rediscover your light' is poetic but abstract. Adding a concrete benefit line (e.g., '500K+ people feeling calmer') or a brief value prop (e.g., 'Daily conversations that reduce stress &amp; anxiety') below it gives new users a reason to tap Get Started.\n\n*Why it lifts the lever:* Users landing on this screen have no context about what Aurie does beyond being an AI companion. Therapy/wellness apps see 15-30% signup lift from social proof or concrete outcome framing on the first screen. The current copy is emotionally warm but lacks a tangible hook.\n\n*Hypothesis:* If we add a single social-proof or benefit-oriented subtitle below the tagline, then Get Started tap rate improves by 10-20% because users understand the concrete value before committing.\n\n_Idea `4991ff40db10` · generated 2026-04-17_",
+    "reactions": [],
+    "replies": []
+  },
+  {
+    "slack_fingerprint": "4f2aac11d639",
+    "channel": "C0ATUL8T936",
+    "ts": "1776466794.045619",
+    "text": ":bulb: *[AI]* *[welcome_screen]* Animate Aurie character with a subtle greeting gesture\n\n*Category:* ui · *Lever:* conversion · *Impact:* Medium · *Effort:* Small\n\nReplace the static orb/character image with a subtle entrance animation (gentle pulse, shimmer, or wave). A brief, personality-driven motion makes Aurie feel alive on first impression, reinforcing that this is a conversational companion rather than a static tool.\n\n*Why it lifts the lever:* The welcome screen is the user's first encounter with Aurie's personality. The static orb is visually appealing but passive. Wellness and companion apps (Replika, Woebot) that animate their character on the welcome screen report higher emotional engagement and tap-through. A 1-2s entrance animation adds warmth without delaying interaction.\n\n*Hypothesis:* If we add a subtle entrance animation to the Aurie character on the welcome screen, then Get Started tap rate improves by 5-10% because the animated character creates an emotional connection that motivates users to engage.\n\n_Idea `4f2aac11d639` · generated 2026-04-17_",
+    "reactions": [
+      {
+        "name": "+1",
+        "users": [
+          "U1BCYETM2"
+        ],
+        "count": 1
+      },
+      {
+        "name": "white_check_mark",
+        "users": [
+          "UFYS6JYH5"
+        ],
+        "count": 1
+      }
+    ],
+    "replies": []
+  }
+]

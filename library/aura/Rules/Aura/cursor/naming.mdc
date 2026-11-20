@@ -1,0 +1,43 @@
+---
+description: Naming conventions for Aura JavaScript files
+alwaysApply: true
+---
+
+# Naming Conventions
+
+## Files
+
+| Kind | Convention | Example |
+|------|-----------|---------|
+| Screen | `PascalCase.js` | `FamilyPlanOnboarding.js`, `LiveMeditationDoneDonate.js` |
+| Component | `PascalCase.js` | `LiveMeditationDonateModal.js` |
+| Reflux store | `{Domain}Store.js` or `{Domain}Controller.js` | `AppInfoStore.js`, `RNIapController.js` |
+| Helper / logic | `PascalCase.js` or `camelCase.js` (match neighbors) | `Trackings.js`, `BranchHelper.js`, `communityForum.js` |
+| Hook | `useXxx.js` | `useScreenInsets.js` |
+| Style file | `camelCase.js` | `styleSheet.js`, `fontStyles.js` |
+| Localization JSON | `<namespace>.json` per locale folder | `src/localization/en/miscellaneous.json` |
+
+When extending a folder, **match the existing naming** in that folder rather than inventing a new convention.
+
+## Symbols
+
+| Kind | Convention | Example |
+|------|-----------|---------|
+| Component | `PascalCase` | `FamilyPlanOnboarding` |
+| Function / variable | `camelCase` | `loadFamilyPlanProducts` |
+| Constant (module-level, semantic) | `UPPER_SNAKE_CASE` | `FOO_LOADED`, `DEFAULT_TIMEOUT` |
+| React state setter | `setCamelCase` | `setLoading` |
+| Boolean | `is*`, `has*`, `can*`, `should*` prefix | `isLoading`, `hasMorePages` |
+| Collection | plural noun | `tracks`, `journals` |
+| Event constant | `UPPER_SNAKE_CASE` exported from store | `export const FOO_LOADED = 'FOO_LOADED'` |
+
+## Avoid
+
+- Single-letter variable names except for short loop indices (`i`, `j`).
+- Hungarian-style prefixes (`strFoo`, `arrFoo`).
+- Abbreviating beyond what's already common in the codebase (`btn`, `lbl`, `txt`). The repo uses `Button`, `Label`, `Text`.
+- Re-using existing names with a slight twist (`User` vs `UserModel` vs `UserData`) — pick one and reuse it.
+
+## File Placement Reminder
+
+See `architecture.mdc` for which folder a new file belongs in. Naming alone doesn't fix being in the wrong place.

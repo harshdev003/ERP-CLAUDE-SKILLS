@@ -1,0 +1,28 @@
+{
+  "description": "Surface a skill's or a subagent's knowledge: manifest (reads/writes) to the model when it starts — the Skill tool injects only the SKILL.md body and a subagent gets only its agent file's body, so the frontmatter never reaches context on its own.",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}\"/hooks/knowledge_context.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}\"/hooks/knowledge_context.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

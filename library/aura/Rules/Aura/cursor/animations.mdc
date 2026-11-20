@@ -1,0 +1,286 @@
+---
+description: "Layout animations on iOS — LayoutTransition / SlideTransition, never new LayoutAnimation.configureNext"
+globs: src/**/*.{js,jsx}
+alwaysApply: false
+---
+
+# Animations
+
+## Related Rules
+
+- `performance.md` for animation cost and keeping the JS thread free.
+- `ui-design-system.md` for theme tokens (durations and easings are **not** theme values — they live in `LAYOUT_PRESETS`).
+- `native-ios.md` for the New Architecture context this whole file exists because of.
+
+## The one rule
+
+**Do not add `LayoutAnimation.configureNext` to new code.** It does nothing on iOS.
+Reach for `LayoutTransition` or `SlideTransition` from `src/components/transitions/` instead.
+
+```js
+// ❌ BAD — a no-op on iOS, so the change just snaps
+LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut)
+this.setState({ expanded: true })
+
+// ✅ GOOD
+<LayoutTransition>
+  <Text numberOfLines={expanded ? null : 3}>{body}</Text>
+</LayoutTransition>
+```
+
+## Why it is off
+
+`index.ios.js:30` calls `LayoutAnimation.setEnabled(false)` on iOS at startup, before
+anything renders (PROD-5801).
+
+RN 0.87 routes `LayoutAnimation` through Fabric's `LayoutAnimationKeyFrameManager`,
+which **withholds mount mutations and replays them** when the animation finishes. With
+view flattening the replayed indices no longer match the shadow tree, so the next
+unmount lands on the wrong child and the app aborts:
+
+```
+*** Assertion failure in -[RCTViewComponentView unmountChildComponentView:index:]
+Attempt to unmount a view which has a different index.
+  index: 16, actual index: 14, tag at index: 224
+```
+
+It crashed on **every signed-in launch**, which made the upgrade unusable for any
+authenticated user.
+
+Turning it back on is not available from this repo, and this was verified rather than
+assumed:
+
+- React core ships **prebuilt** on iOS (`React-Core-prebuilt`, `React.xcframework`), so
+  the renderer that does the withholding cannot be patched here.
+- The native `enableLayoutAnimationsOnIOS` flag defaults true and is what routes the API
+  into that renderer — the only lever it offers is off, which is where we already are.
+- The zIndex flips were ruled out as a cause (both Dashboard overlays pinned to a
+  constant zIndex → identical crash).
+
+`setEnabled` itself needed a one-line fix, the `LayoutAnimation.js` hunk of
+`patches/react-native+0.87.1.patch`: its body in 0.87.1 reads
+`isLayoutAnimationEnabled = isLayoutAnimationEnabled`, assigning the flag to itself and
+ignoring the argument.
+
+## This is scaffolding, not the target state
+
+`src/components/transitions/` exists **only** because `LayoutAnimation` is disabled. It is
+not a better API we chose; it is a workaround for a renderer bug we cannot reach.
+
+Upstream **[facebook/react-native#57454](https://github.com/facebook/react-native/issues/57454)** is open. When it lands and
+`configureNext` works under Fabric again, the intended end state is:
+
+1. Remove the `setEnabled(false)` call and the `LayoutAnimation.js` hunk of the
+   `react-native` patch. Keep the rest of that file: its codegen hunk (PROD-6855) has its
+   own removal trigger, the upgrade to RN 0.88.
+2. Convert the `LayoutTransition` / `SlideTransition` sites back to `configureNext`.
+3. Delete `src/components/transitions/`.
+
+Two consequences for how you use it **today**:
+
+- **Do not spread it further than the motion requires.** A screen that reads fine
+  snapping does not need a wrapper. Every site added is a site to convert back.
+- **Do not build new abstractions on top of it.** Don't re-export it, don't wrap it in a
+  helper, don't make it a prop on a shared component. Call sites should be trivially
+  greppable and trivially reversible.
+
+## `LayoutTransition` — expand / collapse / reveal
+
+Animates its **own height** as content grows or shrinks. That it drives real layout is the
+point: everything below follows on its own, which is what `configureNext` did to the whole
+commit and why a purely visual transform does not reproduce the feel.
+
+| Prop | Default | |
+| -- | -- | -- |
+| `children` | `null` | content whose height changes |
+| `preset` | `easeInEaseOut` | see `LAYOUT_PRESETS` below |
+| `duration` | preset's | override in ms |
+| `enabled` | `true` | false adopts each height instantly (reduced motion) |
+| `manual` | `false` | animate only changes armed through the ref — see below |
+| `style` | `null` | applied to the animated container |
+
+`LAYOUT_PRESETS` mirrors RN's own numbers plus this app's `src/cst.js` configs, so a
+converted call site keeps its timing: `easeInEaseOut` 300, `linear` 500, `spring` 700,
+`mediumAnimation` 700, `conversationAnimation` 700, `springAnimation` 750,
+`defaultAnimation` 1000.
+
+### `manual` + ref is the direct `configureNext` analogue
+
+This is the pattern to reach for when the old code called `configureNext` immediately
+before a `setState` / hook setter.
+
+By default the component animates **every** height change — an answer arriving from the
+network, text reflowing at a larger font size, a rotation. A card that animates when
+nobody touched it reads as a glitch.
+
+`manual` inverts that: nothing animates until a call site **arms** the next change,
+exactly the way `configureNext` armed the next commit. Arming is one-shot — the change
+that consumes it disarms it again.
+
+**Arm it where the old `configureNext` call sat: immediately before the state update.**
+
+```js
+// Function component — SettingsFaqItem.js
+const transition = useRef(null)
+
+const handlePress = () => {
+  transition.current?.configureNext()
+  onPress()
+}
+
+<LayoutTransition manual ref={transition}>
+```
+
+```js
+// Class component — PricingIntroOffer.js
+this.plansTransition = React.createRef()          // constructor
+this.plansTransition.current?.configureNext()      // before the setState
+<LayoutTransition manual ref={this.plansTransition}>
+```
+
+Optionally pass `{ preset, duration }` to `configureNext()` to override for that one
+change.
+
+**Keep the `LayoutAnimation.configureNext` call next to it.** It is dead on iOS but still
+works on Android, and dropping it regresses Android. Both lines together is the correct
+shape:
+
+```js
+// PaywallFaqList.js
+LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut)  // Android
+rowTransitions.current[index]?.configureNext()                        // iOS
+setOpenIndex(isOpen ? null : index)
+```
+
+**In a list, arm every row whose height changes in that commit — not just the one tapped.**
+An accordion closes one row while opening another, so both move:
+
+```js
+rowTransitions.current[index]?.configureNext()
+if (openIndex !== null && openIndex !== index) {
+  // Otherwise the closing row snaps shut beneath the opening one.
+  rowTransitions.current[openIndex]?.configureNext()
+}
+```
+
+Collect the refs with a setter factory rather than one ref per row:
+
+```js
+const rowTransitions = useRef([])
+const setRowTransition = (index) => (node) => {
+  rowTransitions.current[index] = node
+}
+```
+
+Note `PaywallFaqList` animates **each row** rather than the card around them: animating
+the card would leave the rows at their final positions, jumping under a clip.
+
+Use `manual` whenever the content can change for reasons other than the user's own action.
+Leave it off only when every height change is one the user asked for.
+
+### Respect reduced motion
+
+Someone who has turned on Reduce Motion should get the new state instantly, not a slower
+version of the animation. Two ways, both fine:
+
+```js
+// Skip the arming — PaywallFaqList.js
+const { reduceMotion } = useReduceMotion()
+
+if (!reduceMotion) {
+  LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut)
+  rowTransitions.current[index]?.configureNext()
+}
+setOpenIndex(isOpen ? null : index)
+```
+
+```js
+// Or pass it down — the component adopts each height instantly when false
+<LayoutTransition enabled={!reduceMotion}>
+```
+
+Prefer skipping the arming on a `manual` site (the state update still happens, it just
+lands in one frame) and `enabled` on an automatic one.
+
+## `SlideTransition` — sheets
+
+For an always-mounted overlay that used `configureNext` plus a `top` toggle between `0`
+and the screen height. Drives `translateY` on the **native driver**, so it mutates no
+layout and the renderer is not involved.
+
+```js
+<SlideTransition
+  visible={this.state.showCameraOptions}
+  distance={cst.deviceHeight}
+  style={{ position: 'absolute', top: 0, left: 0, right: 0 }}>
+```
+
+`distance` is required. `fade` also cross-fades, for the sheets that toggled opacity.
+
+**Children stay mounted in both states, deliberately.** A sheet that unmounts while
+presented is what aborts Fabric, and it leaves nothing to animate on the way out. Hidden
+means `pointerEvents="none"` plus a transform parking it off-screen, so it cannot take
+touches.
+
+## Reanimated is not the answer here
+
+`performance.md` says to prefer `react-native-reanimated` for frequent animations. That
+holds for transforms and gestures. It does **not** hold for layout animations on this
+stack:
+
+- Reanimated's `LinearTransition` runs through `LayoutAnimationsProxy_Legacy`, the second
+  documented root cause of this upgrade's "different index" aborts, and it is unpatched
+  here (PROD-5826). Routing hundreds of sites through it to fix a crash mitigation is the
+  wrong trade.
+- Measured on this stack, Reanimated's layout animations **never run** at all.
+- `entering` and `layout` are index-safe by construction; **`exiting` is not** — it is the
+  one trigger that withholds Remove and Delete, the same withhold-and-replay shape that
+  caused the crash. Never use `exiting`, and never on a list row.
+- `Animated.FlatList` with `itemLayoutAnimation` stays off the table: it wraps every cell
+  in an extra animated view, changing view flattening, which is exactly what the Legacy
+  proxy does not model.
+
+## Gotchas
+
+**React 19 ignores `defaultProps` on function components.** Both components use default
+parameters instead. This is not stylistic — it silently turned `enabled` into `undefined`
+and made `LayoutTransition` apply every height instantly rather than animating it. If you
+write a new animated component, use default parameters.
+
+**Height cannot use the native driver.** `LayoutTransition` passes
+`useNativeDriver: false` on purpose — a native-driven transform would not move the
+siblings.
+
+**The wrapper is only transparent inside a column.** It sets `alignSelf: stretch` and
+takes the parent's width. Dropping it into a flex row will change the layout. This is why
+the remaining sites were inventoried rather than bulk-wrapped.
+
+**The first layout pass adopts, it does not animate.** A first render must not animate up
+from zero, so the component carries no height until it has measured once.
+
+## The ~1000 dead calls
+
+There are still **1008 `LayoutAnimation.configureNext` call sites across 383 files**. They
+are all no-ops on iOS and all still live on Android.
+
+- **Do not bulk-remove them.** Android keeps its behaviour from them.
+- **Do not bulk-wrap them either.** PROD-5953 inventoried 195 further candidate sites
+  across 92 files; wrapping blind breaks layouts (see the flex-row gotcha).
+- When you convert a site, **leave its `configureNext` call in place** — that is what the
+  existing conversions did, so Android is unaffected.
+
+Restoration is tracked under PROD-5803 and is explicitly **not a release blocker**: zero
+of the call sites pass an `onAnimationDidEnd` callback, so nothing waits on a layout
+animation before unmounting, navigating or firing a callback. The whole surface is
+cosmetic.
+
+## Don't
+
+- Don't add `LayoutAnimation.configureNext` to new iOS code paths.
+- Don't remove the `setEnabled(false)` call or the `LayoutAnimation.js` hunk of the
+  `react-native` patch without the upstream fix — both are required, and the app crashes
+  on every signed-in launch without them.
+- Don't use Reanimated `exiting`, or any Reanimated layout animation, on this stack.
+- Don't wrap a site in `LayoutTransition` unless the motion is actually wanted there.
+- Don't put transition durations in the theme — they live in `LAYOUT_PRESETS` so a
+  converted site keeps the timing its `configureNext` call had.

@@ -1,0 +1,46 @@
+---
+description: Android native conventions for Aura (Gradle, jetifier, release bundle)
+globs: android/**
+alwaysApply: false
+---
+
+# Native Android
+
+## Building
+
+```bash
+# Debug build + install on a connected device/emulator
+npm run android
+
+# Debug APK from CLI
+cd android && ./gradlew assembleDebug
+
+# Release bundle (used for Play Store; runs the deploy script after)
+npm run android:bundleRelease
+```
+
+## Jetifier
+
+`npx jetify` runs automatically on `postinstall` (see `package.json`). It rewrites legacy support-library references in `node_modules/` to AndroidX. **Don't disable it** — several pinned RN modules still ship as legacy.
+
+If you hit `Could not resolve com.android.support:...` during a Gradle build, run `npx jetify` manually then retry.
+
+## Common Failures + Recovery
+
+- **Stale Gradle cache** → `cd android && ./gradlew clean && cd ..`
+- **Broken merge after a pull** → delete `android/build/`, `android/app/build/`, then rebuild.
+- **`Duplicate class` errors** → almost always a transitive native module conflict. Check the recently added module's docs for `exclude` instructions.
+
+## Don't Touch Without Reason
+
+- `android/app/build.gradle` — version bumps and ABI splits live here. Touch only when shipping a release.
+- `android/app/src/main/AndroidManifest.xml` — adding permissions changes the Play Store listing. Coordinate before adding any new permission.
+- `MainApplication.{java,kt}`, `MainActivity.{java,kt}` — autolinking handles most native module registration. Manual entries are usually a sign something is misconfigured.
+
+## Versioning
+
+`versionCode` and `versionName` in `android/app/build.gradle` are bumped per release. Don't bump them in feature PRs.
+
+## Native Module Linking
+
+React Native uses autolinking. If a module needs manual linking, document it in the PR description so reviewers know.

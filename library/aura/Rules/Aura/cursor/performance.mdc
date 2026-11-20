@@ -1,0 +1,63 @@
+---
+description: Performance guidelines for Aura React Native code
+alwaysApply: true
+---
+
+# Performance
+
+## Lists
+
+- For long or unbounded lists, use **`@shopify/flash-list`** (already in deps) instead of `FlatList`. It recycles cells and handles variable heights better.
+- Always set `keyExtractor` to a stable id — never the array index for data that can re-order.
+- Avoid creating new style objects or callbacks inside `renderItem` — define them outside and pass via props, or wrap the row in `React.memo`.
+- Provide `estimatedItemSize` (FlashList) for first-frame layout.
+
+```js
+// ✅ GOOD — memoized row, stable callbacks
+const Row = React.memo(({ item, onPress }) => (
+  <TouchableOpacity onPress={() => onPress(item.id)}>
+    <Text>{item.title}</Text>
+  </TouchableOpacity>
+))
+
+<FlashList
+  data={items}
+  keyExtractor={(item) => item.id}
+  estimatedItemSize={64}
+  renderItem={({ item }) => <Row item={item} onPress={onPressItem} />}
+/>
+```
+
+## Re-renders
+
+- Wrap pure presentational components in `React.memo` when they sit inside a list or are re-rendered often by an unrelated parent state change.
+- Use `useCallback` / `useMemo` for callbacks and derived data passed into memoized children. Don't apply them blindly — only where measurements show wins or where a memoized child requires a stable reference.
+- Avoid keeping derived values in `state` — compute them in `render` or `useMemo`.
+
+## Images
+
+- Use **`react-native-fast-image`** (already in deps) for remote images — it caches aggressively and decodes off the JS thread.
+- Always set explicit `width` + `height` (via `responsiveDimension(...)`) — implicit sizing causes layout thrash.
+- Prefer `resizeMode='cover'` for thumbnails; only use `'contain'` when the source aspect ratio matters.
+
+## Audio / Video
+
+- Audio playback goes through `src/logic/AudioHelper.js` and `react-native-track-player`. Don't spin up parallel `react-native-sound` instances for the same content.
+- Long-form video uses `react-native-video`. Always release the player on `componentWillUnmount` / cleanup effect to free memory.
+
+## Animations
+
+- Prefer `react-native-reanimated` for any animation that runs more than once per second. JS-driven `Animated` API drops frames under load.
+- Keep the JS thread free during transitions — defer non-critical setState until after the transition completes.
+
+## Reflux Stores
+
+- A `trigger` causes every subscribed component to re-evaluate its listener — keep payloads small and event names specific. Prefer `FOO_LOADED` over a single generic `CHANGE` event.
+- Don't `trigger` inside a tight loop — batch updates and trigger once.
+
+## Don't
+
+- Don't allocate large arrays/objects inside `render`.
+- Don't hold large blobs (audio buffers, image data) in component state.
+- Don't subscribe to a store from a deeply nested presentational component — lift the subscription up.
+- Don't ship `console.log` (it's a lint error here, but worth noting it also stalls JS in release builds before being stripped).

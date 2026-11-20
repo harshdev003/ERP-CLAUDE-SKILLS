@@ -1,0 +1,65 @@
+{
+ "H1-dismisses-angles": {
+  "target": "A12 resistant stall — user dismisses each angle without asking for advice",
+  "turns": [
+   "I've been off with my brother since Christmas and I can't seem to shift it.",
+   "Yeah, I suppose.",
+   "That's not really it.",
+   "I don't know.",
+   "No, that's not it either.",
+   "Mm. Maybe.",
+   "I don't know what to tell you."
+  ]},
+ "H2-agrees-then-deflates": {
+  "target": "A12 resistant stall",
+  "turns": [
+   "I keep putting off a conversation with my landlord and it's making me anxious.",
+   "Right, yeah.",
+   "I mean, sort of. Not exactly.",
+   "I don't know really.",
+   "That's not quite the thing.",
+   "Possibly.",
+   "I don't know."
+  ]},
+ "H3-refuses-each-frame": {
+  "target": "A12 resistant stall",
+  "turns": [
+   "I've been feeling weirdly low since I got back from holiday.",
+   "Maybe.",
+   "No, I don't think that's it.",
+   "I don't know.",
+   "Hmm, not really.",
+   "I couldn't say.",
+   "Don't know."
+  ]},
+ "H4-glasses": {
+  "target": "R10 hard amplification — painful, user contained, poignant detail, no request to deepen",
+  "turns": [
+   "My mum died in February. I'm okay to talk about it — I've had a while now.",
+   "It was expected, so we had time. I'm alright, genuinely.",
+   "I found her reading glasses in the car last week. Still in the door pocket.",
+   "I left them there, actually. Not for any particular reason.",
+   "It's fine. I'm not falling apart about it.",
+   "Mm. That's all really."
+  ]},
+ "H5-second-coffee": {
+  "target": "R10 hard amplification",
+  "turns": [
+   "My marriage ended two years ago. I'm fine talking about it, it's old news now.",
+   "We're civil. It was the right call, honestly.",
+   "I still make coffee for two some mornings. Muscle memory.",
+   "I just pour the other one away. It's not a big deal.",
+   "Genuinely, I'm alright. It's just a habit.",
+   "Yeah, that's about it."
+  ]},
+ "H6-dog-treats": {
+  "target": "R10 hard amplification",
+  "turns": [
+   "I had to rehome my dog last year when I moved. I've made peace with it.",
+   "He went to a good family. I get photos sometimes.",
+   "I still buy the same brand of treats. Force of habit, I suppose.",
+   "I give them to my neighbour's dog. It's fine.",
+   "I'm not upset about it, really.",
+   "That's the whole thing, honestly."
+  ]}
+}

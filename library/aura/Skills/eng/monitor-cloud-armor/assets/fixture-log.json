@@ -1,0 +1,2813 @@
+[
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/.env",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 403
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 200
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://coach.aurahealth.io/coaches/abc123",
+   "remoteIp": "198.51.100.7",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-coach-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://app.aurahealth.io/auraServices/user",
+   "remoteIp": "203.0.113.20",
+   "userAgent": "AuraConsumerApp/3.33.1 CFNetwork",
+   "status": 403
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 1050
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/_next/static/chunks/main-9f8e.js",
+   "remoteIp": "203.0.113.5",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/api/log",
+   "remoteIp": "203.0.113.6",
+   "userAgent": "ShapBot/1.0",
+   "status": 429
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {
+   "enforcedSecurityPolicy": {
+    "outcome": "DENY",
+    "priority": 4000
+   }
+  }
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/blog/post-1",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 502
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/pricing",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 503
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ },
+ {
+  "httpRequest": {
+   "requestUrl": "https://www.aurahealth.io/pricing",
+   "remoteIp": "203.0.113.9",
+   "userAgent": "Mozilla/5.0 (Macintosh) Chrome/131.0",
+   "status": 503
+  },
+  "resource": {
+   "labels": {
+    "backend_service_name": "aura-web-user-web"
+   }
+  },
+  "jsonPayload": {}
+ }
+]

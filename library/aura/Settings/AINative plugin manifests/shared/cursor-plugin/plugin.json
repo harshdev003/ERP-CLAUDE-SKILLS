@@ -1,0 +1,15 @@
+{
+  "name": "shared",
+  "version": "3.93.0",
+  "displayName": "AuraHealth Shared",
+  "description": "Shared AuraHealth plugin \u2014 org-wide skills and commands available to all teams",
+  "author": {
+    "name": "AuraHealth"
+  },
+  "homepage": "https://github.com/AuraHealth/AINative",
+  "repository": "https://github.com/AuraHealth/AINative",
+  "keywords": [
+    "aurahealth",
+    "shared"
+  ]
+}

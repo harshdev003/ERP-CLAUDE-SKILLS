@@ -1,0 +1,46 @@
+{
+  "spreadsheet_id": "1UczBaxq2-zxKiwzBDu-5775FtUyTgGgRSxZeaEsE3Ck",
+  "mixpanel_project_id": 963821,
+  "mixpanel_dashboard_id": 6624751,
+  "tabs": {
+    "Product Metrics": {
+      "sheet_id": 1171664684,
+      "template_rows": 35,
+      "formula_rows": [3, 5, 7, 9, 10, 11, 12, 14]
+    },
+    "Content & Marketplace": {
+      "sheet_id": 1714257141,
+      "template_rows": 15,
+      "formula_rows": [3, 5, 7, 9, 11]
+    }
+  },
+  "rows": [
+    {"tab": "Product Metrics", "row": 2,  "label": "WAPU (inc. Trial)",                  "report_id": 94121125, "rule": "weekly_second_highest", "format": "integer"},
+    {"tab": "Product Metrics", "row": 4,  "label": "WAPU (Paid only)",                   "report_id": 94121086, "rule": "weekly_second_highest", "format": "integer"},
+    {"tab": "Product Metrics", "row": 6,  "label": "MAPU (Paid only)",                   "report_id": 94121126, "rule": "monthly",               "format": "integer"},
+    {"tab": "Product Metrics", "row": 8,  "label": "DAPU (Paid only)",                   "report_id": 94121095, "rule": "daily_max",             "format": "integer"},
+    {"tab": "Product Metrics", "row": 13, "label": "New subscribers",                    "report_id": 51696417, "rule": "monthly",               "format": "integer"},
+    {"tab": "Product Metrics", "row": 16, "label": "PMF Survey % Very Disappointed",     "report_id": 94121154, "rule": "monthly",               "format": "percent_points", "only_months": [2, 5, 8, 11]},
+    {"tab": "Product Metrics", "row": 19, "label": "Conversion rate Sign up > Paid (iOS US Organic)",     "report_id": 51695141, "rule": "monthly", "format": "percent", "backfill_months": 2},
+    {"tab": "Product Metrics", "row": 20, "label": "Conversion rate Sign up > Paid (iOS US All Traffic)", "report_id": 51695283, "rule": "monthly", "format": "percent", "backfill_months": 2},
+    {"tab": "Product Metrics", "row": 21, "label": "Engagement freq min. 3 days/week (iOS)", "report_id": 94121128, "rule": "weekly_second_highest", "format": "percent"},
+    {"tab": "Product Metrics", "row": 22, "label": "Engagement freq min. 5 days/week (iOS)", "report_id": 94121098, "rule": "weekly_second_highest", "format": "percent"},
+    {"tab": "Product Metrics", "row": 23, "label": "Tracks finished/week (iOS Premium)", "report_id": 94121106, "rule": "weekly_second_highest", "format": "decimal2"},
+    {"tab": "Product Metrics", "row": 24, "label": "Avg duration/listen",                "report_id": 94121108, "rule": "monthly",               "format": "decimal1"},
+    {"tab": "Product Metrics", "row": 25, "label": "Paid Retention W4 (iOS organic)",    "report_id": 51696804, "rule": "cohort", "cohort_lag_months": 1, "retention_weeks": 4,  "format": "percent", "refund_row": 26},
+    {"tab": "Product Metrics", "row": 27, "label": "Paid Retention W12 (iOS organic)",   "report_id": 51695412, "rule": "cohort", "cohort_lag_months": 3, "retention_weeks": 12, "format": "percent", "refund_row": 28},
+    {"tab": "Product Metrics", "row": 29, "label": "Paid Retention W4 (iOS All)",        "report_id": 51695781, "rule": "cohort", "cohort_lag_months": 1, "retention_weeks": 4,  "format": "percent", "refund_row": 30},
+    {"tab": "Product Metrics", "row": 31, "label": "Paid Retention W12 (iOS All)",       "report_id": 51695993, "rule": "cohort", "cohort_lag_months": 3, "retention_weeks": 12, "format": "percent", "refund_row": 32},
+    {"tab": "Product Metrics", "row": 33, "label": "Cancellation within 14 days (iOS US organic mobile only)", "report_id": 51696108, "rule": "monthly", "format": "percent", "backfill_months": 1, "maturity_days": 14},
+    {"tab": "Product Metrics", "row": 34, "label": "Cancellation within 14 days (iOS All)",                   "report_id": 51696124, "rule": "monthly", "format": "percent", "backfill_months": 1, "maturity_days": 14},
+    {"tab": "Product Metrics", "row": 35, "label": "MAU",                                "report_id": 94121144, "rule": "monthly",               "format": "integer"},
+
+    {"tab": "Content & Marketplace", "row": 2,  "label": "Active tracks (w/o music)",      "report_id": 94121157, "rule": "monthly", "format": "integer"},
+    {"tab": "Content & Marketplace", "row": 4,  "label": "Active tracks (w/ music)",       "report_id": 94121163, "rule": "monthly", "format": "integer", "series": "Formula"},
+    {"tab": "Content & Marketplace", "row": 6,  "label": "Total premium listens/mo",       "report_id": 94121171, "rule": "monthly", "format": "integer"},
+    {"tab": "Content & Marketplace", "row": 8,  "label": "Minutes listened/mo (no music)", "report_id": 94121173, "rule": "monthly", "format": "integer"},
+    {"tab": "Content & Marketplace", "row": 10, "label": "Minutes listened/mo inc. music", "report_id": 94121174, "rule": "monthly", "format": "integer"},
+    {"tab": "Content & Marketplace", "row": 12, "label": "Active coach uploaders",         "report_id": 94121177, "rule": "monthly", "format": "integer"},
+    {"tab": "Content & Marketplace", "row": 13, "label": "Unique coach listened to",       "report_id": 94121178, "rule": "monthly", "format": "integer"}
+  ]
+}

@@ -1,0 +1,37 @@
+name: Version bump
+
+# Fails a PR that changes a skill or plugin without bumping its version.
+#
+# skill  - metadata.version in SKILL.md stamps Slack footers and report artifacts,
+#          so an unbumped edit makes published output cite a revision that no longer
+#          matches the behaviour that produced it.
+# plugin - the manifest version is the install-cache path
+#          (~/.claude/plugins/cache/<marketplace>/<plugin>/<version>). Claude Code
+#          skips the copy when that version is already installed, so shipping under
+#          an unchanged version silently freezes every existing install while the
+#          reload still reports success.
+#
+# create-aura-skill / update-aura-skill bump automatically, but most plugin edits
+# are hand edits that never touch those skills. This is the backstop for those.
+
+on:
+  pull_request:
+    paths:
+      - 'plugins/**'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0        # need the base branch to diff against
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check skill + plugin version bumps
+        run: |
+          python3 scripts/check-version-bumps.py --base "origin/${{ github.base_ref }}"

@@ -1,0 +1,11 @@
+{
+  "baseline_days": 7,
+  "length_pct": 12,
+  "emoji_points": 10,
+  "incomplete_ratio": 3,
+  "incomplete_min": 20,
+  "double_failure_min": 1,
+  "min_replies": 500,
+  "empty_ratio": 3,
+  "empty_min": 10
+}

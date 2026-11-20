@@ -1,0 +1,654 @@
+[
+ {
+  "change": "Coach: per-minute time + last activity moved out of the system message (IS v1.35.0)",
+  "refs": "IS#620 · PROD-7290 · PROD-7659"
+ },
+ {
+  "change": "chat-latest snapshot updated by OpenAI (external): coach prompt caching collapses",
+  "refs": "PROD-7290"
+ },
+ {
+  "change": "Context in its own developer message; history 50 messages + buffer of 20 (IS v1.36.0)",
+  "refs": "IS#622 · IS#623 · PROD-7664 · PROD-7665"
+ },
+ {
+  "change": "prompt_cache_key + 24h retention for every prompter (IS v1.37.0–v1.37.1)",
+  "refs": "IS#627 · IS#629 · IS#631 · PROD-7669"
+ },
+ {
+  "change": "One shared prompt_cache_key per prompt (+ user) for every prompter (IS v1.39.0)",
+  "refs": "IS#633 · IS#635 · IS#637 · PROD-7669"
+ },
+ {
+  "change": "Cache boundary after the shared prompt: developer \"---\" + user \"---\" before the context (IS v1.40.0)",
+  "refs": "IS#639 · IS#641 · PROD-7290 · PROD-7724"
+ },
+ {
+  "change": "voice_minutes stops double-counting ElevenLabs TTS minutes inside LiveKit sessions",
+  "refs": "AINATIVE#1288"
+ },
+ {
+  "change": "Insights weekly recompile skipped when there is no new dialogue",
+  "refs": "IS#603 · PROD-7524"
+ },
+ {
+  "change": "Weekly cost report reads the stored LiveKit-path dollars instead of re-deriving them",
+  "refs": "AINATIVE#1297 · ENG-1586"
+ },
+ {
+  "change": "LiveKit Krisp + observability-audio overage booked from the invoice and accrued daily",
+  "refs": "AINATIVE#1298 · AINATIVE#1299 · ENG-1587 · ENG-1589"
+ },
+ {
+  "change": "Voice cost step from OpenAI's Oct 7 chat-latest update: longer, denser voice replies and longer sessions (users flat)",
+  "refs": "PROD-7585"
+ },
+ {
+  "change": "Voice runs LiveKit-only with ElevenLabs as TTS only (ConvAI switched off): voice ~$390 → ~$240/day",
+  "refs": "PROD-7584"
+ },
+ {
+  "change": "Cost store books Inworld TTS (voice_inworld) and prices Cartesia at the Scale rate",
+  "refs": "AINATIVE#1304"
+ },
+ {
+  "change": "Aurie 1.33.0 — ElevenLabs ConvAI removed; aiVoiceProvider TTS test (Inworld / ElevenLabs / 3× Cartesia)",
+  "refs": "ENGMOB-2879 · ENGMOB-2906 · PROD-6642 · PROD-7497"
+ },
+ {
+  "change": "eng:chart-openai-cost-per-token skill (daily $ per 1M tokens by model / project)",
+  "refs": "PROD-7409"
+ },
+ {
+  "change": "journalInsight prompter: Aurie insight on user-written journal entries (addJournal2)",
+  "refs": "ACA#1813 · ACA#1849 · IS#587 · PROD-7280 · PROD-7441"
+ },
+ {
+  "change": "Chat attachments: cap file size and stop replaying old attachments in full",
+  "refs": "ENGBACK-1469 · PROD-7333"
+ },
+ {
+  "change": "Coach prompt layout: move the per-minute time line after the history and fix the 20-message window together",
+  "refs": "IS#593"
+ },
+ {
+  "change": "Second coach cache test: prompt_cache_key + 24h retention for 50% of users",
+  "refs": "IS#590 · IS#599"
+ },
+ {
+  "change": "Reached-user denominator drops after ambient feed/notification jobs retired; user-count guard learns population shifts",
+  "refs": "ENG-1559"
+ },
+ {
+  "change": "Live-conversation prompt-cache collapses on OpenAI's side (coach on chat-latest, guardrails-handler on gpt-5.4): hit rate 89% → ~50%",
+  "refs": "PROD-7290"
+ },
+ {
+  "change": "llmCall ledger records promptCacheKey / promptCacheGroup / promptCacheBuckets",
+  "refs": "IS#583 · PROD-7290"
+ },
+ {
+  "change": "prompt_cache_key for 50% of coach users (4 keys) as a controlled cache test",
+  "refs": "IS#580 · IS#585 · PROD-7290"
+ },
+ {
+  "change": "Retired the legacy daily feed and daily notification LLM jobs (dailyPractices3 rollout)",
+  "refs": "AURAINFRA#95 · IS#558 · IS#561 · PROD-6948 · PROD-6988 · PROD-6989 · PROD-7114 · PROD-7115 · PROD-7116"
+ },
+ {
+  "change": "Cartesia PVC (voice-clone) training is $45 per job, and the cost store books it as Aurie voice cost",
+  "refs": "PROD-6991 · PROD-6992"
+ },
+ {
+  "change": "Re-evaluate coach-prompter chat-latest vs gpt-5.4 (~$212/day at stake)",
+  "refs": "PROD-6355"
+ },
+ {
+  "change": "ElevenLabs real spend is ~$9,250/mo, not the $990 the subscription API reports",
+  "refs": "ENG-1383 · PROD-2174"
+ },
+ {
+  "change": "Cartesia downgrade dropped (aiVoiceProvider puts it over allotment); Deepgram direct still pays for zero traffic",
+  "refs": "ENG-1383"
+ },
+ {
+  "change": "aiLiveKitIntegration4 concluded — LiveKit rolled out to all users on app 1.29.0+",
+  "refs": "ENG-1383 · ENG-1384 · ENGMOB-2906 · PROD-5987"
+ },
+ {
+  "change": "Voice session-ownership guards on teardown and superseded connect",
+  "refs": "ACA#1525 · ACA#1527 · ACA#1528 · PROD-6099 · PROD-6112 · PROD-6114"
+ },
+ {
+  "change": "Deferred work drained on shutdown instead of dropped",
+  "refs": "IS#533 · PROD-6165"
+ },
+ {
+  "change": "ask side effects now run on tool-call turns",
+  "refs": "ENGBACK-1370 · IS#531"
+ },
+ {
+  "change": "engagement.py event discovery: Mixpanel pagination cap and AIAura prefix miss",
+  "refs": "PROD-6144"
+ },
+ {
+  "change": "Zero-cost rows stored for AI-active users so activity is observable",
+  "refs": "PROD-6143"
+ },
+ {
+  "change": "LiveKit invoiced overage on unmeasurable pools booked to the Other row",
+  "refs": "ENG-1298"
+ },
+ {
+  "change": "dailyPractices3 replaces dailyPractices2, seeded from the backend",
+  "refs": "ACA#1516 · ACA#1523 · IS#517 · IS#523 · IS#525 · PROD-6062 · PROD-6063 · PROD-6064 · PROD-6065 · PROD-6066"
+ },
+ {
+  "change": "Chat photo upload shipped to users behind chatImageUpload",
+  "refs": "ACA#1491 · ACA#1495 · ACA#1513 · PROD-5643 · PROD-5876 · PROD-6041"
+ },
+ {
+  "change": "Unset openaiAPI default reconciled between buildPrompt and dispatch",
+  "refs": "IS#504 · PROD-5782"
+ },
+ {
+  "change": "Responses reasoning summary replayed across turns for stateless continuity",
+  "refs": "IS#440"
+ },
+ {
+  "change": "Deepgram STT now bills through LiveKit inference, not the direct Deepgram account",
+  "refs": ""
+ },
+ {
+  "change": "Simplify track recommendations in the Conversation prompt (trim per-turn guidance, keep the tools)",
+  "refs": ""
+ },
+ {
+  "change": "OpenAI monthly spend limit raised to $15k after the chat-model price increase",
+  "refs": ""
+ },
+ {
+  "change": "Opus measured ~70% more expensive per conversation than chat-latest on the conversation prompt",
+  "refs": ""
+ },
+ {
+  "change": "Voice-engine A/B moved to aiLiveKitIntegration4 (four arms), aiLiveKitIntegration3 retired",
+  "refs": "AURACONSUMERAPP#1433"
+ },
+ {
+  "change": "quick-processing-sentinel prompter added as a selectable conversation type",
+  "refs": "ENGBACK-1332 · IS#489"
+ },
+ {
+  "change": "quick-processing-done moved to gpt-5.6-terra at low reasoning, prompt trimmed 8 to 6 steps",
+  "refs": "ENGBACK-1331 · IS#487"
+ },
+ {
+  "change": "Prompt-testing spend bills into Conversation [Production]",
+  "refs": "AINATIVE#878 · ENG-1171 · PROD-4801"
+ },
+ {
+  "change": "Coach prompt conversational revision, drop inert verbosity",
+  "refs": "IS#476 · PROD-4779"
+ },
+ {
+  "change": "Stop voice accrual outliving the call",
+  "refs": "AURACONSUMERAPP#1385 · PROD-4423"
+ },
+ {
+  "change": "Charge Quick Processing turns and gate its voice duration",
+  "refs": "AURACONSUMERAPP#1377 · PROD-4341 · PROD-4401"
+ },
+ {
+  "change": "LiveKit vs ElevenLabs voice A/B enabled",
+  "refs": "AURACONSUMERAPP#1372 · ENGMOB-2790"
+ },
+ {
+  "change": "Coach prompt context growth (two revisions, gpt-5.4 unchanged)",
+  "refs": "IS#465 · IS#467 · PROD-4541 · PROD-4614"
+ },
+ {
+  "change": "coach-prompter moved to chat-latest, reasoningEffort dropped",
+  "refs": "ENGBACK-1325 · IS#472 · IS#474 · PROD-6326 · PROD-6355"
+ },
+ {
+  "change": "Voice-provider trials: Cartesia + Fish Audio (+ Inworld), gated on LiveKit rollout",
+  "refs": "PROD-4145 · PROD-4149 · PROD-4434"
+ },
+ {
+  "change": "Flex 429 rate_limit_exceeded skipped the service_tier auto fallback",
+  "refs": "IS#454 · PROD-4424"
+ },
+ {
+  "change": "Make OpenAI cost allocation service-tier aware (flex = 50% of standard)",
+  "refs": "ENG-1106 · ENG-1107 · ENGBACK-1315"
+ },
+ {
+  "change": "Move memory + profile side-effect prompters to Flex service tier",
+  "refs": "IS#447 · IS#449 · PROD-4396 · PROD-4397 · PROD-4399"
+ },
+ {
+  "change": "Persist OpenAI service_tier on llmCall ledger rows",
+  "refs": "ENGBACK-1315 · IS#438"
+ },
+ {
+  "change": "Fix ElevenLabs key->caller mapping (LiveKit TTS key misbooked to Intelligence Service)",
+  "refs": "PROD-4316"
+ },
+ {
+  "change": "Voice cap enforced mid-call and on the LiveKit path",
+  "refs": "ACA#1340 · ACA#1346 · ACA#1349 · ACA#1353 · ACA#1364 · IS#418 · IS#424 · IS#434 · PROD-4188 · PROD-4271 · PROD-4301 · PROD-4308 · PROD-4310 · PROD-4346"
+ },
+ {
+  "change": "Conversation prompters upgraded to gpt-5.4 alongside the Responses API cutover (coach, guardrails-handler, quick-processing, chat, companion)",
+  "refs": "ENGBACK-1293 · IS#426 · IS#427 · IS#429 · IS#433 · PROD-4216 · PROD-4279"
+ },
+ {
+  "change": "Complete the Responses API migration — conversation prompters, /ai/dialogue/ask default, ElevenLabs agents",
+  "refs": "ENGBACK-1293 · IS#426 · IS#427 · IS#429 · IS#431 · IS#433 · IS#435 · PROD-3861 · PROD-4216 · PROD-4279 · PROD-4311"
+ },
+ {
+  "change": "Failed OpenAI calls write no llmCall row — the ledger's API split reads clean while turns are dying",
+  "refs": "IS#435 · PROD-4279"
+ },
+ {
+  "change": "Exclude Evaluations project from per-user OpenAI cost attribution",
+  "refs": "ENG-1034 · ENG-1044"
+ },
+ {
+  "change": "Re-evaluate Terra / Luna after OpenAI price drops",
+  "refs": ""
+ },
+ {
+  "change": "Voice-engine A/B switched to aiLiveKitIntegration2 (LiveKit transport + ElevenLabs TTS)",
+  "refs": "ACA#1331 · PROD-4078 · PROD-4081"
+ },
+ {
+  "change": "Insight compiles: worker-pool draining + retry-until-week-lands",
+  "refs": "ENGBACK-1252 · IS#381 · IS#386 · IS#387"
+ },
+ {
+  "change": "Coalesce Response API token metric keys",
+  "refs": "ENGBACK-1264 · IS#402"
+ },
+ {
+  "change": "Remove the ElevenLabs agent fallback entirely",
+  "refs": "ENGMOB-2767 · IS#408"
+ },
+ {
+  "change": "Migrate standalone conversation prompters to the Responses API",
+  "refs": "ENGBACK-1270 · IS#409"
+ },
+ {
+  "change": "Fix ledger-ramp cost attribution (union ledger + stored completions) + re-store 2026-07-23",
+  "refs": "AINATIVE#712 · AINATIVE#713 · ENG-991 · ENG-992"
+ },
+ {
+  "change": "Test OpenAI Flex processing tier",
+  "refs": "ENGBACK-1250 · IS#437"
+ },
+ {
+  "change": "Test OpenAI Batch API for job-type prompters",
+  "refs": "ENGBACK-1249"
+ },
+ {
+  "change": "Stop re-logging the full system prompt on every Braintrust LLM span (removeSystemMessage)",
+  "refs": "IS#385"
+ },
+ {
+  "change": "Fix ElevenLabs cost attribution (split by calling service, not product_type) + recreate keys as per-caller service accounts",
+  "refs": "AINATIVE#711 · ENG-982 · ENG-984"
+ },
+ {
+  "change": "Move non-conversation prompters to the Responses API (feed, onboarding, daily practices)",
+  "refs": "ENGBACK-1236 · ENGBACK-1245 · ENGBACK-1246"
+ },
+ {
+  "change": "LLM-call ledger (per-call attribution) — data available from 2026-07-22/23 only",
+  "refs": "ENGBACK-1243 · ENGBACK-1244"
+ },
+ {
+  "change": "Move memory + non-conversation/feed prompters to Responses API (no server-side conversation)",
+  "refs": "ENGBACK-1235"
+ },
+ {
+  "change": "auriePricingTiers: multiple subscription pricing tiers",
+  "refs": "PROD-1756"
+ },
+ {
+  "change": "Improve usage-limit reached flow in chat/voice",
+  "refs": "PROD-3132"
+ },
+ {
+  "change": "auriePricingTiers variant c: Stripe checkout replaces IAP",
+  "refs": "PROD-1756 · PROD-3163 · PROD-3416"
+ },
+ {
+  "change": "removeDoneScreenVoice: A/B remove done-screen affirmation TTS for non-LiveKit users",
+  "refs": "ACA#1261 · PROD-3473"
+ },
+ {
+  "change": "Cost-increase & lifetime-cost analysis -> shift to cohort-based margin reporting",
+  "refs": "PROD-3557"
+ },
+ {
+  "change": "Cohort-based cost & economics chart family (eng:chart-aurie-*) + build-aurie-cost-report",
+  "refs": "AINATIVE#588 · AINATIVE#593 · PROD-3556 · PROD-3558 · PROD-3559 · PROD-3560"
+ },
+ {
+  "change": "ElevenLabs voice outage — Business credits exhausted; grant-plan switch failed, reverted to Business",
+  "refs": ""
+ },
+ {
+  "change": "Enforce voice cap during the initial subscription period (new-subscriber cost controls)",
+  "refs": "PROD-3244"
+ },
+ {
+  "change": "Engaged/active-vs-reached DAU separation + per-active/engaged ambient KPIs",
+  "refs": "AINATIVE#543 · AINATIVE#545 · AINATIVE#546 · AINATIVE#547 · PROD-3446 · PROD-3451"
+ },
+ {
+  "change": "Daily Practices feature live — feed content/completion, notifications, conversation context + experiment gating",
+  "refs": "IS#329 · IS#330 · IS#331 · IS#334 · IS#339 · IS#341 · IS#342 · IS#343 · IS#344 · PROD-3302 · PROD-3305 · PROD-3310 · PROD-3311 · PROD-3313 · PROD-3415 · PROD-3531"
+ },
+ {
+  "change": "Inject Profile Insights context into coach prompt",
+  "refs": "ENGBACK-1195 · IS#320"
+ },
+ {
+  "change": "Insights renderers v0: gated rollout + core-quote & tending → gpt-5.4",
+  "refs": "IS#333 · IS#335 · IS#336 · IS#337 · IS#338 · PROD-3375 · PROD-3404 · PROD-3407"
+ },
+ {
+  "change": "Cap summary + profile prompt input (Intelligence Service)",
+  "refs": "ENGBACK-1201 · ENGBACK-1202 · ENGBACK-1203 · IS#326 · IS#327 · PROD-3329"
+ },
+ {
+  "change": "Migrate 9 prompters off gpt-5.2 family before Aug 10 API deadline",
+  "refs": "ENGBACK-1293 · IS#426 · IS#427 · IS#429 · IS#433 · PROD-4216 · PROD-4279"
+ },
+ {
+  "change": "Insights/Profile feature v0 live — insights compiler + 6 card-renderer prompters",
+  "refs": "AINATIVE#525 · ENGBACK-1161 · ENGBACK-1173 · ENGBACK-1174 · IS#308 · IS#309 · IS#310 · IS#311"
+ },
+ {
+  "change": "OpenAI request-ID tracing across all call sites",
+  "refs": "IS#297"
+ },
+ {
+  "change": "Remove in-app voice selection — server-side voice parameters",
+  "refs": "ACA#1165 · ENGMOB-1923"
+ },
+ {
+  "change": "Server-side package experiment engine (pricing tiers)",
+  "refs": "IS#300 · IS#301 · IS#302 · IS#304 · IS#305 · PROD-2662"
+ },
+ {
+  "change": "auriePricingTiers: new onboarding + Lite offer + WebView paywall shipped",
+  "refs": "ACA#1135 · ACA#1171 · ACA#1186 · PROD-2648 · PROD-2849 · PROD-2915"
+ },
+ {
+  "change": "Journal prompt cost reduction — scope day-conversations to current day",
+  "refs": "IS#295 · PROD-2882"
+ },
+ {
+  "change": "Package usage limits + config-failure handling (pricing tiers)",
+  "refs": "ACA#1133 · ACA#1194 · PROD-2653 · PROD-2792 · PROD-3041"
+ },
+ {
+  "change": "aiPaywallOnStart: paywall on every cold launch experiment",
+  "refs": "ACA#1112 · PROD-2701"
+ },
+ {
+  "change": "aiFourStepNoTrial: no-trial 4-step onboarding paywall experiment",
+  "refs": "ACA#1095 · PROD-2486"
+ },
+ {
+  "change": "limitedFreeLimitChange: tighter free-cap experiment (a=20, c=25 msgs)",
+  "refs": "ACA#1114 · PROD-2747"
+ },
+ {
+  "change": "Usage-limits gate rolled out unconditional (all users)",
+  "refs": "ACA#1119"
+ },
+ {
+  "change": "Test Gemma on ambient/routine prompters (quality A/B via eng:qa-prompt)",
+  "refs": "PROD-1843 · PROD-2705"
+ },
+ {
+  "change": "Investigate voice-provider options (LiveKit/Cartesia vs Gemini Live vs Gemini TTS)",
+  "refs": "ENG-880 · PROD-1986 · PROD-2706 · PROD-2729"
+ },
+ {
+  "change": "Investigation: voice usage-limit gate doesn't enforce + Jun cost trend",
+  "refs": "PROD-2525"
+ },
+ {
+  "change": "Summary prompt config sync (Braintrust → prod)",
+  "refs": "IS#258 · PROD-2423 · PROD-2424 · PROD-2425"
+ },
+ {
+  "change": "Core-chat prompt caching (standing)",
+  "refs": ""
+ },
+ {
+  "change": "Hold ambient cost ≤$0.45/DAU/month (feed/profile/notifications)",
+  "refs": ""
+ },
+ {
+  "change": "Fine-tuned cheaper model for core chat",
+  "refs": ""
+ },
+ {
+  "change": "Multi-tier plan launch (BM v4: Taste/Lite/Plus/Pro/Ultra)",
+  "refs": "ACA#1097 · ACA#1100 · ACA#1101 · ACA#1110 · ACA#1135 · ACA#1171 · ACA#1186 · IS#272 · IS#273 · PROD-2584 · PROD-2648 · PROD-2849 · PROD-2915"
+ },
+ {
+  "change": "Free-tier taste model (one-time 50 msgs, hard wall)",
+  "refs": ""
+ },
+ {
+  "change": "Web checkout / reduce Apple cut",
+  "refs": ""
+ },
+ {
+  "change": "Reduce notification prompt runs per user",
+  "refs": "ENGBACK-1127"
+ },
+ {
+  "change": "Cost-change ledger + near-daily harvest skill",
+  "refs": "PROD-2583 · PROD-2587"
+ },
+ {
+  "change": "Summary prompt slim-down: output 9→3 fields, drop profile context, low reasoning/verbosity",
+  "refs": "ENGBACK-1135 · IS#268"
+ },
+ {
+  "change": "Reduce context instructions (coach + quickProcessing)",
+  "refs": "ENGBACK-1136 · IS#269"
+ },
+ {
+  "change": "Dual-cap enforcement system (messages + time, weekly reset)",
+  "refs": "IS#281 · PROD-2652"
+ },
+ {
+  "change": "Tiered LLM routing (cheaper model for casual conversations)",
+  "refs": ""
+ },
+ {
+  "change": "End-of-session memory batching (~$555/mo est.)",
+  "refs": "ENG-639"
+ },
+ {
+  "change": "Memory model review (array + sorting prompts)",
+  "refs": "PROD-2308"
+ },
+ {
+  "change": "Reduce reasoning effort across remaining prompts",
+  "refs": "ENGPROM-46"
+ },
+ {
+  "change": "Daily stores: per-user cost, unit costs, 3-KPI scoreboard",
+  "refs": "PROD-2553 · PROD-2568"
+ },
+ {
+  "change": "Sample (not full-log) non-chat Braintrust projects",
+  "refs": ""
+ },
+ {
+  "change": "Reduce Braintrust logs",
+  "refs": "PROD-2379"
+ },
+ {
+  "change": "Cartesia TTS deployed as the LiveKit-path TTS provider",
+  "refs": "ENG-880 · PROD-1986 · PROD-2218 · PROD-2342 · PROD-2346 · PROD-3139 · PROD-3890 · PROD-3984"
+ },
+ {
+  "change": "ElevenLabs annual-commitment discount",
+  "refs": ""
+ },
+ {
+  "change": "LiveKit migration (target ~5¢/min all-in voice)",
+  "refs": "ACA#1128 · ACA#1331 · ENG-794 · ENG-880 · IS#274 · IS#275 · IS#287 · IS#290 · IS#291 · IS#292 · IS#293 · IS#303 · PROD-1795 · PROD-2636 · PROD-3890 · PROD-4078 · PROD-4081"
+ },
+ {
+  "change": "Voice stack cost comparison (LiveKit/Deepgram/Cartesia vs ElevenLabs)",
+  "refs": "PROD-2348"
+ },
+ {
+  "change": "JSON-output config for prompters (applied to memory)",
+  "refs": "ENGBACK-1132 · IS#265"
+ },
+ {
+  "change": "Profile prompt de-bloat + reasoningEffort medium, verbosity low",
+  "refs": "ENG-679 · IS#264"
+ },
+ {
+  "change": "insight-card → gpt-5.2 low reasoning",
+  "refs": "IS#253 · PROD-1405"
+ },
+ {
+  "change": "LimitedFree cap experiment: variants 50 / 70 msgs",
+  "refs": "ACA#1061 · ACA#1115 · PROD-2356"
+ },
+ {
+  "change": "Enforce voice cap on live sessions (mid-session)",
+  "refs": "ACA#1063 · PROD-2375"
+ },
+ {
+  "change": "Revert memory-sorting → gpt-5.2 + low reasoning",
+  "refs": "ENG-675 · IS#261"
+ },
+ {
+  "change": "memory-sorting → gpt-5.4-mini + high reasoning",
+  "refs": "IS#249 · PROD-2309 · PROD-2429"
+ },
+ {
+  "change": "memory-prompter: assistant responses in extraction context",
+  "refs": "ENG-642 · IS#248"
+ },
+ {
+  "change": "Memory analysis window n→35 + similar-pool cap →5",
+  "refs": "ENG-641 · IS#247"
+ },
+ {
+  "change": "memoryIngest reasoningEffort → medium",
+  "refs": "ENGBACK-1117 · IS#243"
+ },
+ {
+  "change": "Memory-sorting prompter + two-step tool-less ingestion",
+  "refs": "ENGBACK-1115 · ENGBACK-1116 · IS#240 · IS#241"
+ },
+ {
+  "change": "LimitedFree split by audience (old/new users)",
+  "refs": "ACA#988 · PROD-1891"
+ },
+ {
+  "change": "LimitedFree: strict 30-msg cap + dialogue-count API",
+  "refs": "ACA#968 · ENGMOB-1680"
+ },
+ {
+  "change": "Voice limit re-checked on in-session reconnects",
+  "refs": "PROD-2318"
+ },
+ {
+  "change": "memory prompt → gpt-5.2 + low verbosity",
+  "refs": "IS#239 · PROD-2209"
+ },
+ {
+  "change": "Consumer app: backend usage-limits gate on voice/chat/QP entry",
+  "refs": "ACA#1009"
+ },
+ {
+  "change": "Investigate outlier voice user (25% of ElevenLabs credits)",
+  "refs": "PROD-2173 · PROD-2175"
+ },
+ {
+  "change": "ElevenLabs overage purchase + plan upgrade",
+  "refs": "PROD-2174 · PROD-2176"
+ },
+ {
+  "change": "Voice usage-limits endpoint (timezone-aware)",
+  "refs": "IS#237 · PROD-2168"
+ },
+ {
+  "change": "Usage ledger written from ElevenLabs webhook",
+  "refs": "IS#236 · PROD-2169"
+ },
+ {
+  "change": "quickProcessing → gpt-5.3-chat-latest, drop reasoningEffort + recommendTracks tool",
+  "refs": "IS#232"
+ },
+ {
+  "change": "Persist ElevenLabs post-call metrics (webhook → conversation table)",
+  "refs": "ENG-575 · IS#226"
+ },
+ {
+  "change": "feed-prompter reasoningEffort → medium",
+  "refs": "IS#223 · PROD-1954"
+ },
+ {
+  "change": "feed-prompter reasoningEffort → low",
+  "refs": "PROD-1941 · PROD-1966 · PROD-1997"
+ },
+ {
+  "change": "Memory dedup/replace/refresh moved to code (plan/apply pipeline)",
+  "refs": "ENGBACK-1082 · IS#220"
+ },
+ {
+  "change": "Memory restricted to AI-premium users (firefight stopgap)",
+  "refs": ""
+ },
+ {
+  "change": "Serialize memory runs per conversation + reuse conversationId",
+  "refs": "ENGBACK-1073 · ENGBACK-1075 · IS#208 · IS#210"
+ },
+ {
+  "change": "Memory cadence every 10 turns (was 5); input capped at 5 user messages",
+  "refs": "ENGBACK-1076 · IS#215"
+ },
+ {
+  "change": "Memory rewrite: tool-loop agent (gpt-5.4, 3 tools) → single-shot JSON array (gpt-5.2), dedup in code",
+  "refs": "ENGPROM-37 · ENGPROM-50 · IS#217 · IS#225"
+ },
+ {
+  "change": "Revert 15 Response API prompts to Chat Completions",
+  "refs": "ENGBACK-1079 · IS#219"
+ },
+ {
+  "change": "Temperature/reasoning/verbosity audit across gpt-5 prompters",
+  "refs": "ENGBACK-1041 · IS#201"
+ },
+ {
+  "change": "Migrate 17 prompts to OpenAI Response API",
+  "refs": "ENGBACK-1043 · IS#206"
+ },
+ {
+  "change": "eng:analyze-memory-overhead skill (memory/conversation call ratio)",
+  "refs": "ENG-505"
+ },
+ {
+  "change": "Per-user metadata tagging (aiPremium/premium) on OpenAI calls",
+  "refs": "ENG-498 · ENG-500"
+ }
+]

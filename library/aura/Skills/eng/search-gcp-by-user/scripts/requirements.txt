@@ -1,0 +1,5 @@
+# search-gcp-by-user Python deps
+# Install with:
+#   python3 -m pip install --user -r ${CLAUDE_PLUGIN_ROOT}/skills/search-gcp-by-user/scripts/requirements.txt
+# (Use `python3 -m pip` not bare `pip` — on macOS they often point to different Pythons.)
+google-cloud-logging>=3.10.0

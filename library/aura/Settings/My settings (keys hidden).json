@@ -1,0 +1,17 @@
+{
+  "env": {
+    "BUGSNAG_TOKEN": "****",
+    "CARTESIA_ADMIN_API_KEY": "****",
+    "CARTESIA_API_KEY": "****",
+    "DEEPGRAM_OWNER_API_KEY": "****",
+    "ELEVENLABS_ADMIN_API_KEY": "****",
+    "FIREBASE_API_KEY": "****",
+    "GCP_KEY": "****",
+    "INWORLD_API_KEY": "****",
+    "LIVEKIT_API_KEY": "****",
+    "LIVEKIT_API_SECRET": "****",
+    "LIVEKIT_URL": "****",
+    "SLACK_BOT_TOKEN": "****",
+    "SLACK_WEBHOOK_URL": "****"
+  }
+}

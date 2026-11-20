@@ -1,0 +1,37 @@
+name: Skill length
+
+# Fails a PR that pushes a SKILL.md over the ~500-line budget, or grows one that
+# is already over.
+#
+# A SKILL.md is loaded in full every time the skill runs, so length is a cost
+# paid on every invocation — not just at review time. The budget has been
+# documented since the authoring guide existed and drifted anyway, because no
+# single PR's few added lines look unreasonable and nobody is holding the line.
+#
+# The check is a ratchet, not a threshold: it compares each changed file against
+# its own length at the base ref, so today's over-budget files don't block
+# unrelated work but can only shrink. See scripts/check-skill-length.py.
+
+on:
+  pull_request:
+    paths:
+      - 'plugins/**/SKILL.md'
+      - 'scripts/check-skill-length.py'
+      - '.github/workflows/skill-length.yml'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0        # need the base branch to diff against
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check SKILL.md line budget
+        run: |
+          python3 scripts/check-skill-length.py --base "origin/${{ github.base_ref }}"

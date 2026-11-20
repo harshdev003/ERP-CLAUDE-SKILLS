@@ -1,0 +1,39 @@
+name: Skill description
+
+# Fails a PR whose SKILL.md `description` breaks either plugin-loader rule:
+# at most 1024 characters, and no XML-looking tags (`<uid>` reads as markup —
+# write `{uid}`).
+#
+# Descriptions are the only skill registry (CLAUDE.md, Architecture principle 3):
+# the union of every SKILL.md `description` is what the model matches user intent
+# against. An invalid one is not cosmetic — it is the routing surface going
+# unvalidated, and the marketplace warns on every sync. 144 skills drifted over
+# the line before anything was watching.
+#
+# Unlike the sibling line gate this is a hard threshold, not a ratchet, and it
+# sweeps the whole repo rather than the diff. There is nothing to grandfather —
+# ENG-1236 brought every offender into compliance in one pass — and a description
+# can start failing without its own file changing, since the rules live in the
+# loader. See scripts/check-skill-description.py.
+
+on:
+  pull_request:
+    paths:
+      - 'plugins/**/SKILL.md'
+      - 'plugins/shared/skills/create-aura-skill/references/best-practices.md'
+      - 'scripts/check-skill-description.py'
+      - '.github/workflows/skill-description.yml'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check SKILL.md description limits
+        run: python3 scripts/check-skill-description.py

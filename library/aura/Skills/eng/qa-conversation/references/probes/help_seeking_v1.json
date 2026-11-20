@@ -1,0 +1,37 @@
+{
+ "HS1-manager-overload": {
+  "target": "R7 practical usefulness — help unambiguously sought",
+  "turns": [
+   "I need to tell my manager I'm overloaded and I honestly don't know how to say it. What would you actually say?",
+   "Yeah but what words, though?",
+   "Can you give me something I could actually send?",
+   "That's better. Anything shorter?",
+   "Okay, I'll use that."
+  ]},
+ "HS2-birthday-dinner": {
+  "target": "R7 practical usefulness",
+  "turns": [
+   "My sister's birthday dinner is Friday and I don't want to go. How do I get out of it without a row?",
+   "I've tried 'I'm tired', she doesn't accept that.",
+   "Just tell me what to say.",
+   "Right, and if she pushes back?",
+   "Fine, that'll do."
+  ]},
+ "HS3-feedback-deadlines": {
+  "target": "R7 practical usefulness",
+  "turns": [
+   "I have to give feedback to someone on my team who keeps missing deadlines and I don't know how to open it.",
+   "What's the actual first sentence?",
+   "Can you make it less soft?",
+   "And if he gets defensive?",
+   "Good, that helps."
+  ]},
+ "HS4-landlord-boiler": {
+  "target": "R7 practical usefulness",
+  "turns": [
+   "I want to ask my landlord to fix the boiler and I always end up apologising. Help me word it.",
+   "That still sounds apologetic.",
+   "Better. What if he just ignores it?",
+   "Okay. I'll send that today."
+  ]}
+}

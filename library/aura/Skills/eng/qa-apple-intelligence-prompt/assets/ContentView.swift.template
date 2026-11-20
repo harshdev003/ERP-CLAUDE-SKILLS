@@ -1,0 +1,160 @@
+import SwiftUI
+import FoundationModels
+
+// An input is free-form text — a single user turn, a multi-turn
+// conversation rendered as text, or a free-form description. It is
+// appended verbatim to the prompt under a `## Input` section before
+// being sent to the model.
+struct Fixture: Codable, Identifiable {
+    let id: String
+    let input: String
+}
+
+struct PendingRun: Codable {
+    let instructions: String
+    let temperature: Double?
+    let fixtures: [Fixture]
+}
+
+struct RunResult: Codable, Identifiable {
+    let id: String
+    let input: String
+    let output: String
+    let latencyMs: Int
+}
+
+struct RunPayload: Codable {
+    let instructions: String
+    let temperature: Double
+    let device: String
+    let startedAt: String
+    let finishedAt: String
+    let results: [RunResult]
+}
+
+@MainActor
+final class Runner: ObservableObject {
+    @Published var status: String = "Idle"
+    @Published var results: [RunResult] = []
+    @Published var instructions: String = ""
+
+    private static let pendingFilename = "pending-run.json"
+    private static let resultsFilename = "results.json"
+
+    private func documentsURL() -> URL {
+        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    }
+
+    func autoRunIfPending() async {
+        let docs = documentsURL()
+        let pendingURL = docs.appendingPathComponent(Self.pendingFilename)
+        guard FileManager.default.fileExists(atPath: pendingURL.path) else {
+            status = "No pending run. Drop a pending-run.json in Documents and relaunch."
+            return
+        }
+        do {
+            let data = try Data(contentsOf: pendingURL)
+            let pending = try JSONDecoder().decode(PendingRun.self, from: data)
+            instructions = pending.instructions
+            await runAll(pending: pending)
+            try? FileManager.default.removeItem(at: pendingURL)
+        } catch {
+            status = "Failed to read pending-run.json: \(error)"
+        }
+    }
+
+    private func runAll(pending: PendingRun) async {
+        status = "Running \(pending.fixtures.count) fixture(s)…"
+        results = []
+
+        guard case .available = SystemLanguageModel.default.availability else {
+            status = "Apple Intelligence model unavailable on this device."
+            await writeResults(pending: pending, results: [], startedAt: Date(), finishedAt: Date())
+            return
+        }
+
+        let started = Date()
+        let temperature = pending.temperature ?? 0.0
+        var collected: [RunResult] = []
+
+        for f in pending.fixtures {
+            // Prompt + input concatenated under a `## Input` section, sent as
+            // the session's system instructions. A single-space user turn
+            // satisfies the API's non-empty requirement and serves as the
+            // trigger to generate.
+            let combinedInstructions = pending.instructions + "\n\n## Input\n" + f.input
+            let session = LanguageModelSession(instructions: combinedInstructions)
+            let start = Date()
+            do {
+                let r = try await session.respond(
+                    to: " ",
+                    options: GenerationOptions(temperature: temperature)
+                )
+                let ms = Int(Date().timeIntervalSince(start) * 1000)
+                let result = RunResult(id: f.id, input: f.input, output: r.content, latencyMs: ms)
+                collected.append(result)
+                results = collected
+            } catch {
+                let ms = Int(Date().timeIntervalSince(start) * 1000)
+                let result = RunResult(id: f.id, input: f.input, output: "ERROR: \(error)", latencyMs: ms)
+                collected.append(result)
+                results = collected
+            }
+        }
+
+        let finished = Date()
+        await writeResults(pending: pending, results: collected, startedAt: started, finishedAt: finished)
+        status = "Done. \(collected.count) result(s) written to Documents/results.json."
+    }
+
+    private func writeResults(pending: PendingRun, results: [RunResult], startedAt: Date, finishedAt: Date) async {
+        let iso = ISO8601DateFormatter()
+        let payload = RunPayload(
+            instructions: pending.instructions,
+            temperature: pending.temperature ?? 0.0,
+            device: UIDevice.current.name,
+            startedAt: iso.string(from: startedAt),
+            finishedAt: iso.string(from: finishedAt),
+            results: results
+        )
+        let url = documentsURL().appendingPathComponent(Self.resultsFilename)
+        let enc = JSONEncoder()
+        enc.outputFormatting = [.prettyPrinted, .sortedKeys]
+        do {
+            let data = try enc.encode(payload)
+            try data.write(to: url, options: .atomic)
+        } catch {
+            status = "Failed to write results.json: \(error)"
+        }
+    }
+}
+
+struct ContentView: View {
+    @StateObject private var runner = Runner()
+
+    var body: some View {
+        NavigationStack {
+            List {
+                Section("Status") {
+                    Text(runner.status).font(.callout)
+                }
+                Section("Prompt") {
+                    Text(runner.instructions).font(.caption.monospaced())
+                }
+                ForEach(runner.results) { r in
+                    VStack(alignment: .leading, spacing: 4) {
+                        HStack {
+                            Text(r.id).font(.caption.bold())
+                            Spacer()
+                            Text("\(r.latencyMs) ms").font(.caption2).foregroundStyle(.secondary)
+                        }
+                        Text(r.input).font(.caption.monospaced()).foregroundStyle(.secondary)
+                        Text(r.output).font(.body)
+                    }
+                }
+            }
+            .navigationTitle("ApplePromptTester iOS")
+            .task { await runner.autoRunIfPending() }
+        }
+    }
+}

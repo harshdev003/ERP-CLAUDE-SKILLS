@@ -1,0 +1,43 @@
+{
+  "name": "aura-tools",
+  "owner": {
+    "name": "AuraHealth",
+    "email": "<redacted-email>"
+  },
+  "metadata": {
+    "description": "AuraHealth team plugins for Cursor",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "shared",
+      "source": "./plugins/shared",
+      "description": "Org-wide skills and commands for all AuraHealth teams"
+    },
+    {
+      "name": "eng",
+      "source": "./plugins/eng",
+      "description": "Engineering team plugin — skills, commands, and hooks for backend, mobile, and web development"
+    },
+    {
+      "name": "product",
+      "source": "./plugins/product",
+      "description": "Product team plugin — skills and commands for spec writing, ticket creation, and roadmap workflows"
+    },
+    {
+      "name": "data",
+      "source": "./plugins/data",
+      "description": "Data team plugin — skills and commands for analytics, ML pipelines, and evaluation workflows"
+    },
+    {
+      "name": "marketing",
+      "source": "./plugins/marketing",
+      "description": "Marketing team plugin — skills and commands for ad creative, growth, and campaign workflows"
+    },
+    {
+      "name": "qa",
+      "source": "./plugins/qa",
+      "description": "QA team plugin — skills and commands for end-to-end testing of AuraHealth products (Aurie conversations, regression sweeps, scripted user simulations)"
+    }
+  ]
+}

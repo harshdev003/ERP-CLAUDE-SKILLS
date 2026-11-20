@@ -1,0 +1,38 @@
+{
+  "displayName": "REPLACE <Event in words, e.g. User Claim Unresolved> Check on <Service> Policy",
+  "conditions": [
+    {
+      "displayName": "logging/user/REPLACE_METRIC_NAME [COUNT]",
+      "conditionThreshold": {
+        "aggregations": [
+          {
+            "alignmentPeriod": "300s",
+            "crossSeriesReducer": "REDUCE_SUM",
+            "groupByFields": [],
+            "perSeriesAligner": "ALIGN_DELTA"
+          }
+        ],
+        "comparison": "COMPARISON_GT",
+        "duration": "0s",
+        "filter": "resource.type = \"k8s_container\" AND metric.type = \"logging.googleapis.com/user/REPLACE_METRIC_NAME\"",
+        "thresholdValue": 1,
+        "trigger": {
+          "count": 1
+        }
+      }
+    }
+  ],
+  "alertStrategy": {
+    "autoClose": "604800s",
+    "notificationPrompts": [
+      "OPENED"
+    ]
+  },
+  "combiner": "OR",
+  "enabled": true,
+  "notificationChannels": [
+    "projects/firebase-auratech16/notificationChannels/11467163257391956365",
+    "projects/firebase-auratech16/notificationChannels/9276031353074528112",
+    "projects/firebase-auratech16/notificationChannels/3690673794603392095"
+  ]
+}

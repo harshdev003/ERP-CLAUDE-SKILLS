@@ -1,0 +1,59 @@
+---
+description: Error handling patterns for Aura (try/catch, propagation, user-facing messages)
+alwaysApply: true
+---
+
+# Error Handling
+
+## Related Rules
+
+- `error-handling-bugsnag.mdc` for the `bugsnag.report` import + call convention.
+- `logging.mdc` for analytics + dev logging.
+- `state-management-reflux.mdc` for triggering error events from stores.
+
+## Always Wrap Async Work
+
+Every `await` lives inside a `try/catch`. The `catch` block must do something — never an empty catch.
+
+```js
+// ✅ GOOD
+try {
+  const result = await api.fetchUser(userId)
+  this.user = result
+  this.trigger('USER_LOADED', result)
+} catch (error) {
+  bugsnag.report('fetchUser failed', { userId, error: error?.message })
+  this.trigger('USER_LOAD_ERROR', { userId })
+}
+
+// ❌ BAD — empty catch
+try {
+  await api.fetchUser(userId)
+} catch (e) {}
+```
+
+## Propagation Pattern
+
+| Layer | What it does on error |
+|-------|----------------------|
+| `src/api.js`, `src/requests/` | Throw the raw error or a normalized one. Don't report — the caller has more context. |
+| `src/stores/` | Catch, call `bugsnag.report` with context, trigger an error event so the UI can react. |
+| `src/screens/` | Subscribe to error events and render a user-friendly message. **Never** show raw error messages in the UI. |
+| `src/logic/`, `src/services/` helpers | Catch where the side effect happens; report; return a sentinel (e.g. `null`, `false`) so callers can branch. |
+
+## User-Facing Errors
+
+- Use `t('errors.<key>')` from i18next — never display a server message or stack trace to the user.
+- For unrecoverable crashes, fall back to a generic toast / alert tied to a translated key.
+
+## Don't
+
+- **Never** swallow an error silently — at minimum, `bugsnag.report` it.
+- **Never** stringify an `Error` as the metadata value (`{ error }`) — instead spread `{ error: error?.message, stack: error?.stack }`. The Bugsnag wrapper will JSON-stringify the metadata object.
+- **Never** throw from a Reflux store action handler — `trigger` an error event instead. Throwing from a Reflux callback can break other listeners.
+
+## Network-Specific Patterns
+
+- Treat HTTP `401`s explicitly — don't conflate "session expired" with "no permission". Trigger the right event so the UI can route to login vs. show "access denied".
+- Treat network-offline (`error.message === 'Network Error'` for axios, or `NetInfo.fetch()` showing `isConnected: false`) as a **non-Bugsnag** event — log it via `Trackings('network_offline', {...})` instead.
+- For Firebase realtime listeners, `bugsnag.report` is fine but include the ref path in the metadata.

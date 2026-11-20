@@ -1,0 +1,92 @@
+[
+ {
+  "verdict": "hold",
+  "turn_quote": "I think I'm alright actually \u2014 it comes and goes like this.",
+  "why": "the user signalled they were settling and the coach appropriately offered steady reassurance rather than reopening with another question",
+  "conv": "8|A",
+  "turn": 15,
+  "rep": 0,
+  "text": "No need to apologize. That little throat-clear is exactly the kind of thing grief keeps in perfect detail.\nIt makes sense that it comes in waves like "
+ },
+ {
+  "verdict": "hold",
+  "turn_quote": "You\u2019re not doing grief wrong",
+  "why": "the user signalled they were settling and needed reassurance rather than another prompt",
+  "conv": "8|A",
+  "turn": 15,
+  "rep": 1,
+  "text": "No need to apologize. That little throat-clear is exactly the kind of thing grief keeps in perfect detail.\nIt makes sense that it comes in waves like "
+ },
+ {
+  "verdict": "hold",
+  "turn_quote": "You\u2019re not doing grief wrong",
+  "why": "the user signalled they were alright for now and needed steady reassurance rather than another prompt",
+  "conv": "8|A",
+  "turn": 15,
+  "rep": 2,
+  "text": "No need to apologize. That little throat-clear is exactly the kind of thing grief keeps in perfect detail.\nIt makes sense that it comes in waves like "
+ },
+ {
+  "verdict": "hold",
+  "turn_quote": "You\u2019re not doing grief wrong",
+  "why": "the user signalled they were alright for now and needed reassurance rather than another prompt",
+  "conv": "8|A",
+  "turn": 15,
+  "rep": 3,
+  "text": "No need to apologize. That little throat-clear is exactly the kind of thing grief keeps in perfect detail.\nIt makes sense that it comes in waves like "
+ },
+ {
+  "verdict": "hold",
+  "turn_quote": "You\u2019re not doing grief wrong",
+  "why": "the user signalled they were settling and needed reassurance rather than another prompt",
+  "conv": "8|A",
+  "turn": 15,
+  "rep": 4,
+  "text": "No need to apologize. That little throat-clear is exactly the kind of thing grief keeps in perfect detail.\nIt makes sense that it comes in waves like "
+ },
+ {
+  "verdict": "hold",
+  "turn_quote": "It was a small human moment of love and loss colliding.",
+  "why": "the user had just named the painful core and the moment called for steady normalization rather than another prompt",
+  "conv": "8|U",
+  "turn": 3,
+  "rep": 0,
+  "text": "Yeah. That lands in such a specific, painful way \u2014 like part of you reached for him, and then the reality of him not being here caught up a second lat"
+ },
+ {
+  "verdict": "hold",
+  "turn_quote": "It was a small human moment of love and loss colliding.",
+  "why": "the user had just named a raw, specific grief moment and the right move was steady acknowledgment rather than another prompt",
+  "conv": "8|U",
+  "turn": 3,
+  "rep": 1,
+  "text": "Yeah. That lands in such a specific, painful way \u2014 like part of you reached for him, and then the reality of him not being here caught up a second lat"
+ },
+ {
+  "verdict": "hold",
+  "turn_quote": "It was a small human moment of love and loss colliding.",
+  "why": "the user had just named a tender grief detail and this moment called for gentle acknowledgement rather than another prompt",
+  "conv": "8|U",
+  "turn": 3,
+  "rep": 2,
+  "text": "Yeah. That lands in such a specific, painful way \u2014 like part of you reached for him, and then the reality of him not being here caught up a second lat"
+ },
+ {
+  "verdict": "hold",
+  "turn_quote": "It was a small human moment of love and loss colliding.",
+  "why": "the user had just named the tender core and the moment called for soothing acknowledgement rather than another prompt",
+  "conv": "8|U",
+  "turn": 3,
+  "rep": 3,
+  "text": "Yeah. That lands in such a specific, painful way \u2014 like part of you reached for him, and then the reality of him not being here caught up a second lat"
+ },
+ {
+  "verdict": "hold",
+  "turn_quote": "It was a small human moment of love and loss colliding.",
+  "why": "the user had just named a tender grief moment and the right move was gentle acknowledgment rather than another prompt",
+  "conv": "8|U",
+  "turn": 3,
+  "rep": 4,
+  "text": "Yeah. That lands in such a specific, painful way \u2014 like part of you reached for him, and then the reality of him not being here caught up a second lat"
+ }
+]

@@ -1,0 +1,7 @@
+# LiveKit monitoring skills — Python deps
+# Install with:
+#   python3 -m pip install --user -r ${CLAUDE_PLUGIN_ROOT}/skills/analyze-livekit-usage/scripts/requirements.txt
+# (Use `python3 -m pip` not bare `pip` — on macOS they often point to different Pythons.)
+google-cloud-logging>=3.10.0
+# The Inference credit pool is read from the cost store, not the logs (PROD-6008).
+google-cloud-bigquery>=3.0.0

@@ -1,0 +1,174 @@
+{
+ "number": 1212,
+ "title": "features-loop: one build agent at a time; ready-for-review PRs don't block the queue",
+ "url": "https://github.com/AuraHealth/AINative/pull/1212",
+ "isDraft": false,
+ "state": "MERGED",
+ "headRefOid": "395dcc2a47d60855b818b53ea374268f836557ee",
+ "updatedAt": "2026-10-06T06:28:37Z",
+ "author": {
+  "login": "jcurlier"
+ },
+ "reviews": {
+  "nodes": [
+   {
+    "author": {
+     "login": "cursor"
+    },
+    "state": "COMMENTED",
+    "submittedAt": "2026-10-06T02:41:07Z",
+    "commit": {
+     "oid": "ebc067c6b26c0001dc5c8a38c46d7263859dea91"
+    }
+   },
+   {
+    "author": {
+     "login": "jcurlier"
+    },
+    "state": "COMMENTED",
+    "submittedAt": "2026-10-06T02:43:16Z",
+    "commit": {
+     "oid": "9283d7301cd5a640162915fdf3cce4a6824913ac"
+    }
+   },
+   {
+    "author": {
+     "login": "cursor"
+    },
+    "state": "COMMENTED",
+    "submittedAt": "2026-10-06T02:52:34Z",
+    "commit": {
+     "oid": "9283d7301cd5a640162915fdf3cce4a6824913ac"
+    }
+   },
+   {
+    "author": {
+     "login": "jcurlier"
+    },
+    "state": "COMMENTED",
+    "submittedAt": "2026-10-06T02:54:49Z",
+    "commit": {
+     "oid": "9283d7301cd5a640162915fdf3cce4a6824913ac"
+    }
+   },
+   {
+    "author": {
+     "login": "cursor"
+    },
+    "state": "COMMENTED",
+    "submittedAt": "2026-10-06T02:59:35Z",
+    "commit": {
+     "oid": "395dcc2a47d60855b818b53ea374268f836557ee"
+    }
+   }
+  ]
+ },
+ "reviewThreads": {
+  "pageInfo": {
+   "hasNextPage": false
+  },
+  "nodes": [
+   {
+    "isResolved": true,
+    "comments": {
+     "nodes": [
+      {
+       "author": {
+        "login": "cursor"
+       },
+       "body": "alt=\"Fix in Web\" width=\"99\" height=\"28\" src=\"https://cursor.com/assets/images/fix-in-web-dark.png\"></picture></a></div>\n\n\n<sup>Reviewed by [Cursor Bugbot](https://cursor.com/bugbot) for commit ebc067c6b26c0001dc5c8a38c46d7263859dea91. Configure [here](https://www.cursor.com/dashboard/bugbot).</sup>\n",
+       "originalCommit": {
+        "oid": "ebc067c6b26c0001dc5c8a38c46d7263859dea91"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "isResolved": true,
+    "comments": {
+     "nodes": [
+      {
+       "author": {
+        "login": "cursor"
+       },
+       "body": "alt=\"Fix in Web\" width=\"99\" height=\"28\" src=\"https://cursor.com/assets/images/fix-in-web-dark.png\"></picture></a></div>\n\n\n<sup>Reviewed by [Cursor Bugbot](https://cursor.com/bugbot) for commit 9283d7301cd5a640162915fdf3cce4a6824913ac. Configure [here](https://www.cursor.com/dashboard/bugbot).</sup>\n",
+       "originalCommit": {
+        "oid": "9283d7301cd5a640162915fdf3cce4a6824913ac"
+       }
+      }
+     ]
+    }
+   }
+  ]
+ },
+ "commits": {
+  "nodes": [
+   {
+    "commit": {
+     "oid": "395dcc2a47d60855b818b53ea374268f836557ee",
+     "statusCheckRollup": {
+      "contexts": {
+       "nodes": [
+        {
+         "__typename": "CheckRun",
+         "name": "check",
+         "status": "COMPLETED",
+         "conclusion": "SUCCESS"
+        },
+        {
+         "__typename": "CheckRun",
+         "name": "check",
+         "status": "COMPLETED",
+         "conclusion": "SUCCESS"
+        },
+        {
+         "__typename": "CheckRun",
+         "name": "check",
+         "status": "COMPLETED",
+         "conclusion": "SUCCESS"
+        },
+        {
+         "__typename": "CheckRun",
+         "name": "check",
+         "status": "COMPLETED",
+         "conclusion": "SUCCESS"
+        },
+        {
+         "__typename": "CheckRun",
+         "name": "test",
+         "status": "COMPLETED",
+         "conclusion": "SUCCESS"
+        },
+        {
+         "__typename": "CheckRun",
+         "name": "test",
+         "status": "COMPLETED",
+         "conclusion": "SUCCESS"
+        },
+        {
+         "__typename": "CheckRun",
+         "name": "check",
+         "status": "COMPLETED",
+         "conclusion": "SUCCESS"
+        },
+        {
+         "__typename": "CheckRun",
+         "name": "check",
+         "status": "COMPLETED",
+         "conclusion": "SUCCESS"
+        },
+        {
+         "__typename": "CheckRun",
+         "name": "Cursor Bugbot",
+         "status": "COMPLETED",
+         "conclusion": "SUCCESS"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ }
+}

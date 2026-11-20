@@ -1,0 +1,86 @@
+[
+ {
+  "score": 5,
+  "evidence": "\u201cOh, that lands deep. It\u2019s not just missing your dad \u2014 it\u2019s missing the feeling of still being someone\u2019s looked-after person in that small, ordinary way.\u201d",
+  "_id": "8|A",
+  "row": "R1",
+  "rep": 2
+ },
+ {
+  "score": 5,
+  "evidence": "It sounds like you want to feel chosen, not just maintained \u2014 and that matters in a close friendship.",
+  "_id": "1|A",
+  "row": "R1",
+  "rep": 0
+ },
+ {
+  "score": 5,
+  "evidence": "Oh, that lands deep. It\u2019s not just missing your dad \u2014 it\u2019s missing the feeling of still being someone\u2019s looked-after person in that small, ordinary way.",
+  "_id": "8|A",
+  "row": "R1",
+  "rep": 0
+ },
+ {
+  "score": 5,
+  "evidence": "You didn\u2019t do anything wrong by falling apart; your heart just ran into him for a second.",
+  "_id": "8|U",
+  "row": "R1",
+  "rep": 1
+ },
+ {
+  "score": 4,
+  "evidence": "It sounds like the shame is piling on top of the hurt and trying to make the hurt look like a character flaw.",
+  "_id": "1|A",
+  "row": "R1",
+  "rep": 2
+ },
+ {
+  "score": 5,
+  "evidence": "Yeah \u2014 the guessing is its own kind of hurt. It leaves you holding the whole story by yourself, and that can feel lonelier than a hard truth.",
+  "_id": "1|U",
+  "row": "R1",
+  "rep": 2
+ },
+ {
+  "score": 4,
+  "evidence": "It sounds like the shame is piling on top of the hurt and trying to make the hurt look like a character flaw.",
+  "_id": "1|A",
+  "row": "R1",
+  "rep": 1
+ },
+ {
+  "score": 5,
+  "evidence": "\u201cyour heart just ran into him for a second\u201d",
+  "_id": "8|U",
+  "row": "R1",
+  "rep": 2
+ },
+ {
+  "score": 5,
+  "evidence": "\u201cYeah \u2014 the guessing is its own kind of hurt. It leaves you holding the whole story by yourself, and that can feel lonelier than a hard truth.\u201d",
+  "_id": "1|U",
+  "row": "R1",
+  "rep": 0
+ },
+ {
+  "score": 5,
+  "evidence": "your heart just ran into him for a second",
+  "_id": "8|U",
+  "row": "R1",
+  "rep": 0
+ },
+ {
+  "score": 5,
+  "evidence": "\u201cOh, that lands deep. It\u2019s not just missing your dad \u2014 it\u2019s missing the feeling of still being someone\u2019s looked-after person in that small, ordinary way.\u201d",
+  "_id": "8|A",
+  "row": "R1",
+  "rep": 1
+ },
+ {
+  "score": 4,
+  "evidence": "\u201cYeah \u2014 the guessing is its own kind of hurt. It leaves you holding the whole story by yourself, and that can feel lonelier than a hard truth.\u201d",
+  "_id": "1|U",
+  "row": "R1",
+  "rep": 1
+ }
+]

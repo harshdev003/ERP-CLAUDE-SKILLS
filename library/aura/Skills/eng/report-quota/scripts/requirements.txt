@@ -1,0 +1,5 @@
+# Only needs `requests` (for optional --slack). It COMPOSES the per-vendor quota skills as
+# subprocesses, so each of those skills' own deps must also be installed:
+#   report-cartesia-quota / report-elevenlabs-quota / report-deepgram-quota → requests
+#   report-livekit-quota → google-cloud-logging
+requests

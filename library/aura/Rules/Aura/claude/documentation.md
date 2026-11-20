@@ -1,0 +1,71 @@
+---
+description: Documentation standards for Aura (JSDoc, file headers, READMEs)
+alwaysApply: true
+---
+
+# Documentation
+
+## Related Rules
+
+- `comments.md` for comment preservation and "why" comments.
+- `coding.md` for general style.
+
+## File-Level
+
+A short JSDoc block at the top of a non-trivial module is welcome but not mandatory. When you add one, follow the pattern already used in `src/styles/index.js`:
+
+```js
+/**
+ * @module FamilyPlanController
+ * @description Reflux store managing family plan onboarding, IAP receipts,
+ *   and member invitations. See PROD-942 for the original spec.
+ */
+```
+
+## Function JSDoc
+
+Add JSDoc when:
+
+- The function is exported and the contract isn't obvious from the name + arg list.
+- It has side effects that callers need to know about (network calls, Reflux triggers, navigation).
+- It returns a non-trivial shape.
+
+```js
+/**
+ * Fetches and caches the family plan products from the IAP store.
+ *
+ * @param {boolean} [forceRefresh=false] When true, bypasses the in-memory cache.
+ * @returns {Promise<{ productId: string, localizedPrice: string }[]>} Sorted by price ascending.
+ * @throws Re-throws the underlying RNIap error after reporting it to Bugsnag.
+ */
+async function loadFamilyPlanProducts(forceRefresh = false) { ... }
+```
+
+For private/internal functions, a one-line `//` comment above the signature is enough.
+
+## Magic Values
+
+If a constant has a non-obvious origin (App Store regional pricing, server-side enum, third-party SDK requirement), document it inline:
+
+```js
+// 7 = days in trial. App Store enforces this server-side; if you change
+// it here without updating the SKU configuration, paywall copy lies.
+const TRIAL_DAYS = 7
+```
+
+## README
+
+`README.md` should cover:
+
+- Repo purpose
+- Setup (Node version, npm install, pod install)
+- How to run locally (Metro + iOS/Android)
+- A pointer to `CLAUDE.md` for architecture details
+
+Don't document feature flows or API endpoints in `README.md` — those go in inline comments or wiki/Notion.
+
+## Don't
+
+- Don't add JSDoc that just restates the function name.
+- Don't write a wall of comments at the top of a file describing what each section does — let logical grouping and clear function names speak for themselves.
+- Don't paste Slack conversations or PR comments into source files.

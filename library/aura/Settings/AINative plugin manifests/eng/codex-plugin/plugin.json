@@ -1,0 +1,26 @@
+{
+  "name": "eng",
+  "version": "3.347.0",
+  "description": "Engineering team plugin - skills, commands, and hooks for backend, mobile, and web development at AuraHealth",
+  "author": {
+    "name": "AuraHealth Engineering",
+    "email": "<redacted-email>"
+  },
+  "repository": "https://github.com/AuraHealth/AINative",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Aura Engineering",
+    "shortDescription": "Engineering workflows for AuraHealth Codex users.",
+    "longDescription": "AuraHealth engineering workflows for implementing Linear tasks, investigating production issues, analyzing logs, working with CI, and maintaining backend, mobile, and web systems.",
+    "developerName": "AuraHealth",
+    "category": "Productivity",
+    "capabilities": [
+      "Skills"
+    ],
+    "defaultPrompt": [
+      "Work on this Linear task.",
+      "Investigate this production issue.",
+      "Analyze these GCP logs."
+    ]
+  }
+}

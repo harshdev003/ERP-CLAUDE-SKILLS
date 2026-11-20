@@ -1,0 +1,279 @@
+---
+paths:
+  - "AuraConsumerAppSimTests/**"
+  - ".claude/skills/sim-test/**"
+  - ".claude/skills/screenshot-harvest/**"
+  - ".claude/skills/aurie-screens-weekly/**"
+---
+
+# Simulator Testing
+
+## Purpose
+
+`AuraConsumerAppSimTests` runs UI tests against **real services** — no mocks. Unlike `AuraConsumerAppUITests` (which passes `-UITesting` to inject mock services), sim tests boot the app normally with real Firebase auth, real API calls, and real SDK initialization.
+
+## Related Rules
+
+- `testing.md` for unit test and mock UI test conventions.
+- `architecture.md` for MVVM + DI layer boundaries.
+- `coding.md` for Swift style and accessibility identifier requirements.
+
+## When to Use Sim Tests vs Mock UI Tests
+
+| Aspect | `AuraConsumerAppUITests` | `AuraConsumerAppSimTests` |
+|--------|--------------------------|---------------------------|
+| Services | Mock (via `-UITesting` flag) | Real (Firebase, API) |
+| Speed | Fast (~2-5 min) | Slower (~5-15 min) |
+| Network | None | Required |
+| User accounts | Fake tokens | Real accounts created |
+| Use case | Regression, CI | End-to-end validation, QA |
+| Determinism | High | Lower (network dependent) |
+
+## Directory Structure
+
+```
+AuraConsumerAppSimTests/
+├── Base/
+│   └── BaseSimTestCase.swift       # Base class — no -UITesting, longer timeouts
+├── Flows/
+│   └── AdHocSimTest.swift          # Autonomous ad-hoc test runner
+├── Helpers/
+│   ├── AdHocTestModels.swift       # SimState, SimAction, config models
+│   ├── ExplorationTracker.swift    # Navigation graph and findings
+│   └── HierarchyParser.swift       # XCTest hierarchy → categorized elements
+├── Scripts/
+│   ├── sim_start.sh                # Boot simulator (optionally reset)
+│   ├── sim_shutdown.sh             # Shut down simulator to free resources
+│   ├── sim_install.sh              # Build app + test target, install on simulator
+│   ├── sim_test.sh                 # Write session config + launch XCTest runner
+│   ├── sim_common.sh               # Shared constants and helpers (sourced by other scripts)
+│   ├── sim_bridge.py               # Command loop (wait/act/read/screen/hierarchy)
+│   ├── sim_cleanup.sh              # Clean session artifacts
+│   ├── sim_kill.sh                 # Kill test or recording processes
+│   ├── sim_record.sh               # Start/stop video recording
+│   └── sim_mcp.py                  # MCP server for native Claude tool integration
+├── knowledge/         # Shared knowledge (tracked in git)
+├── users.json              # Test user accounts (tracked in git)
+├── simulators.json         # Device inventory and test coverage (tracked in git)
+└── Sessions/
+    └── {sessionId}/                # Per-session (gitignored)
+        ├── config.json
+        ├── state.json
+        ├── action.json
+        ├── exploration.json
+        └── findings.json
+```
+
+## Configuration
+
+Tests are configured via a JSON file at `AuraConsumerAppSimTests/Sessions/{sessionId}/config.json`, written by the `/sim-test` skill before each run.
+
+**Session ID resolution** (in priority order):
+1. `SIM_SESSION_ID` environment variable
+2. `SIMULATOR_UDID` environment variable (set automatically by xcodebuild)
+3. Falls back to `"default"`
+
+When running via `xcodebuild test`, the session ID will be the **simulator UDID** (e.g., `80A4802A-4906-41D9-9B6B-78845EFDAFD8`). It is the last line `sim_start.sh` prints. To look it up afterwards, grep for **your session's own simulator**, not the shared model name:
+```bash
+xcrun simctl list devices available | grep "iPhone 17 Pro (<worktree>)"
+```
+
+## One Simulator Per Session (MANDATORY)
+
+Several sessions run sim tests on the same Mac at once, so **each session has its own simulator**, named `"<model> (<label>)"`, e.g. `iPhone 17 Pro (frosty-golick-68d358)`. The scripts create it with `xcrun simctl create` on first use and reuse it after that. The agent does not pass anything for this.
+
+- **Label:** `$SIM_SESSION_NAME` if set, then `ci` on CI, then the worktree's directory name, then `main`. Two sessions sharing one checkout must each set `SIM_SESSION_NAME`.
+- **`--session <UDID>`** targets exactly that device and derives its name from it. No name-based lookup happens.
+- **`--device-type "iPhone 16 Pro"`** picks the model for the session's own simulator. `--sim "<name>"` means an exact name. Pass a shared name like `"iPhone 17 Pro"` only if you mean to use that shared device.
+- **The stale sweep** (`shutdown_stale_sims`) only shuts down copies of this session's own simulator, never a device another session could be using.
+- **Never** `xcrun simctl shutdown|erase|boot "iPhone 17 Pro"` by name. Another session may be on that device. Always target your own UDID.
+
+See `knowledge/workarounds.md § Parallel sessions shut down each other's simulators`.
+
+**Config format** (matches `AdHocTestConfig` in `AdHocTestModels.swift`):
+
+```json
+{
+  "auth": {
+    "email": "<redacted-email>",
+    "password": "Sim4567890x!",
+    "autoGenerateEmail": false
+  },
+  "goal": "Sign up a new user, complete onboarding, reach home screen.",
+  "maxIterations": 150,
+  "mode": "goal",
+  "safetyConstraints": {
+    "allowAccountDeletion": false,
+    "allowDeleteConversation": false,
+    "allowDeleteJournal": false,
+    "allowLogout": false,
+    "allowPurchases": false,
+    "blockedIdentifiers": []
+  },
+  "sessionId": "default",
+  "takeScreenshots": true,
+  "timeoutPerStep": 120
+}
+```
+
+**Optional fields:**
+- `explorationConfig`: `{ "analyzeAccessibility": true, "analyzeUX": true, "strategy": "breadthFirst" }` — for explore/uiAnalysis/uxAnalysis modes
+- `mode`: `"goal"` (default), `"explore"`, `"uiAnalysis"`, `"uxAnalysis"`
+
+## Test Email Convention
+
+Always use: `{prefix}+test+{unix_timestamp}@aurahealth.io`
+
+- The `+test+` segment identifies automated test accounts.
+- The timestamp ensures uniqueness across runs.
+- Default prefix: `test`.
+
+## Timeouts
+
+Real services are slower than mocks. Use these guidelines:
+
+| Operation | Timeout |
+|-----------|---------|
+| Network calls (auth, API) | 30s |
+| UI animations | 10s |
+| Quick element checks | 5s |
+| Home screen after sign-up | 60s |
+
+## Account Cleanup
+
+Set `deleteAccountAfterTest: true` to have the test navigate to Settings → Account and Data → Delete Account after completing the flow. This keeps the test environment clean.
+
+## Simulator Reset (MANDATORY Before Exploratory Runs)
+
+**Always reset the simulator before a full exploratory or new-user-onboarding run.** This ensures a clean state — no cached auth tokens, no prior account data, no leftover app state that would skip onboarding.
+
+```bash
+# Erase + boot this session's own simulator (creates it if needed); prints its UDID
+SID=$(bash AuraConsumerAppSimTests/Scripts/sim_start.sh --reset | tail -1)
+
+# Or, by hand, by UDID — never by name (a name can be another session's device)
+xcrun simctl shutdown "$SID"
+xcrun simctl erase "$SID"
+```
+
+**When to reset:**
+- Before any test that starts from the welcome/age-gate screen
+- Before any new-user registration flow
+- When prior test state might affect the flow (e.g., logged-in account, skipped onboarding)
+
+**When NOT to reset:**
+- Regression tests that test an already-logged-in user state
+- Tests that intentionally continue from a prior session
+- Account-scoped first-run screens (voice/chat intro, captions tooltip, QP intro) — those flags live on the server, so an erase doesn't bring them back. Use an account in `users.json` that hasn't used the screen, or sign a new one up through the app; see `knowledge/rules.md § Test accounts`. Never create one with a script: prod refuses a scripted sign-up, and `sim_provision_user.py` is retired for that reason
+
+What an erase, a reinstall, a reboot and a single-permission reset each clear — including that a reinstall keeps the keychain session and the microphone permission — is in `AuraConsumerAppSimTests/knowledge/rules.md § Simulator state`.
+
+## Running Sim Tests
+
+Use the `/sim-test` skill for interactive runs. For manual execution:
+
+```bash
+# 1. Write config JSON to AuraConsumerAppSimTests/Sessions/{sessionId}/config.json
+# 2. Run:
+xcodebuild test \
+  -project AuraConsumerApp.xcodeproj \
+  -scheme AuraConsumerApp \
+  -destination "platform=iOS Simulator,id=$SID" \
+  -only-testing:AuraConsumerAppSimTests \
+  -derivedDataPath DerivedData-CLI
+```
+
+## Adding New Flows
+
+1. Create a new test file in `Flows/` (e.g., `LoginSimTest.swift`).
+2. Extend `BaseSimTestCase` for real-service timeouts and helpers.
+3. Read config from `SimTestConfig.load()`.
+4. Add the flow enum case to `SimTestConfig.Flow`.
+5. Update the `/sim-test` skill to support the new flow.
+
+## Knowledge Files
+
+The `/sim-test` skill uses a set of knowledge files at `AuraConsumerAppSimTests/knowledge/` as its source of truth. **These files must be kept up to date in interactive mode. In headless / CI mode, do NOT write to these files** — CI workspaces are ephemeral, parallel runs would race, and changes don't propagate back. Report findings in the run summary instead and let a human follow up.
+
+Structure:
+
+- `rules.md` — global rules, safety rules, company context, experiment API
+- `experiments.md` — which experiments are live and **which screen is visible to whom**; an experiment rolled out to control turns a whole screen family off. Kept honest by `Scripts/sim_experiments.py` — `check` is a set difference against `Experiments.swift` and runs in the pre-commit hook, so a PR that adds or removes an experiment cannot land without updating the doc; `state` reports live state per key
+
+**Not a knowledge file, but read at the same moment:** `Scripts/sim_priors.py` builds the **prior-knowledge block** the `ideas` analyzer runs against — our own backlog for the screen, the experiments that already answered the question, and the standing lessons. It is fetched once per session from Notion and cached in the session dir, so it is never committed and never stale. `experiments.md` answers "what will this run see?"; the priors block answers "what do we already know about it?"
+- `flows.md` — onboarding, login, delete account, QP, feed cards
+- `workarounds.md` — known bugs and platform-specific quirks
+- `screens/<name>.md` — one file per screen (see `screens/README.md` for index)
+
+### When to update
+
+Update the relevant file whenever:
+- A quiz question is added, removed, or reordered → `screens/onboarding_quiz.md`
+- An option label changes in `OnboardingQuizConfig.json` → relevant `screens/*.md`
+- An accessibility identifier is added, renamed, or removed → relevant `screens/*.md`
+- A new screen is added → new file under `screens/`, add to `screens/README.md` index, **and in the same PR** a flow in `screenshots/recipes.json` that reaches it (with `watch` paths if its key is not an identifier in code) plus its three captures — anytime, light, dark — via the `screenshot-harvest` skill. A PR that changes how a screen looks re-captures it the same way (`sim_capture.py run --pr`).
+- A new flow is added to sim tests → `flows.md`
+- An experiment starts, ends, or rolls out → `experiments.md` (run `sim_experiments.py state`; a key that moves between the running and rolled-out tables is flagged for you)
+- An experiment key is added to or removed from `Experiments.swift` → `experiments.md`, **in the same commit** — the pre-commit hook blocks otherwise
+- A **new workaround** is discovered during test runs → `workarounds.md`
+
+### Mandatory: capture learnings
+
+After every sim test run (pass or fail), check if any new learnings should be captured:
+- New XCTest quirks (elements not found, tap not triggering, timing issues)
+- Workarounds that fixed a failure
+- Timeout adjustments that were needed
+- Identifier changes discovered during self-healing
+
+Add these to `workarounds.md` with:
+- A short H2 title
+- What the issue is
+- Affected elements/screens
+- Fix
+- Discovery context
+
+Always bump the "Last updated" line at the top of the file you touched.
+
+## UIViewRepresentable Accessibility Identifier Propagation (CRITICAL)
+
+SwiftUI propagates `.accessibilityIdentifier` from a parent container to **all descendant UIKit-backed elements** (`UIViewRepresentable` subclasses like `GrowingTextView`/`UITextView` and `VoiceButton`/`UIButton`) that **don't have their own explicit identifier**. This causes screen identifiers like `conversation_screen` to appear on child text fields and buttons in the XCTest accessibility tree.
+
+**Symptom**: Multiple elements in the hierarchy share the screen's `_screen` identifier, making them ambiguous to query.
+
+**Fix**: Add explicit `accessibilityIdentifier` to all UIViewRepresentable-backed child components:
+
+```swift
+// ChatInputView — pass screen-specific identifiers as parameters
+ChatInputView(
+    ...,
+    fieldIdentifier: "conversation_messageField",
+    voiceButtonIdentifier: "conversation_voiceButton"
+)
+
+// CircularIconButton — use the accessibilityId parameter
+CircularIconButton(icon: "xmark", ..., accessibilityId: "quickProcessing_closeButton")
+```
+
+**When adding a new screen**: ensure any `UIViewRepresentable` children (especially `GrowingTextView` text fields or custom `UIButton` wrappers) have explicit identifiers that don't default to the parent screen's identifier.
+
+## Debugging: Screenshot on Confusion (MANDATORY)
+
+When the `sim_bridge.py` times out, state appears stale (same step after an action), or behavior is unexpected (action succeeded but screen didn't change):
+
+1. **ALWAYS take a screenshot first** — run `sim_bridge.py --verbose screen 30` to capture and read the screenshot
+2. **Do NOT guess** or retry the same action blindly
+3. **Diagnose from the screenshot**: the XCTest runner may have crashed, the app may have closed, or the screen may show something different from the last `state.json`
+4. **If the app/runner died**, restart the session instead of retrying actions
+
+```bash
+# After any timeout or unexpected result:
+python3 AuraConsumerAppSimTests/Scripts/sim_bridge.py --session $SID --verbose screen 30
+```
+
+A screenshot reveals the actual situation instantly — guessing wastes steps and can make things worse.
+
+## Security
+
+- **Never commit test credentials** — config files are in `.gitignore`.
+- **Never hardcode passwords** — `sim_test.sh` auto-generates a unique password per run. Read it from `config.json`.
+- **Recordings are gitignored** — screenshots, videos, and result bundles stay local.

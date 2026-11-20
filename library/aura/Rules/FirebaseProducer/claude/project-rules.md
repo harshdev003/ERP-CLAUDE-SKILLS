@@ -1,0 +1,123 @@
+---
+description: Aura Firebase Cloud Functions - Node.js Development Rules
+globs:
+alwaysApply: true
+---
+
+# Aura Firebase Cloud Functions - Node.js Development Rules
+
+This is the canonical baseline rule file for this repository.
+
+## 🚨 CRITICAL: Always Use Correct Node.js Version and Lint
+
+**MANDATORY**: Before making any code changes or running commands:
+
+1. **Always run `nvm use` first** to ensure the correct Node.js version (see `.nvmrc` at repo root).
+2. **Run `npm run lint` after any code changes** — from the **`functions/`** directory (this repo’s source and ESLint config live there).
+3. **Fix any linting errors before proceeding**
+4. **Only proceed if linting passes without errors**
+
+```bash
+# Required workflow (from repo root or from functions/):
+nvm use
+cd functions && npm run lint
+```
+
+## 🏗️ Architecture & Code Standards
+
+### Project Structure
+- **Firebase Functions v2**: Event-driven triggers using `firebase-functions/v2`
+- **Application code** in this repo lives under **`functions/src/`** (paths below are relative to `functions/`).
+- **Trigger Layer**: Event handlers in `src/triggers/{domain}/on{Entity}{Action}.js`
+- **Service Layer**: External integrations in `src/services/` (firebase, pubsub, etc.)
+- **Context**: Per-invocation `Context` instance for tracing and metadata
+- **Config**: Centralized configuration in `src/config.js`
+
+### Code Quality Requirements
+- **ESLint Compliance**: All code MUST pass ESLint without errors
+- **Type Safety**: Use JSDoc for type annotations and parameter documentation
+- **Error Handling**: Wrap all I/O in `try/catch`, log with context, re-throw
+- **Async/Await**: Prefer modern async/await over callbacks or raw promises
+- **No console.log**: Use the `logger` service for all output
+
+### Trigger Patterns
+- Create a new `Context` instance at the top of every trigger handler
+- Destructure config values at module scope
+- Guard against null/missing event data before service calls
+- Pass `{context}` to every service call
+
+## 🎯 Critical Thinking & Problem Solving
+
+### DO NOT:
+- ❌ Agree with everything the user says without analysis
+- ❌ Generate code that doesn't follow the established patterns
+- ❌ Skip linting after code changes
+- ❌ Forget to update `functions/package.json` when adding a new trigger
+- ❌ Share `Context` instances between trigger invocations
+
+### DO:
+- ✅ **Question assumptions** and validate requirements
+- ✅ **Analyze trade-offs** before implementing solutions
+- ✅ **Consider edge cases** and error scenarios
+- ✅ **Follow established patterns** from the codebase
+- ✅ **Lint after every change**
+- ✅ **Update `functions/package.json`** deploy scripts when adding new functions
+
+### Bug Fix Thinking Pattern
+Reflect on 5-7 different possible sources of the problem, distill those down to 1-2 most likely sources, then add logs to validate your assumptions before implementing the actual fix.
+
+## 🧪 Testing Requirements
+
+- **Triggers**: Test event data extraction, guard clauses, and service call arguments
+- **Services**: Test initialization, publish/read operations, and error scenarios
+- **Mocks**: Mock external services (Firebase, Pub/Sub) in unit tests
+
+## 🔧 Development Workflow
+
+### Before Making Changes
+1. **Switch to correct Node.js version** — `nvm use`
+2. **Understand the requirement** — Ask clarifying questions if needed
+3. **Analyze the current architecture** — Follow established patterns
+
+### During Implementation
+1. **Follow trigger patterns** — New `Context`, guard clauses, service calls
+2. **Use proper error handling** — `try/catch` with logging and re-throw
+3. **Update `functions/package.json`** — Add new function to deploy scripts
+4. **Export from `triggers/index.js`** — New trigger must be discoverable
+
+### After Implementation
+1. **Run `nvm use`** — Ensure correct Node.js version
+2. **Run `npm run lint`** — Fix all errors before proceeding
+3. **Deploy to dev** — `npm run deploy:dev` and verify
+4. **Deploy to prod** — `npm run deploy:prod` only after dev verification
+
+## 🔄 Code Review Checklist
+
+- [ ] Code passes ESLint without errors
+- [ ] Follows established trigger patterns
+- [ ] New `Context` instance per trigger invocation
+- [ ] Config destructured at module scope
+- [ ] Guard clauses for null/missing event data
+- [ ] All I/O wrapped in `try/catch`
+- [ ] Errors re-thrown after logging
+- [ ] `functions/package.json` updated with new function names
+- [ ] Uses logger instead of console statements
+- [ ] Includes `context.meta()` in all log calls
+
+## 🔄 Git Workflow
+
+### Branch Naming
+- `feature/description` — New features
+- `bugfix/description` — Bug fixes
+- `refactor/description` — Code refactoring
+- `quality/description` — Code quality improvements
+
+### Commit Messages
+- Use conventional commits format
+- Include scope when relevant: `feat(reel): add onReelUpdated trigger`
+- Keep first line under 50 characters
+
+### Pull Request Process
+- Link to related issues
+- Ensure all linting checks pass
+- Ensure all CI checks pass before merging

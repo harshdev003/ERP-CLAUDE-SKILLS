@@ -1,0 +1,17 @@
+{
+  "name": "product",
+  "version": "3.110.1",
+  "displayName": "AuraHealth Product",
+  "description": "Product team plugin \u2014 skills and commands for spec writing, ticket creation, and roadmap workflows at AuraHealth",
+  "author": {
+    "name": "AuraHealth Product"
+  },
+  "homepage": "https://github.com/AuraHealth/AINative",
+  "repository": "https://github.com/AuraHealth/AINative",
+  "keywords": [
+    "aurahealth",
+    "product",
+    "specs",
+    "linear"
+  ]
+}

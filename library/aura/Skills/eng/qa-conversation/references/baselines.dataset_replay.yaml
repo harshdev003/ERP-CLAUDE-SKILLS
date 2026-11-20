@@ -1,0 +1,137 @@
+# Recorded dataset-replay baselines for the locked suite.
+#
+# WHY THIS FILE EXISTS. Before it, the only recorded numbers lived in
+# `measured.md`, which is entirely MULTI-TURN drive data — a different replication
+# unit and a different denominator. The rubric forbids mixing the two modes, so a
+# dataset-replay gate scored against those numbers would be comparing across two
+# rulers while looking perfectly reasonable. These values come from a dataset
+# replay and are only valid for one.
+#
+# A threshold is a VALUE plus the instrument that produced it. When the judge,
+# the judge prompt, or a dataset version changes, the baseline is unverified until
+# re-measured — not silently carried forward.
+
+source:
+  report: "Conversation Prompt and Model Evaluation — Data Report (September 2026)"
+  notion_page: "3d175e23af208135b788e8d100eb8183"
+  measured_on: "2026-09-04"
+  mode: dataset_replay
+  judge: "gpt-5.5"
+  method: "Blinded criterion-specific review against each row's prewritten PASS/FAIL conditions. Labels: pass, fail, uncertain."
+  generations_per_row: 3
+  note: >-
+    Repetition is the exception: its 60 stored rows are already 12 scenarios with
+    five embedded replicates, so they are scored once each rather than x3. Every
+    other dataset shows total = rows x 3.
+
+# The arm a candidate is compared against. PROD-CHAT is the production
+# configuration at the time of measurement, not the best arm in the run.
+baseline_arm:
+  code: PROD-CHAT
+  prompt_version: "1000197806534492368"
+  model: "chat-latest"
+  overall: {pass: 303, fail: 83, uncertain: 1, rate: 0.783}
+
+# Reference arms, recorded so a run can be read against something contemporaneous
+# rather than only against production.
+reference_arms:
+  DEV-CHAT:  {prompt_version: "1000197802751623234", model: "chat-latest", overall_rate: 0.904}
+  DEV-54:    {prompt_version: "1000197806245806611", model: "gpt-5.4", overall_rate: 0.863}
+  OLD-CHAT:  {prompt_version: "1000197806534557862", model: "chat-latest", overall_rate: 0.674}
+
+datasets:
+  transitions:
+    braintrust_id: "18fd1770-d53e-41ac-8565-1c865dba2501"
+    name: conversation-transitions-qa-rubric-v3
+    rows: 18
+    judgements: 54
+    covers: [A2, A3, A4, A5, A6, A7, A8, A10, A11]
+    baseline: {pass: 52, total: 54, rate: 0.963}
+    arms: {DEV-CHAT: 0.981, OLD-CHAT: 0.926, DEV-54: 0.963}
+
+  frustration:
+    braintrust_id: "1fd3ba91-0884-4766-aff3-97b19bbba228"
+    name: conversation-frustration-points-qa-rubric-v3
+    rows: 16
+    judgements: 48
+    covers: [A5, A8, A12, R1, R5, R7, V1c]
+    baseline: {pass: 41, total: 48, rate: 0.854}
+    arms: {DEV-CHAT: 0.813, OLD-CHAT: 0.688, DEV-54: 0.938}
+
+  warmth:
+    braintrust_id: "23c959c7-235a-4d08-b588-fbd5443db3f0"
+    name: aurie-voice-warmth-qa
+    rows: 16
+    judgements: 48
+    covers: [V1a, R1, R4, R5, R7, A4, A7, A11]
+    baseline: {pass: 42, total: 48, rate: 0.875}
+    arms: {DEV-CHAT: 0.938, OLD-CHAT: 0.771, DEV-54: 0.813}
+
+  repetition:
+    braintrust_id: "124b3e6b-aa40-4962-b90f-6c041aa445d5"
+    name: aurie-repetition-patterns-qa-v1
+    rows: 60
+    judgements: 60
+    scenarios: 12
+    replicates_per_scenario: 5
+    covers: [N1, N2, N3, V1a, A12]
+    baseline: {pass: 49, total: 60, rate: 0.817}
+    arms: {DEV-CHAT: 0.867, OLD-CHAT: 0.817, DEV-54: 0.917}
+    reporting: >-
+      Report separately and never pooled with the others. These 60 rows are 12
+      replicated cohorts, not 60 independent cases; pooling them into a suite
+      total treats replicates as evidence and overstates n by a factor of five.
+
+  hard_conversations:
+    braintrust_id: "6210ba1a-0b90-4f72-825d-1a4703384c5a"
+    name: aurie-hard-conversations-qa-v1
+    rows: 16
+    judgements: 48
+    covers: [A4, A7, A8, A11, A12, R1, R5, R7, R10, S8, S9, N3]
+    baseline: {pass: 47, total: 48, rate: 0.979}
+    arms: {DEV-CHAT: 1.0, OLD-CHAT: 0.917, DEV-54: 0.896}
+
+# Measured in the same run but NOT part of the locked suite. Recorded because a
+# candidate touching these behaviours should be read against them, and because
+# leaving them out of the file is how they get re-measured from scratch.
+adjacent_datasets:
+  workplace:
+    name: practical-help-workplace-communications-qa-v2
+    judgements: 30
+    baseline: {pass: 26, total: 30, rate: 0.867}
+  technical_support:
+    name: technical-account-support-critical-rules-qa-v1
+    judgements: 36
+    baseline: {pass: 5, total: 36, rate: 0.139}
+    note: >-
+      Production scores 13.9% here against DEV-CHAT's 100%, an 86-point gap and by
+      far the largest in the run. Treat a candidate's score on this dataset as
+      information about the candidate, not as a regression signal against a
+      baseline this low.
+  directness_boundaries:
+    name: "Directness & Boundary Naturalness QA — Provisional v0.1"
+    judgements: 36
+    baseline: {pass: 26, total: 36, rate: 0.722}
+  track_requests:
+    name: conversation-track-request-tool-routing-qa-v1
+    judgements: 9
+    baseline: {pass: 8, total: 9, rate: 0.889}
+  practical_help_guard:
+    name: "Practical Help — Comparative Guard Slice v0.1"
+    judgements: 18
+    baseline: {pass: 7, total: 18, rate: 0.389}
+
+# What counts as a move, so a run does not argue about it afterwards.
+interpretation:
+  suite_total_forbidden: >-
+    There is no single pass rate across the suite. The datasets have different
+    sizes and different replication, and one of them is cohort-replicated. Report
+    per dataset.
+  material_change_pp_owned_by: "release_contract.yaml - resolution.material_change_pp"
+  material_change_note: >-
+    Below roughly five percentage points on a 48-judgement dataset is one or two
+    rows moving, which is inside what a re-draw produces. Treat smaller deltas as
+    unmoved rather than as an improvement or a regression.
+  uncertain_handling: >-
+    An `uncertain` label is not a pass. Resolve it by discussion or a second
+    blinded reviewer before it enters a rate; the source run resolved two by hand.

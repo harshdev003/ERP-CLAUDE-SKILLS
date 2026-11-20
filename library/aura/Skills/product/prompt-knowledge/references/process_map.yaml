@@ -1,0 +1,238 @@
+# The nine-stage prompt-engineering process, mapped onto the loop.
+#
+# The process is human-led and predates the loop. Absorbing it means saying, for
+# every stage, whether a leg does it, a leg assists a human at it, or a human does
+# it and which gate that human sits behind. The point is the third column: a stage
+# with no leg and no named gate is a stage that quietly stops happening the week
+# nobody remembers it.
+#
+# Mode:
+#   automated  a leg does it; a human reads the output
+#   assisted   a leg produces the draft or the evidence and a human decides
+#   human      judgment the process assigns to a person, which no leg may assume
+#
+# Source: Procedures/Product/Prompt Engineering Process Document.
+# Human mirror: Learnings/Loop/Aurie Conversations - The nine stages.
+
+process_version: "1.0.0"
+mirrors: "Learnings/Loop/Aurie Conversations - The nine stages"
+source: "Procedures/Product/Prompt Engineering Process Document (35e75e23af20813485e5f9cb7f2bdf48)"
+
+stages:
+
+  stage_1:
+    name: "Product alignment"
+    mode: assisted
+    legs: [digest-conversation-signals, record-prompt-candidates, share-prompt-candidate]
+    gate: "Gate 1"
+    what_the_loop_does: >-
+      The digest ranks defects from what users actually said and the recorder
+      writes the candidate with its defect, evidence and named risk. The candidate
+      row IS the written alignment the stage asks for, and the Slack thread is
+      where it is agreed.
+    what_stays_human: >-
+      Whether this is the right thing to change at all. The loop can rank a defect
+      by how many independent sources name it; it cannot decide the product wants
+      it fixed.
+    note: >-
+      The process warns that following a PRD written entirely by others creates
+      risk. The loop's version of that risk is a candidate whose diagnosis nobody
+      read before approving it, which is what Gate 1 exists to prevent.
+
+  stage_2:
+    name: "Roadmap generation"
+    mode: human
+    legs: []
+    gate: "Gate 1"
+    what_the_loop_does: >-
+      Nothing, by design. The loop ships one change at a time against one defect;
+      a phased roadmap is what a multi-week prompt upgrade needs, and that is the
+      declared exception to the weekly cadence rather than the ordinary case.
+    what_stays_human: >-
+      Sequencing by architectural dependency - identity informs pacing, pacing
+      informs tier logic, tier logic informs guardrails, guardrails affect tone -
+      and defining the upgrade philosophy before writing. `prompt_knowledge.py
+      brief` prints that dependency order and which layer each section belongs to;
+      it does not decide the sequence.
+    note: >-
+      When a candidate turns out to need a roadmap, that is the signal it is not a
+      weekly-cadence change. Say so at Gate 1 rather than shipping the first phase
+      and discovering the rest.
+
+  stage_3:
+    name: "Phased implementation"
+    mode: assisted
+    legs: [draft-prompt-candidate]
+    gate: "Gate 2"
+    what_the_loop_does: >-
+      One change, one labelled Braintrust commit, so a problem traces to the change
+      that introduced it and reverts without losing unrelated work.
+    what_stays_human: >-
+      Final editorial authority over every word. The process is explicit that AI
+      silently compresses language, omits nuance and introduces unrequested
+      changes, and that every generated revision is a draft requiring human
+      review. The loop does not relax that: the diff is read at Gate 2.
+    note: >-
+      "Discussion before generation" survives as the rule that a candidate carries
+      a diagnosis and a named risk BEFORE it is drafted. A draft with neither is
+      the loop's version of asking for markdown before thinking.
+
+  stage_4:
+    name: "Failure diagnosis and repair"
+    mode: human
+    legs: [digest-conversation-signals, prompt-knowledge]
+    gate: "Gate 1"
+    what_the_loop_does: >-
+      Supplies the material: the ranked defect, the evidence rows, the deployed
+      configuration, and what has already been tried. `check` refuses a candidate
+      that restates a settled question before anyone spends a week on it.
+    what_stays_human: >-
+      Local versus structural. This is the hardest diagnostic skill in the process
+      and the one the loop most conspicuously cannot do: AI fixes the instance it
+      is shown and is unreliable at telling whether that instance is a symptom.
+      Every candidate carries a Diagnosis field for exactly this reason, and
+      `not yet diagnosed` is a refusal to share, not a default.
+    note: >-
+      The Diagnosis field read across weeks is what makes patch accumulation
+      visible - several local fixes that each looked reasonable and collectively
+      degraded coherence.
+
+  stage_5:
+    name: "Overriding model training"
+    mode: human
+    legs: [prompt-knowledge]
+    gate: "Gate 2"
+    what_the_loop_does: >-
+      Records the deployed model and its configuration, and flags drift against
+      it, so "the model changed underneath an untouched prompt" is answerable.
+    what_stays_human: >-
+      Model-fit calibration. Selective permissiveness, recovery modes and positive
+      examples are judgments about a specific model's training defaults. A prompt
+      written for one model does not transfer cleanly to another even within a
+      family, and no leg may assume it does.
+    note: >-
+      Register REG-4 is this stage in executable form: a behaviour change with no
+      prompt change is a model or reasoning change until proven otherwise.
+
+  stage_6:
+    name: "Multi-turn testing"
+    mode: automated
+    legs: [evaluate-prompt-candidate]
+    gate: "Gate 2"
+    what_the_loop_does: >-
+      Runs the drive harnesses in eng:qa-conversation - at least three drives per
+      arm for any comparative claim, because drive variance is the larger term.
+      The class picks whether drives run at all.
+    what_stays_human: >-
+      Reading the transcripts. Automated scores support evaluation and do not
+      replace them: every substantive finding in this rubric's history came from
+      reading the material rather than the numbers, which is why a scorecard
+      arrives with its generated outputs or does not arrive.
+    note: >-
+      Stages 6, 7 and 8 are iterative in the process document, not a fixed
+      sequence. The loop keeps that: Gate 2 can send a candidate back to draft as
+      many times as it takes.
+
+  stage_7:
+    name: "Single-turn testing in Braintrust"
+    mode: automated
+    legs: [evaluate-prompt-candidate]
+    gate: "Gate 2"
+    what_the_loop_does: >-
+      Guardrail cases, safe sets and naturalistic examples are the Safety Suite and
+      the locked rubric datasets. Which of them run is set by the change class, not
+      chosen per candidate - see the release contract in eng:qa-conversation.
+    what_stays_human: >-
+      Whether a failing row is a prompt defect or a stale expectation. The process
+      is explicit that an apparent failure is checked against current product
+      intent before the prompt is changed.
+    note: >-
+      Thirty-one of the fifty-two rubric rows have not been human-reviewed. A
+      parsed row is reportable evidence and cannot fail a release until someone
+      has read it.
+
+  stage_8:
+    name: "Human testing and final review"
+    mode: human
+    legs: [share-prompt-candidate, harvest-prompt-decisions]
+    gate: "Gate 2"
+    what_the_loop_does: >-
+      Carries the evidence into the channel and reads the reply. It posts the
+      brief; it does not write the verdict.
+    what_stays_human: >-
+      Clinical and relational quality assessment - whether the conversation felt
+      like Aurie. The process calls this felt coherence and is explicit that
+      technical correctness is necessary and not sufficient. No score substitutes.
+    note: >-
+      Ask testers for examples of what is NOT working. A scored failure with no
+      example is hard to diagnose; the loop's equivalent is a Gate 2 reply that
+      says "ask for changes" without saying which.
+
+  stage_9:
+    name: "Publication and monitoring"
+    mode: assisted
+    legs: [ship-prompt-candidate, learn-prompt-candidate]
+    gate: "Gate 2"
+    what_the_loop_does: >-
+      Ships by class - safety and correctness to everyone, behavioural and
+      model/config as an experiment arm - then measures and writes the verdict back
+      to the row, the thread and the register. Rollback reverts both the IS commit
+      and the Braintrust [Production] prompt.
+    what_stays_human: >-
+      Calling a rollback, and deciding an experiment is over. The loop asks for an
+      experiment at the start and reads the verdict at the end; it never decides a
+      test has run long enough.
+    note: >-
+      Stage 9's propagation step - improvements to guardrail or critical-rules
+      logic that belong in sibling prompts - becomes its own candidate row rather
+      than being bundled into the current release. quickProcessing and
+      quickProcessingSentinel are the usual pair.
+
+# Judgment the process document assigns to a human. No leg may quietly assume any
+# of these, and a leg that appears to perform one is reporting, not deciding.
+human_judgment:
+
+  architectural_judgment:
+    stage: "stage_4"
+    what: "Local versus structural diagnosis, and the structural cause behind repeated local failures."
+    why_not_automated: >-
+      AI fixes the instance it is shown and is unreliable at identifying whether
+      that instance is a symptom of a deeper problem. The failure mode is patch
+      accumulation, which is invisible in any one change and only visible across
+      weeks of them.
+    where_it_sits: "Gate 1 — the Diagnosis field, which `share-prompt-candidate` refuses to post without."
+
+  final_editorial_authority:
+    stage: "stage_3"
+    what: "Every word of the diff."
+    why_not_automated: >-
+      Generated revisions silently compress language, omit nuance, alter phrasing
+      and introduce changes nobody asked for. Every generated revision is a draft.
+    where_it_sits: "Gate 2 — the diff summary in the candidate's thread."
+
+  clinical_and_relational_quality:
+    stage: "stage_8"
+    what: "Whether the conversation felt like Aurie: warm, steady, perceptive, human."
+    why_not_automated: >-
+      Felt coherence. Technical correctness is necessary and not sufficient, and
+      the voice rows ceiling at 4.90 to 5.00 across six consecutive measurements -
+      they cannot separate arms on the thing this judgment is about.
+    where_it_sits: "Gate 2 — a person reads transcripts, not only the scorecard."
+
+  model_fit_calibration:
+    stage: "stage_5"
+    what: "Whether the prompt is calibrated to the model it actually runs on."
+    why_not_automated: >-
+      A prompt written for one model does not transfer cleanly to another even
+      within a family. The loop can detect that the model moved; it cannot judge
+      what the new model's defaults do to this prompt's intent.
+    where_it_sits: "Gate 1 — the change class. A model move makes it model/config, not behavioural."
+
+# The process document's own note on pace, kept because it is the thing most
+# likely to be lost when a weekly target is written down next to it.
+pace: >-
+  The process is intentionally deliberate. A complex conversational upgrade may
+  take two weeks or more, and that slowness is the process working correctly
+  rather than inefficiency. The loop's weekly target is for the ordinary case - a
+  named defect, a scoped change, a measured result. It is not a licence to
+  accelerate past diagnosis.

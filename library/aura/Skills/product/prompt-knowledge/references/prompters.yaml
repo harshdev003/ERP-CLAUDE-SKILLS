@@ -1,0 +1,205 @@
+# What the propose leg reads before it drafts a change, per prompter.
+#
+# Deliberately NOT a copy of the prompts. The prompt bodies run to 1500 lines and
+# this loop changes them weekly; a section list copied in here would be wrong
+# within a fortnight and would be trusted anyway. The section map is read from the
+# live `.txt` at run time and annotated with what each section is load-bearing
+# for. Only what the prompt file cannot tell you is recorded here.
+#
+# The configuration snapshot IS recorded, because its value is the comparison: a
+# behaviour change with no prompt change is a model or reasoning change until
+# proven otherwise (register REG-4), and that question is only answerable against
+# a previously recorded value. `config-drift` compares this against src/config.js.
+
+knowledge_version: "1.0.0"
+config_snapshot_taken: "2026-09-22"
+config_source: "IntelligenceService src/config.js - the `prompt` block"
+prompt_bodies: "IntelligenceService src/prompters/<name>.txt"
+
+# The order matters and is the process document's: identity informs pacing,
+# pacing informs tier logic, tier logic informs guardrails, guardrails affect
+# tone. A change to a later layer cannot fix a defect that originates in an
+# earlier one, which is the usual shape of a structural diagnosis.
+dependency_order: [identity, pacing, tier_logic, guardrails, tone]
+
+# `tools` is a sixth layer and deliberately outside that order: a tool is a
+# capability the prompt can reach for, not a stage of the conversation, and a
+# candidate that changes tool wording is usually proposing a code change too.
+
+# Section-heading keywords to layer. Matched case-insensitively against the
+# headings read from the live prompt file, longest match first.
+section_layers:
+  role: identity
+  identity: identity
+  interaction mode: identity
+  welcome: identity
+  aurie context: identity
+  handler role: identity
+  pacing: pacing
+  rhythm: pacing
+  arc: pacing
+  progression: pacing
+  light moments: pacing
+  friendship mode: pacing
+  tier: tier_logic
+  tier progression: tier_logic
+  coaching mode: tier_logic
+  re-entry: tier_logic
+  combination rules: tier_logic
+  guardrail: guardrails
+  safety: guardrails
+  critical constraint: guardrails
+  critical rule: guardrails
+  crisis: guardrails
+  category: guardrails
+  decision rules: guardrails
+  scope of assistance: guardrails
+  language boundaries: tone
+  communication style: tone
+  voice: tone
+  naturalness: tone
+  attunement: tone
+  tone: tone
+  wording: tone
+  tool usage: tools
+  tool: tools
+
+prompters:
+
+  coach:
+    status: live
+    serves: [chat, voice]
+    role: >-
+      The main conversation prompter. It serves BOTH chat and voice - the `chat`
+      prompter is near-dormant in production - so a coach change reaches every
+      surface and cannot be reasoned about as chat-only.
+    prompt_file: "src/prompters/coach.txt"
+    braintrust_project: conversation
+    config: {model: chat-latest, openaiAPI: responses, reasoningEffort: null, verbosity: null}
+    tools: [findSimilarInMemory, handoffToGuardrails, recommendTracks, searchTracks, storeInMemory]
+    notes: >-
+      The only prompter with the full tier ladder and the handoff to the guardrail
+      handler. Every Safety Suite gate row was written against this prompt. It
+      carries no reasoningEffort or verbosity setting, which means it takes the
+      model defaults - a real difference from its siblings and a thing to check
+      before attributing a pacing change to wording.
+
+  companion:
+    status: live
+    serves: [chat]
+    role: "A lighter conversational mode with no tier ladder and a smaller tool set."
+    prompt_file: "src/prompters/companion.txt"
+    braintrust_project: conversation
+    config: {model: gpt-5.4, openaiAPI: responses, reasoningEffort: low, verbosity: medium}
+    tools: [findSimilarInMemory, storeInMemory]
+    notes: >-
+      116 lines against coach's 1039. Its guardrail section is two subsections, not
+      a ladder, so a safety candidate written for coach does not transfer.
+
+  chat:
+    status: near_dormant
+    serves: [chat]
+    role: >-
+      A CBT/ACT-structured conversation prompter that production does not route to
+      - chat traffic runs on `coach`. Recorded as near-dormant rather than dropped,
+      because a defect attributed to it is almost always a coach defect.
+    prompt_file: "src/prompters/chat.txt"
+    braintrust_project: conversation
+    config: {model: gpt-5.4, openaiAPI: responses, reasoningEffort: low, verbosity: medium}
+    tools: [findSimilarInMemory, recommendTracks, storeInMemory]
+    notes: >-
+      Before proposing a change here, confirm the traffic exists. Gate chat-versus-
+      voice behaviour on the voice handlers' flags, never on prompterName.
+
+  onboarding:
+    status: live
+    serves: [chat]
+    role: "First-run conversation. Ends with a tool call rather than a natural close."
+    prompt_file: "src/prompters/onboarding.txt"
+    braintrust_project: onboarding
+    config: {model: gpt-5.2, openaiAPI: responses, reasoningEffort: none, verbosity: null}
+    tools: [endOnboarding]
+    notes: >-
+      reasoningEffort `none` and a two-versions-old model. Both are deliberate for
+      latency on the first screen a user ever sees; treat a change to either as
+      model/config class with its own evidence.
+
+  quickProcessing:
+    status: live
+    serves: [chat]
+    role: "The Quick Processing arc - a short, structured reset with its own tier rules."
+    prompt_file: "src/prompters/quickProcessing.txt"
+    braintrust_project: conversation
+    config: {model: gpt-5.4, openaiAPI: responses, reasoningEffort: low, verbosity: medium}
+    tools: [createInsightCard, findSimilarInMemory, handoffToGuardrails, storeInMemory]
+    notes: >-
+      1501 lines, and the longest prompt in the service. Its arc-completion states
+      and progression rules are what a pacing candidate must be read against.
+
+  quickProcessingSentinel:
+    status: live
+    serves: [chat]
+    role: "The sentinel variant of the QP arc."
+    prompt_file: "src/prompters/quickProcessingSentinel.txt"
+    braintrust_project: conversation
+    config: {model: gpt-5.4, openaiAPI: responses, reasoningEffort: low, verbosity: medium}
+    tools: [findSimilarInMemory, handoffToGuardrails, storeInMemory]
+    notes: >-
+      Tracks quickProcessing closely - 1338 lines against 1501, the same section
+      spine. A change to one is a candidate to change both, and the register
+      records that they diverged once by accident.
+
+  quickProcessingDone:
+    status: live
+    serves: [chat]
+    role: "Renders the conversation-done screen: header, old/new lines, something to remember."
+    prompt_file: "src/prompters/quickProcessingDone.txt"
+    braintrust_project: conversation
+    config: {model: gpt-5.6-terra, openaiAPI: responses, reasoningEffort: low, verbosity: null}
+    tools: []
+    notes: >-
+      A renderer, not a conversation: its output is a fixed structure and its
+      defects are correctness-class more often than behavioural. The only prompter
+      here on gpt-5.6-terra. It writes the `{quote, notes, affirmation}` payload to
+      conversation.insight.
+
+  guardrailsHandler:
+    status: live
+    serves: [chat, voice]
+    role: >-
+      The in-conversation handler the coach hands off to when a guardrail fires.
+      Owns the crisis and boundary response, so it is safety class by default.
+    prompt_file: "src/prompters/guardrailsHandler.txt"
+    braintrust_project: conversation
+    config: {model: gpt-5.4, openaiAPI: responses, reasoningEffort: low, verbosity: medium}
+    tools: []
+    notes: >-
+      Its `showCrisisModal` tool is COMMENTED OUT in src/config.js. Any candidate
+      that assumes the modal fires is proposing a code change as well as a prompt
+      change. The handover flagged the handling paths as needing a relational
+      rewrite and parked it on the prompt-engineer seat.
+
+  userGuardrail:
+    status: live
+    serves: [chat, voice]
+    role: "Multi-label classifier over the USER's message. Emits category codes, not prose."
+    prompt_file: "src/prompters/userGuardrail.txt"
+    braintrust_project: guardrail
+    config: {model: gpt-5.4-nano, openaiAPI: responses, reasoningEffort: null, verbosity: null}
+    tools: []
+    notes: >-
+      102 lines, on a nano model, in its own Braintrust project. A classifier
+      candidate is judged on label agreement against controls, not on the
+      conversation rubric - none of the locked datasets apply.
+
+  assistantGuardrail:
+    status: live
+    serves: [chat, voice]
+    role: "The same shape, over Aurie's own response."
+    prompt_file: "src/prompters/assistantGuardrail.txt"
+    braintrust_project: guardrail
+    config: {model: gpt-5.4-nano, openaiAPI: responses, reasoningEffort: null, verbosity: null}
+    tools: []
+    notes: >-
+      Changing a category definition here changes what the memory-guardrail alert
+      channel fires on; check the alert base rate before and after.

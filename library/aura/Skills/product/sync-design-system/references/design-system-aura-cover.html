@@ -1,0 +1,35 @@
+<!-- @dsCard height=288 -->
+<style>
+  html, body { margin: 0; height: 288px; background: var(--canvas); overflow: hidden; }
+  .cover { position: relative; width: 960px; height: 288px; }
+  .violet { fill: var(--accentViolet); }
+  .rose { fill: var(--accentRose); }
+  .mint { fill: var(--accentMint); }
+  .peach { fill: var(--accentPeach); }
+  .glass { fill: var(--surfaceGlass); }
+  .text { position: absolute; left: 48px; bottom: 44px; width: 420px; }
+  .name { font-family: var(--font-serif); font-size: 120px; line-height: .92; color: var(--textPrimary); margin: 0; }
+  .tag { font-family: var(--font-sans); font-size: 14px; color: var(--textSecondary); margin: 12px 0 0; }
+  svg { position: absolute; left: 480px; top: 0; }
+</style>
+<div class="cover">
+  <svg width="480" height="288" viewBox="0 0 480 288" aria-hidden="true">
+    <!--
+      blocks: accentViolet slab 168x232 (radius-32), accentRose disc 136, accentMint pill 152x64, accentPeach disc 64
+      arrangement: one tall slab bleeding off the top, satellites stepping down to the right, glass rings between them
+      pattern: discs and pills from the radius scale, because the system is soft, calm and rounded ("peaceful, comforting")
+      steps and radii: space-24 / space-32 gaps, radius-32 on the slab, pills and discs at half their short side
+    -->
+    <rect class="violet" x="40" y="-40" width="168" height="232" rx="32" />
+    <circle class="rose" cx="300" cy="96" r="68" />
+    <rect class="mint" x="232" y="200" width="152" height="64" rx="32" />
+    <circle class="peach" cx="424" cy="216" r="32" />
+    <circle class="glass" cx="404" cy="56" r="24" />
+    <circle class="glass" cx="436" cy="112" r="12" />
+    <circle class="glass" cx="96" cy="236" r="16" />
+  </svg>
+  <div class="text">
+    <p class="name">Aura</p>
+    <p class="tag">Content that adapts to you, not the other way around.</p>
+  </div>
+</div>

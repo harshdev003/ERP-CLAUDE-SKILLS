@@ -1,0 +1,9 @@
+{
+  "name": "data",
+  "version": "3.108.1",
+  "description": "Data team plugin \u2014 skills and commands for analytics, ML pipelines, and evaluation workflows at AuraHealth",
+  "author": {
+    "name": "AuraHealth Data",
+    "email": "<redacted-email>"
+  }
+}

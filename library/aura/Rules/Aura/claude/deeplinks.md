@@ -1,0 +1,140 @@
+---
+paths:
+  - "app.js"
+  - "src/components/DeeplinkHandler.js"
+  - "src/models/deeplink.js"
+  - "src/logic/Iterable.js"
+  - "src/logic/ReferralLinkHelper.js"
+  - "src/events/ReminderPushController.js"
+  - "test/unit/deeplink.test.js"
+  - "test/unit/DeeplinkHandler.test.js"
+---
+
+# Deep links
+
+## The rule
+
+**Every deep link goes through `DeeplinkHandler`.** That means every way a link,
+push or notification can open something in the app:
+- universal links and the `aurahealth://` scheme, including the link that
+  cold-launches Android
+- Branch, OneSignal push, Iterable push
+- local reminders and notifications, Sendbird message notifications
+- payment return links
+
+Each one is received by `src/components/DeeplinkHandler.js` and converted by a
+pure parser in `src/models/deeplink.js` into one shape:
+
+```js
+{ destination, objectId, params }
+```
+
+and opened by one router, `handleDeeplinkIntent(destination, objectId, params)`.
+
+Never add a link listener, a URL parse or navigation for a link anywhere else:
+not in `app.js`, a store, a screen or a helper. Two paths for one destination is
+exactly what this replaced. Before it, push, Iterable, Branch and universal links
+each parsed and navigated their own way, and the same email link behaved
+differently depending on where it was tapped (ENGMOB-3228, ENGMOB-3247).
+
+Native code only forwards. `AppDelegate.m` hands URLs to Branch or
+`RCTLinkingManager` and decides nothing.
+
+## Who owns what
+
+| Layer | Owns | Never |
+|---|---|---|
+| `src/models/deeplink.js` | Pure parsers, one per source (`universalDeeplinkToIntent`, `universalWebLinkToIntent`, `paymentReturnLinkToIntent`, `iterablePushToIntent`, `branchLinkToIntent`, `pushNotificationToIntent`), plus `branchLinkToOnboarding` for Branch attribution and onboarding as plain data | Imports stores or `Actions`, navigates, reads app state, has side effects |
+| `src/components/DeeplinkHandler.js` | Every link listener, the router, parking, id checks, the paywall, and the side effects `branchLinkToOnboarding` describes (analytics, identify, AsyncStorage, toasts) | Renders anything (it returns `null`) |
+| `app.js` | Renders `<DeeplinkHandler>` once, first in `render`, so it stays mounted through loading screens. Passes `userId`, `profile`, `dashboardRef`, `experimentsLoaded` and `branchEnabled`. Draws the login-onboarding and referral modals from the state `onLoginOnboarding` sets. Calls `ref.openPending()` when the dashboard is up and `ref.clearPending()` on logout | Parses a link or navigates for one |
+
+A model never navigates. Routing belongs to the component.
+
+## Adding a destination
+
+1. Register the screen in `Dashboard.js` (`navigation.md`, "Adding a new screen").
+2. Add a `case` to `routeDestination` in `DeeplinkHandler.js`, next to its
+   neighbours. Read link values from `params`. Fall back to the value the
+   destination has always reported (`sentFrom || 'notifications'`), so push
+   analytics don't shift.
+3. If it opens nothing without an id, add it to `NEEDS_OBJECT_ID`. A link missing
+   the id is then dropped rather than parked.
+4. If it reads an id or slug from `params`, add that key to `PATH_ID_PARAMS`, so it
+   gets the same path check as `objectId`.
+5. If it finishes a purchase rather than opening a screen, add it to
+   `PAYMENT_RETURN_DESTINATIONS`. Add it to `IMMEDIATE_DESTINATIONS` too only if it
+   must run before a user and the dashboard exist. Something that only Dashboard
+   can show must wait.
+6. Map it in every parser whose source can carry it, and add tests to both files.
+
+## Adding a source
+
+1. Write `<source>ToIntent(input)` in `src/models/deeplink.js`. It returns the
+   intent, or `null` when the input isn't its shape. It's pure, with JSDoc.
+2. Register the listener in a `useEffect` in `DeeplinkHandler`, with cleanup, and
+   call `routeIntent(router, intent)`. Effects read props through refs. Keep their
+   deps stable so nothing re-subscribes.
+3. Test the parser in `test/unit/deeplink.test.js`. Test the listener in
+   `test/unit/DeeplinkHandler.test.js` by capturing the mocked listener and
+   firing it.
+
+## Parking
+
+A link that arrives before there is a signed-in user **and** a mounted dashboard
+waits in one slot. That covers being signed out, and a cold start still restoring
+auth or mounting the dashboard.
+- **The last tap wins.**
+- **It opens on any of these:** `userId` arriving, `ref.openPending()` (from
+  `onDashboardLoaded`, and from `handleBackgroundNotification`, which Dashboard
+  calls on every mount), or the app returning to the foreground.
+- **It opens once.** The slot is cleared before it runs.
+- **`ref.clearPending()` runs on logout** when someone was signed in. It also drops
+  a OneSignal tap still held for `experimentsLoaded`, so a link never opens for
+  the next account.
+- **Only `IMMEDIATE_DESTINATIONS` skip the wait.** Those are the Stripe and Aurie
+  paywall returns, whose paywall can be open during onboarding.
+
+Don't keep a link anywhere else: not `startupNavigateTo`, not app state, not a
+store.
+
+## Validation and privacy
+
+- **Link labels** (`utm_*`, `trackType`, Branch `~feature`) pass `toSafeLabel`
+  (`[A-Za-z0-9_.-]{1,64}`) before they reach analytics or `sentFrom`.
+- **Link booleans** go through `toBoolean`, so `"false"` stays false. Screens test
+  `autoReserve` and similar flags for truthiness.
+- **Ids and slugs** that reach a Firebase path are checked once, at the router's
+  entry, for every source. `/ . # $ [ ]` are refused, as is anything longer than
+  768 characters, Firebase's key limit. Don't add a per-case check instead.
+- **Analytics and `bugsnag.report` get named fields only.** Never send a whole
+  `params`, intent or notification, and never a full URL (a query can carry a token
+  or an email). See `security-review.md` A1.
+- **The paywall goes through `canPlayTrack(trackType)`** for every source. It opens
+  the paywall itself when it returns false.
+
+## Testing on the simulator
+
+The `sim-test` skill builds and installs the app. Then fire one link per source,
+in three states: warm, cold (`xcrun simctl terminate booted com.AuraMobile` first),
+and signed out followed by a login.
+- **Universal link:**
+  `xcrun simctl openurl booted "https://www.aurahealth.io/deeplink/destination/<d>/objectId/<id>?utm_source=…"`.
+  If it opens Safari, tap the link from Notes instead.
+- **Payment return:** `xcrun simctl openurl booted "aurahealth://stripe-redirect/cancel"`
+- **Push:** `xcrun simctl push booted com.AuraMobile payload.apns`, then tap the
+  banner with the app in the background.
+  - OneSignal puts the data under `custom.a`.
+  - Iterable puts it under `itbl.defaultAction` (`type: openUrl`).
+- **Branch:** a real test link (`aura.test-app.link/…`) with the right `~feature`.
+  A link without `source` must still show the correct onboarding screen.
+
+## Don't
+
+- Don't navigate for a link outside `DeeplinkHandler`, or parse one outside
+  `src/models/deeplink.js`.
+- Don't import stores, `Actions` or React into `src/models/deeplink.js`.
+- Don't add a second parking mechanism, or hold a link in `app.js` state.
+- Don't let a destination's `case` skip the router's entry checks by navigating
+  from a listener directly.
+- Don't send link params, URLs or notification payloads whole to analytics or
+  Bugsnag.

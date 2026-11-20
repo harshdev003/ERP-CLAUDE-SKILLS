@@ -1,0 +1,55 @@
+[
+  {
+    "type": "message",
+    "user": "UGWLCQ8TC",
+    "bot_id": "BGXNL41F1",
+    "ts": "1790287583.265029",
+    "thread_ts": "1790287583.265029",
+    "text": "New PMF Survey Response [respondent details removed]"
+  },
+  {
+    "type": "message",
+    "user": "U0ATMPESR37",
+    "bot_id": "B0ATUPK38P6",
+    "ts": "1790292294.226649",
+    "thread_ts": "1790287583.265029",
+    "text": "[Aura AI PMF card, body removed]"
+  },
+  {
+    "type": "message",
+    "user": "U1BCYETM2",
+    "ts": "1790294460.621019",
+    "thread_ts": "1790287583.265029",
+    "text": "<@U0AV303B4VB> is this a bug? it shouldn't ask for PMF survey within 2-3 days of use"
+  },
+  {
+    "type": "message",
+    "user": "U0AV303B4VB",
+    "bot_id": "B0B05979QU9",
+    "ts": "1790294464.572959",
+    "thread_ts": "1790287583.265029",
+    "text": "I’ll check the user timeline and survey-trigger logic to confirm whether this is a bug."
+  },
+  {
+    "type": "message",
+    "user": "U1BCYETM2",
+    "ts": "1790294465.342649",
+    "thread_ts": "1790287583.265029",
+    "text": "cc <@U0ATMPESR37> ^"
+  },
+  {
+    "type": "message",
+    "user": "U0AV303B4VB",
+    "bot_id": "B0B05979QU9",
+    "ts": "1790294577.185909",
+    "thread_ts": "1790287583.265029",
+    "text": "<@U1BCYETM2> **Yes—relative to the intended 2–3 day minimum, this is a gating bug.** The current implementation does **n"
+  },
+  {
+    "type": "message",
+    "user": "U1BCYETM2",
+    "ts": "1790296036.347769",
+    "thread_ts": "1790287583.265029",
+    "text": "<@UFYS6JYH5> <@U01CPPQ2MNJ> would it be possible to create a card to update PMF survey to 3 separate days of conversations please?\nThank you."
+  }
+]

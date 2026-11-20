@@ -1,0 +1,43 @@
+name: Memory length
+
+# Fails a PR that pushes CLAUDE.md / AGENTS.md past the harness's context limit,
+# or grows one that is already inside the warn band.
+#
+# An agent-memory file is loaded in full at the start of every session. Past the
+# limit the harness stops loading it and says so once, in the session that
+# crosses. Nothing in the repo fails and no output changes shape — every later
+# session just runs without the project memory everyone assumes is in context.
+# The file does not break; it quietly stops being memory. That is why this needs
+# a gate rather than a convention.
+#
+# Three bands: free below the warn threshold, no-growth inside it, fail at the
+# limit. The middle band is what holds the line — a bare "must be under N" check
+# passes at 149,999 and fails on the next paragraph, turning an extraction into
+# an emergency. See scripts/check-memory-length.py.
+
+on:
+  pull_request:
+    paths:
+      - 'CLAUDE.md'
+      - 'AGENTS.md'
+      - '**/CLAUDE.md'
+      - '**/AGENTS.md'
+      - 'scripts/check-memory-length.py'
+      - '.github/workflows/memory-length.yml'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0        # need the base branch to diff against
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check agent-memory character budget
+        run: |
+          python3 scripts/check-memory-length.py --base "origin/${{ github.base_ref }}"

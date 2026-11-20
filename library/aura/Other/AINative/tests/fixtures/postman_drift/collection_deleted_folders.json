@@ -1,0 +1,23 @@
+{
+  "_comment": "Folder shapes for the fully-[DELETED] folder report: one not yet renamed, one renamed, one nested inside a live folder, one mixed, and an empty folder. Placeholders only.",
+  "info": {"name": "Aura Services"},
+  "item": [
+    {"name": "Archive", "item": [
+      {"name": "[DELETED] Create", "request": {"method": "POST", "url": {"raw": "{{default.host}}/coaching/archive"}}},
+      {"name": "Old", "item": [
+        {"name": "[DELETED] List", "request": {"method": "POST", "url": {"raw": "{{default.host}}/coaching/archive/list"}}}
+      ]}
+    ]},
+    {"name": "[DELETED] Legacy", "item": [
+      {"name": "[DELETED] Get", "request": {"method": "GET", "url": {"raw": "{{default.host}}/coaching/legacy"}}}
+    ]},
+    {"name": "Notes", "item": [
+      {"name": "Create", "request": {"method": "POST", "url": {"raw": "{{default.host}}/coaching/notes"}}},
+      {"name": "[DELETED] Archive", "request": {"method": "POST", "url": {"raw": "{{default.host}}/coaching/notes/archive"}}},
+      {"name": "Drafts", "item": [
+        {"name": "[DELETED] List", "request": {"method": "POST", "url": {"raw": "{{default.host}}/coaching/notes/drafts"}}}
+      ]}
+    ]},
+    {"name": "Empty", "item": []}
+  ]
+}

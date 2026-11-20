@@ -1,0 +1,8 @@
+# monitor-response-message-drops Python deps
+# Install with:
+#   python3 -m pip install --user -r ${CLAUDE_PLUGIN_ROOT}/skills/monitor-response-message-drops/scripts/requirements.txt
+# (Use `python3 -m pip` not bare `pip` — on macOS they often point to different Pythons.)
+#
+# The only dependency is the Cloud Logging client used by gcp.py (the byte-identical
+# copy of investigate-gcp-logs' canonical). Everything else is stdlib.
+google-cloud-logging>=3.10.0

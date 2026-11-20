@@ -1,0 +1,91 @@
+---
+description: Architecture conventions for the Aura React Native app
+alwaysApply: true
+---
+
+# Architecture
+
+## Related Rules
+
+- `state-management-reflux.mdc` for store + actions patterns.
+- `navigation.mdc` for the Reflux-driven router and screen dispatch.
+- `ui-design-system.mdc` for theme/style ownership.
+
+## Stack
+
+- React Native 0.87.1, React 19, **JavaScript only** (no TypeScript in `src/`).
+- State: **Reflux** (`reflux@6.4.1`) with `seamless-immutable` for collections.
+- Navigation: custom Reflux-driven router — `Actions.navigateTo` dispatched by `src/screens/Dashboard.js`. `@react-navigation` v6 is in deps but used only in the community / inset-modal subtree. See `navigation.mdc`.
+- Networking: monolithic axios-based `src/api.js` (the `Api` object — imported as `import Api from '../api'`). `src/requests/` holds higher-level wrappers (currently sparse). Some legacy stores still use raw `fetch` — prefer `Api` for new endpoints.
+- Analytics & error reporting: Mixpanel, Bugsnag, AppsFlyer, Iterable, Firebase — all funnelled through `src/logic/Trackings.js`.
+- i18n: `i18next` + `react-i18next`.
+
+## Layer Map
+
+```
+Aura/
+├── app.js                 # App root — bootstraps stores, listens to NavigationController, sets up Linking + Branch + push
+├── index.{ios,android}.js # RN entry points
+├── src/
+│   ├── screens/
+│   │   ├── Dashboard.js   # Screen dispatcher — maps Actions.navigateTo view-keys to components (see navigation.mdc)
+│   │   └── ...            # One file per screen (e.g. FamilyPlanOnboarding.js)
+│   ├── components/        # Reusable UI components
+│   ├── reuseableUI/       # Older shared UI primitives — prefer src/components/ for new work
+│   ├── stores/            # Reflux stores ({Domain}Controller.js or {Domain}Store.js)
+│   ├── events/            # Cross-cutting Reflux event bridges (NavigationController.js, etc.)
+│   ├── actions.js         # Single global Reflux Actions object
+│   ├── logic/             # Side-effect modules + helpers (Trackings, APIManager, ...)
+│   ├── api.js             # Monolithic Api object (axios) — imported by stores as `import Api from '../api'`
+│   ├── requests/          # Thin per-domain request wrappers (currently sparse)
+│   ├── services/          # Cross-cutting service modules
+│   ├── styles/            # Theme system (see ui-design-system.mdc)
+│   ├── data/              # Static data + enums (enums.js is the canonical enum file)
+│   ├── localization/      # i18next translations (en, de, es, fr, ja, ko, pt_BR)
+│   ├── hooks/             # Custom React hooks
+│   ├── context/           # React contexts
+│   ├── providers/         # Context providers
+│   ├── lib/               # Vendored / third-party adapters (firebase, etc.)
+│   └── ...
+├── ios/                   # Xcode workspace: Aura.xcworkspace
+├── android/               # Gradle project
+└── apple/                 # iOS Widget extension + bridging
+```
+
+## Layer Responsibilities
+
+| Layer | Location | Responsibility |
+|-------|----------|----------------|
+| Screens | `src/screens/` | Top-level UI containers; subscribe to stores; dispatch Actions; navigation goes through `Actions.navigateTo` (dispatched by `Dashboard.js`) |
+| Components | `src/components/`, `src/reuseableUI/` | Pure(ish) UI; receive data via props |
+| Stores | `src/stores/` | Reflux state holders; call APIs; trigger events |
+| Actions | `src/actions.js` | Centralized Reflux Actions; **never create per-feature Actions modules** |
+| Logic / Services | `src/logic/`, `src/services/` | Side-effect modules (analytics, audio, downloads, helpers) |
+| API | `src/api.js`, `src/requests/` | Monolithic `Api` object (axios) + thin per-domain request wrappers |
+| Styles | `src/styles/` | Theme objects per palette + global tokens (fonts, colors, dimensions, spaces, gradients) |
+| Localization | `src/localization/<locale>/` | i18next JSON resource bundles |
+
+## Where to Put New Code
+
+- **New screen** → `src/screens/<ScreenName>.js` (or sub-folder for grouped screens like `src/screens/familyPlan/`); register the view-key in the `src/screens/Dashboard.js` dispatcher (NOT in `app.js`).
+- **New reusable UI** → `src/components/`. Don't add to `reuseableUI/` unless you're extending an existing primitive there.
+- **New global state** → new Reflux store in `src/stores/`, listen to existing Actions or extend `src/actions.js`.
+- **New API endpoint** → extend `src/api.js` (preferred — add a method to the `Api` object) or add a wrapper in `src/requests/` for new domains. Call from a store, not directly from a screen.
+- **New theme value** → `src/styles/globals/<token>.js`, then expose via every theme `index.js`.
+- **New translation key** → add to `src/localization/en/<namespace>.json` first, then run `npx i18next-scanner --config i18next-scanner.config.js` to propagate.
+
+## Experiments and Flags
+
+- `src/lib/ExperimentHelper.js` is the experiment system. Experiments are defined in Firebase RTDB and assigned per user after login, so nothing before login is gated.
+- An experiment whose `active` is a single variant is rolled out: every user gets that variant, version and traffic gating are skipped, and a per-user force-set changes nothing.
+- Gate every surface through one helper for the feature (e.g. a `UserController.canShow*` or a feature module function), never a raw `experiments?.x === 'a'` at the call site.
+- To hide a shipped feature for now and bring it back later, gate it on an experiment and roll the "off" variant out, rather than deleting the code.
+- To reach a variant in a sim run, force it with `sim_test.sh --experiment <key>=<variant>` (applied on read, never saved).
+- Removing an ended experiment: keep the winning branch, and grep `app.js` as well as `src/`.
+
+## Don't
+
+- Don't put business logic in screens — push it into stores or `src/logic/`.
+- Don't import from `src/reuseableUI/` if a `src/components/` equivalent exists.
+- Don't create per-feature `actions.js` files — extend the global one.
+- Don't bypass `src/logic/Trackings` for analytics or error reporting.

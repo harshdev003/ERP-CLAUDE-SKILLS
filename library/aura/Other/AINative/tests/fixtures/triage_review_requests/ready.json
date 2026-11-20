@@ -1,0 +1,72 @@
+{
+ "number": 7286,
+ "title": "fix(phone-input): draw the country flag on React 19 [PROD-7101]",
+ "url": "https://github.com/AuraHealth/Aura/pull/7286",
+ "isDraft": false,
+ "state": "OPEN",
+ "headRefOid": "98588154723ba6a08d3137d767327676100e57fc",
+ "updatedAt": "2026-10-06T18:56:20Z",
+ "author": {
+  "login": "devashishHp04"
+ },
+ "reviews": {
+  "nodes": [
+   {
+    "author": {
+     "login": "cursor"
+    },
+    "state": "COMMENTED",
+    "submittedAt": "2026-10-06T18:55:15Z",
+    "commit": {
+     "oid": "e1d52e094b0d7d9a5a994a3721a822765fa8f572"
+    }
+   },
+   {
+    "author": {
+     "login": "cursor"
+    },
+    "state": "COMMENTED",
+    "submittedAt": "2026-10-06T18:56:20Z",
+    "commit": {
+     "oid": "98588154723ba6a08d3137d767327676100e57fc"
+    }
+   }
+  ]
+ },
+ "reviewThreads": {
+  "pageInfo": {
+   "hasNextPage": false
+  },
+  "nodes": []
+ },
+ "commits": {
+  "nodes": [
+   {
+    "commit": {
+     "oid": "98588154723ba6a08d3137d767327676100e57fc",
+     "statusCheckRollup": {
+      "contexts": {
+       "nodes": [
+        {
+         "__typename": "CheckRun",
+         "name": "Cursor Bugbot",
+         "status": "COMPLETED",
+         "conclusion": "SUCCESS"
+        },
+        {
+         "__typename": "CheckRun",
+         "name": "build",
+         "status": "COMPLETED",
+         "conclusion": "SUCCESS"
+        },
+        {
+         "__typename": "StatusContext"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ }
+}

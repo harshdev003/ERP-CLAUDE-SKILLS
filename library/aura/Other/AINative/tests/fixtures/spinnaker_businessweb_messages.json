@@ -1,0 +1,25 @@
+{
+ "source": "#deployment (GG6CJ6P0D) conversations.history, spinbot posts for business execution 01M5N5PCG2Z7K33FKPVVH4C6Z4 (BusinessWeb), title/text/fallback only",
+ "messages": [
+  {
+   "ts": "1792785724.430769",
+   "attachments": [
+    {
+     "title": "Pipeline starting for BUSINESS",
+     "text": "Business's <https://spin.aurahealth.io/#/applications/business/executions/details/01M5N5PCG2Z7K33FKPVVH4C6Z4|Quick deployment for Web> pipeline is starting",
+     "fallback": "Business's <https://spin.aurahealth.io/#/applications/business/executions/details/01M5N5PCG2Z7K33FKPVVH4C6Z4|Quick deployment for Web> pipeline is starting"
+    }
+   ]
+  },
+  {
+   "ts": "1792785781.893829",
+   "attachments": [
+    {
+     "title": "Pipeline complete for BUSINESS",
+     "text": "Business's <https://spin.aurahealth.io/#/applications/business/executions/details/01M5N5PCG2Z7K33FKPVVH4C6Z4|Quick deployment for Web> pipeline has completed successfully",
+     "fallback": "Business's <https://spin.aurahealth.io/#/applications/business/executions/details/01M5N5PCG2Z7K33FKPVVH4C6Z4|Quick deployment for Web> pipeline has completed successfully"
+    }
+   ]
+  }
+ ]
+}

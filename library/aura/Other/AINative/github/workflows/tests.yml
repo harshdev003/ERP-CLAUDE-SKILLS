@@ -1,0 +1,150 @@
+name: Tests
+
+# Runs the repo's Python test suite on every PR that touches a tested skill or
+# the tests themselves.
+#
+# The suite is stdlib `unittest` with all network stubbed — no API keys, no
+# secrets, no live calls. That is a hard requirement, not an accident: these
+# tests exist to exercise the failure branches (a response that will not fetch,
+# a paginating endpoint, an `/input_items` call that raises) that real data
+# cannot reach, so the transport has to be under the test's control.
+#
+# Scope is the Responses reader family plus the structural checks on every
+# markdown file under `plugins/`. The latter reads the whole repo, so any PR
+# touching a skill file runs it — a botched extraction is silent otherwise, and
+# the length gate actively pushes authors to extract.
+#
+# Widen `paths` as more of the repo grows coverage; a path not listed here
+# simply isn't gated.
+
+on:
+  pull_request:
+    paths:
+      - 'plugins/data/skills/*/scripts/responses_reader.py'
+      - 'plugins/data/skills/*/scripts/fetch_logs.py'
+      - 'plugins/data/skills/*/scripts/mixpanel_api.py'
+      - 'plugins/data/skills/*/scripts/fetch_cancellations.py'
+      # The two Signals/Cancellations writers. tests/test_cancellations_schema.py holds
+      # them to the canonical schema, and enrich.py *reads* names harvest.py wrote — a
+      # rename there resolves to an empty field here rather than raising.
+      - 'plugins/data/skills/harvest-cancellation-feedback/scripts/harvest.py'
+      # The backfill gap computation — tests/test_backfill_gap.py pins the rule that
+      # decides which rating represents a conversation, and therefore how many there
+      # are to back-fill. An arrival-order pick is a plausible unreproducible number.
+      - 'plugins/data/skills/backfill-learnings-conversations/scripts/gap.py'
+      # Any script under plugins/ that writes to Mixpanel's ingestion endpoint —
+      # tests/test_mixpanel_engage_ip0.py holds every raw /engage write to ip=0, so a
+      # sender's IP can never become a profile's geo again (PROD-6322).
+      - 'plugins/**/*.py'
+      - 'plugins/**/*.sh'
+      - 'plugins/**/*.js'
+      - 'plugins/**/*.mjs'
+      - 'plugins/**/*.ts'
+      - 'plugins/data/skills/enrich-cancellation-feedback/scripts/enrich.py'
+      - 'plugins/data/skills/investigate-pmf-survey/scripts/fetch_pmf_responses.py'
+      - 'plugins/data/skills/analyze-experiment/scripts/screen_internal.py'
+      - 'plugins/data/skills/update-conversations-top10/scripts/classify_rows.py'
+      - 'plugins/*/skills/*/scripts/notion_rest.py'
+      - 'plugins/shared/skills/sync-security-checklist/**'
+      - 'plugins/shared/skills/*/scripts/manifest.py'
+      - 'plugins/shared/skills/healthcheck-knowledge/scripts/workaround_notes.py'
+      # shared:raise-followup: one post per dedupe key, refusals write nothing (tests/test_raise_followup.py).
+      - 'plugins/shared/skills/raise-followup/**'
+      # shared:check-followups reads raise-followup's posts back (tests/test_check_followups.py).
+      - 'plugins/shared/skills/check-followups/**'
+      - 'plugins/shared/hooks/*'
+      - 'plugins/eng/skills/update-nodejs/scripts/scan_node_versions.py'
+      - 'plugins/eng/skills/protect-github-branches/scripts/*.py'
+      - 'plugins/eng/skills/store-aurie-user-daily-cost/scripts/store.py'
+      - 'plugins/eng/skills/store-aurie-user-daily-cost/scripts/unit_costs.py'
+      - 'plugins/eng/skills/report-aurie-weekly-costs/scripts/report.py'
+      - 'plugins/eng/skills/analyze-openai-cost-per-user/scripts/report.py'
+      - 'plugins/eng/skills/report-aurie-daily-costs/scripts/report.py'
+      - 'plugins/eng/skills/report-aurie-daily-costs/scripts/bq.py'
+      # sync-design-system records a token parser gap and keeps building (tests/test_design_system_parser_gaps.py).
+      - 'plugins/product/skills/sync-design-system/scripts/extract_tokens.py'
+      - 'plugins/eng/skills/store-aurie-user-daily-cost/scripts/livekit_minutes.py'
+      - 'plugins/data/skills/report-aurie-conversations/scripts/*.py'
+      # data:sync-screens archives an orphan only when git proves its doc was deleted on main
+      # (tests/test_sync_screens_orphans.py).
+      - 'plugins/data/skills/sync-screens/scripts/sync_screens.py'
+      - 'plugins/eng/skills/release-version/scripts/*.py'
+      # eng:fix-one-auth: the E2 plan and the prod write guards (tests/test_fix_one_auth.py).
+      - 'plugins/eng/skills/fix-one-auth/scripts/*'
+      - 'plugins/data/skills/harvest-conversation-patterns/scripts/fetch_sweep_analyses.py'
+      - 'plugins/data/skills/report-conversation-patterns/scripts/sample.py'
+      - 'plugins/data/skills/*/scripts/fetch_ratings.py'
+      - 'plugins/data/skills/chart-monthly-ratings/scripts/chart_ratings.py'
+      - 'plugins/eng/skills/investigate-voice-issue/scripts/*.py'
+      - 'plugins/eng/skills/report-elevenlabs-user-cost/scripts/*.py'
+      - 'plugins/eng/skills/*/scripts/bugsnag.py'
+      - 'plugins/eng/skills/report-bugsnag-errors/scripts/*.py'
+      - 'plugins/eng/skills/*/scripts/livekit_core.py'
+      - 'plugins/eng/skills/analyze-livekit-latency/scripts/report.py'
+      - 'plugins/eng/skills/*/scripts/normalize.py'
+      - 'plugins/eng/skills/*/scripts/livekit_core.py'
+      # The partial derived copy + the consumer whose livekit_core surface is pinned.
+      - 'plugins/eng/skills/store-aurie-user-daily-cost/scripts/livekit_minutes.py'
+      - 'plugins/eng/skills/report-livekit-quota/scripts/report.py'
+      - 'plugins/eng/skills/report-livekit-health/scripts/report.py'
+      - 'plugins/eng/skills/report-prompt-testing-cost/scripts/*.py'
+      - 'plugins/eng/skills/audit-pod-right-sizing/scripts/*.py'
+      - 'plugins/eng/skills/audit-intelligence-prompts/scripts/audit.py'
+      - 'plugins/eng/skills/qa-prompt/**'
+      - 'plugins/eng/skills/qa-conversation/**'
+      - 'plugins/eng/skills/compare-prompt-versions/**'
+      - 'plugins/data/skills/analyze-conversation-guardrails/scripts/*.py'
+      - 'plugins/data/skills/investigate-user-rating/scripts/*.py'
+      - 'plugins/data/skills/save-to-braintrust-dataset/scripts/*.py'
+      # land_pr.sh is shell, so no *.py pattern above reaches it — and it carries the
+      # second implementation of the CircleCI workflow-aggregation rule.
+      - 'plugins/eng/skills/update-node-packages/scripts/*'
+      - 'plugins/eng/skills/update-postman-collection/scripts/*.py'
+      - 'plugins/eng/skills/respond-to-sar/scripts/*.py'
+      # tests/test_product_list_limit.py: the product-list reads send limit 0.
+      - 'plugins/eng/skills/investigate-missing-premium/scripts/*.py'
+      - 'plugins/eng/skills/manage-ai-packages/scripts/*.py'
+      - 'plugins/eng/skills/remove-package-experiment/scripts/*.py'
+      # Every markdown file under plugins/, not just SKILL.md + references/*.md:
+      # the link check resolves `plugins/**/*.md`, and the files it was written
+      # for live in `references/schemas/`, which a one-level glob misses.
+      - 'plugins/**/*.md'
+      # The description gate's own script — tests/test_check_skill_description.py
+      # imports it, so a change there must re-run the suite.
+      - 'scripts/check-skill-description.py'
+      # Same for the two length gates. check-skill-length.py was missing here,
+      # so a change to it did not run its own suite.
+      - 'scripts/check-skill-length.py'
+      - 'scripts/check-memory-length.py'
+      # The AGENTS.md generator — its suite runs the real rule list against the
+      # real CLAUDE.md, so a reword on either side has to re-run it.
+      - 'scripts/build-agents-md.py'
+      # The IntelligenceService prompter-name snapshot writer; tests/test_is_prompter_names.py
+      # runs it against a small IS-shaped repo.
+      - 'scripts/refresh-is-prompter-names.py'
+      - 'CLAUDE.md'
+      - 'AGENTS.md'
+      - 'tests/**'
+      - '.github/workflows/tests.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # `responses_reader.py` imports `requests` at module scope. The tests
+      # never let a real request out — the import just has to resolve.
+      # `design_idea.py` (product:design-idea) composites screenshots with Pillow;
+      # without it the renderer tests skip, and a compositing regression would
+      # ship unseen. Its tests use synthetic captures, so no fonts are needed.
+      - name: Install runtime imports
+        run: python3 -m pip install --quiet requests pillow
+
+      - name: Run tests
+        run: python3 -m unittest discover -s tests -v

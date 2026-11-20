@@ -1,0 +1,3558 @@
+{
+ "source": "Learnings/Experiments, fetched 2026-09-20 via the Notion REST API (per-block text + hrefs; code blocks excluded)",
+ "database": {
+  "path": "Learnings/Experiments",
+  "url": "https://app.notion.com/p/2cbe45a3246040658b9f20559b5b452b"
+ },
+ "scanned": 298,
+ "total": 3087,
+ "rows": [
+  {
+   "path": "Learnings/Experiments",
+   "title": "aiImprove4StepPaywall",
+   "url": "https://app.notion.com/p/aiImprove4StepPaywall-3ab75e23af2081538c59fb28efa1246a",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Rewritten copy for the 4-step paywall lead-in: new headline, subline and value props on the intro screen, new title copy plus a second testimonial on the social proof screen, and a new headline and bullets on the pricing screen (a) vs the existing copy (b)",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "Mixpanel, Aurie Mobile, 2026-08-04 -> 2026-08-25 (real launch window; the row's Start Date 2026-07-27 is the catalog registration date). Denominator N = AI Sign Up Login unique users. a = new copy, b = control. Note the arm imbalance (1829 vs 1705, +7.3%); every rate below is per-user so the imbalance does not drive it.",
+     "hrefs": []
+    },
+    {
+     "text": "Exposure quality — the property is not attached at sign-up, so no over-stamping; the raw cut is trustworthy.\n\nInternal/comped screen: applied to the heavy tail only — the top 1% of each arm by session count (38 unique UIDs, min 33 sessions). Both nets ran clean (cohort + per-subscription code scan, complete=true) and 0 were internal, so the tail is organic. The screen was NOT applied to the full ~3,000-user population, so the arm denominators below are unscreened aggregates.",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "Variant a won on Aurie's primary metric. Avg Sessions per User is up 14.4%, and unlike the close-button tests this survives trimming — +12.6% after dropping the top 1% of users and +9.1% with sessions capped at 20 — so it is broad-based across the middle and upper distribution rather than a few heavy accounts. The heavy tail is organic (0 of 38 top-1% accounts internal). Monetization is genuinely tied (Purchased +2.2%, Paid +1.4%), and session reach is identical at 64.5%, so the copy is not pulling in more people — it is making the people it reaches come back more. DISAGREEMENT: the team read this as 'results are tied' and shipped variant a on 2026-08-25 for the better user experience, treating it as a no-cost UX change. That undersells it. Judged on the metric Aurie declares primary, this is the only one of the four experiments in the batch that actually won, and the mechanism is worth reusing: honest value framing bought engagement that paywall friction could not.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "- Port the winning lead-in copy pattern to the other Aurie paywall surfaces and re-measure Avg Sessions per User, since that is where the gain landed. Primary metric: Avg Sessions per User.\n- Decompose the win: the variant changed three screens at once (intro copy, second testimonial, pricing bullets). Test the second testimonial alone against the copy rewrite alone to find which half carries the +9-13%. Primary metric: Avg Sessions per User.\n- Re-run with balanced arms and a pre-registered engagement primary to confirm the effect at 95%; the current read is a robust point estimate but the batch was never powered for an engagement call. Primary metric: Avg Sessions per User.\n- Check whether the engagement lift converts on a longer horizon than the 20-day window allowed — flat Paid at day 20 with +14% sessions is the shape that turns into paid later. Primary metric: Day-60 Paid Subscription Rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server: https://services.aurahealth.io/experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Mixpanel — per-variant metrics",
+     "hrefs": [
+      "https://mixpanel.com/project/963821/view/30768/app/insights#e9iXZUtzJTCr"
+     ]
+    },
+    {
+     "text": "Slack #wins — Experiment Turned On (2026-08-25)",
+     "hrefs": [
+      "https://auramobile.slack.com/archives/C9NEE1PLK/p1787700098284329"
+     ]
+    },
+    {
+     "text": "Slack #abtest-monitoring — close decision (2026-08-25)",
+     "hrefs": [
+      "https://auramobile.slack.com/archives/C05TX32DJVA/p1787699863179139?thread_ts=1787629248.171199&cid=C05TX32DJVA"
+     ]
+    },
+    {
+     "text": "Slack #abtest-monitoring — Yawar 20-day readout (2026-08-24)",
+     "hrefs": [
+      "https://auramobile.slack.com/archives/C05TX32DJVA/p1787629248171199?thread_ts=1787629248.171199&cid=C05TX32DJVA"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "removeYearlyDiscountCopy",
+   "url": "https://app.notion.com/p/removeYearlyDiscountCopy-3ab75e23af2081ce80a7dcfa73ddd03b",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "remove the Yearly discount copy Card of paywall",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "Independently re-cut from Mixpanel on 2026-08-08 (project 963821, all-country, user-level assignment over 7/30-8/8). The two arms are flat — no metric separates them.",
+     "hrefs": []
+    },
+    {
+     "text": "The -28.4% @95.0% Trial Start figure recorded on the experiment server is a US-only sub-cut at 37 vs 49 trials — below the team's own >=50-conversions-per-arm bar. #abtest-monitoring retracted it on 2026-08-08: -28.4% @95.0% became -20.6% @84.6% (US) and -1.4% @9.9% all-country, logged as \"classic noise resolving\". Our independent pull reproduces the all-country figure exactly (-1.4%, 9.5% confidence).",
+     "hrefs": []
+    },
+    {
+     "text": "Exposure quality. Experiment: removeYearlyDiscountCopy is a user-profile property, not an event super-property — an event-level cut returns 1 user in total, so there is no over-stamping diluting the raw cut. Assigned 596 vs N 548: a 48-user gap (8.1%), balanced across arms (a 20 / b 28), consistent with internal/QA accounts plus assignments too recent for events to land. Internal/comped screening was not applied (aggregate-only run, no per-user JQL pass), so the population above is unscreened.",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "Removing the \"50% off\" copy from the yearly plan card changed nothing measurable. At 276 vs 272 registrations and 90 vs 90 trial starts, the primary metric lands at -1.4% with 9.5% confidence — the arms are indistinguishable on trial start, paid conversion and trial cancellation alike. The copy was suspected of being misleading rather than of carrying conversion weight (PROD-3587), and this result is consistent with it carrying none: the claim can be corrected or dropped on accuracy grounds without paying for it at the paywall.",
+     "hrefs": []
+    },
+    {
+     "text": "Verdict recorded as Inconclusive, not Lost. The formal AuraBot end-note on 2026-08-07 closed this as *Experiment Lost — winner b (control)*, and the server result field still carries the -28.4% headline. That headline did not survive one more day of data. Our read is that the experiment reached an adequate sample on its primary (90 conversions per arm, above the 50/arm bar) and detected no effect — a genuine null, not a loss for variant a. Shipping control was still the right call; there was simply no evidence against the treatment.",
+     "hrefs": []
+    },
+    {
+     "text": "Methodology note worth carrying forward. The signal that drove the kill was produced by event-level assignment on a mobile-only slice (-32.9% @95.9% on 8/6), which is survivorship-biased; re-pulling with the canonical user-level property on 8/7 weakened it, and it decayed to non-significance by 8/8. The team caught this in flight, but only after a stakeholder pushed back on the number. Two standing hazards this run illustrates: a US-only cut disagreeing with the matched all-country cut (an open question raised across three concurrent experiments), and a decision taken at Day 8 against a stated 14-day minimum runtime.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Ship the accurate discount, don't just delete the claim. showRealYearlyDiscount (PROD-4328) already computes the true saving against the 6-month plan. Hypothesis: a credible, correct percentage beats both the inflated \"50% off\" and no badge at all. Primary metric: Trial Start Rate. This experiment shows the removal is free, so the upside now sits entirely in the replacement.",
+     "hrefs": [
+      "https://linear.app/aura-health/issue/PROD-4328"
+     ]
+    },
+    {
+     "text": "Resolve the canonical Aura population before the next paywall test. A prerequisite rather than a product experiment: US-only vs all-country flipped the read on three concurrent experiments (paywallOnStart, removeYearlyDiscountCopy, auraPaywallAddFAQs), sometimes in opposite directions. Fix the denominator once and every subsequent paywall readout gets cheaper and more trustworthy.",
+     "hrefs": []
+    },
+    {
+     "text": "Test the yearly card's value framing, not its badge. Copy removal was a null, which suggests the badge is not what the user is reading. Hypothesis: restating the yearly plan as a per-month equivalent (\"$5.83/month, billed yearly\") moves plan selection more than any discount claim. Primary metric: yearly-plan share of Trial Start.",
+     "hrefs": []
+    },
+    {
+     "text": "Pre-register a stopping rule. This ran 8 of a planned 14 days and was called on a sub-cut that later retracted. Hypothesis: committing the population, primary metric and minimum conversions per arm before launch reduces retracted calls. Measure on process, not users: count of flagged-then-retracted signals per quarter.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server: https://services.aurahealth.io/experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Linear PROD-3587 — A/B test: Remove 50% discount copy on yearly plan",
+     "hrefs": [
+      "https://linear.app/aura-health/issue/PROD-3587/ab-test-remove-50percent-discount-copy-on-yearly-plan"
+     ]
+    },
+    {
+     "text": "Linear PROD-3845 — webview mirror",
+     "hrefs": [
+      "https://linear.app/aura-health/issue/PROD-3845/ab-test-remove-50percent-discount-copy-on-yearly-plan-webview"
+     ]
+    },
+    {
+     "text": "Slack #abtest-monitoring — 2026-08-08 retraction of the -28.4% @95.0% flag",
+     "hrefs": [
+      "https://auramobile.slack.com/archives/C05TX32DJVA/p1786202791958469"
+     ]
+    },
+    {
+     "text": "Mixpanel project 963821 — per-variant segmentation, 2026-07-30 to 2026-08-08 (pulled 2026-08-08)",
+     "hrefs": [
+      "https://mixpanel.com/project/963821"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "auraPaywallCTAPosition",
+   "url": "https://app.notion.com/p/auraPaywallCTAPosition-3a375e23af208132a52fc62dc5dfcb43",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Shows CTA Button at bottom of paywall , a - show cta button at bottom , b - normal flow",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "Exposure quality: cannot be measured for this experiment.\n\nThe Experiment: auraPaywallCTAPosition property exists only as a USER profile\nproperty - it is never stamped on events. An event-level breakdown returns 100%\nundefined (1,040 of 1,041 sign-up-login events carry no variant). So the\nover-stamping check cannot be run, and there is no way to isolate the users who\nactually rendered the paywall from the users merely assigned at registration.\n\nConsequence: every rate above is computed over ALL assigned registrants, not over\nan exposed cohort. Dilution is symmetric across arms, so the DIRECTION of the\nresult is safe; the true effect on users who saw the paywall is larger in absolute\nterms than the numbers above, not smaller.\n\nAssigned vs N gap: 1,121 assigned vs 1,039 signed in (82 users, 7.3%). 8 are\ninternal accounts; the rest were assigned but fired no sign-up-login in the window.",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "Moving the Aura paywall's subscribe CTA to the very bottom cost paid conversion with no upside on any other metric. Variant a lost 33.0% of Paid Rate against control (5.73% vs 8.54%, ~92% confidence) and 28.2% of trial-to-paid conversion. Trial starts were down 6.7% and trial cancellations up 3.9%, neither significant - so the damage is concentrated exactly where the layout change acts: users reached the plan cards but converted to paid less often once the CTA stopped sitting with them. Verdict Lost; control (b) shipped.",
+     "hrefs": []
+    },
+    {
+     "text": "The decisive finding is that Aura had already run this test and it had already lost. paywallCTAPosition ended 2026-06-17 on AuraConsumerApp with the same treatment concept and the same outcome - variant a (sticky bottom CTA) turned off 6/15 for \"paid starts way lower\", variant c (dual CTA) turned off 6/17 at a Paid Subscription Rate 64% below control (6.38% vs 17.54%). The request for this experiment (ENGMOB-1908) was filed 2026-06-22, five days after that conclusion, and its stated rationale was \"it follows a massive win seen on Aurie\" - the Aurie prior was used while Aura's own contradicting result from the previous week was not. Two experiment cycles were spent re-learning the same thing.",
+     "hrefs": [
+      "https://linear.app/aura-health/issue/ENGMOB-1908"
+     ]
+    },
+    {
+     "text": "The transferable learning is about priors, not about CTAs: an Aurie paywall win is not evidence for Aura. Aurie is a conversation product whose paywall sits inside an engagement loop; Aura is a content product whose paywall is a purchase decision at the plan cards. CTA placement is precisely the kind of layout variable whose effect depends on that surrounding funnel, and it has now reversed sign across the two apps twice. Before porting an Aurie paywall win to Aura, check the Aura catalog for the same treatment first.",
+     "hrefs": []
+    },
+    {
+     "text": "Caveat on magnitude: paid counts are modest (30 vs 44), and the same channel has documented rate lifts on thin windows evaporating on matured data (fourStepPaywallAura went from +55% Paid Starts to +1.4% $/reg once matured). The direction here is well-supported and consistent with the June result; the -33% point estimate should not be quoted as a precise effect size.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Stop porting Aurie paywall layout wins to Aura without an Aura-side prior check. Not an experiment - a process change. Add a step to experiment intake that greps the Aura experiment catalog for the same treatment before a card is written. This experiment and paywallCTAPosition would both have been caught by it.",
+     "hrefs": []
+    },
+    {
+     "text": "Test CTA proximity rather than CTA position. Hypothesis: paid conversion depends on the CTA being visible at the moment the user finishes comparing plans, not on where it sits in the page. Variants: a = CTA pinned directly beneath the plan cards (moves up, not down), b = control. Primary metric: Trial -> Paid. This is the opposite direction to what just lost and is the untested half of the hypothesis space.",
+     "hrefs": []
+    },
+    {
+     "text": "Investigate why Aurie's CTA-at-bottom win does not transfer. Hypothesis: the two paywalls differ in scroll depth and in how much content sits between the plan cards and the CTA. A read-only teardown comparing the two surfaces (scroll length, elements between plans and CTA, time-to-CTA-visible) would say whether the Aurie win was about position at all, or about something else that came with it.",
+     "hrefs": []
+    },
+    {
+     "text": "Re-test on the exposed cohort once the experiment property is event-stamped. This experiment could not measure exposure at all. Stamping Experiment: <name> at paywall render would let future paywall tests compute rates over users who actually saw the surface, which is where the effect is. Worth doing before the next paywall experiment, not after.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server (https://services.aurahealth.io/experiments)",
+     "hrefs": []
+    },
+    {
+     "text": "Experiment analysis - #abtest-monitoring, 2026-08-13",
+     "hrefs": [
+      "https://auramobile.slack.com/archives/C05TX32DJVA/p1786663741256759"
+     ]
+    },
+    {
+     "text": "ENGMOB-2759 - prior paywallCTAPosition experiment, same treatment, lost 2026-06-17",
+     "hrefs": [
+      "https://linear.app/aura-health/issue/ENGMOB-2759"
+     ]
+    },
+    {
+     "text": "ENGMOB-2720 - webview paywall port",
+     "hrefs": [
+      "https://linear.app/aura-health/issue/ENGMOB-2720"
+     ]
+    },
+    {
+     "text": "Mixpanel project 963821 - per-variant segmentation + per-user JQL pass",
+     "hrefs": [
+      "https://mixpanel.com/project/963821"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "mobileYearlyPricing",
+   "url": "https://app.notion.com/p/mobileYearlyPricing-39875e23af20817b8eefe96606e7e465",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Yearly subscription price test on Aura mobile: a: $79.99/year, b: control, c: $89.99/year",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "Inconclusive — the intended control price was never served on iOS, so the headline contrast is unmeasurable. Numbers below are recorded for the audit trail, not as a verdict.",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "The experiment cannot be read, and that is the finding. Arm b had no dedicated control SKU: it fell through to the permanent iOS yearly price, which a prior won experiment (appleNewUpdatedPriceForNewUsers, removed in Aura#6504) had already moved to $79.99 — the same price as arm a. PROD-4638 root-caused this on 2026-08-18 and the $69.99 restore only shipped in v3.19.147/148 on 2026-08-20, the day before the experiment was ended, so effectively the entire 22-day run served $79.99 / $79.99 / $89.99 rather than the intended $69.99 / $79.99 / $89.99. The $69.99 label came from the Android fallback path only.\n\nTaken at face value the numbers do not support the recorded \"Lost\" either. On the all-country cut, Paid Rate over N is dead flat (9.21% / 9.15% / 9.13%) and paid-per-trial-start is higher in both treatments than in control; the only consistent signal is a lower Trial Start Rate in both (a -15.7%, c -2.2%), which is directionally what a price rise should do but is contaminated by the same defect. Yawar independently spotted the tell: a at $79.99 started fewer trials than c at $89.99, which is not how price behaves, so a's deficit is likely noise. Two further confounds remain even after the SKU fix: most Aura mobile users are routed to a webview and pay via Stripe, so the native IAP arm may not describe what an assigned user was actually charged, and webYearlyPricing was running concurrently on web.\n\nVerdict recorded as Inconclusive rather than Lost. The pricing question is untested, not answered — treating this as \"the price rise lost\" would retire a live revenue hypothesis on a broken measurement. Note also that no exposure-time attribution is possible here: the variant lives on the user profile rather than as an event super-property, so an over-stamping check is unverifiable and only ~50% of assigned users ever reached the paywall.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Four next steps, ordered — the first two split the question the broken run conflated:",
+     "hrefs": []
+    },
+    {
+     "text": "Clean two-arm re-run ($79.99 vs $89.99, explicit control SKU) — the contrast the current data actually served. Hypothesis: at the already-shipped $79.99 baseline, a further rise to $89.99 loses more trial starts than it gains in revenue per payer. Primary metric: Trial Start Rate, with paid-per-trial-start as the confirmation. Blocked on PROD-4638 landing.",
+     "hrefs": []
+    },
+    {
+     "text": "Re-test the original question ($69.99 vs $79.99) separately, since the permanent price is now $79.99 on iOS and $69.99 on Android — the platforms have silently diverged. Hypothesis: the $10 step is invisible to conversion. Primary metric: Trial Start Rate, cut by platform.",
+     "hrefs": []
+    },
+    {
+     "text": "Segment any pricing re-run by payment rail (native IAP vs webview/Stripe). Hypothesis: a native price arm moves nothing for the webview-routed majority, which would explain the flat revenue-per-payer Steve flagged on 2026-08-12. Primary metric: Paid Rate split by Paywall Type.",
+     "hrefs": []
+    },
+    {
+     "text": "Guardrail, not an experiment: add the PROD-4638 acceptance check so removing a won experiment cannot silently repoint a live experiment's control price. This run cost 22 days of mobile paywall traffic.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    },
+    {
+     "text": "- Linear PROD-2762 — Mobile: Yearly price test (hypothesis + variant spec)",
+     "hrefs": [
+      "https://linear.app/aura-health/issue/PROD-2762/mobile-yearly-price-test"
+     ]
+    },
+    {
+     "text": "- Linear PROD-4638 — control arm b resolves to $79.99 on iOS, a/b contrast is invalid",
+     "hrefs": [
+      "https://linear.app/aura-health/issue/PROD-4638/abmobileyearlypricing-control-arm-b-resolves-to-dollar7999-on-ios-ab"
+     ]
+    },
+    {
+     "text": "- Slack #abtest-monitoring — experiment monitor, 2026-08-18: \"mobileYearlyPricing is invalidated ... the current 19 days are unusable\"",
+     "hrefs": [
+      "https://auramobile.slack.com/archives/C05TX32DJVA/p1787066007149009"
+     ]
+    },
+    {
+     "text": "- Slack #abtest-monitoring — Yawar's advised decision, 2026-08-19",
+     "hrefs": [
+      "https://auramobile.slack.com/archives/C05TX32DJVA/p1787169322788329"
+     ]
+    },
+    {
+     "text": "- Slack #abtest-monitoring — end-note \"Experiment Lost: mobileYearlyPricing\", 2026-08-21",
+     "hrefs": [
+      "https://auramobile.slack.com/archives/C05TX32DJVA/p1787279365722829"
+     ]
+    },
+    {
+     "text": "- Mixpanel — mobileYearlyPricing dashboard (Mobile 2026)",
+     "hrefs": [
+      "https://mixpanel.com/s/1zpCeW"
+     ]
+    },
+    {
+     "text": "- Mixpanel — Yawar's revenue-by-variant report",
+     "hrefs": [
+      "https://mixpanel.com/s/IOc1r"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "autoplayPlayer",
+   "url": "https://app.notion.com/p/autoplayPlayer-39775e23af20813baa96cc2ac55b6f71",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "add autoplay to player a:test b:control",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "Legacy Aura experiment, batch-closed 2022-11-30 with no individual readout recorded. Control (b, no autoplay) shipped.",
+     "hrefs": []
+    },
+    {
+     "text": "_Legacy experiment: ran and ended ~2022-11 but was re-registered in the catalog on 2026-07-06, so the row's Start Date reflects the re-registration, not the true start. Mixpanel per-variant is unavailable this far back (pre-`Experiment:` super-property for Aura), so the team's recorded server `result` is the authoritative readout._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "Adding autoplay to the player (test a) vs none (control b) was closed in the 2022-11-30 batch with no recorded result; control shipped. No readout recoverable — logged for completeness.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Re-test autoplay on the current player with a content-consumption + D7-return guardrail if still relevant; primary metric: sessions per user / D7 return.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "FPReminderCopy",
+   "url": "https://app.notion.com/p/FPReminderCopy-39775e23af2081c5aebbc3980d5bd3ef",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "add reminder copy to app FP a:test b:control (no reminder copy)",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "Legacy Aura experiment, batch-closed 2022-11-30 with no individual readout recorded. Control (b, no reminder copy) shipped.",
+     "hrefs": []
+    },
+    {
+     "text": "_Legacy experiment: ran and ended ~2022-11 but was re-registered in the catalog on 2026-07-06, so the row's Start Date reflects the re-registration, not the true start. Mixpanel per-variant is unavailable this far back (pre-`Experiment:` super-property for Aura), so the team's recorded server `result` is the authoritative readout._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "Adding reminder copy to the app FP (test a) vs none (control b) was closed in the 2022-11-30 batch with no recorded result; control shipped. No readout recoverable — logged for completeness.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Re-test reminder/urgency copy on the current FP with a trial-start readout if still relevant; primary metric: trial-start rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "FPBestofAppleLogo",
+   "url": "https://app.notion.com/p/FPBestofAppleLogo-39775e23af20816780cad02582e36876",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "add best of apple logo to FP a:test b:control (no apple logo)",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "Legacy Aura experiment, batch-closed 2022-11-30 with no individual readout recorded on the experiment server. Control (b, no logo) shipped.",
+     "hrefs": []
+    },
+    {
+     "text": "_Legacy experiment: ran and ended ~2022-11 but was re-registered in the catalog on 2026-07-06, so the row's Start Date reflects the re-registration, not the true start. Mixpanel per-variant is unavailable this far back (pre-`Experiment:` super-property for Aura), so the team's recorded server `result` is the authoritative readout._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "Adding a 'Best of Apple' logo to the FP (test a) vs no logo (control b) was closed in a 2022-11-30 batch with no recorded result; control shipped. No readout is recoverable — logged for catalog completeness.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "If the trust-badge hypothesis still matters, re-run on the current Aura FP with a proper trial-start readout; primary metric: trial-start rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "newDoneScreen2",
+   "url": "https://app.notion.com/p/newDoneScreen2-38875e23af20814e9129e260726cb092",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "updated conversation done screen with nee design",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Note: `SUL` and `Paid` land almost entirely in the `undefined` variant bucket — the `Experiment:` super-property is stamped at sign-up, before variant bucketing, so per-variant paid rate isn't recoverable from the raw cut. Paid/funnel verdict relies on the team's recorded readout (Aura experiment `result`). `Trial` and `Session` carry the per-variant splits below._",
+     "hrefs": []
+    },
+    {
+     "text": "_N is small (tens to low-hundreds per arm) — treat splits as directional, not powered._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "The updated conversation done-screen design ran only 6 days at low volume and its own data was flat (sessions a=68 vs b=67, single-digit trials) — not powered to call. It was turned on based on the sibling `newDoneScreen` experiment's positive result rather than its own metrics, so treat this as a decision-by-analogy, not an independently-validated win.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Re-run newDoneScreen2 standalone with sufficient volume before assuming the sibling's lift transfers; primary metric: post-conversation sessions.",
+     "hrefs": []
+    },
+    {
+     "text": "Test done-screen CTA variants on the shipped design to isolate the engagement driver; primary metric: next-session rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "qpReplaceContinueWithInput",
+   "url": "https://app.notion.com/p/qpReplaceContinueWithInput-38075e23af2081bc81faf6faa550cb1c",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Replace Continue button for no question replies with text input",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "Initial AB read (Jun 11-29, underpowered):",
+     "hrefs": []
+    },
+    {
+     "text": "Post-rollout confirmation (Alyssa Luboff, 2026-07-13 -- Conversation traces + Mixpanel, ~2 weeks before [Jun 13-27] vs after [Jun 29-Jul 13], full rollout to 100% on 2026-06-28):",
+     "hrefs": []
+    },
+    {
+     "text": "Synthetic \"Continue\" turns: ~2% of text turns -> 0% (mechanism fully off)",
+     "hrefs": []
+    },
+    {
+     "text": "Empty/blank replies (text QP): 0 -> 0 -- eliminates the exact failure the button was causing",
+     "hrefs": []
+    },
+    {
+     "text": "Button-induced guardrail loops: none remain; residual guardrail responses are correct replies to typed messages",
+     "hrefs": []
+    },
+    {
+     "text": "Of 42 post-rollout no-question moments (the old button trigger spot): 67% replied naturally, 14% gave a short reply (81% kept talking), only 10% didn't reply/exited, and a residual 10% still typed \"continue\" (likely stale app versions) but all closed cleanly",
+     "hrefs": []
+    },
+    {
+     "text": "Completion rate 46.5% -> 50.1%; cancellation rate 41.1% -> 33.2%; ratings and back-button taps flat -- no harm to engagement",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "The original AB read was underpowered (tens of sessions per arm) and called a tie by the team, who shipped variant a on UX preference. A stronger post-rollout before/after analysis (2026-07-13) confirms it was the right call: the mechanism this experiment targeted -- the mid-conversation Continue button, which drove ~2/3 of QP guardrail hand-offs and 95% of empty responses per the original 90-day problem analysis -- was fully eliminated after 100% rollout, with zero blank replies and zero button-induced guardrail loops. Users overwhelmingly (81%) replied naturally where the button used to appear. No harm to engagement -- completion rate and cancellation rate both moved favorably. Net: benefit, no harm -- treat as a win despite the inconclusive initial AB read, since that read measured the wrong thing (raw session counts on tiny N) rather than the actual failure modes this change was designed to fix.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Investigate 3 blank replies that appeared in voice QP on 2026-06-30 (voice never had a Continue button, so unrelated to this change -- flagged separately by Alyssa Luboff)",
+     "hrefs": []
+    },
+    {
+     "text": "If a measured engagement-lift claim is needed later, re-run with a properly powered cohort -- the completion/cancellation deltas above are directional (before/after, not a controlled AB) and shouldn't be cited as a measured lift on their own",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    },
+    {
+     "text": "Linear -- PROD-2550",
+     "hrefs": [
+      "https://linear.app/aura-health/issue/PROD-2550"
+     ]
+    },
+    {
+     "text": "Slack thread -- QP Continue button removal, recommendation + rollout results (Alyssa Luboff)",
+     "hrefs": [
+      "https://auramobile.slack.com/archives/C07EX6CL43A/p1783980501882899?thread_ts=1780697347.412629&cid=C07EX6CL43A"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "aurieWebViewPaywall2",
+   "url": "https://app.notion.com/p/aurieWebViewPaywall2-37675e23af2081a08eb1db919119e216",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Show paywall in webview with Apple Pay or card via Stripe extrenal browser  (a & c)  for US users only vs regular subscription modal (b)",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Note: `SUL` and `Paid` land almost entirely in the `undefined` variant bucket — the `Experiment:` super-property is stamped at sign-up, before variant bucketing, so per-variant paid rate isn't recoverable from the raw cut. Paid/funnel verdict relies on the team's exposure-cohort readout (Aura experiment `result`). `Trial` and `Session` carry clean per-variant splits below._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "The webview paywall with Apple Pay / Stripe external-browser checkout (variants a & c, US users only) edged out the standard subscription modal on trials and sessions; variant a shipped. N is low and web trial rates run 3–4× below mobile, so treat this as a directional win pending more volume.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Re-run for a longer window to reach stat-sig before broad rollout; primary metric: web trial-start rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Extend the external-browser Stripe checkout to non-US web users; primary metric: web paid rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "limitedFreeIncreaseLimit",
+   "url": "https://app.notion.com/p/limitedFreeIncreaseLimit-37675e23af2081ed950dfa7bfacc9408",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "increase message limit for free users to 50 and 70",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Note: `SUL` and `Paid` land almost entirely in the `undefined` variant bucket — the `Experiment:` super-property is stamped at sign-up, before variant bucketing, so per-variant paid rate isn't recoverable from the raw cut. Paid/funnel verdict relies on the team's exposure-cohort readout (Aura experiment `result`). `Trial` and `Session` carry clean per-variant splits below._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "Raising the free message limit to 50/70 produced slightly more sessions for the treatment arms but no significant paid-rate difference — loosening the limit didn't help monetization while risking giving away value. Control (current limit) retained.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Test lowering the free limit to probe monetization elasticity in the other direction; primary metric: trial-start rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Test a dynamic limit tied to engagement rather than a flat increase; primary metric: paid rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "paywallCTAPosition",
+   "url": "https://app.notion.com/p/paywallCTAPosition-37675e23af20816abf6dcab70502b99a",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Add Subscribe CTA placement on paywall pricing screen with 2-variant a:test b:control",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Note: `SUL` and `Paid` land almost entirely in the `undefined` variant bucket — the `Experiment:` super-property is stamped at sign-up, before variant bucketing, so per-variant paid rate isn't recoverable from the raw cut. Paid/funnel verdict relies on the team's exposure-cohort readout (Aura experiment `result`). `Trial` and `Session` carry clean per-variant splits below._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "Repositioning the Subscribe CTA on the paywall pricing screen sharply reduced paid subscription rate — variant c was 64% lower than control (6.38% vs 17.54%) and both treatments were turned off. The control CTA placement is well-optimized; moving it costs conversion. Control (b) shipped.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Lock the CTA position and instead test CTA copy/color at the control position; primary metric: paid rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Re-run with a larger sample if any placement is revisited — n≈47–57/arm is underpowered for a paid-rate call; primary metric: paid subscription rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "privacyButtonPostFirstConversation",
+   "url": "https://app.notion.com/p/privacyButtonPostFirstConversation-37675e23af2081bfadbbd5cc4fcbde97",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Run a follow-up experiment to show the privacy button only after a user has sent 5 messages in their first conversation",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Note: `SUL` and `Paid` land almost entirely in the `undefined` variant bucket — the `Experiment:` super-property is stamped at sign-up, before variant bucketing, so per-variant paid rate isn't recoverable from the raw cut. Paid/funnel verdict relies on the team's recorded readout (Aura experiment `result`). `Trial` and `Session` carry the per-variant splits below._",
+     "hrefs": []
+    },
+    {
+     "text": "_N is small (tens to low-hundreds per arm) — treat splits as directional, not powered._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "Showing the privacy button only after a user sends 5 messages in their first conversation underperformed the existing always-on placement — both trial starts and conversation sessions were lower for the treatment, and the team kept control (b). Delaying the privacy affordance didn't help engagement or conversion. N is modest (~150–170 sessions/arm, single-to-low-double-digit trials), so read the trial gap as directional.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Test an earlier-but-less-intrusive privacy affordance (e.g. on the first message) to find the right exposure point; primary metric: conversation sessions.",
+     "hrefs": []
+    },
+    {
+     "text": "Test privacy-button copy at the current always-on placement instead of changing its timing; primary metric: trial-start rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "journeyStatsCard",
+   "url": "https://app.notion.com/p/journeyStatsCard-36f75e23af20811584c0f9e06bab253a",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Settings-page streak and stats card. Created 2026-05-20; min v1.19.0.",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Note: `SUL` and `Paid` land almost entirely in the `undefined` variant bucket — the `Experiment:` super-property is stamped at sign-up, before variant bucketing, so per-variant paid rate isn't recoverable from the raw cut. Paid/funnel verdict relies on the team's exposure-cohort readout (Aura experiment `result`). `Trial` and `Session` carry clean per-variant splits below._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "Adding a streak/stats card to the settings page underperformed — lower retention plus fewer trials and sessions for the treatment cohort. Surfacing stats on a low-traffic settings surface added noise without value; control (b) shipped.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Test the streak/stats on a high-visibility surface (home) rather than settings; primary metric: D7 retention.",
+     "hrefs": []
+    },
+    {
+     "text": "Test the streak as an active re-engagement push instead of a passive card; primary metric: return rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server — journeyStatsCard",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments/journeyStatsCard"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "paymentPendingSheet",
+   "url": "https://app.notion.com/p/paymentPendingSheet-36f75e23af20818f8e19ff6517b84835",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Bottom-sheet recovery UI for failed-payment users. Created 2026-05-20; min v1.19.0.",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Note: `SUL` and `Paid` land almost entirely in the `undefined` variant bucket — the `Experiment:` super-property is stamped at sign-up, before variant bucketing, so per-variant paid rate isn't recoverable from the raw cut. Paid/funnel verdict relies on the team's exposure-cohort readout (Aura experiment `result`). `Trial` and `Session` carry clean per-variant splits below._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "Showing a payment-pending sheet to users with failed payments did not recover paid starts and increased cancellation — a net negative despite more trial starts. Control (b) retained.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Test a softer dunning flow (email / silent retry) instead of an interruptive in-app sheet; primary metric: payment recovery rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Test timing/copy of the recovery prompt to reduce the cancellation side-effect; primary metric: cancellation rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server — paymentPendingSheet",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments/paymentPendingSheet"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "paywallTestimonial",
+   "url": "https://app.notion.com/p/paywallTestimonial-36f75e23af208149a742c2755a3fe29e",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Display user testimonials inside the subscription modal. Created 2026-05-21; min v1.19.0.",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Note: `SUL` and `Paid` land almost entirely in the `undefined` variant bucket — the `Experiment:` super-property is stamped at sign-up, before variant bucketing, so per-variant paid rate isn't recoverable from the raw cut. Paid/funnel verdict relies on the team's exposure-cohort readout (Aura experiment `result`). `Trial` and `Session` carry clean per-variant splits below._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "User testimonials on the subscription modal produced no trial-start lift and slightly lower retention/engagement — turned off. Social proof at this placement didn't move conversion.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Test testimonials earlier (pre-paywall, during onboarding) where trust is being formed; primary metric: paywall-view→trial.",
+     "hrefs": []
+    },
+    {
+     "text": "Test outcome-specific testimonials matched to the user's stated goal; primary metric: trial-start rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server — paywallTestimonial",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments/paywallTestimonial"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "encourageRating",
+   "url": "https://app.notion.com/p/encourageRating-35a75e23af2081b0aca0d8aa3d1de863",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "UI section that encourages users to rate Aurie's responses. Created 2026-05-01; min v1.16.1.",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Note: `SUL` and `Paid` land almost entirely in the `undefined` variant bucket — the `Experiment:` super-property is stamped at sign-up, before variant bucketing, so per-variant paid rate isn't recoverable from the raw cut. Paid/funnel verdict relies on the team's exposure-cohort readout (Aura experiment `result`). `Trial` and `Session` carry clean per-variant splits below._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "Highlighting the rating buttons on the conversation-done and QP-done screens for never-rated users lifted total sessions rated +50% (99% sig), with neutral-to-slightly-positive effects elsewhere — more rating signal at no engagement cost. Shipped variant a.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Use the increased rating volume to power a rating-gated feedback / model-eval loop; primary metric: rating coverage.",
+     "hrefs": []
+    },
+    {
+     "text": "Test prompting for a short written reason after a low rating to capture qualitative signal; primary metric: written-feedback rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server — encourageRating",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments/encourageRating"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "aiThreeDayTrialWeb",
+   "url": "https://app.notion.com/p/aiThreeDayTrialWeb-35a75e23af20811b9a28d17b44525136",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Replace the web 7-day yearly trial with a 3-day $19.99 trial. Created 2026-04-30.",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "Variant comparison (Mixpanel segmentation, window per row dates):",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "The 0 trial-starts on variant b is almost certainly an instrumentation gap, not a real result — the 7-day yearly flow may fire a different event name than the 3-day flow, so the property doesn't see b's trial-starts. Before drawing a conclusion, audit which event marks 'trial start' for each variant. Until then, do not interpret the 8/0 split.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Concrete follow-ups from this result:",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server — aiThreeDayTrialWeb",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments/aiThreeDayTrialWeb"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "onboardingPulse",
+   "url": "https://app.notion.com/p/onboardingPulse-35a75e23af2081a6b43ac04472300083",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "UX nudge: variant a pulses the primary CTA button on the homepage for new users. Created 2026-04-30; min v1.16.0.",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Note: `SUL` and `Paid` land almost entirely in the `undefined` variant bucket — the `Experiment:` super-property is stamped at sign-up, before variant bucketing, so per-variant paid rate isn't recoverable from the raw cut. Paid/funnel verdict relies on the team's exposure-cohort readout (Aura experiment `result`). `Trial` and `Session` carry clean per-variant splits below._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "The homepage button pulse for new users was neutral on trials and engagement at large N (~2k/arm). It was turned on for UX polish rather than for any measured lift — a passive cue didn't change behavior.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Test a stronger first-session nudge (tooltip / coachmark) since a passive pulse didn't move behavior; primary metric: D1 first-session rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server — onboardingPulse",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments/onboardingPulse"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "addTrialEndReminderToggle",
+   "url": "https://app.notion.com/p/addTrialEndReminderToggle-35075e23af2081d496b2c24d904393e1",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "introduce a toggle to remind users before their trial ends, which will help them convert to a paid subscription a: Variant 1 b: control c: Variant 2 d: Variant 3",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "The window predates the current Aura event taxonomy, so the metered event names\n('Sign up login', 'Subscription Trial Started') do not match what was being emitted\nfor most of it. Zero in both arms over 514 days is an instrumentation gap, not\nuser behaviour.\n\nThe experiment also carries no end-note in #data-experiment and an empty result\non the experiment server - the only one of the 31 with neither.",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "Nothing was learned, and nothing can be recovered.\n\nThis ran 514 days from 2023-09-22 to 2025-02-17 - the longest window in the\ncatalogue by a factor of ten - and returns zero sign-ups and zero trials in both\narms. The window predates the current event taxonomy, so the events that would\ncarry the answer were never emitted under the names that would find them. Eight\npaid events across both arms is all that is attributed.\n\nIt is also the only one of the 31 rows with no Slack end-note and no result on\nthe experiment server. Nobody read it out at the time either.\n\nRecorded as Turned off rather than Inconclusive deliberately: Inconclusive says a\ntest ran and the data could not settle it, which invites a re-read. This was never\nmeasurable, so the row should stop anyone spending time on it.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Nothing to follow up. If the trial-end reminder is still a live question it needs a fresh experiment on current instrumentation, not a re-read of this one.",
+     "hrefs": []
+    },
+    {
+     "text": "Check whether other pre-2025 rows share this shape - a long window, no end-note and zero metered events. They should be closed rather than left waiting for an analysis that cannot be done.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    },
+    {
+     "text": "Mixpanel - Project Aura (963821), Experiment: addTrialEndReminderToggle, 2023-09-22 to 2025-02-17",
+     "hrefs": []
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "newPricingPage",
+   "url": "https://app.notion.com/p/newPricingPage-35075e23af2081cfa4bde8ff0b65728d",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "new pricing page for apple a:new yearly, b:control, c:yearly monthly",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "active=\"bb\" is the reason this row stayed open for six years. The experiment\nservice decides an experiment has ended with active.length === 1 - the STRING\nlength, not the distinct-letter count - so writing bb forces one arm (a pick\nfrom \"bb\" is always b) while the length-2 string evades the ended check.\n\nSomebody wanted everyone on control without ending the experiment. It worked, and\nthe row went on assigning until 2026-09-18.",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "A 3-arm Apple pricing test that reached 16,964 users, was quietly forced onto\ncontrol, and was never read out - for six years.\n\nIt ran from 2020-04-18 testing a new yearly plan (a) and a yearly-monthly option\n(c) against control (b). At some point before its last edit in May 2022 it was\ncollapsed to active=\"bb\": everyone onto control, experiment still open. No\nresult was ever written.\n\nThe verdict is not recoverable. Its window predates the current Aura event\ntaxonomy, so 16,964 assigned users return 14 metered events in total - the same\nshape as addTrialEndReminderToggle and onboardVoice, both closed in this\nreconcile for the same reason.\n\nWhat survives is the mechanism. bb is not a typo, it is a workaround against\nthe service's own active.length === 1 ended check, and it makes every consumer\nthat counts arms wrong - this row read as \"splitting across 2 arms\" to anything\nasking the catalogue what was live. Two rows carried it; both are now ended and\ndata:sync-experiments' reconcile refuses the shape rather than guessing at it.\n\nEnded 2026-09-18 with winner b, matching what the collapse had already done.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via `analyze-experiment` enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    },
+    {
+     "text": "Aura experiment server - GET /experiments/newPricingPage, ended 2026-09-18",
+     "hrefs": []
+    },
+    {
+     "text": "Mixpanel - Project Aura (963821), engage profile counts per variant",
+     "hrefs": []
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "qpDiveDeeperUI",
+   "url": "https://app.notion.com/p/qpDiveDeeperUI-35075e23af20814d9d9cc4a1e26b13b9",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Quick-processing 'dive deeper' UI / flow. Created 2026-04-27; min v1.16.0.",
+     "hrefs": []
+    },
+    {
+     "text": "a:",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Note: `SUL` and `Paid` land almost entirely in the `undefined` variant bucket — the `Experiment:` super-property is stamped at sign-up, before variant bucketing, so per-variant paid rate isn't recoverable from the raw cut. Paid/funnel verdict relies on the team's exposure-cohort readout (Aura experiment `result`). `Trial` and `Session` carry clean per-variant splits below._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "The Dive Deeper UI/flow after quick-processing lifted post-QP conversation sessions ~25% and improved day- and week-over-week retention, with +26% paid post-QP completion — a clean engagement + monetization win. Shipped variant a.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Extend Dive Deeper entry points to other conversation surfaces beyond QP; primary metric: conversation sessions started.",
+     "hrefs": []
+    },
+    {
+     "text": "Test prompt/topic variety inside the Dive Deeper flow to sustain the retention lift over time; primary metric: WoW retention.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server — qpDiveDeeperUI",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments/qpDiveDeeperUI"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "hideIncognitoButton",
+   "url": "https://app.notion.com/p/hideIncognitoButton-35075e23af2081fcafabd44bb9fd01f0",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Hide the incognito (temporary/privacy chat) button for new users. The incognito feature lets users start conversations that aren't saved to memory or history. Hypothesis: new users may find the toggle confusing or distracting during early sessions; hiding it could improve activation.",
+     "hrefs": []
+    },
+    {
+     "text": "a : Hide incognito button (treatment) — new users do not see the incognito toggle",
+     "hrefs": []
+    },
+    {
+     "text": "b : Control — new users see the incognito button as normal",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "Exposure quality: sound for the engagement metric. Event-level attribution\nputs 4.7% of sessions (236 of 5061) before the variant stamp, so the session cut\ncovers post-exposure behaviour. Sign-up itself is 100% pre-stamp, as expected -\nassignment happens at or after registration, which is why N is taken from the\nuser-level breakdown rather than the event-level one.",
+     "hrefs": []
+    },
+    {
+     "text": "Context",
+     "hrefs": []
+    },
+    {
+     "text": "Incognito mode (\"temporary chat\") was built as part of V1.2 (ENG-317). The button appears in chat, voice, and QP headers.",
+     "hrefs": []
+    },
+    {
+     "text": "Variant a gates visibility via the hideIncognitoButton experiment flag — when variant is \"a\", the button is hidden.",
+     "hrefs": []
+    },
+    {
+     "text": "After the first message, the button is locked regardless of variant (ENG-333 fix).",
+     "hrefs": []
+    },
+    {
+     "text": "Related: PROD-954 (incognito state/UI implementation), ENG-333 (bug fixes + polish), ENG-317 (parent: temporary chat mode).",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "Hiding the incognito button won on engagement without costing trials. Variant a\nran +14.4% sessions per user (2.86 vs 2.50) on ~950 users an arm, with trial start\nflat at 58.7% vs 59.4% - so the lift is people talking to Aurie more, not a funnel\ntrade. Paid rate moved with it, +20.8% on N and +22.4% per trial.\n\nOur magnitude differs from the end-note's +68% Paid Start Rate, and the reason is\nthe observation window, not the verdict. Paid conversion lags trial start, and the\nend-note measured n=1105 lagged trials past the experiment's own end date; this cut\nstops at 2026-05-29 and so sees less of the paid tail. Both agree variant a won and\nthat paid is where it won - read the +68% as the fuller-tail figure and +22% as the\nwithin-window floor.\n\nThe incognito button was a reassurance affordance that turned out to cost the\nconversation it was meant to protect.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Re-run the paid comparison with a 30-day lag window past the end date. Both figures here are right about direction and neither is the settled magnitude; a fixed lag makes this experiment comparable to the rest of the paywall family.",
+     "hrefs": []
+    },
+    {
+     "text": "Test the button's copy rather than its presence - if privacy reassurance has value, it may be recoverable without the toggle. Primary metric: sessions per user, guardrail trial start rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Check whether the engagement lift holds past D1. The end-note reports D1 retention +33%; a W1/W4 read would say whether hiding the toggle changed the habit or only the first session.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    },
+    {
+     "text": "PROD-954 — iOS incognito mode implementation",
+     "hrefs": [
+      "https://linear.app/aura-health/issue/PROD-954"
+     ]
+    },
+    {
+     "text": "ENG-333 — Incognito bug fixes and polish",
+     "hrefs": [
+      "https://linear.app/aura-health/issue/ENG-333"
+     ]
+    },
+    {
+     "text": "ENG-317 — Temporary chat mode (parent)",
+     "hrefs": [
+      "https://linear.app/aura-health/issue/ENG-317"
+     ]
+    },
+    {
+     "text": "Mixpanel - Project Aura (963821), Experiment: hideIncognitoButton, 2026-04-02 to 2026-05-29",
+     "hrefs": []
+    },
+    {
+     "text": "Slack #data-experiment - AuraBot end-note, 2079 users",
+     "hrefs": []
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "pricingAddFAQs",
+   "url": "https://app.notion.com/p/pricingAddFAQs-34f75e23af2081dca43fe412141f012e",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Add a FAQ section on the web payment page, part of the 2026-04-22 pricing batch.",
+     "hrefs": []
+    },
+    {
+     "text": "a: New FAQs section rendered below the money-back guarantee card",
+     "hrefs": []
+    },
+    {
+     "text": "b: Control (no FAQs section)",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Note: `SUL` and `Paid` land almost entirely in the `undefined` variant bucket — the `Experiment:` super-property is stamped at sign-up, before variant bucketing, so per-variant paid rate isn't recoverable from the raw cut. Paid/funnel verdict relies on the team's exposure-cohort readout (Aura experiment `result`). `Trial` and `Session` carry clean per-variant splits below._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "Adding a FAQ section to the web payment page lifted trial-start ~36% (variant a) with the full funnel up +32% (81% sig) and trial→paid tied — the only clear winner in the 6-test pricing batch. Shipped variant a.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Extend the FAQ treatment to the mobile paywall — hyp: the same objection-reducer works on iOS; primary metric: mobile trial-start rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Test FAQ content variants (objection-specific vs generic copy) to find which questions drive the lift; primary metric: web trial-start rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server — pricingAddFAQs",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments/pricingAddFAQs"
+     ]
+    },
+    {
+     "text": "Slack — Aurie Web v0.1.50 release announcement",
+     "hrefs": [
+      "https://auramobile.slack.com/archives/CPTFXHNP2/p1777322893923859"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "paymentCTACopy",
+   "url": "https://app.notion.com/p/paymentCTACopy-34f75e23af2081deb572c90d416698b0",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Change the payment CTA copy to 'Try For $0.00' when the user has no trial fee, part of the 2026-04-22 pricing batch.",
+     "hrefs": []
+    },
+    {
+     "text": "a: \"Try For $0.00\"",
+     "hrefs": []
+    },
+    {
+     "text": "b: Control (current CTA — e.g. \"Try Completely Free\" / \"Start Free Trial\")",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Note: `SUL` and `Paid` land almost entirely in the `undefined` variant bucket — the `Experiment:` super-property is stamped at sign-up, before variant bucketing, so per-variant paid rate isn't recoverable from the raw cut. Paid/funnel verdict relies on the team's exposure-cohort readout (Aura experiment `result`). `Trial` and `Session` carry clean per-variant splits below._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "The dynamic \"Try For $0.00 / Try Aurie Now\" CTA did not beat the existing copy on trial starts and produced materially higher cancellation — a net negative. Control (b) retained.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Test an honesty-forward CTA that sets the post-trial price expectation upfront to cut cancellation; primary metric: trial→paid retention.",
+     "hrefs": []
+    },
+    {
+     "text": "Isolate whether the cancellation rise was the copy or price-salience by testing the \"$0.00\" framing alone; primary metric: cancellation rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server — paymentCTACopy",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments/paymentCTACopy"
+     ]
+    },
+    {
+     "text": "Slack — Aurie Web v0.1.50 release announcement",
+     "hrefs": [
+      "https://auramobile.slack.com/archives/CPTFXHNP2/p1777322893923859"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "iterableFamilyPriceIncreaseTo15999Unengaged",
+   "url": "https://app.notion.com/p/iterableFamilyPriceIncreaseTo15999Unengaged-3de75e23af20817380d5e0964b281167",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Family plan price increase for existing unengaged subscribers on renewal. a: raise to $159.99, b: control, keep current price",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Awaiting end of experiment._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server (primary)",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "iterableFamilyPriceIncreaseTo15999Engaged",
+   "url": "https://app.notion.com/p/iterableFamilyPriceIncreaseTo15999Engaged-3de75e23af2081d3ac84ef33081d5bef",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Family plan price increase for existing engaged subscribers on renewal. a: raise to $159.99, b: control, keep current price",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Awaiting end of experiment._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server (primary)",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "aiPriceIncrease2",
+   "url": "https://app.notion.com/p/aiPriceIncrease2-3dd75e23af2081efa8e1fc3cf92cf1a2",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "From the experiment-server registration note: test 89.99 yearly and 24.99 monthly pricing for plus plan",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Awaiting end of experiment._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server (primary)",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "dailyPractices3",
+   "url": "https://app.notion.com/p/dailyPractices3-3dd75e23af20811dacc5eb20aa62059a",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "From the experiment-server registration note: Retest daily practices with default practices setup",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Awaiting end of experiment._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server (primary)",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "annualDunningEmail3Arm",
+   "url": "https://app.notion.com/p/annualDunningEmail3Arm-3dc75e23af2081379425eae1286ce5a7",
+   "blocks": [
+    {
+     "text": "Spec — not launched. Owner: Daniel. Flip Status to Running and fill Start/End Date on launch day.",
+     "hrefs": []
+    },
+    {
+     "text": "Why this is the biggest lever on the board",
+     "hrefs": []
+    },
+    {
+     "text": "870 annual subscribers a month hit a failed renewal. None of them are contacted. The 9% that come back are recovered entirely by Stripe Smart Retries.",
+     "hrefs": []
+    },
+    {
+     "text": "This is a first-contact lever, not an optimization lever. There is no incumbent email to beat.",
+     "hrefs": []
+    },
+    {
+     "text": "What the archive says — read before arguing about the offer",
+     "hrefs": []
+    },
+    {
+     "text": "This problem has been attacked four times from the wrong angle and lost every time:",
+     "hrefs": []
+    },
+    {
+     "text": "Two things fall out of that table.",
+     "hrefs": []
+    },
+    {
+     "text": "One: the surface was wrong, not the intervention. Every loss above put the message somewhere the user had to already be in the app to see it. A user whose card silently declined has no reason to open Aura that week. Email is the one channel that reaches them without requiring the behaviour we are trying to restore — and it is the one channel never tried on this cohort. Daniel's read is right, and the archive supports it rather than undercutting it.",
+     "hrefs": []
+    },
+    {
+     "text": "Two: discounts have lost here twice. fpRenewalChurn and pushTrialCancelled both put money on the table and both lost. That is the single strongest reason the offer arm below carries a plan switch at list price rather than a discount.",
+     "hrefs": []
+    },
+    {
+     "text": "One more prior worth pulling forward: fpRenewalChurn2 Won in Dec 2023, and its win was not in conversion — trial and paid rates were flat (19.5% vs 19.3% on N≈9k/arm). The recorded API note is \"a Lower refunds 24%\". A renewal intervention at Aura has already been shown to pay off through refunds rather than through recovery rate. That shapes the metric design below, and it is the whole reason pre-dunning gets measured on net revenue.",
+     "hrefs": []
+    },
+    {
+     "text": "The design",
+     "hrefs": []
+    },
+    {
+     "text": "Three arms, assigned at customer level, so a customer who fails twice in the window stays in the arm they were first assigned to.",
+     "hrefs": []
+    },
+    {
+     "text": "Why A exists at all. Without it, the whole first-contact lift — which will be most of the lift — lands on the offer arm and gets written up as \"the downgrade offer works.\" Then the offer ships, the discount precedent gets set, and nobody knows whether a plain card-update email would have delivered 90% of it for free. A is the arm that makes the readout mean something.",
+     "hrefs": []
+    },
+    {
+     "text": "Why email 1 is identical in A and B. Introducing the offer at first contact downgrades people who would simply have updated an expired card — you would be paying for recoveries you were getting anyway. Holding the offer until email 2 lets the easy fixes resolve at full price and aims the offer at the residual. The cost is that offer timing becomes a confound with offer presence; that is deliberate, and offer-at-day-0 is the natural follow-up test once the offer itself is proven.",
+     "hrefs": []
+    },
+    {
+     "text": "Why 40/40/20 rather than thirds. The holdout is the expensive arm — every user in it is a user we knowingly do not try to recover, at roughly $924/mo in forgone recovery at 20%. Shrinking it to 20% cuts that cost while still powering the headline comparison faster than equal allocation would, because the pooled A+B group grows.",
+     "hrefs": []
+    },
+    {
+     "text": "Randomization and eligibility",
+     "hrefs": []
+    },
+    {
+     "text": "Unit: Stripe customer ID, hashed and bucketed at first invoice.payment_failed on an annual subscription. Sticky for 180 days.",
+     "hrefs": []
+    },
+    {
+     "text": "In scope: Aura annual subscriptions billed through Stripe, first failure of the renewal invoice.",
+     "hrefs": []
+    },
+    {
+     "text": "Out of scope: App Store / Play Store billing (different dunning mechanics entirely — worth its own spec), monthly plans, subscriptions already in a cancellation flow, anyone who cancelled voluntarily before the renewal date.",
+     "hrefs": []
+    },
+    {
+     "text": "Stratify on decline-code family (see pre-work) so an unlucky split on expired_card vs insufficient_funds does not swamp a 3-point effect.",
+     "hrefs": []
+    },
+    {
+     "text": "Cadence, pinned to the Smart Retries window",
+     "hrefs": []
+    },
+    {
+     "text": "Smart Retries spreads up to four ML-timed attempts over roughly three weeks. The emails ride alongside it rather than running on their own clock, so the user is never told \"your payment failed\" on a day Stripe has already succeeded.",
+     "hrefs": []
+    },
+    {
+     "text": "Suppression: any send is cancelled on invoice.paid, customer.subscription.deleted, or a successful plan switch. Cap one email per day per customer across all Aura streams during the window.",
+     "hrefs": []
+    },
+    {
+     "text": "The offer — both variants designed, one ships first",
+     "hrefs": []
+    },
+    {
+     "text": "Daniel asked for both a discounted annual and a monthly downgrade. Both are specified below. Only one can be in Arm B without destroying the power budget (a fourth arm pushes the A-vs-B read past eight months), so one ships in Test 1 and the other becomes the Test 2 challenger.",
+     "hrefs": []
+    },
+    {
+     "text": "Recommendation: monthly downgrade at list price ships first",
+     "hrefs": []
+    },
+    {
+     "text": "Three reasons.",
+     "hrefs": []
+    },
+    {
+     "text": "It matches the failure mode. An $89 single charge failing on a thin card is a charge-size problem. A 30%-off annual is still a $62 lump sum landing on the same card. Monthly at list is the only offer that changes the shape of the ask rather than just its size.",
+     "hrefs": []
+    },
+    {
+     "text": "Aura has lost on discounts twice at exactly this moment (fpRenewalChurn, pushTrialCancelled). Leading with a discount means the likely outcome is another loss that also costs margin and sets a precedent that is hard to walk back once support starts quoting it.",
+     "hrefs": []
+    },
+    {
+     "text": "Aura already sells monthly and it already won (addMonthlyPackagePaywall, Won). The SKU exists, the price is public, and the plan switch runs through the Stripe Customer Portal with no new billing surface to build.",
+     "hrefs": []
+    },
+    {
+     "text": "The counter-case, stated fairly: if the decline-code distribution comes back dominated by expired_card, then neither offer is the lever — the answer is a better card-update path and the Account Updater work in the pre-work section — and the monthly offer will look flat for the right reason. Run the decline-code pull before launch so this is a known quantity rather than a post-hoc explanation.",
+     "hrefs": []
+    },
+    {
+     "text": "Economics — monthly downgrade",
+     "hrefs": []
+    },
+    {
+     "text": "The trap: recovery rate and recovery revenue diverge the moment you offer a cheaper plan. Arm B can beat Arm A on recovery rate and still lose money. Break-even depends on how long a recovered monthly subscriber survives.",
+     "hrefs": []
+    },
+    {
+     "text": "Assuming Arm A recovers 14%, and Arm B recovers the same population as 9% at annual + 8% switching to monthly:",
+     "hrefs": []
+    },
+    {
+     "text": "We already have this number. Median tenure of Aura's existing monthly cohort is a query, not an assumption — pull it before launch and write the break-even threshold into this doc. If existing monthly subs survive 6+ months, the offer is comfortably accretive at any of these prices. If they survive 3, it is a revenue-negative recovery machine and the arm should be reconsidered.",
+     "hrefs": []
+    },
+    {
+     "text": "Economics — discounted annual",
+     "hrefs": []
+    },
+    {
+     "text": "Same shift assumptions (14% plain; offer arm = 9% at full price + 8% at a discount). Maximum discount depth before year-1 revenue falls below Arm A:",
+     "hrefs": []
+    },
+    {
+     "text": "The first row is the pessimistic case and the one to design against: cap any discount at 30%, which leaves a margin of safety. Frame it as a one-time credit (\"$25 off this year's renewal\"), not a rate cut — a dollar amount doesn't reset the customer's reference price the way a percentage does, and it doesn't renew.",
+     "hrefs": []
+    },
+    {
+     "text": "Third option worth its own slot later",
+     "hrefs": []
+    },
+    {
+     "text": "Neither offer addresses the user who genuinely cannot pay right now. subscriptionPauseInCancellation is already running on the cancellation flow; a defer-30-days option in the dunning sequence is the cheapest possible save — no discount, no plan change, no revenue loss, just a later charge date. Worth queuing as Test 3.",
+     "hrefs": []
+    },
+    {
+     "text": "Metrics",
+     "hrefs": []
+    },
+    {
+     "text": "Primary: net recovered revenue per 1,000 failed invoices, measured at day 60.",
+     "hrefs": []
+    },
+    {
+     "text": "Not recovery rate. Recovery rate is the metric that makes Arm B look like a winner while it quietly trades $88.50 annual subs for $12.99 monthly ones. Net recovered revenue is defined as: renewal revenue collected + 12-month contracted value of any plan switch at its actual price, minus refunds, minus chargebacks. Day 60 because Smart Retries runs ~21 days and the offer window and refund window need to close before the number is stable.",
+     "hrefs": []
+    },
+    {
+     "text": "Report recovery rate as the headline secondary — it is the number everyone will ask for, and the gap between it and net revenue is the most interesting thing this test will produce.",
+     "hrefs": []
+    },
+    {
+     "text": "Secondaries",
+     "hrefs": []
+    },
+    {
+     "text": "Recovery rate (any successful payment within 60 days)",
+     "hrefs": []
+    },
+    {
+     "text": "Split of recoveries: full annual / switched to monthly / recovered after switch",
+     "hrefs": []
+    },
+    {
+     "text": "Email funnel per step: delivered, open, click, card updated, paid",
+     "hrefs": []
+    },
+    {
+     "text": "Time to recovery (which email in the sequence does the work)",
+     "hrefs": []
+    },
+    {
+     "text": "Refund rate on recovered subscriptions",
+     "hrefs": []
+    },
+    {
+     "text": "Downstream: 90-day retention of recovered subs, by arm and by recovery path",
+     "hrefs": []
+    },
+    {
+     "text": "Guardrails — pre-registered stop conditions",
+     "hrefs": []
+    },
+    {
+     "text": "That last one matters: the offer email tells a lapsed user their subscription exists. Some of them will use that information to cancel outright. Watch it.",
+     "hrefs": []
+    },
+    {
+     "text": "One consent note. The plain sequence is transactional — a billing notice for a live contract. The offer block arguably makes Arm B promotional. Get this classified before launch: if it has to go out under marketing consent, Arm B's addressable population shrinks and the arms are no longer comparable. Most billing-adjacent counsel will land on \"transactional with an embedded service option,\" but confirm rather than assume.",
+     "hrefs": []
+    },
+    {
+     "text": "Powering and runtime",
+     "hrefs": []
+    },
+    {
+     "text": "Two-proportion test, α = 0.05 two-sided, 80% power.",
+     "hrefs": []
+    },
+    {
+     "text": "Run 16 weeks, fixed horizon, with one futility check at week 7.",
+     "hrefs": []
+    },
+    {
+     "text": "The holdout answer lands at week 7. Do not ship on it and kill the test — the offer question is the one that determines whether a discount precedent enters Aura's playbook, and it needs the full run. What week 7 does buy: if pooled email is not beating the holdout by then, stop, because nothing downstream matters.",
+     "hrefs": []
+    },
+    {
+     "text": "Accept +4pp as the B-vs-A MDE. Chasing +3pp costs another twelve weeks for a difference that would not change the decision.",
+     "hrefs": []
+    },
+    {
+     "text": "Holdout cost: 174 users/mo × 6pp × $88.50 ≈ $924/mo forgone, roughly $3.4k over the 16-week run. That is the price of knowing whether the offer or the contact did the work, and it is cheap against a $55k/yr decision. Take it to whoever needs to sign off on it explicitly rather than burying it.",
+     "hrefs": []
+    },
+    {
+     "text": "Peeking: one interim look at week 7, pre-registered. No other peeks. If someone wants a continuous readout, use a sequential boundary (O'Brien-Fleming) and say so here before launch, not after.",
+     "hrefs": []
+    },
+    {
+     "text": "Decision rules — write these down before you look at data",
+     "hrefs": []
+    },
+    {
+     "text": "Build",
+     "hrefs": []
+    },
+    {
+     "text": "Stripe's built-in failed-payment emails are a single template with no variant support and no arbitrary CTA — they cannot run three arms, and they cannot carry a plan-switch link. Given that 870 users/mo are currently uncontacted, they are presumably switched off today. So:",
+     "hrefs": []
+    },
+    {
+     "text": "Keep Smart Retries as the retry engine. Do not change the retry schedule during the test; it is a shared confound across all three arms and must stay frozen.",
+     "hrefs": []
+    },
+    {
+     "text": "Leave Stripe's native emails off. Turning them on for some arms and not others introduces a second sender and a second template.",
+     "hrefs": []
+    },
+    {
+     "text": "Trigger sends off invoice.payment_failed webhooks into Iterable. Aura already runs Iterable (iterableChurnPrevention, iterableContentvsSale, and others), so this is wiring, not a new vendor.",
+     "hrefs": []
+    },
+    {
+     "text": "Arm A CTA → invoice.hosted_invoice_url. Stripe-hosted, no build, updates the card and charges in one step.",
+     "hrefs": []
+    },
+    {
+     "text": "Arm B CTA → Stripe Customer Portal with plan switching enabled, deep-linked to the monthly SKU. Also no custom billing surface. Confirm proration behaviour on a switch from a failed annual invoice — the unpaid invoice should be voided, not prorated into the new plan.",
+     "hrefs": []
+    },
+    {
+     "text": "Webhook payload must carry: customer ID, arm assignment, invoice ID, amount, decline code, attempt number, last4, card brand, card expiry.",
+     "hrefs": []
+    },
+    {
+     "text": "If Iterable cannot be triggered off Stripe webhooks without engineering work, that is the critical-path blocker and it should be sized before anything else in this doc gets scheduled.",
+     "hrefs": []
+    },
+    {
+     "text": "Pre-work — three pulls, all cheap, all before launch",
+     "hrefs": []
+    },
+    {
+     "text": "Decline-code distribution across the 870. Group into expired_card / insufficient_funds / do_not_honor / generic_decline / other. This determines whether the offer hypothesis is even live, and it is the stratification variable. If expired_card dominates, say so out loud now rather than discovering it in the readout.",
+     "hrefs": []
+    },
+    {
+     "text": "Median tenure and 12-month revenue of Aura's existing monthly cohort. Turns the break-even table above from a sensitivity analysis into a threshold.",
+     "hrefs": []
+    },
+    {
+     "text": "fpRenewalChurn2's actual mechanics. It Won in Dec 2023 on a 24% refund reduction and the page has no record of what was tested. Someone knows. Finding out may mean this test is partly re-running something that already shipped — worth twenty minutes to check.",
+     "hrefs": []
+    },
+    {
+     "text": "And one build that is not an experiment: Stripe Card Account Updater plus network tokenization. If expired_card is a meaningful share of the 870, this recovers subscriptions with no email, no offer and no user action at all. It may be worth more than everything in this doc. It is not an A/B test, it is a configuration change — but do not ship it mid-test, because it changes the denominator.",
+     "hrefs": []
+    },
+    {
+     "text": "Copy — Arm A (plain)",
+     "hrefs": []
+    },
+    {
+     "text": "Deliberately unadorned. No usage recap, no personalization beyond name and card, no social proof. Arm A's job is to isolate contact; every extra ingredient contaminates that. Usage personalization is a good idea and belongs in a later test, not this one.",
+     "hrefs": []
+    },
+    {
+     "text": "E1 — Day 0",
+     "hrefs": []
+    },
+    {
+     "text": "Subject: Your Aura renewal didn't go through",
+     "hrefs": []
+    },
+    {
+     "text": "Preheader: Your card was declined — here's a link to sort it out.",
+     "hrefs": []
+    },
+    {
+     "text": "Hi {{first_name}},",
+     "hrefs": []
+    },
+    {
+     "text": "We tried to renew your Aura subscription today and your card ending {{last4}} was declined. It's usually something simple — an expired card, or a bank flagging the charge.",
+     "hrefs": []
+    },
+    {
+     "text": "Your account is still active. We'll try again automatically over the next few days.",
+     "hrefs": []
+    },
+    {
+     "text": "[Update your card]",
+     "hrefs": []
+    },
+    {
+     "text": "If nothing changes, your subscription will end on {{grace_end_date}}.",
+     "hrefs": []
+    },
+    {
+     "text": "— The Aura team",
+     "hrefs": []
+    },
+    {
+     "text": "E2 — Day 3",
+     "hrefs": []
+    },
+    {
+     "text": "Subject: We tried your card again — still declined",
+     "hrefs": []
+    },
+    {
+     "text": "Preheader: Takes about thirty seconds to fix.",
+     "hrefs": []
+    },
+    {
+     "text": "Hi {{first_name}},",
+     "hrefs": []
+    },
+    {
+     "text": "Your card ending {{last4}} was declined again. Your Aura account is still active until {{grace_end_date}}.",
+     "hrefs": []
+    },
+    {
+     "text": "[Update your card]",
+     "hrefs": []
+    },
+    {
+     "text": "If you're not sure why it's failing, your bank will know — it's almost always an expiry date or a fraud hold on a recurring charge.",
+     "hrefs": []
+    },
+    {
+     "text": "— The Aura team",
+     "hrefs": []
+    },
+    {
+     "text": "E3 — Day 7",
+     "hrefs": []
+    },
+    {
+     "text": "Subject: Your Aura subscription ends {{grace_end_date}}",
+     "hrefs": []
+    },
+    {
+     "text": "Preheader: Your card is still declining.",
+     "hrefs": []
+    },
+    {
+     "text": "Hi {{first_name}},",
+     "hrefs": []
+    },
+    {
+     "text": "We haven't been able to renew your subscription. On {{grace_end_date}} your account will move to the free tier and you'll lose access to the full library, your downloads, and your saved sessions.",
+     "hrefs": []
+    },
+    {
+     "text": "[Update your card]",
+     "hrefs": []
+    },
+    {
+     "text": "— The Aura team",
+     "hrefs": []
+    },
+    {
+     "text": "E4 — Day 14",
+     "hrefs": []
+    },
+    {
+     "text": "Subject: {{days_left}} days until your Aura access ends",
+     "hrefs": []
+    },
+    {
+     "text": "Preheader: One link, and nothing changes.",
+     "hrefs": []
+    },
+    {
+     "text": "Hi {{first_name}},",
+     "hrefs": []
+    },
+    {
+     "text": "Your renewal is still unpaid and your subscription ends in {{days_left}} days. After that you'd need to resubscribe at the current price.",
+     "hrefs": []
+    },
+    {
+     "text": "[Update your card]",
+     "hrefs": []
+    },
+    {
+     "text": "— The Aura team",
+     "hrefs": []
+    },
+    {
+     "text": "E5 — Day 20 (final)",
+     "hrefs": []
+    },
+    {
+     "text": "Subject: Last chance — your Aura subscription ends tomorrow",
+     "hrefs": []
+    },
+    {
+     "text": "Preheader: After tomorrow you'd have to start over.",
+     "hrefs": []
+    },
+    {
+     "text": "Hi {{first_name}},",
+     "hrefs": []
+    },
+    {
+     "text": "This is the last email about this. Tomorrow your Aura subscription ends and your account moves to the free tier.",
+     "hrefs": []
+    },
+    {
+     "text": "[Update your card and keep your subscription]",
+     "hrefs": []
+    },
+    {
+     "text": "If you'd rather let it go, you don't need to do anything.",
+     "hrefs": []
+    },
+    {
+     "text": "— The Aura team",
+     "hrefs": []
+    },
+    {
+     "text": "Copy — Arm B (offer)",
+     "hrefs": []
+    },
+    {
+     "text": "E1 is byte-identical to Arm A's E1. Same subject, same body, same CTA, same send time. E2–E5 are Arm A's emails with the block below inserted beneath the primary CTA — nothing else changes, so the read stays clean.",
+     "hrefs": []
+    },
+    {
+     "text": "The offer block (E2–E4)",
+     "hrefs": []
+    },
+    {
+     "text": "———",
+     "hrefs": []
+    },
+    {
+     "text": "Or pay monthly instead",
+     "hrefs": []
+    },
+    {
+     "text": "If the once-a-year charge is the sticking point, you can switch to ${{monthly_price}}/month — same full access, smaller payment, cancel any time.",
+     "hrefs": []
+    },
+    {
+     "text": "[Switch to monthly]",
+     "hrefs": []
+    },
+    {
+     "text": "E5 — offer leads",
+     "hrefs": []
+    },
+    {
+     "text": "Subject: Last chance — or switch to ${{monthly_price}}/month",
+     "hrefs": []
+    },
+    {
+     "text": "Preheader: Two ways to keep your access. Both take a minute.",
+     "hrefs": []
+    },
+    {
+     "text": "Hi {{first_name}},",
+     "hrefs": []
+    },
+    {
+     "text": "This is the last email about this. Tomorrow your Aura subscription ends.",
+     "hrefs": []
+    },
+    {
+     "text": "If the annual charge isn't working for you right now, switch to monthly — ${{monthly_price}}/month, same full access, cancel any time.",
+     "hrefs": []
+    },
+    {
+     "text": "[Switch to monthly]",
+     "hrefs": []
+    },
+    {
+     "text": "Or [update your card] to keep your annual plan.",
+     "hrefs": []
+    },
+    {
+     "text": "— The Aura team",
+     "hrefs": []
+    },
+    {
+     "text": "If the discounted-annual variant ships instead, swap the block for:",
+     "hrefs": []
+    },
+    {
+     "text": "Or take $25 off this year",
+     "hrefs": []
+    },
+    {
+     "text": "We'd rather keep you than lose you over a renewal. Use this link and this year's renewal is ${{discounted_price}} instead of ${{annual_price}}.",
+     "hrefs": []
+    },
+    {
+     "text": "[Renew for ${{discounted_price}}]",
+     "hrefs": []
+    },
+    {
+     "text": "One-time credit, applies to this renewal only.",
+     "hrefs": []
+    },
+    {
+     "text": "That last line is not decoration — it is what stops the discount from becoming the price.",
+     "hrefs": []
+    },
+    {
+     "text": "Copy notes",
+     "hrefs": []
+    },
+    {
+     "text": "Every subject line names the problem in the first four words. Dunning emails are not the place for curiosity gaps; a user who doesn't open this loses their subscription.",
+     "hrefs": []
+    },
+    {
+     "text": "No exclamation marks, no \"Oops!\", no apology. The tone is a bank notice written by someone who likes you.",
+     "hrefs": []
+    },
+    {
+     "text": "\"It's usually something simple\" in E1 is doing real work: it removes the implication that the user's card was rejected for lack of funds, which is the reading that makes people ignore the email.",
+     "hrefs": []
+    },
+    {
+     "text": "E5 in Arm A explicitly offers the exit. Counterintuitive, but it is the line that keeps complaint rate down, and complaint rate on this cohort is a deliverability risk for every other Aura email.",
+     "hrefs": []
+    },
+    {
+     "text": "{{grace_end_date}} must be the real date the subscription cancels in Stripe. If the email says one date and Stripe does another, that is a support and chargeback problem, not a copy problem.",
+     "hrefs": []
+    },
+    {
+     "text": "Phase 2 — pre-dunning notice at T-7",
+     "hrefs": []
+    },
+    {
+     "text": "Designed here so the program is complete, but not launched alongside the dunning test. It gets its own row in this database when it's scheduled.",
+     "hrefs": []
+    },
+    {
+     "text": "Why it runs second",
+     "hrefs": []
+    },
+    {
+     "text": "A T-7 renewal notice changes who lands in dunning at all — fewer expired cards, fewer surprise charges, and a different mix of decline reasons among those who still fail. Running both at once means the dunning test's denominator shifts underneath it mid-flight. Running pre-dunning first means waiting four months for the bigger lever. So: dunning first, pre-dunning starts the week the dunning test closes, and the dunning baseline gets re-measured afterwards.",
+     "hrefs": []
+    },
+    {
+     "text": "The thing that makes this test different",
+     "hrefs": []
+    },
+    {
+     "text": "A renewal reminder can lose money by working. It tells a user who forgot they subscribed that they subscribed. Some of them cancel. The upside is quieter: fewer failed charges, fewer refund requests, fewer chargebacks.",
+     "hrefs": []
+    },
+    {
+     "text": "We have evidence for exactly this shape at Aura. fpRenewalChurn2 Won in Dec 2023 with trial and paid rates essentially flat (19.5% vs 19.3%, N≈9k/arm) — the recorded win was \"a Lower refunds 24%\". A renewal intervention here has already paid off through refunds rather than conversion.",
+     "hrefs": []
+    },
+    {
+     "text": "So the primary metric is net revenue retained per 1,000 upcoming renewals at day 45 post-renewal — renewal revenue collected, minus refunds, minus chargebacks. Involuntary failure rate is a secondary. Anyone who proposes judging this on failure rate alone is measuring the half of the effect that flatters the test.",
+     "hrefs": []
+    },
+    {
+     "text": "Arms",
+     "hrefs": []
+    },
+    {
+     "text": "B is the arm with a real mechanism: a user whose card expires in nineteen days cannot act on information nobody gives them. A is the compliance-grade floor.",
+     "hrefs": []
+    },
+    {
+     "text": "Highest-yield segment: subscribers whose card on file expires before the renewal date. Pre-register it. It is small, the effect there should be large, and it is the segment that justifies the build even if the overall read is flat.",
+     "hrefs": []
+    },
+    {
+     "text": "Compliance — check before assuming the holdout is legal",
+     "hrefs": []
+    },
+    {
+     "text": "Advance renewal notice for annual auto-renewals is required or effectively required in several jurisdictions — California's Automatic Renewal Law is the one most likely to bind Aura given the subscriber base, and the federal negative-option landscape has been in flux. This is a question for counsel, not for this doc. Two consequences if notice turns out to be mandatory:",
+     "hrefs": []
+    },
+    {
+     "text": "Arm C is not available and the test becomes A vs B, which is fine — it is also the more interesting comparison.",
+     "hrefs": []
+    },
+    {
+     "text": "The T-7 notice ships regardless of what the test says, and the test is only choosing between two versions of a thing you have to send anyway.",
+     "hrefs": []
+    },
+    {
+     "text": "Worth resolving early: it changes whether this is a growth experiment or a compliance build with an experiment attached.",
+     "hrefs": []
+    },
+    {
+     "text": "Pre-dunning copy — Arm A",
+     "hrefs": []
+    },
+    {
+     "text": "Subject: Your Aura subscription renews on {{renewal_date}}",
+     "hrefs": []
+    },
+    {
+     "text": "Preheader: ${{amount}} on the card ending {{last4}}.",
+     "hrefs": []
+    },
+    {
+     "text": "Hi {{first_name}},",
+     "hrefs": []
+    },
+    {
+     "text": "A quick heads-up: your Aura annual subscription renews on {{renewal_date}} for ${{amount}}, charged to the card ending {{last4}}.",
+     "hrefs": []
+    },
+    {
+     "text": "Nothing to do if that all looks right.",
+     "hrefs": []
+    },
+    {
+     "text": "[Manage your subscription]",
+     "hrefs": []
+    },
+    {
+     "text": "— The Aura team",
+     "hrefs": []
+    },
+    {
+     "text": "Pre-dunning copy — Arm B",
+     "hrefs": []
+    },
+    {
+     "text": "Subject: Your Aura subscription renews on {{renewal_date}}",
+     "hrefs": []
+    },
+    {
+     "text": "Preheader: One thing worth checking before it does.",
+     "hrefs": []
+    },
+    {
+     "text": "Hi {{first_name}},",
+     "hrefs": []
+    },
+    {
+     "text": "Your Aura annual subscription renews on {{renewal_date}} for ${{amount}}.",
+     "hrefs": []
+    },
+    {
+     "text": "{{#if card_expires_before_renewal}}",
+     "hrefs": []
+    },
+    {
+     "text": "Heads-up: the card we have on file ends {{last4}} and expires {{card_expiry}} — before your renewal date. If we can't charge it, your access stops.",
+     "hrefs": []
+    },
+    {
+     "text": "[Update your card]",
+     "hrefs": []
+    },
+    {
+     "text": "{{else}}",
+     "hrefs": []
+    },
+    {
+     "text": "We'll charge the card ending {{last4}}.",
+     "hrefs": []
+    },
+    {
+     "text": "{{/if}}",
+     "hrefs": []
+    },
+    {
+     "text": "This past year you finished {{sessions_count}} sessions and kept a {{streak_weeks}}-week streak going.",
+     "hrefs": []
+    },
+    {
+     "text": "[Manage your subscription]",
+     "hrefs": []
+    },
+    {
+     "text": "— The Aura team",
+     "hrefs": []
+    },
+    {
+     "text": "The usage recap is the one piece of personalization worth its complexity here: it is the difference between \"you are about to be charged $89\" and \"you are about to be charged $89 for something you used.\"",
+     "hrefs": []
+    },
+    {
+     "text": "Pre-dunning metrics",
+     "hrefs": []
+    },
+    {
+     "text": "Primary: net revenue retained per 1,000 upcoming renewals at day 45 (revenue − refunds − chargebacks)",
+     "hrefs": []
+    },
+    {
+     "text": "Involuntary failure rate at renewal",
+     "hrefs": []
+    },
+    {
+     "text": "Pre-emptive card updates in the T-7 → T-0 window (B's mechanism — if this doesn't move, B didn't work)",
+     "hrefs": []
+    },
+    {
+     "text": "Voluntary cancels before renewal — the cost side, watch it per-arm",
+     "hrefs": []
+    },
+    {
+     "text": "Refund requests within 30 days of renewal",
+     "hrefs": []
+    },
+    {
+     "text": "Chargeback / dispute rate — the fpRenewalChurn2 channel",
+     "hrefs": []
+    },
+    {
+     "text": "Support tickets tagged renewal",
+     "hrefs": []
+    },
+    {
+     "text": "Powering: depends on the monthly volume of upcoming annual renewals, which is a much larger population than the 870 failures. Fill that number in and re-run the sizing; with a bigger denominator this test should read considerably faster than the dunning test, but it needs the day-45 window on top.",
+     "hrefs": []
+    },
+    {
+     "text": "Open questions for Daniel",
+     "hrefs": []
+    },
+    {
+     "text": "Which offer in Arm B — the recommendation above is monthly at list price. Overridable, but the discount precedent is the thing to weigh.",
+     "hrefs": []
+    },
+    {
+     "text": "The $924/mo holdout cost — does that need sign-off from anyone beyond you?",
+     "hrefs": []
+    },
+    {
+     "text": "Iterable triggered off Stripe webhooks — does this exist already for any Aura flow, or is it net-new engineering? This is the critical path.",
+     "hrefs": []
+    },
+    {
+     "text": "Does anyone remember fpRenewalChurn2? A Won renewal-churn experiment with a 24% refund reduction and no recorded design is the cheapest possible source of prior art.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Learnings / Experiments — prior art: paymentPendingModal, paymentPendingSheet, fpRenewalChurn, fpRenewalChurn2, pushTrialCancelled, cancelToMonthly, addMonthlyPackagePaywall, iterableChurnPrevention",
+     "hrefs": [
+      "https://app.notion.com/p/2cbe45a3246040658b9f20559b5b452b"
+     ]
+    },
+    {
+     "text": "Volume, recovery rate and revenue-per-point figures supplied by Daniel; per-sub value of ~$88.50 is derived from them, not read from billing — confirm against Stripe before anyone quotes the $55.4k.",
+     "hrefs": []
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "chatImageUpload",
+   "url": "https://app.notion.com/p/chatImageUpload-3dc75e23af2081f9bc46ff961013d58c",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "From the experiment-server registration note:",
+     "hrefs": []
+    },
+    {
+     "text": "Allow uploading images in chat mode",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Awaiting end of experiment._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "- Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "webFamilyPlanPricing2",
+   "url": "https://app.notion.com/p/webFamilyPlanPricing2-3dc75e23af2081ba89fbd178569383a4",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "From the experiment-server registration note:",
+     "hrefs": []
+    },
+    {
+     "text": "Family plan price test on Aura web, following on from webFamilyPlanPricing which moved the control to $159.99. a: $179.99, b: control $159.99, c: $199.99",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Awaiting end of experiment._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "- Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "auraDesignChange2",
+   "url": "https://app.notion.com/p/auraDesignChange2-3dc75e23af208199a2e4e2a0f33df45e",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "From the experiment-server registration note:",
+     "hrefs": []
+    },
+    {
+     "text": "Aura 4.0 redesign a=4.0- new design , b=control -Current design",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Awaiting end of experiment._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "- Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "aiReviewModalAfterPMF",
+   "url": "https://app.notion.com/p/aiReviewModalAfterPMF-3db75e23af208184a4efff88cdb79fa6",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Registered on the Aura experiment server with the following description:",
+     "hrefs": []
+    },
+    {
+     "text": "5-star App Store review ask after a Very disappointed PMF survey answer. a: show the ask, b: control",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Awaiting end of experiment._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "stripeExistingPriceIncreaseTo9999Unengaged",
+   "url": "https://app.notion.com/p/stripeExistingPriceIncreaseTo9999Unengaged-3d875e23af2081dc8318f7aac70c3c51",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Registered in the Aura experiment server with the note:",
+     "hrefs": []
+    },
+    {
+     "text": "Price increase for existing unengaged Stripe subscribers on renewal. a: raise to $99.99, b: control, keep current price",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Awaiting end of experiment._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server (primary)",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "stripeExistingPriceIncreaseTo9999Engaged",
+   "url": "https://app.notion.com/p/stripeExistingPriceIncreaseTo9999Engaged-3d875e23af20816cb0a7f0b5c80349a2",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Registered in the Aura experiment server with the note:",
+     "hrefs": []
+    },
+    {
+     "text": "Price increase for existing engaged Stripe subscribers on renewal. a: raise to $99.99, b: control, keep current price",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Awaiting end of experiment._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server (primary)",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "stripeExistingPriceIncreaseTo9999",
+   "url": "https://app.notion.com/p/stripeExistingPriceIncreaseTo9999-3d675e23af2081d5a793e98cf1ece1c7",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Registered on the Aura experiment server 2026-09-09; two arms (a/b). Engineer's note: Price increase for existing Stripe subscribers on renewal. a: raise to $99.99, b: control, keep current price. Same experiment covers both engaged and unengaged users",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Awaiting end of experiment._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server (parent) — the GET /experiments catalog this row was synced from; carries id, active arms, notes, createdAt/endedAt.",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "mobileFamilyPlanPricing",
+   "url": "https://app.notion.com/p/mobileFamilyPlanPricing-3d175e23af208195a034c3bb45e6dc57",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Registered in the Aura experiment server on 2026-09-03. Description recorded at registration:",
+     "hrefs": []
+    },
+    {
+     "text": "Family plan price test on Aura mobile. a: $159.99 for a 6-member plan, b: control $119.99 for a 4-member plan",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "Provenance. The assigned / trial start / paid columns are an independent Mixpanel pull (project 963821, 2026-09-11 to 09-17) and reconcile with the data team's own cut (206 vs 174 here, 204 vs 174 there). The family-plan columns, the booked-revenue split and the cash sizing are the data team's, posted in #data-analysis and #abtest-monitoring on 2026-09-16.",
+     "hrefs": []
+    },
+    {
+     "text": "Exposure quality — the primary metric was unreadable. familyPlanWebviewUpsell, the only family plan purchase surface reachable by trial users on mobile, was switched to control after 2026-09-14. Family Plan Subscription Success on iPhone across ALL users ran 3, 4, 4, 2, 5, 8, 3 on 09-08 to 09-14 and then exactly 0, 0 on 09-15 and 09-16 — a purchase event, not a downstream conversion, so payment lag does not explain it (p ~ 0.0003 against the ~4.1/day baseline). Web family sales kept running the same days. Assignment continued at ~40 registrations per arm per day into a price the user could not reach.",
+     "hrefs": []
+    },
+    {
+     "text": "Crossed with mobileYearlyPricing2, so any all-in per-registration cut is contaminated. The two tests overlap into 12 cells, and the arms did not come out balanced on the yearly dimension (29a/26b vs 23a/29b on $99.99 users). The raw gap of +$8.57 booked per trial start (+9.8%) therefore overstates it: holding the yearly price constant at $84.50, the clean family-driven gap is +$6.40 per trial start (+7.2%), all of it on the family line ($21.33 vs $12.63), with the yearly line flat by design. Compare family attach and family price only.",
+     "hrefs": []
+    },
+    {
+     "text": "It could never have powered in the window it had. Moving attach from 11% to 14% needs roughly 1,900 trials per arm; at ~11 family-eligible trials per arm per day the real read date was mid-October, and every one of those days needed a live purchase surface.",
+     "hrefs": []
+    },
+    {
+     "text": "Methodology note. Experiment: mobileFamilyPlanPricing is a profile property, not an event super-property — an event-level cut returns a single event across the whole window — so every figure above uses profile-based segmentation. The usual over-stamping check is therefore not applicable, and is moot regardless because the outcome surface was removed.",
+     "hrefs": []
+    },
+    {
+     "text": "One caveat for a rerun. Arm sizes came out 206 vs 174, about 18% apart on what should be an even split (chi-square p ~ 0.10 — not significant, but worth watching alongside the yearly-dimension imbalance above).",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "Turned off mid-flight, and deliberately — this is not a performance loss. The experiment lost its own outcome surface when familyPlanWebviewUpsell was switched to control after 2026-09-14, freezing family plan trial starts at 8 (a) vs 6 (b) while assignment carried on to 206 vs 174. active on the experiment server is b, so control shipped and no variant was adopted. Linear PROD-4562.",
+     "hrefs": []
+    },
+    {
+     "text": "Nothing here is decision-grade, and nothing here is evidence against $159.99. Attach was directionally up (14.0% vs 11.1%, +2.9pp at ~64% confidence on n = 8 vs 6) and booked revenue per trial start was up +$6.40 (+7.2%) once the crossed yearly test is held constant — but on 14 family trial starts in total, one or two sales either way swings the whole delta. Read it as no damage from the higher price, not as a lift.",
+     "hrefs": []
+    },
+    {
+     "text": "The finding that outranks the experiment: mobile family plan sales are at zero, and nobody owns turning the surface back on. With familyPlanWebviewUpsell (PROD-3624) off, ~$5.2k/mo of mobile family gross is going to $0 — on the conservative paid-event sizing, and the success-event volume implies more. That is a live cash leak, independent of any pricing question, and it was found by someone asking why a counter had stopped rather than by anything monitoring it.",
+     "hrefs": []
+    },
+    {
+     "text": "The generalisable lesson is about dependency, not pricing. A live experiment silently became unreadable because a *different* experiment's variant assignment removed the surface its primary metric depended on. Nothing in the experiment server or the monitor flagged the coupling. The second-order lesson is the crossing: two concurrent price tests over the same traffic made the all-in per-registration cut unreadable and left the arms imbalanced on the other test's dimension — the same trap webYearlyPricing2 set on web.",
+     "hrefs": []
+    },
+    {
+     "text": "Sizing context for whoever picks this up: mobile is only ~8% of family volume. Repricing all mobile family to $159.99 is worth ~+$15.5k/yr net at flat attach, ~+$25.7k/yr if the attach edge is real, and break-even tolerates losing 25% of family sales. The far bigger lever is the 283 Stripe family subscriptions still renewing at $129.99 (~$36.8k/mo) — moving those to $159.99 is ~+$8.5k/mo (~+$102k/yr) before churn, and webFamilyPlanPricing already resolved $159.99 as the winner on web.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Re-enable familyPlanWebviewUpsell (PROD-3624) — the only item here that is losing money today. Not an experiment: mobile family plan sales are at literal zero since 09-15, roughly $5.2k/mo gross and falling to $0 while it stays off, and the thread closes with nobody owning the flag. Confirm whether it was turned off intentionally or as collateral, then restore it. Primary metric: Family Plan Subscription Success on iPhone back to its ~4.1/day baseline.",
+     "hrefs": []
+    },
+    {
+     "text": "Reprice the 283 Stripe family subscriptions still renewing at $129.99 to $159.99. Hypothesis: the renewal base absorbs $159.99 at the churn rate the $99.99 existing-user increase already demonstrated. Build: the same renewal-journey playbook, engaged and unengaged split. Primary metric: net revenue after churn, with a churn-sensitivity table. Worth ~+$8.5k/mo (~+$102k/yr) before churn — the largest family-plan lever by an order of magnitude.",
+     "hrefs": []
+    },
+    {
+     "text": "Rerun mobileFamilyPlanPricing on a clean window, a/b only. Hypothesis: at $159.99 for 6 members the family attach rate holds within noise of the $119.99 4-member control. Build: start only once the upsell has been stable for several days, and do not run it crossed with another price test over the same traffic. Primary metric: revenue per trial start across the whole paywall rather than family attach alone — buyers pushed off family land on $99.99 solo, so family-only attach understates it. Note it needs ~1,900 trials/arm to detect 11% -> 14%, so scope the window accordingly or accept it as directional.",
+     "hrefs": []
+    },
+    {
+     "text": "Fix or drop variant c ($129.99 / 6 members) before any rerun. One assigned user in six days is a delivery bug, not a result — the arm needs a flag/pricing fix to be capable of reading at all. Primary metric: assignment volume in arm c reaching parity with a and b.",
+     "hrefs": []
+    },
+    {
+     "text": "Add an outcome-surface dependency guard to the experiment monitor. Hypothesis: an experiment whose primary-metric surface is disabled is detectable within 24h as a drop to zero on its primary event while assignment continues. Build: a monitor rule that flags or auto-pauses on that divergence. Primary metric: days of unreadable experiment run time (this run burned 2 of 5, and the surface outage itself went unowned for longer).",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server (primary)",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    },
+    {
+     "text": "Slack #abtest-monitoring — mobileFamilyPlanPricing turn-off analysis and thread, 2026-09-16",
+     "hrefs": [
+      "https://auramobile.slack.com/archives/C05TX32DJVA/p1789583964610489?thread_ts=1789583964.610489&cid=C05TX32DJVA"
+     ]
+    },
+    {
+     "text": "Mixpanel — Project Aura (963821), profile-property segmentation 2026-09-11 to 2026-09-17",
+     "hrefs": [
+      "https://mixpanel.com/project/963821"
+     ]
+    },
+    {
+     "text": "Slack #data-analysis — mobileFamilyPlanPricing readout, per-arm booked revenue and cash sizing, 2026-09-16",
+     "hrefs": [
+      "https://auramobile.slack.com/archives/C05TMC2Q33K/p1789578926921239?thread_ts=1789578926.921239&cid=C05TMC2Q33K"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "aurieCustomWebPaywall2",
+   "url": "https://app.notion.com/p/aurieCustomWebPaywall2-3ca75e23af208156ae1ee3b012c00852",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Registered in the Aura experiment server on 2026-08-28. Description as recorded by the engineer who registered it:",
+     "hrefs": []
+    },
+    {
+     "text": "Re-test of aurieCustomWebPaywall on a fresh assignment, after the social-login checkout fix. a: Aurie's own hosted checkout page in the external browser, b: control, Stripe hosted checkout in the external browser",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Awaiting end of experiment._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server — the catalog row this stub was synced from (fetched 2026-08-28).",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "aiLiveKitIntegration4",
+   "url": "https://app.notion.com/p/aiLiveKitIntegration4-3ca75e23af20813cb91dec63a5c4369d",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Registered on the Aura experiment server with the following note from the engineer who created it:",
+     "hrefs": []
+    },
+    {
+     "text": "retest livekit integration with improvements and bug fixes a:livekit b:elevenlabs c:livekit d:elevenlabs",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Awaiting end of experiment._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "mobileYearlyPricing2",
+   "url": "https://app.notion.com/p/mobileYearlyPricing2-3c875e23af20819e8c7eff824c175978",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Yearly subscription price test on mobile. a: $99.99/year, b: control $69.99/year, c: $109.99/year, d: $89.99/year. All variants show the 4-member family plan at $119.99/year",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Awaiting end of experiment._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "auraDesignChange",
+   "url": "https://app.notion.com/p/auraDesignChange-3c875e23af2081078f80ca69f21418ed",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Aura 4.0 redesign. a = new design, b = current design",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "Aura Mixpanel, 2026-09-11 → 2026-09-15 (the live window — see the runtime note below), users with Experiment: auraDesignChange set. Denominator N = Sign up login uniques.",
+     "hrefs": []
+    },
+    {
+     "text": "Runtime. The row's Start Date (2026-08-25) is the experiment-server registration date. The experiment was gated to minVersion 3.22.0, which shipped 2026-09-11, so live exposure ran 5 days (9/11 → 9/15), not 21 — every rate above is computed on the live window.\nExposure quality. The event-level cut on Sign up login returns a 131 / b 142 / undefined 180 against a user-level 210 / 220, so roughly 40% of registrations fired before the variant was stamped: assignment lands at or after registration for a large minority of the cohort.\nTreatment contamination. Arm A served the legacy design on webview-paywall sessions that lost a cold-connect race (tracked as PROD-5994, still In Review), and an earlier UserWeb release leaked the 4.0 paywall to arm-A accounts on 9/3–9/4 before being reverted.\nPower. Paid N < 10 per arm — underpowered.\nScreening. Internal and comped accounts were NOT screened out on this run (no per-user JQL pass), so both arms are unscreened populations.",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "Turned off on day 5 of live exposure after two separate treatment-contamination bugs, so there is no clean read on the Aura 4.0 redesign. Across the 5 live days trial start was flat (49.5% vs 47.7%, +3.8% relative — inside noise), but the new design cancelled trials at nearly twice the control rate (29.8% vs 16.2% of trials started) and converted fewer to paid (5 vs 9); that is directionally concerning rather than decision-grade, since paid N is under 10 per arm and arm A was serving the legacy design to an unknown share of sessions. Our verdict agrees with the team's call in #support-bot and #abtest-monitoring (turned off, \"no read taken\", retest planned). Two caveats limit any re-use of these numbers: the variant stamp lands at or after registration for ~40% of the cohort, and internal/comped accounts were not screened.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Four candidates, in priority order:",
+     "hrefs": []
+    },
+    {
+     "text": "Land the contamination fix before reading the retest. The cold-connect race that served arm A the legacy design (PROD-5994) is still In Review, while the successor auraDesignChange2 has been live since 2026-09-14. Hypothesis: with the race fixed, arm-A exposure is clean and the trial-cancel gap either persists (a real design regression) or collapses (a contamination artifact). Primary metric: Trial Cancel Rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Move the variant stamp to first render of a redesigned surface, rather than to registration. Hypothesis: stamping at exposure removes the ~40% of Sign up login events that fire unstamped and makes trial start computable on a true exposure cohort. Primary metric: exposure-cohort Trial Start Rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Split the 4.0 paywall from the rest of the redesign. Hypothesis: the trial-cancel regression comes from the redesigned paywall specifically rather than the full-app redesign, so separating the two attributes the cancel lift. Primary metric: Trial Cancel Rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Pre-declare a runtime floor for the retest. Both this run and the Day-4/Day-5 monitor reads died at paid N < 10 per arm. Hypothesis: a pre-committed minimum runtime (or paid-N target) prevents a third inconclusive cycle on the same redesign. Primary metric: paid N per arm at decision time.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    },
+    {
+     "text": "Mixpanel — Aura A/B board (auraDesignChange)",
+     "hrefs": [
+      "https://mixpanel.com/project/963821/view/30768/app/boards/#id=11422584"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "onbSelfCommitment",
+   "url": "https://app.notion.com/p/onbSelfCommitment-3c775e23af208139b32cc0d018cbd3c5",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Self-commitment promise screen split by placement.",
+     "hrefs": []
+    },
+    {
+     "text": "a: after onboarding results",
+     "hrefs": []
+    },
+    {
+     "text": "b: control",
+     "hrefs": []
+    },
+    {
+     "text": "c: after trial start",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Awaiting end of experiment._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server (primary)",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "aiPmfSurvey",
+   "url": "https://app.notion.com/p/aiPmfSurvey-3c675e23af20818b8b8dd7b46182d225",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Registered in the Aura experiment server with the following note:",
+     "hrefs": []
+    },
+    {
+     "text": "On the PMF survey, a: after the existing \"how disappointed\" question, show the 2-min survey invite screen, b: control, the \"how disappointed\" question only, no follow-ups",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "Independent Mixpanel pull for this readout:",
+     "hrefs": []
+    },
+    {
+     "text": "Exposure quality — assignment coincides with exposure.\nAll 31 assigned users in a and all 26 in b fired AI Helpfulness Modal Seen, a 1:1 match between\nassignment and exposure, so the completion rates above need no exposure correction. The surface is\nlow-traffic: 57 assigned users in 12 days, which is the binding constraint on this experiment\nrather than any measurement defect.",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "The invite did not work, but the completion-rate comparison is not what proves it. At n=57 the 54.8% versus 73.1% gap reaches only about 85% confidence - underpowered, and we would not call a paywall test on that margin. What is decisive is the direct funnel measurement: of the 17 users who actually saw the hosted 2-minute survey invite, 2 accepted it. An 11.8% acceptance rate is a product fact rather than a statistical inference, and no sample size would rescue a screen that 15 of 17 people dismiss. The invite also added a dismissal step to a flow whose entire purpose is a single question, which is the most plausible reading of the directional drop in completion. Control shipped. Recorded here with the underpowered caveat explicit so a future reader does not cite the 54.8%/73.1% delta as a significant result. Built under PROD-3983 from the PROD-3606 design, with analytics wiring under PROD-4420.",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "Ask the follow-up in-line instead of hosting it. Hypothesis: the cost is the context switch to a webview, not the extra questions - append one free-text \"what would make it better?\" field to the existing modal. Variants: a: modal plus one free-text field, b: control. Primary metric: Helpfulness Modal Completion Rate; secondary: free-text fill rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Move the invite off the completion path. Hypothesis: the invite suppresses completion because it interrupts it - show it only after the modal completes, or a day later by push or email. Variants: a: post-completion invite, b: day-later push, c: control. Primary metric: survey acceptance rate; guardrail: Helpfulness Modal Completion Rate.",
+     "hrefs": []
+    },
+    {
+     "text": "Power the surface before reading it again. Not a growth test - test design. 57 assigned users in 12 days means any future variant on the helpfulness modal needs roughly 6-8 weeks, or a wider trigger, to separate a 15-point completion difference. Decide the minimum detectable effect before launching rather than reading an 85% result afterwards.",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "Aura experiment server",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    },
+    {
+     "text": "Mixpanel — aiPmfSurvey exposure and completion by variant (this readout)",
+     "hrefs": [
+      "https://mixpanel.com/project/963821/view/30768/app/insights#GAVmhMjFkWPs"
+     ]
+    },
+    {
+     "text": "Slack #abtest-monitoring — Experiment Lost: aiPmfSurvey",
+     "hrefs": [
+      "https://auramobile.slack.com/archives/C05TX32DJVA/p1788810481381149"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "Learnings/Experiments",
+   "title": "auraWebPaywallNoTrialPlans",
+   "url": "https://app.notion.com/p/auraWebPaywallNoTrialPlans-3c375e23af208122905feeb0dd4174e3",
+   "blocks": [
+    {
+     "text": "What was tested",
+     "hrefs": []
+    },
+    {
+     "text": "Registered in the Aura experiment server on 2026-08-21. Description as recorded at registration:",
+     "hrefs": []
+    },
+    {
+     "text": "Removes the free trial on the Aura web subscribe paywall and charges immediately. a: yearly only, no trial, no plan choice, b: control, yearly with a 7-day free trial, c: yearly + monthly at $14.99/mo, no trial",
+     "hrefs": []
+    },
+    {
+     "text": "Result",
+     "hrefs": []
+    },
+    {
+     "text": "_Awaiting end of experiment._",
+     "hrefs": []
+    },
+    {
+     "text": "Learning",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Follow-up experiments",
+     "hrefs": []
+    },
+    {
+     "text": "_To be added via analyze-experiment enrichment._",
+     "hrefs": []
+    },
+    {
+     "text": "Sources",
+     "hrefs": []
+    },
+    {
+     "text": "- Aura experiment server (primary)",
+     "hrefs": [
+      "https://services.aurahealth.io/experiments"
+     ]
+    }
+   ]
+  }
+ ]
+}

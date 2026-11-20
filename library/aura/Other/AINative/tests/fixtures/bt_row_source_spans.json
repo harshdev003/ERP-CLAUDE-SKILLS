@@ -1,0 +1,562 @@
+[
+ {
+  "created": "2026-09-23T13:28:46.996Z",
+  "input": [
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 0"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 1"
+   }
+  ],
+  "output": "scrubbed output",
+  "metadata": {
+   "contextInstructions": "## Context\n\nscrubbed context block",
+   "conversationId": "16EA51C5-C1D9-47A2-9AD9-156CACA84FE8",
+   "dialogueId": "862c0ffe-9bde-4a92-8359-dd1b3e51b8ef",
+   "model": "chat-latest",
+   "parallel_tool_calls": false,
+   "project": "conversation",
+   "prompterName": "coach-prompter",
+   "store": true,
+   "stream": true,
+   "temperature": 1,
+   "tool_choice": "auto",
+   "tools": "<stripped: tool schemas, not read by pick_source_span>",
+   "transaction": "bce688b5-4574-44ae-9ce5-9eae0419e213",
+   "transactionSlice": "bce688b5",
+   "user": "scrubbed-uid",
+   "version": "1.21.6"
+  },
+  "scores": null,
+  "span_attributes": {
+   "created_by_api_key_id": "6c1ca8c1-0242-4ddb-a993-1f1651928f09",
+   "created_by_user_id": "287aeb3e-cc71-4c1c-9ae2-be2100fc960c",
+   "exec_counter": 36291,
+   "name": "streamResponse",
+   "type": "task"
+  },
+  "span_id": "39b7c2345fb066a5"
+ },
+ {
+  "created": "2026-09-23T13:28:46.997Z",
+  "input": [
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 0"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 1"
+   }
+  ],
+  "output": "scrubbed output",
+  "metadata": {
+   "conversationId": "16EA51C5-C1D9-47A2-9AD9-156CACA84FE8",
+   "dialogueId": "862c0ffe-9bde-4a92-8359-dd1b3e51b8ef",
+   "model": "chat-latest",
+   "parallel_tool_calls": false,
+   "prompterName": "coach-prompter",
+   "store": true,
+   "stream": true,
+   "temperature": 1,
+   "tool_choice": "auto",
+   "tools": "<stripped: tool schemas, not read by pick_source_span>",
+   "transaction": "bce688b5-4574-44ae-9ce5-9eae0419e213",
+   "transactionSlice": "bce688b5",
+   "user": "scrubbed-uid",
+   "version": "1.21.6"
+  },
+  "scores": null,
+  "span_attributes": {
+   "created_by_api_key_id": "6c1ca8c1-0242-4ddb-a993-1f1651928f09",
+   "created_by_user_id": "287aeb3e-cc71-4c1c-9ae2-be2100fc960c",
+   "exec_counter": 36292,
+   "name": "openaiStreamResponse",
+   "type": "llm"
+  },
+  "span_id": "a7289b2e91006216"
+ },
+ {
+  "created": "2026-09-23T13:29:28.065Z",
+  "input": [
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 0"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 1"
+   },
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 2"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 3"
+   }
+  ],
+  "output": "scrubbed output",
+  "metadata": {
+   "conversationId": "16EA51C5-C1D9-47A2-9AD9-156CACA84FE8",
+   "dialogueId": "12695f66-5e5e-454e-a773-e8b8809c0871",
+   "model": "chat-latest",
+   "parallel_tool_calls": false,
+   "prompterName": "coach-prompter",
+   "store": true,
+   "stream": true,
+   "temperature": 1,
+   "tool_choice": "auto",
+   "tools": "<stripped: tool schemas, not read by pick_source_span>",
+   "transaction": "4ba089f1-ae0b-43dd-b0bd-17585c63f823",
+   "transactionSlice": "4ba089f1",
+   "user": "scrubbed-uid",
+   "version": "1.21.6"
+  },
+  "scores": null,
+  "span_attributes": {
+   "created_by_api_key_id": "6c1ca8c1-0242-4ddb-a993-1f1651928f09",
+   "created_by_user_id": "287aeb3e-cc71-4c1c-9ae2-be2100fc960c",
+   "exec_counter": 36302,
+   "name": "openaiStreamResponse",
+   "type": "llm"
+  },
+  "span_id": "83fa17b567d3c3f0"
+ },
+ {
+  "created": "2026-09-23T13:29:28.199Z",
+  "input": [
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 0"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 1"
+   },
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 2"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 3"
+   }
+  ],
+  "output": "scrubbed output",
+  "metadata": {
+   "contextInstructions": "## Context\n\nscrubbed context block",
+   "conversationId": "16EA51C5-C1D9-47A2-9AD9-156CACA84FE8",
+   "dialogueId": "12695f66-5e5e-454e-a773-e8b8809c0871",
+   "model": "chat-latest",
+   "parallel_tool_calls": false,
+   "project": "conversation",
+   "prompterName": "coach-prompter",
+   "store": true,
+   "stream": true,
+   "temperature": 1,
+   "tool_choice": "auto",
+   "tools": "<stripped: tool schemas, not read by pick_source_span>",
+   "transaction": "846835a5-986b-4a9d-928b-dd779c25a9b7",
+   "transactionSlice": "846835a5",
+   "user": "scrubbed-uid",
+   "version": "1.21.6"
+  },
+  "scores": null,
+  "span_attributes": {
+   "created_by_api_key_id": "6c1ca8c1-0242-4ddb-a993-1f1651928f09",
+   "created_by_user_id": "287aeb3e-cc71-4c1c-9ae2-be2100fc960c",
+   "exec_counter": 38128,
+   "name": "streamResponse",
+   "type": "task"
+  },
+  "span_id": "93a8e156e094e739"
+ },
+ {
+  "created": "2026-09-23T13:29:28.200Z",
+  "input": [
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 0"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 1"
+   },
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 2"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 3"
+   }
+  ],
+  "output": "scrubbed output",
+  "metadata": {
+   "conversationId": "16EA51C5-C1D9-47A2-9AD9-156CACA84FE8",
+   "dialogueId": "12695f66-5e5e-454e-a773-e8b8809c0871",
+   "model": "chat-latest",
+   "parallel_tool_calls": false,
+   "prompterName": "coach-prompter",
+   "store": true,
+   "stream": true,
+   "temperature": 1,
+   "tool_choice": "auto",
+   "tools": "<stripped: tool schemas, not read by pick_source_span>",
+   "transaction": "846835a5-986b-4a9d-928b-dd779c25a9b7",
+   "transactionSlice": "846835a5",
+   "user": "scrubbed-uid",
+   "version": "1.21.6"
+  },
+  "scores": null,
+  "span_attributes": {
+   "created_by_api_key_id": "6c1ca8c1-0242-4ddb-a993-1f1651928f09",
+   "created_by_user_id": "287aeb3e-cc71-4c1c-9ae2-be2100fc960c",
+   "exec_counter": 38129,
+   "name": "openaiStreamResponse",
+   "type": "llm"
+  },
+  "span_id": "9d1d6052405cb6bc"
+ },
+ {
+  "created": "2026-09-23T13:29:43.435Z",
+  "input": [
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 0"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 1"
+   },
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 2"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 3"
+   },
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 4"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 5"
+   }
+  ],
+  "output": "scrubbed output",
+  "metadata": {
+   "contextInstructions": "## Context\n\nscrubbed context block",
+   "conversationId": "16EA51C5-C1D9-47A2-9AD9-156CACA84FE8",
+   "dialogueId": "060b23c0-03e6-4734-b14a-090052678474",
+   "model": "chat-latest",
+   "parallel_tool_calls": false,
+   "project": "conversation",
+   "prompterName": "coach-prompter",
+   "store": true,
+   "stream": true,
+   "temperature": 1,
+   "tool_choice": "auto",
+   "tools": "<stripped: tool schemas, not read by pick_source_span>",
+   "transaction": "6091dd24-f094-4867-9a01-faa704914a9f",
+   "transactionSlice": "6091dd24",
+   "user": "scrubbed-uid",
+   "version": "1.21.6"
+  },
+  "scores": null,
+  "span_attributes": {
+   "created_by_api_key_id": "6c1ca8c1-0242-4ddb-a993-1f1651928f09",
+   "created_by_user_id": "287aeb3e-cc71-4c1c-9ae2-be2100fc960c",
+   "exec_counter": 36315,
+   "name": "streamResponse",
+   "type": "task"
+  },
+  "span_id": "718098891347fff3"
+ },
+ {
+  "created": "2026-09-23T13:29:43.436Z",
+  "input": [
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 0"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 1"
+   },
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 2"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 3"
+   },
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 4"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 5"
+   }
+  ],
+  "output": "scrubbed output",
+  "metadata": {
+   "conversationId": "16EA51C5-C1D9-47A2-9AD9-156CACA84FE8",
+   "dialogueId": "060b23c0-03e6-4734-b14a-090052678474",
+   "model": "chat-latest",
+   "parallel_tool_calls": false,
+   "prompterName": "coach-prompter",
+   "store": true,
+   "stream": true,
+   "temperature": 1,
+   "tool_choice": "auto",
+   "tools": "<stripped: tool schemas, not read by pick_source_span>",
+   "transaction": "6091dd24-f094-4867-9a01-faa704914a9f",
+   "transactionSlice": "6091dd24",
+   "user": "scrubbed-uid",
+   "version": "1.21.6"
+  },
+  "scores": null,
+  "span_attributes": {
+   "created_by_api_key_id": "6c1ca8c1-0242-4ddb-a993-1f1651928f09",
+   "created_by_user_id": "287aeb3e-cc71-4c1c-9ae2-be2100fc960c",
+   "exec_counter": 36316,
+   "name": "openaiStreamResponse",
+   "type": "llm"
+  },
+  "span_id": "10286e311813b12e"
+ },
+ {
+  "created": "2026-09-23T13:31:22.669Z",
+  "input": [
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 0"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 1"
+   },
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 2"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 3"
+   },
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 4"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 5"
+   },
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 6"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 7"
+   }
+  ],
+  "output": "scrubbed output",
+  "metadata": {
+   "conversationId": "16EA51C5-C1D9-47A2-9AD9-156CACA84FE8",
+   "dialogueId": "f2f857c9-98d4-44d3-bf93-1ccb8617bf1c",
+   "model": "chat-latest",
+   "parallel_tool_calls": false,
+   "prompterName": "coach-prompter",
+   "store": true,
+   "stream": true,
+   "temperature": 1,
+   "tool_choice": "auto",
+   "tools": "<stripped: tool schemas, not read by pick_source_span>",
+   "transaction": "1279f935-34a9-47f2-9514-2db86a277b6f",
+   "transactionSlice": "1279f935",
+   "user": "scrubbed-uid",
+   "version": "1.21.6"
+  },
+  "scores": null,
+  "span_attributes": {
+   "created_by_api_key_id": "6c1ca8c1-0242-4ddb-a993-1f1651928f09",
+   "created_by_user_id": "287aeb3e-cc71-4c1c-9ae2-be2100fc960c",
+   "exec_counter": 38161,
+   "name": "openaiStreamResponse",
+   "type": "llm"
+  },
+  "span_id": "24213390c64d4314"
+ },
+ {
+  "created": "2026-09-23T13:33:03.642Z",
+  "input": [
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 0"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 1"
+   },
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 2"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 3"
+   },
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 4"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 5"
+   },
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 6"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 7"
+   }
+  ],
+  "output": "scrubbed output",
+  "metadata": {
+   "conversationId": "16EA51C5-C1D9-47A2-9AD9-156CACA84FE8",
+   "dialogueId": "f2f857c9-98d4-44d3-bf93-1ccb8617bf1c",
+   "model": "gpt-5.4",
+   "prompterName": "coach-prompter",
+   "reasoning": {
+    "effort": "low",
+    "summary": "auto"
+   },
+   "store": true,
+   "stream": true,
+   "temperature": 1,
+   "text": {
+    "verbosity": "medium"
+   },
+   "transaction": "fa8398b4-49f2-4f41-8fac-0beaf31ef8a4",
+   "transactionSlice": "fa8398b4",
+   "user": "scrubbed-uid",
+   "version": "1.21.6"
+  },
+  "scores": null,
+  "span_attributes": {
+   "created_by_api_key_id": "6c1ca8c1-0242-4ddb-a993-1f1651928f09",
+   "created_by_user_id": "287aeb3e-cc71-4c1c-9ae2-be2100fc960c",
+   "exec_counter": 38185,
+   "name": "openaiStreamResponse",
+   "type": "llm"
+  },
+  "span_id": "63f4a12cd4f0dd8c"
+ },
+ {
+  "created": "2026-09-23T13:33:04.910Z",
+  "input": [
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 0"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 1"
+   },
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 2"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 3"
+   },
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 4"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 5"
+   },
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 6"
+   },
+   {
+    "role": "user",
+    "content": "scrubbed user turn 7"
+   },
+   {
+    "role": "assistant",
+    "content": "scrubbed assistant turn 8"
+   }
+  ],
+  "output": "scrubbed output",
+  "metadata": {
+   "conversationId": "16EA51C5-C1D9-47A2-9AD9-156CACA84FE8",
+   "dialogueId": "f2f857c9-98d4-44d3-bf93-1ccb8617bf1c",
+   "model": "gpt-5.4",
+   "prompterName": "guardrails-handler-prompter",
+   "reasoning": {
+    "effort": "low",
+    "summary": "auto"
+   },
+   "store": true,
+   "stream": true,
+   "temperature": 1,
+   "text": {
+    "verbosity": "medium"
+   },
+   "transaction": "fa8398b4-49f2-4f41-8fac-0beaf31ef8a4",
+   "transactionSlice": "fa8398b4",
+   "user": "scrubbed-uid",
+   "version": "1.21.6"
+  },
+  "scores": null,
+  "span_attributes": {
+   "created_by_api_key_id": "6c1ca8c1-0242-4ddb-a993-1f1651928f09",
+   "created_by_user_id": "287aeb3e-cc71-4c1c-9ae2-be2100fc960c",
+   "exec_counter": 38186,
+   "name": "openaiStreamResponse",
+   "type": "llm"
+  },
+  "span_id": "f910d8715d0663a4"
+ },
+ {
+  "created": "2026-09-23T13:33:40.396Z",
+  "input": null,
+  "output": null,
+  "metadata": {
+   "conversationId": "16EA51C5-C1D9-47A2-9AD9-156CACA84FE8",
+   "title": "Family Stress And Space Loss",
+   "transaction": "4AF411D8-D0BF-4AFD-BC62-6D732FB84947",
+   "transactionSlice": "4AF411D8",
+   "userId": "scrubbed-uid",
+   "version": "1.21.6"
+  },
+  "scores": {
+   "User Rating": 0.5
+  },
+  "span_attributes": {
+   "created_by_api_key_id": "6c1ca8c1-0242-4ddb-a993-1f1651928f09",
+   "created_by_user_id": "287aeb3e-cc71-4c1c-9ae2-be2100fc960c",
+   "exec_counter": 36387,
+   "name": "conversationRating",
+   "type": "review"
+  },
+  "span_id": "e437017b09c16b28"
+ }
+]

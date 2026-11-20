@@ -1,0 +1,4 @@
+# flag-suspicious-traffic Python deps
+# Install with:
+#   python3 -m pip install --user -r ${CLAUDE_PLUGIN_ROOT}/skills/flag-suspicious-traffic/scripts/requirements.txt
+google-cloud-logging>=3.10.0

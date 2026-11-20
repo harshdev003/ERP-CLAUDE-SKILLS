@@ -1,0 +1,78 @@
+---
+description: JavaScript / React Native code style for Aura
+globs: src/**/*.{js,jsx}
+alwaysApply: false
+---
+
+# Coding Style
+
+## Related Rules
+
+- `comments.mdc` for comment preservation and "why" comments.
+- `naming.mdc` for naming conventions.
+- `ui-design-system.mdc` for theme + style usage.
+- `error-handling-bugsnag.mdc` for the Bugsnag import + report pattern.
+
+## Formatting (enforced by ESLint + Prettier)
+
+- 2-space indentation, single quotes, no semicolons (per repo Prettier config).
+- Trailing commas in multi-line collections.
+- Keep lines reasonable; `max-len` is `off` in ESLint, but reviewers will ask you to wrap > ~120 chars.
+
+## Hard Rules from `.eslintrc.json`
+
+These are **errors** in this repo — your PR will fail CI if you break them:
+
+- `no-console: error` — never commit `console.log`. Use `bugsnag.report` or `Trackings`. (Existing `console.log` calls behind `if (__DEV__)` and `// eslint-disable-next-line no-console` are tolerated; new code should follow the same pattern only when truly needed.)
+- `react/prop-types: error` — every component prop is declared in `propTypes`.
+- `consistent-return: error` — a function either always returns a value or never does.
+- `no-mixed-operators: error` — wrap mixed `&&`/`||` and arithmetic groups in parens.
+- `no-confusing-arrow: error` (with `allowParens: true`).
+- `no-plusplus: error` — use `i += 1`, not `i++`.
+- `no-sequences: error`.
+- `quotes: ['error', 'single']` — single quotes, template literals allowed.
+- `no-restricted-globals: Translator` — never reference the global `Translator`; import from `src/stores/Translator`.
+
+## React Components
+
+- Functional components with hooks for new code. The codebase has many class components (especially in `src/screens/`) — leave them alone unless your task involves rewriting one.
+- Always declare `propTypes`:
+
+```js
+import PropTypes from 'prop-types'
+
+const Foo = ({ title, onPress }) => (
+  <TouchableOpacity onPress={onPress}>
+    <Text>{title}</Text>
+  </TouchableOpacity>
+)
+
+Foo.propTypes = {
+  title: PropTypes.string.isRequired,
+  onPress: PropTypes.func.isRequired,
+}
+
+export default Foo
+```
+
+- Default exports are the convention here. Don't add named exports unless multiple things are exported.
+
+## Imports
+
+- Sort: built-ins → third-party → absolute project → relative. ESLint `import` plugin enforces ordering issues.
+- Use relative paths (`../../logic/Trackings`) — there is no path alias configured.
+- `import { bugsnag } from '<path>/logic/Trackings'` is the **only** correct way to use Bugsnag. See `error-handling-bugsnag.mdc`.
+
+## Async
+
+- Prefer `async`/`await` over chained `.then()` for new code.
+- Always wrap `await` in `try/catch` and report errors via `bugsnag.report` — see `error-handling.mdc`.
+- Reflux store methods that perform async work return nothing meaningful; they `trigger(...)` on completion.
+
+## Avoid
+
+- `var` — use `const` by default, `let` only when reassignment is required.
+- Force-coercions (`!!x`, `+x`) when intent is non-obvious — use `Boolean(x)`, `Number(x)`.
+- Mutating `seamless-immutable` collections — use `.set`, `.merge`, `.asMutable()` if needed.
+- Creating new files in `reuseableUI/` for new UI — use `src/components/` instead.
+- Adding new top-level files at the repo root (use `src/`).

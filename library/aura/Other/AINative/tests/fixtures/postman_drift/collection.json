@@ -1,0 +1,20 @@
+{
+  "_comment": "The shape GET /collections/{uid} returns for Aura Services (folders, requests, raw URLs on {{default.host}}, inherited bearer auth), trimmed to the coaching notes routes. Placeholders only.",
+  "info": {"name": "Aura Services"},
+  "auth": {"type": "bearer", "bearer": [{"key": "token", "value": "{{user.token}}", "type": "string"}]},
+  "item": [
+    {"name": "Coaching (One-on-One)", "item": [
+      {"name": "Notes", "item": [
+        {"name": "Create", "request": {"method": "POST", "url": {"raw": "{{default.host}}/coaching/notes"}}},
+        {"name": "List", "request": {"method": "POST", "url": {"raw": "{{default.host}}/coaching/notes/list"}}},
+        {"name": "Update", "request": {"method": "PUT", "auth": {"type": "noauth"},
+                                       "url": {"raw": "{{default.host}}/coaching/notes/:coachingNoteId"}}},
+        {"name": "Retrieve", "request": {"method": "GET", "url": {"raw": "{{default.host}}/coaching/notes/{{note.id}}?full=1"}}},
+        {"name": "[DELETED] Archive", "request": {"method": "POST", "url": {"raw": "{{default.host}}/coaching/notes/archive"}}}
+      ]}
+    ]},
+    {"name": "Quotes (NOT PUBLIC)", "item": [
+      {"name": "List", "request": {"method": "GET", "url": {"raw": "{{default.host}}/quotes"}}}
+    ]}
+  ]
+}

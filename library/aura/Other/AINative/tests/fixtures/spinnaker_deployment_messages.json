@@ -1,0 +1,838 @@
+[
+ {
+  "type": "message",
+  "ts": "1791273770.215569",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1791273770,
+    "color": "769D3E",
+    "fallback": "User's <https://spin.aurahealth.io/#/applications/user/executions/details/01M483P6Y94Y9BX7SZEDH73E48|Quick deployment for Service> pipeline has completed successfully",
+    "text": "User's <https://spin.aurahealth.io/#/applications/user/executions/details/01M483P6Y94Y9BX7SZEDH73E48|Quick deployment for Service> pipeline has completed successfully",
+    "title": "Pipeline complete for USER",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1791273672.313489",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1791273672,
+    "color": "2275B8",
+    "fallback": "User's <https://spin.aurahealth.io/#/applications/user/executions/details/01M483P6Y94Y9BX7SZEDH73E48|Quick deployment for Service> pipeline is starting",
+    "text": "User's <https://spin.aurahealth.io/#/applications/user/executions/details/01M483P6Y94Y9BX7SZEDH73E48|Quick deployment for Service> pipeline is starting",
+    "title": "Pipeline starting for USER",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1791239532.661799",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1791239532,
+    "color": "769D3E",
+    "fallback": "Intelligence's <https://spin.aurahealth.io/#/applications/intelligence/executions/details/01M4731VVQHVDT212BS44FCH66|Quick deployment> pipeline has completed successfully",
+    "text": "Intelligence's <https://spin.aurahealth.io/#/applications/intelligence/executions/details/01M4731VVQHVDT212BS44FCH66|Quick deployment> pipeline has completed successfully",
+    "title": "Pipeline complete for INTELLIGENCE",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1791239451.024829",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1791239450,
+    "color": "2275B8",
+    "fallback": "Intelligence's <https://spin.aurahealth.io/#/applications/intelligence/executions/details/01M4731VVQHVDT212BS44FCH66|Quick deployment> pipeline is starting",
+    "text": "Intelligence's <https://spin.aurahealth.io/#/applications/intelligence/executions/details/01M4731VVQHVDT212BS44FCH66|Quick deployment> pipeline is starting",
+    "title": "Pipeline starting for INTELLIGENCE",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1791217824.697549",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1791217824,
+    "color": "769D3E",
+    "fallback": "Payment's <https://spin.aurahealth.io/#/applications/payment/executions/details/01M46EBFPMBCBCHGV0HPYZ621G|Quick deployment> pipeline has completed successfully",
+    "text": "Payment's <https://spin.aurahealth.io/#/applications/payment/executions/details/01M46EBFPMBCBCHGV0HPYZ621G|Quick deployment> pipeline has completed successfully",
+    "title": "Pipeline complete for PAYMENT",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1791217746.237189",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1791217746,
+    "color": "2275B8",
+    "fallback": "Payment's <https://spin.aurahealth.io/#/applications/payment/executions/details/01M46EBFPMBCBCHGV0HPYZ621G|Quick deployment> pipeline is starting",
+    "text": "Payment's <https://spin.aurahealth.io/#/applications/payment/executions/details/01M46EBFPMBCBCHGV0HPYZ621G|Quick deployment> pipeline is starting",
+    "title": "Pipeline starting for PAYMENT",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1791214972.741939",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1791214972,
+    "color": "769D3E",
+    "fallback": "Experiment's <https://spin.aurahealth.io/#/applications/experiment/executions/details/01M46BKQFYYJ8DEGTD7VQ1Z2G1|Quick deployment> pipeline has completed successfully",
+    "text": "Experiment's <https://spin.aurahealth.io/#/applications/experiment/executions/details/01M46BKQFYYJ8DEGTD7VQ1Z2G1|Quick deployment> pipeline has completed successfully",
+    "title": "Pipeline complete for EXPERIMENT",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1791214870.802289",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1791214870,
+    "color": "2275B8",
+    "fallback": "Experiment's <https://spin.aurahealth.io/#/applications/experiment/executions/details/01M46BKQFYYJ8DEGTD7VQ1Z2G1|Quick deployment> pipeline is starting",
+    "text": "Experiment's <https://spin.aurahealth.io/#/applications/experiment/executions/details/01M46BKQFYYJ8DEGTD7VQ1Z2G1|Quick deployment> pipeline is starting",
+    "title": "Pipeline starting for EXPERIMENT",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1790982829.144839",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1790982829,
+    "color": "769D3E",
+    "fallback": "Iterable's <https://spin.aurahealth.io/#/applications/iterable/executions/details/01M3ZE8ZA2NMDNN2BGD5ZBRFNM|Quick deployment> pipeline has completed successfully",
+    "text": "Iterable's <https://spin.aurahealth.io/#/applications/iterable/executions/details/01M3ZE8ZA2NMDNN2BGD5ZBRFNM|Quick deployment> pipeline has completed successfully",
+    "title": "Pipeline complete for ITERABLE",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1790982783.019869",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1790982782,
+    "color": "2275B8",
+    "fallback": "Iterable's <https://spin.aurahealth.io/#/applications/iterable/executions/details/01M3ZE8ZA2NMDNN2BGD5ZBRFNM|Quick deployment> pipeline is starting",
+    "text": "Iterable's <https://spin.aurahealth.io/#/applications/iterable/executions/details/01M3ZE8ZA2NMDNN2BGD5ZBRFNM|Quick deployment> pipeline is starting",
+    "title": "Pipeline starting for ITERABLE",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1790902354.733419",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1790902354,
+    "color": "769D3E",
+    "fallback": "Intelligence's <https://spin.aurahealth.io/#/applications/intelligence/executions/details/01M3X1AX48G3QBPGN7VPMRV511|Quick deployment> pipeline has completed successfully",
+    "text": "Intelligence's <https://spin.aurahealth.io/#/applications/intelligence/executions/details/01M3X1AX48G3QBPGN7VPMRV511|Quick deployment> pipeline has completed successfully",
+    "title": "Pipeline complete for INTELLIGENCE",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1790902105.833279",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1790902105,
+    "color": "2275B8",
+    "fallback": "Intelligence's <https://spin.aurahealth.io/#/applications/intelligence/executions/details/01M3X1AX48G3QBPGN7VPMRV511|Quick deployment> pipeline is starting",
+    "text": "Intelligence's <https://spin.aurahealth.io/#/applications/intelligence/executions/details/01M3X1AX48G3QBPGN7VPMRV511|Quick deployment> pipeline is starting",
+    "title": "Pipeline starting for INTELLIGENCE",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1790874917.508029",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1790874917,
+    "color": "769D3E",
+    "fallback": "User's <https://spin.aurahealth.io/#/applications/user/executions/details/01M3W75EHVZC9D9BYXK9F1WK7F|Quick deployment for Web> pipeline has completed successfully",
+    "text": "User's <https://spin.aurahealth.io/#/applications/user/executions/details/01M3W75EHVZC9D9BYXK9F1WK7F|Quick deployment for Web> pipeline has completed successfully",
+    "title": "Pipeline complete for USER",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1790874664.162819",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1790874664,
+    "color": "2275B8",
+    "fallback": "User's <https://spin.aurahealth.io/#/applications/user/executions/details/01M3W75EHVZC9D9BYXK9F1WK7F|Quick deployment for Web> pipeline is starting",
+    "text": "User's <https://spin.aurahealth.io/#/applications/user/executions/details/01M3W75EHVZC9D9BYXK9F1WK7F|Quick deployment for Web> pipeline is starting",
+    "title": "Pipeline starting for USER",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1790870667.441819",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1790870667,
+    "color": "769D3E",
+    "fallback": "Payment's <https://spin.aurahealth.io/#/applications/payment/executions/details/01M3W38AQDM8JJWW2AJYMR72W3|Quick deployment> pipeline has completed successfully",
+    "text": "Payment's <https://spin.aurahealth.io/#/applications/payment/executions/details/01M3W38AQDM8JJWW2AJYMR72W3|Quick deployment> pipeline has completed successfully",
+    "title": "Pipeline complete for PAYMENT",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1790870565.811079",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1790870565,
+    "color": "2275B8",
+    "fallback": "Payment's <https://spin.aurahealth.io/#/applications/payment/executions/details/01M3W38AQDM8JJWW2AJYMR72W3|Quick deployment> pipeline is starting",
+    "text": "Payment's <https://spin.aurahealth.io/#/applications/payment/executions/details/01M3W38AQDM8JJWW2AJYMR72W3|Quick deployment> pipeline is starting",
+    "title": "Pipeline starting for PAYMENT",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1790804669.249819",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1790804669,
+    "color": "769D3E",
+    "fallback": "Ai's <https://spin.aurahealth.io/#/applications/ai/executions/details/01M3T4B4FSWH96Q5J1Q31MDRN6|Quick deployment for Web> pipeline has completed successfully",
+    "text": "Ai's <https://spin.aurahealth.io/#/applications/ai/executions/details/01M3T4B4FSWH96Q5J1Q31MDRN6|Quick deployment for Web> pipeline has completed successfully",
+    "title": "Pipeline complete for AI",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1790804595.797919",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1790804595,
+    "color": "2275B8",
+    "fallback": "Ai's <https://spin.aurahealth.io/#/applications/ai/executions/details/01M3T4B4FSWH96Q5J1Q31MDRN6|Quick deployment for Web> pipeline is starting",
+    "text": "Ai's <https://spin.aurahealth.io/#/applications/ai/executions/details/01M3T4B4FSWH96Q5J1Q31MDRN6|Quick deployment for Web> pipeline is starting",
+    "title": "Pipeline starting for AI",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1790769577.662209",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1790769577,
+    "color": "769D3E",
+    "fallback": "User's <https://spin.aurahealth.io/#/applications/user/executions/details/01M3S2VS3SSHM3376M2HK7Y0RS|Quick deployment for Service> pipeline has completed successfully",
+    "text": "User's <https://spin.aurahealth.io/#/applications/user/executions/details/01M3S2VS3SSHM3376M2HK7Y0RS|Quick deployment for Service> pipeline has completed successfully",
+    "title": "Pipeline complete for USER",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1790769489.789589",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1790769489,
+    "color": "2275B8",
+    "fallback": "User's <https://spin.aurahealth.io/#/applications/user/executions/details/01M3S2VS3SSHM3376M2HK7Y0RS|Quick deployment for Service> pipeline is starting",
+    "text": "User's <https://spin.aurahealth.io/#/applications/user/executions/details/01M3S2VS3SSHM3376M2HK7Y0RS|Quick deployment for Service> pipeline is starting",
+    "title": "Pipeline starting for USER",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1790756281.850039",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1790756281,
+    "color": "769D3E",
+    "fallback": "Payment's <https://spin.aurahealth.io/#/applications/payment/executions/details/01M3RP5YZ0EMTY6P2H0W2ERC7D|Quick deployment> pipeline has completed successfully",
+    "text": "Payment's <https://spin.aurahealth.io/#/applications/payment/executions/details/01M3RP5YZ0EMTY6P2H0W2ERC7D|Quick deployment> pipeline has completed successfully",
+    "title": "Pipeline complete for PAYMENT",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1790756191.921099",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1790756191,
+    "color": "2275B8",
+    "fallback": "Payment's <https://spin.aurahealth.io/#/applications/payment/executions/details/01M3RP5YZ0EMTY6P2H0W2ERC7D|Quick deployment> pipeline is starting",
+    "text": "Payment's <https://spin.aurahealth.io/#/applications/payment/executions/details/01M3RP5YZ0EMTY6P2H0W2ERC7D|Quick deployment> pipeline is starting",
+    "title": "Pipeline starting for PAYMENT",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1790629604.158789",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1790629604,
+    "color": "769D3E",
+    "fallback": "Intelligence's <https://spin.aurahealth.io/#/applications/intelligence/executions/details/01M3MXCY8MZXPW8WY213ED3SAB|Quick deployment> pipeline has completed successfully",
+    "text": "Intelligence's <https://spin.aurahealth.io/#/applications/intelligence/executions/details/01M3MXCY8MZXPW8WY213ED3SAB|Quick deployment> pipeline has completed successfully",
+    "title": "Pipeline complete for INTELLIGENCE",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1790629542.674989",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1790629542,
+    "color": "2275B8",
+    "fallback": "Intelligence's <https://spin.aurahealth.io/#/applications/intelligence/executions/details/01M3MXCY8MZXPW8WY213ED3SAB|Quick deployment> pipeline is starting",
+    "text": "Intelligence's <https://spin.aurahealth.io/#/applications/intelligence/executions/details/01M3MXCY8MZXPW8WY213ED3SAB|Quick deployment> pipeline is starting",
+    "title": "Pipeline starting for INTELLIGENCE",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1790601729.545749",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1790601729,
+    "color": "769D3E",
+    "fallback": "Payment's <https://spin.aurahealth.io/#/applications/payment/executions/details/01M3M2T09JRM7WER9Y9GNWYGTA|Quick deployment> pipeline has completed successfully",
+    "text": "Payment's <https://spin.aurahealth.io/#/applications/payment/executions/details/01M3M2T09JRM7WER9Y9GNWYGTA|Quick deployment> pipeline has completed successfully",
+    "title": "Pipeline complete for PAYMENT",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1790601659.318239",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1790601659,
+    "color": "2275B8",
+    "fallback": "Payment's <https://spin.aurahealth.io/#/applications/payment/executions/details/01M3M2T09JRM7WER9Y9GNWYGTA|Quick deployment> pipeline is starting",
+    "text": "Payment's <https://spin.aurahealth.io/#/applications/payment/executions/details/01M3M2T09JRM7WER9Y9GNWYGTA|Quick deployment> pipeline is starting",
+    "title": "Pipeline starting for PAYMENT",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1790382985.714219",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1790382985,
+    "color": "769D3E",
+    "fallback": "User's <https://spin.aurahealth.io/#/applications/user/executions/details/01M3DJ5KWWW7J5QQQ61PKN6G8C|Quick deployment for Service> pipeline has completed successfully",
+    "text": "User's <https://spin.aurahealth.io/#/applications/user/executions/details/01M3DJ5KWWW7J5QQQ61PKN6G8C|Quick deployment for Service> pipeline has completed successfully",
+    "title": "Pipeline complete for USER",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1790382887.383669",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1790382887,
+    "color": "2275B8",
+    "fallback": "User's <https://spin.aurahealth.io/#/applications/user/executions/details/01M3DJ5KWWW7J5QQQ61PKN6G8C|Quick deployment for Service> pipeline is starting",
+    "text": "User's <https://spin.aurahealth.io/#/applications/user/executions/details/01M3DJ5KWWW7J5QQQ61PKN6G8C|Quick deployment for Service> pipeline is starting",
+    "title": "Pipeline starting for USER",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1775139813.141639",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1775139813,
+    "color": "769D3E",
+    "fallback": "Coach's <https://spin.aurahealth.io/#/applications/coach/executions/details/01KN795NCS1QF81BM6SSPENZCM|Quick deployment for Web> pipeline has completed successfully",
+    "text": "Coach's <https://spin.aurahealth.io/#/applications/coach/executions/details/01KN795NCS1QF81BM6SSPENZCM|Quick deployment for Web> pipeline has completed successfully",
+    "title": "Pipeline complete for COACH",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1775139739.708349",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1775139739,
+    "color": "2275B8",
+    "fallback": "Coach's <https://spin.aurahealth.io/#/applications/coach/executions/details/01KN795NCS1QF81BM6SSPENZCM|Quick deployment for Web> pipeline is starting",
+    "text": "Coach's <https://spin.aurahealth.io/#/applications/coach/executions/details/01KN795NCS1QF81BM6SSPENZCM|Quick deployment for Web> pipeline is starting",
+    "title": "Pipeline starting for COACH",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1772656270.552579",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1772656270,
+    "color": "769D3E",
+    "fallback": "Coach's <https://spin.aurahealth.io/#/applications/coach/executions/details/01KJX8NT4FMN13D8X2TVBD8PE9|Quick deployment for Web> pipeline has completed successfully",
+    "text": "Coach's <https://spin.aurahealth.io/#/applications/coach/executions/details/01KJX8NT4FMN13D8X2TVBD8PE9|Quick deployment for Web> pipeline has completed successfully",
+    "title": "Pipeline complete for COACH",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1772656192.251849",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1772656192,
+    "color": "2275B8",
+    "fallback": "Coach's <https://spin.aurahealth.io/#/applications/coach/executions/details/01KJX8NT4FMN13D8X2TVBD8PE9|Quick deployment for Web> pipeline is starting",
+    "text": "Coach's <https://spin.aurahealth.io/#/applications/coach/executions/details/01KJX8NT4FMN13D8X2TVBD8PE9|Quick deployment for Web> pipeline is starting",
+    "title": "Pipeline starting for COACH",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1771897025.847019",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1771897025,
+    "color": "B82525",
+    "fallback": "Iterable's <https://spin.aurahealth.io/#/applications/iterable/executions/details/01KJ6M3C77HV9AEHE06SRKARN7|Quick deployment> pipeline has failed",
+    "text": "Iterable's <https://spin.aurahealth.io/#/applications/iterable/executions/details/01KJ6M3C77HV9AEHE06SRKARN7|Quick deployment> pipeline has failed",
+    "title": "Pipeline failed for ITERABLE",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1771896419.118849",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1771896419,
+    "color": "2275B8",
+    "fallback": "Iterable's <https://spin.aurahealth.io/#/applications/iterable/executions/details/01KJ6M3C77HV9AEHE06SRKARN7|Quick deployment> pipeline is starting",
+    "text": "Iterable's <https://spin.aurahealth.io/#/applications/iterable/executions/details/01KJ6M3C77HV9AEHE06SRKARN7|Quick deployment> pipeline is starting",
+    "title": "Pipeline starting for ITERABLE",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1771894026.312369",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1771894026,
+    "color": "B82525",
+    "fallback": "Iterable's <https://spin.aurahealth.io/#/applications/iterable/executions/details/01KJ6H7ZCKB8D4BH77AS1PKH9M|Quick deployment> pipeline has failed",
+    "text": "Iterable's <https://spin.aurahealth.io/#/applications/iterable/executions/details/01KJ6H7ZCKB8D4BH77AS1PKH9M|Quick deployment> pipeline has failed",
+    "title": "Pipeline failed for ITERABLE",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1771893423.925959",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1771893423,
+    "color": "2275B8",
+    "fallback": "Iterable's <https://spin.aurahealth.io/#/applications/iterable/executions/details/01KJ6H7ZCKB8D4BH77AS1PKH9M|Quick deployment> pipeline is starting",
+    "text": "Iterable's <https://spin.aurahealth.io/#/applications/iterable/executions/details/01KJ6H7ZCKB8D4BH77AS1PKH9M|Quick deployment> pipeline is starting",
+    "title": "Pipeline starting for ITERABLE",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1771883557.934049",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1771883557,
+    "color": "B82525",
+    "fallback": "Iterable's <https://spin.aurahealth.io/#/applications/iterable/executions/details/01KJ678G3RSE03W4X9EFF2T67F|Quick deployment> pipeline has failed",
+    "text": "Iterable's <https://spin.aurahealth.io/#/applications/iterable/executions/details/01KJ678G3RSE03W4X9EFF2T67F|Quick deployment> pipeline has failed",
+    "title": "Pipeline failed for ITERABLE",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ },
+ {
+  "type": "message",
+  "ts": "1771882955.585489",
+  "user": "UFQB0D486",
+  "bot_id": "BFN6H1B16",
+  "text": "",
+  "attachments": [
+   {
+    "id": 1,
+    "footer_icon": "https://avatars0.githubusercontent.com/u/7634182?s=200&v=4",
+    "ts": 1771882955,
+    "color": "2275B8",
+    "fallback": "Iterable's <https://spin.aurahealth.io/#/applications/iterable/executions/details/01KJ678G3RSE03W4X9EFF2T67F|Quick deployment> pipeline is starting",
+    "text": "Iterable's <https://spin.aurahealth.io/#/applications/iterable/executions/details/01KJ678G3RSE03W4X9EFF2T67F|Quick deployment> pipeline is starting",
+    "title": "Pipeline starting for ITERABLE",
+    "footer": "Spinnaker",
+    "mrkdwn_in": [
+     "text"
+    ]
+   }
+  ]
+ }
+]

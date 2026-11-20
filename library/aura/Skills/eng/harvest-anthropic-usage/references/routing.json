@@ -1,0 +1,28 @@
+{
+  "_comment": "The one place that decides where follow-ups go and who acts on them. Callers never name a person: they name a role, and this file says who fills it. Change a destination here, in a reviewed PR; no caller changes.",
+  "roles": {
+    "approver": {"label": "the approver", "filled_by": ["Jerome"]},
+    "reviewer": {"label": "the reviewer", "filled_by": ["Jerome"]},
+    "owner": {"label": "the owner", "filled_by": []}
+  },
+  "authority": {
+    "release": "approver",
+    "prod-change": "approver",
+    "security": "approver",
+    "merge": "approver"
+  },
+  "defaults": {
+    "channel": "C0CB3Q05P2S",
+    "channel_name": "#claude-monitoring",
+    "dedupe_window_days": 30,
+    "linear_team_key": "ENG",
+    "linear_parent": null
+  },
+  "kinds": {
+    "pr-ready": {"header": "PR ready", "for": "reviewer", "card": "update", "requires": ["pr"]},
+    "go-needed": {"header": "Go needed", "for": "approver", "card": "file", "requires": ["go_line", "go_session", "go_type"]},
+    "decision": {"header": "Decision needed", "for": "approver", "card": "file", "requires": []},
+    "blocked": {"header": "Blocked", "for": "approver", "card": "file", "requires": []},
+    "fyi": {"header": "FYI", "for": null, "card": "none", "requires": []}
+  }
+}

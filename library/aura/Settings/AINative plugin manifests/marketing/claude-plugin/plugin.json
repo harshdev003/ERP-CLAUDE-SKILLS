@@ -1,0 +1,9 @@
+{
+  "name": "marketing",
+  "version": "3.5.3",
+  "description": "Marketing team plugin \u2014 skills and commands for ad creative, growth, and campaign workflows",
+  "author": {
+    "name": "AuraHealth",
+    "email": "<redacted-email>"
+  }
+}

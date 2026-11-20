@@ -1,0 +1,41 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "start",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "source ~/.nvm/nvm.sh >/dev/null && nvm use >/dev/null && npm run start"
+      ],
+      "port": 8081
+    },
+    {
+      "name": "businessweb-dashboard-mock",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "source ~/.nvm/nvm.sh >/dev/null && nvm use 18 >/dev/null && (node /private/tmp/claude-501/-Users-macdev-Work-Aura/f8a8e200-3e1c-47a6-801f-51b6846b8193/scratchpad/mock/mockServices.js &) && cd ~/Work/BusinessWeb && AURA_SERVICES_URL=http://localhost:3901 BUSINESS_WEB_SERVICE_TOKEN=mock-token NEXT_PUBLIC_APP_DOMAIN=http://localhost:3600 NEXT_PUBLIC_BUGSNAG_KEY=00000000000000000000000000000000 NEXT_PUBLIC_MIXPANEL_TOKEN=mock NEXT_PUBLIC_STRIPE_KEY=pk_test_mock NEXT_PUBLIC_BRANCH_KEY=key_test_mock npx next dev -p 3600"
+      ],
+      "port": 3600
+    },
+    {
+      "name": "businessweb-master-mock",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "source ~/.nvm/nvm.sh >/dev/null && nvm use 18 >/dev/null && cd /private/tmp/claude-501/-Users-macdev-Work-Aura/f8a8e200-3e1c-47a6-801f-51b6846b8193/scratchpad/bw-master && AURA_SERVICES_URL=http://localhost:3901 BUSINESS_WEB_SERVICE_TOKEN=mock-token NEXT_PUBLIC_APP_DOMAIN=http://localhost:3601 NEXT_PUBLIC_BUGSNAG_KEY=00000000000000000000000000000000 NEXT_PUBLIC_MIXPANEL_TOKEN=mock NEXT_PUBLIC_STRIPE_KEY=pk_test_mock NEXT_PUBLIC_BRANCH_KEY=key_test_mock npx next dev -p 3601"
+      ],
+      "port": 3601
+    },
+    {
+      "name": "businessweb-branch-nomock",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "source ~/.nvm/nvm.sh >/dev/null && nvm use 18 >/dev/null && cd ~/Work/BusinessWeb && AURA_SERVICES_URL=http://localhost:3901 BUSINESS_WEB_SERVICE_TOKEN=mock-token NEXT_PUBLIC_APP_DOMAIN=http://localhost:3600 NEXT_PUBLIC_BUGSNAG_KEY=00000000000000000000000000000000 NEXT_PUBLIC_MIXPANEL_TOKEN=mock NEXT_PUBLIC_STRIPE_KEY=pk_test_mock NEXT_PUBLIC_BRANCH_KEY=key_test_mock npx next dev -p 3600"
+      ],
+      "port": 3600
+    }
+  ]
+}

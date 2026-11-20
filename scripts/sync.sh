@@ -21,9 +21,18 @@ installed=()
 for dir in "$REPO"/skills/*/; do
   [ -f "$dir/SKILL.md" ] || continue
   name="$(basename "$dir")"
-  rm -rf "$CLAUDE_DIR/skills/$name"
+  rm -rf "${CLAUDE_DIR:?}/skills/${name:?}"
   cp -r "$dir" "$CLAUDE_DIR/skills/$name"
   installed+=("$name")
+done
+
+# 2b. Install agents: every agents/*.md
+mkdir -p "$CLAUDE_DIR/agents"
+agents=()
+for f in "$REPO"/agents/*.md; do
+  [ -f "$f" ] || continue
+  cp "$f" "$CLAUDE_DIR/agents/"
+  agents+=("$(basename "$f" .md)")
 done
 
 # 3. Install global rules
@@ -31,5 +40,5 @@ if [ -f "$REPO/rules/CLAUDE.md" ]; then
   cp "$REPO/rules/CLAUDE.md" "$CLAUDE_DIR/CLAUDE.md"
 fi
 
-echo "[ERP-CLAUDE-SKILLS sync] $status. Skills installed: ${installed[*]:-none}. Rules: rules/CLAUDE.md -> ~/.claude/CLAUDE.md"
+echo "[ERP-CLAUDE-SKILLS sync] $status. Skills installed: ${installed[*]:-none}. Agents: ${agents[*]:-none}. Rules: rules/CLAUDE.md -> ~/.claude/CLAUDE.md"
 exit 0

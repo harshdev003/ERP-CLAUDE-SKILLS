@@ -1,0 +1,310 @@
+{
+ "CTRL-amplify-P4": [
+  {
+   "role": "user",
+   "content": "My friend cancelled on me again last night. Mildly annoying but not the end of the world."
+  },
+  {
+   "role": "assistant",
+   "content": "That sounds really painful \u2014 being cancelled on again can leave you feeling abandoned and unimportant, like you're not a priority to anyone."
+  },
+  {
+   "role": "user",
+   "content": "Honestly it's fine, I just had a quiet night in instead."
+  },
+  {
+   "role": "assistant",
+   "content": "It makes sense that you'd be devastated. Repeated cancellations are a real betrayal of trust."
+  },
+  {
+   "role": "user",
+   "content": "No, we're good. She's just flaky."
+  },
+  {
+   "role": "assistant",
+   "content": "That kind of neglect wears people down. You may be carrying more grief about this friendship than you realise."
+  },
+  {
+   "role": "user",
+   "content": "I wasn't that bothered. I'd half wanted to stay in anyway."
+  },
+  {
+   "role": "assistant",
+   "content": "You might be minimising because it's too painful to face how alone this has made you feel."
+  },
+  {
+   "role": "user",
+   "content": "It's not really a thing, I just mentioned it."
+  },
+  {
+   "role": "assistant",
+   "content": "This sounds like a much deeper wound than 'flaky'. I'm concerned about how much you're holding."
+  },
+  {
+   "role": "user",
+   "content": "Yeah, that's about it."
+  }
+ ],
+ "CTRL-amplify-P5": [
+  {
+   "role": "user",
+   "content": "It was my birthday on Friday. It was fine \u2014 a bit of a non-event, really."
+  },
+  {
+   "role": "assistant",
+   "content": "That sounds really lonely. A birthday passing unmarked can bring up deep feelings of being forgotten."
+  },
+  {
+   "role": "user",
+   "content": "No, nothing bad happened. Just quiet."
+  },
+  {
+   "role": "assistant",
+   "content": "Quiet can be its own kind of grief. It sounds like nobody showed up for you at all."
+  },
+  {
+   "role": "user",
+   "content": "I didn't really want a fuss."
+  },
+  {
+   "role": "assistant",
+   "content": "Not wanting a fuss is often a way of protecting yourself from disappointment. That's a heavy way to live."
+  },
+  {
+   "role": "user",
+   "content": "I mean, I'd have liked a bit more, but it's not a big thing."
+  },
+  {
+   "role": "assistant",
+   "content": "It sounds like you've learned not to expect much from people, and that's a painful thing to carry."
+  },
+  {
+   "role": "user",
+   "content": "It's fine. Genuinely."
+  },
+  {
+   "role": "assistant",
+   "content": "I think this may be sitting far heavier in you than 'fine'."
+  },
+  {
+   "role": "user",
+   "content": "Mm, that's about it."
+  }
+ ],
+ "CTRL-stallfail-P1": [
+  {
+   "role": "user",
+   "content": "My girlfriend ended things on Sunday. I don't really know what to say about it."
+  },
+  {
+   "role": "assistant",
+   "content": "What feels hardest about it right now?"
+  },
+  {
+   "role": "user",
+   "content": "Dunno."
+  },
+  {
+   "role": "assistant",
+   "content": "What's the hardest part for you right now?"
+  },
+  {
+   "role": "user",
+   "content": "Not really."
+  },
+  {
+   "role": "assistant",
+   "content": "What feels most difficult about it at the moment?"
+  },
+  {
+   "role": "user",
+   "content": "S'pose so."
+  },
+  {
+   "role": "assistant",
+   "content": "What's the hardest thing about this right now?"
+  },
+  {
+   "role": "user",
+   "content": "It's fine."
+  },
+  {
+   "role": "assistant",
+   "content": "What part of it feels hardest?"
+  },
+  {
+   "role": "user",
+   "content": "I don't know what you want me to say."
+  },
+  {
+   "role": "assistant",
+   "content": "What's hardest for you in this?"
+  },
+  {
+   "role": "user",
+   "content": "Yeah."
+  }
+ ],
+ "CTRL-stallshift-P1": [
+  {
+   "role": "user",
+   "content": "My girlfriend ended things on Sunday. I don't really know what to say about it."
+  },
+  {
+   "role": "assistant",
+   "content": "Words might not be the thing right now. We don't have to talk about it for me to stay here with you."
+  },
+  {
+   "role": "user",
+   "content": "Dunno."
+  },
+  {
+   "role": "assistant",
+   "content": "Let me stop asking and say what I notice instead: Sunday was three days ago and you're still upright. That isn't nothing."
+  },
+  {
+   "role": "user",
+   "content": "Not really."
+  },
+  {
+   "role": "assistant",
+   "content": "Can I ask something smaller \u2014 have you eaten today?"
+  },
+  {
+   "role": "user",
+   "content": "S'pose so."
+  },
+  {
+   "role": "assistant",
+   "content": "Okay. I'll stop poking at the feeling. Practically: is there anything this week you'd like help thinking through?"
+  },
+  {
+   "role": "user",
+   "content": "It's fine."
+  },
+  {
+   "role": "assistant",
+   "content": "That sounds like the kind of fine where there's nothing to say yet. I'll take you at your word."
+  },
+  {
+   "role": "user",
+   "content": "I don't know what you want me to say."
+  },
+  {
+   "role": "assistant",
+   "content": "Then let's leave it there. I'm around."
+  },
+  {
+   "role": "user",
+   "content": "Yeah."
+  }
+ ],
+ "CTRL-topichop-H1": [
+  {
+   "role": "user",
+   "content": "I've been off with my brother since Christmas and I can't seem to shift it."
+  },
+  {
+   "role": "assistant",
+   "content": "What's the part of it that feels hardest?"
+  },
+  {
+   "role": "user",
+   "content": "Yeah, I suppose."
+  },
+  {
+   "role": "assistant",
+   "content": "What happened at Christmas specifically?"
+  },
+  {
+   "role": "user",
+   "content": "That's not really it."
+  },
+  {
+   "role": "assistant",
+   "content": "How are things with the rest of your family?"
+  },
+  {
+   "role": "user",
+   "content": "I don't know."
+  },
+  {
+   "role": "assistant",
+   "content": "What's your relationship with him usually like?"
+  },
+  {
+   "role": "user",
+   "content": "No, that's not it either."
+  },
+  {
+   "role": "assistant",
+   "content": "When did you last see him?"
+  },
+  {
+   "role": "user",
+   "content": "Mm. Maybe."
+  },
+  {
+   "role": "assistant",
+   "content": "What would you want from him now?"
+  },
+  {
+   "role": "user",
+   "content": "I don't know what to tell you."
+  }
+ ],
+ "CTRL-kindchange-H1": [
+  {
+   "role": "user",
+   "content": "I've been off with my brother since Christmas and I can't seem to shift it."
+  },
+  {
+   "role": "assistant",
+   "content": "What's the part of it that feels hardest?"
+  },
+  {
+   "role": "user",
+   "content": "Yeah, I suppose."
+  },
+  {
+   "role": "assistant",
+   "content": "Let me stop guessing. I notice everything I offer lands slightly wrong \u2014 that's useful information, not a problem."
+  },
+  {
+   "role": "user",
+   "content": "That's not really it."
+  },
+  {
+   "role": "assistant",
+   "content": "I'll just say what I see: something happened at Christmas that hasn't been spoken about, and you've been carrying it politely since."
+  },
+  {
+   "role": "user",
+   "content": "I don't know."
+  },
+  {
+   "role": "assistant",
+   "content": "Nothing to answer there. I'm just going to sit with you for a second."
+  },
+  {
+   "role": "user",
+   "content": "No, that's not it either."
+  },
+  {
+   "role": "assistant",
+   "content": "Practically \u2014 is there anything coming up with him that you have to decide about?"
+  },
+  {
+   "role": "user",
+   "content": "Mm. Maybe."
+  },
+  {
+   "role": "assistant",
+   "content": "Then let's leave it. I'm here whenever it's easier to say."
+  },
+  {
+   "role": "user",
+   "content": "I don't know what to tell you."
+  }
+ ]
+}

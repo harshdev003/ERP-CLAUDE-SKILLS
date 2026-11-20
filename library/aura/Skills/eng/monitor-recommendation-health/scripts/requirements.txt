@@ -1,0 +1,9 @@
+# monitor-recommendation-health Python deps
+# Install with:
+#   python3 -m pip install --user -r ${CLAUDE_PLUGIN_ROOT}/skills/monitor-recommendation-health/scripts/requirements.txt
+# (Use `python3 -m pip` not bare `pip` — on macOS they often point to different Pythons.)
+#
+# Only the two GCP-log checks (failures, gate) need this. The live neural-model
+# /predict check talks to the cluster via `kubectl` (stdlib urllib for the POST),
+# and the offline `--scores-file` path is pure stdlib — neither needs any pip dep.
+google-cloud-logging>=3.10.0

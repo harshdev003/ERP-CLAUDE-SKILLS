@@ -1,0 +1,26 @@
+{
+  "name": "qa",
+  "version": "3.19.0",
+  "description": "QA team plugin - skills, commands, and hooks for testing AuraHealth products end-to-end",
+  "author": {
+    "name": "AuraHealth QA",
+    "email": "<redacted-email>"
+  },
+  "repository": "https://github.com/AuraHealth/AINative",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Aura QA",
+    "shortDescription": "End-to-end testing workflows for AuraHealth Codex users.",
+    "longDescription": "AuraHealth QA workflows for end-to-end product testing, Aurie conversation checks, regression sweeps, prompt scenario runs, and simulated user QA.",
+    "developerName": "AuraHealth",
+    "category": "Productivity",
+    "capabilities": [
+      "Skills"
+    ],
+    "defaultPrompt": [
+      "Run an Aurie QA scenario.",
+      "Sweep this prompt across scenarios.",
+      "Check this regression flow."
+    ]
+  }
+}

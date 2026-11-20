@@ -1,0 +1,48 @@
+{
+ "number": 1784,
+ "title": "fix(dailyPractices3): refresh For today on return to the app and at midnight [PROD-7034]",
+ "url": "https://github.com/AuraHealth/AuraConsumerApp/pull/1784",
+ "isDraft": false,
+ "state": "OPEN",
+ "headRefOid": "804e4bcbbc0017a0fd8d6313ab450345f33f28ad",
+ "updatedAt": "2026-10-06T11:42:30Z",
+ "author": {
+  "login": "naveed-rana"
+ },
+ "reviews": {
+  "nodes": []
+ },
+ "reviewThreads": {
+  "pageInfo": {
+   "hasNextPage": false
+  },
+  "nodes": []
+ },
+ "commits": {
+  "nodes": [
+   {
+    "commit": {
+     "oid": "804e4bcbbc0017a0fd8d6313ab450345f33f28ad",
+     "statusCheckRollup": {
+      "contexts": {
+       "nodes": [
+        {
+         "__typename": "CheckRun",
+         "name": "build-and-test",
+         "status": "COMPLETED",
+         "conclusion": "SUCCESS"
+        },
+        {
+         "__typename": "StatusContext"
+        },
+        {
+         "__typename": "StatusContext"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ }
+}

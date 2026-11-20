@@ -1,0 +1,79 @@
+---
+description: Reflux-driven navigation conventions — Actions.navigateTo, Dashboard dispatch, the @react-navigation exception
+globs: app.js,src/screens/**/*.js,src/components/**/*.js,src/events/NavigationController.js,src/actions.js
+alwaysApply: false
+---
+
+# Navigation
+
+Aura does **not** use `@react-navigation` as its app-wide router. Navigation is driven by a custom Reflux event bus:
+
+- `src/actions.js` exposes `navigateTo`, `navigateBack`, `navigateToTab`, `navigateToSearchTab`.
+- `src/events/NavigationController.js` is a thin Reflux store that listens to those Actions and re-triggers them as events (and also fires special cross-cutting events like `showSubscription`, `openFPShareSubscription`, `highlightGiveawayProfileButton`, `SHOW_TOAST_MODAL`, `SHOW_SUBSCRIPTION_PAYWALL`).
+- `src/screens/Dashboard.js` (`navigateTo = (event, view, options, props) => { ... }`) is the actual screen dispatcher — a large `if/switch` block that maps a string `view` key to a rendered screen component.
+- `app.js` is **not** the screen registry. It bootstraps stores, sets up Branch + `Linking`, listens to `NavigationController`, and renders the root container. Don't add new screens to `app.js`.
+
+## Triggering navigation
+
+```js
+import Actions from '../actions'
+
+Actions.navigateTo('familyPlanOnboarding', null, { source: 'paywall', planId })
+Actions.navigateBack({ animated: true })
+Actions.navigateToTab('home')
+```
+
+- `view` (1st arg) is a stable string key that the Dashboard dispatcher branches on.
+- `option` (2nd arg) is a navigation modifier (e.g. animation hint, replace flag) — pass `null` if none.
+- `props` (3rd arg) is the props bag that ends up on the rendered screen. Keep it JSON-serializable (no functions, no class instances, no React refs).
+
+## Adding a new screen
+
+1. Create the screen file under `src/screens/` (or a sub-folder like `src/screens/familyPlan/`).
+2. Open `src/screens/Dashboard.js` and add a `case` / branch in the `navigateTo` dispatcher (and the corresponding render path) that maps your new `view` string to the component. Mind the file size — make a focused diff.
+3. Trigger navigation with `Actions.navigateTo('<viewKey>', null, { ...props })`.
+4. Receive props on the screen. Existing convention varies:
+   - Some screens read params via `this.props.props.*` (e.g. `src/screens/NewCoachDetails.js`: `this.props.props || {}`).
+   - Others read top-level `this.props.<key>` directly (e.g. `src/screens/QuoteCalender.js`).
+   Match the surrounding screens' style — Dashboard wires it differently per branch.
+
+## Deep linking
+
+**Every deep link goes through `DeeplinkHandler`** (`src/components/DeeplinkHandler.js`,
+rendered once by `app.js`). That covers universal links, the `aurahealth://`
+scheme, Branch, OneSignal and Iterable push, local notifications, and payment
+return links.
+
+A pure parser in `src/models/deeplink.js` turns each source's input into
+`{ destination, objectId, params }`, and one router, `handleDeeplinkIntent`, opens
+it. The router also parks a link until a user is signed in and the dashboard is up.
+
+Never listen for, parse or navigate a link anywhere else: not in `app.js`, a
+store or a screen. To make a screen deep-linkable, register it in `Dashboard.js`,
+then add its `case` to `routeDestination` and map it in the parsers. There is no
+`linking` config object; that's a `@react-navigation` concept and doesn't apply
+here.
+
+The full rule, covering adding a destination or source, parking, validation and
+simulator testing, is in `deeplinks.mdc`.
+
+## The `@react-navigation` exception
+
+`@react-navigation` is in `package.json` and is used in a small, contained subtree:
+
+- `src/screens/community/CommunityTabItem.js`
+- `src/screens/community/CommunityUnsubscribe.js`
+- `src/components/community/EventInsetModal.js`
+- `src/components/community/CommunityInsetModal.js`
+- `src/components/community/CourseInsetModal.js`
+
+Inside that subtree, `Stack.Screen`, `NavigationContainer`, `route.params`, and the `useNavigation` hook are fine. **Outside** it, do not introduce `@react-navigation` patterns — use the Reflux router.
+
+## Don't
+
+- Don't call `Actions.navigateTo(...)` inside a `render` or functional component body without an event guard — it causes infinite loops.
+- Don't pass non-serializable values (functions, class instances, refs) through the `props` arg.
+- Don't handle a deep link outside `DeeplinkHandler`: no `Linking` listener, URL parse or link navigation in `app.js`, a store or a screen. See `deeplinks.mdc`.
+- Don't navigate from inside a Reflux store callback by holding a navigation reference — `Actions.navigateTo` is the only sanctioned channel.
+- Don't add a parallel `@react-navigation` stack at the root or register screens in `app.js`. The screen registry lives in `src/screens/Dashboard.js`.
+- Don't introduce a new top-level navigator type (drawer, bottom tabs) without coordinating — the existing Dashboard-driven structure is intentional.

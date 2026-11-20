@@ -1,0 +1,30 @@
+{
+  "autoMemoryEnabled": true,
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "64000"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(*)",
+      "Read(*)",
+      "Edit(*)",
+      "Write(*)"
+    ],
+    "deny": [
+      "mcp__34854d44-01ee-47c1-ba3b-fa0d490c79e0__use_figma",
+      "mcp__34854d44-01ee-47c1-ba3b-fa0d490c79e0__create_new_file",
+      "mcp__34854d44-01ee-47c1-ba3b-fa0d490c79e0__add_code_connect_map",
+      "mcp__34854d44-01ee-47c1-ba3b-fa0d490c79e0__send_code_connect_mappings",
+      "mcp__34854d44-01ee-47c1-ba3b-fa0d490c79e0__upload_assets",
+      "mcp__34854d44-01ee-47c1-ba3b-fa0d490c79e0__weave_upload_asset",
+      "mcp__34854d44-01ee-47c1-ba3b-fa0d490c79e0__weave_run_tool",
+      "mcp__34854d44-01ee-47c1-ba3b-fa0d490c79e0__create_shader",
+      "mcp__34854d44-01ee-47c1-ba3b-fa0d490c79e0__update_shader",
+      "mcp__34854d44-01ee-47c1-ba3b-fa0d490c79e0__create_generative_plugin",
+      "mcp__34854d44-01ee-47c1-ba3b-fa0d490c79e0__update_generative_plugin",
+      "mcp__34854d44-01ee-47c1-ba3b-fa0d490c79e0__generate_diagram",
+      "mcp__34854d44-01ee-47c1-ba3b-fa0d490c79e0__export_video"
+    ]
+  }
+}

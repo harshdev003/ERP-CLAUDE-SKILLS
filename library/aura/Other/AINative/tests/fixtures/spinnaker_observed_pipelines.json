@@ -1,0 +1,231 @@
+{
+ "source": "#deployment (GG6CJ6P0D) conversations.history, 2025-10-06..2026-10-06, 3360 messages",
+ "pairs": [
+  {
+   "app": "activated",
+   "pipeline": "Quick deployment",
+   "messages": 14
+  },
+  {
+   "app": "activated",
+   "pipeline": "Quick deployment for loader",
+   "messages": 2
+  },
+  {
+   "app": "activation",
+   "pipeline": "Quick deployment activation",
+   "messages": 40
+  },
+  {
+   "app": "activation",
+   "pipeline": "Quick deployment activation category",
+   "messages": 38
+  },
+  {
+   "app": "activation",
+   "pipeline": "Quick deployment activation category loader",
+   "messages": 6
+  },
+  {
+   "app": "activation",
+   "pipeline": "Quick deployment activation loader",
+   "messages": 6
+  },
+  {
+   "app": "ai",
+   "pipeline": "Quick deployment for Web",
+   "messages": 198
+  },
+  {
+   "app": "business",
+   "pipeline": "Quick deployment for Service",
+   "messages": 38
+  },
+  {
+   "app": "business",
+   "pipeline": "Quick deployment for Web",
+   "messages": 12,
+   "source": "#deployment conversations.history, 2026-09-01..2026-10-30 (ENG-1712); not in the year above"
+  },
+  {
+   "app": "button",
+   "pipeline": "Quick deployment",
+   "messages": 14
+  },
+  {
+   "app": "button",
+   "pipeline": "Quick deployment for loader",
+   "messages": 2
+  },
+  {
+   "app": "coach",
+   "pipeline": "Quick Deployment for Service",
+   "messages": 22
+  },
+  {
+   "app": "coach",
+   "pipeline": "Quick deployment for Web",
+   "messages": 16
+  },
+  {
+   "app": "content",
+   "pipeline": "Quick deployment",
+   "messages": 120
+  },
+  {
+   "app": "email",
+   "pipeline": "Quick deployment",
+   "messages": 54
+  },
+  {
+   "app": "experiment",
+   "pipeline": "Quick deployment",
+   "messages": 100
+  },
+  {
+   "app": "feed",
+   "pipeline": "Quick deployment",
+   "messages": 80
+  },
+  {
+   "app": "habit",
+   "pipeline": "Quick deployment",
+   "messages": 18
+  },
+  {
+   "app": "habit",
+   "pipeline": "Quick deployment for loader",
+   "messages": 2
+  },
+  {
+   "app": "ingestor",
+   "pipeline": "Quick deployment",
+   "messages": 38
+  },
+  {
+   "app": "intelligence",
+   "pipeline": "Quick deployment",
+   "messages": 1396
+  },
+  {
+   "app": "iterable",
+   "pipeline": "Quick deployment",
+   "messages": 108
+  },
+  {
+   "app": "klaviyo",
+   "pipeline": "Quick deployment",
+   "messages": 26
+  },
+  {
+   "app": "locale",
+   "pipeline": "Quick deployment",
+   "messages": 10
+  },
+  {
+   "app": "locale",
+   "pipeline": "Quick deployment for loader",
+   "messages": 2
+  },
+  {
+   "app": "neural",
+   "pipeline": "Quick deployment",
+   "messages": 16
+  },
+  {
+   "app": "neural",
+   "pipeline": "Quick deployment for trainer",
+   "messages": 20
+  },
+  {
+   "app": "notification",
+   "pipeline": "Quick deployment",
+   "messages": 82
+  },
+  {
+   "app": "onboarding",
+   "pipeline": "Quick deployment",
+   "messages": 12
+  },
+  {
+   "app": "payment",
+   "pipeline": "Quick deployment",
+   "messages": 302
+  },
+  {
+   "app": "predict",
+   "pipeline": "Quick deployment",
+   "messages": 10
+  },
+  {
+   "app": "predict",
+   "pipeline": "Quite deployment for trainer",
+   "messages": 2
+  },
+  {
+   "app": "program",
+   "pipeline": "Quick deployment program",
+   "messages": 14
+  },
+  {
+   "app": "program",
+   "pipeline": "Quick deployment program loader",
+   "messages": 2
+  },
+  {
+   "app": "proxy",
+   "pipeline": "Quick Deployment",
+   "messages": 32
+  },
+  {
+   "app": "reel",
+   "pipeline": "Quick deployment",
+   "messages": 14
+  },
+  {
+   "app": "reel",
+   "pipeline": "Quick deployment for loader",
+   "messages": 2
+  },
+  {
+   "app": "report",
+   "pipeline": "Quick deployment",
+   "messages": 38
+  },
+  {
+   "app": "serie",
+   "pipeline": "Quick deployment serie",
+   "messages": 14
+  },
+  {
+   "app": "serie",
+   "pipeline": "Quick deployment serie loader",
+   "messages": 2
+  },
+  {
+   "app": "slack",
+   "pipeline": "Quick deployment",
+   "messages": 38
+  },
+  {
+   "app": "support",
+   "pipeline": "Quick deployment",
+   "messages": 78
+  },
+  {
+   "app": "user",
+   "pipeline": "Quick deployment for AI",
+   "messages": 26
+  },
+  {
+   "app": "user",
+   "pipeline": "Quick deployment for Service",
+   "messages": 158
+  },
+  {
+   "app": "user",
+   "pipeline": "Quick deployment for Web",
+   "messages": 146
+  }
+ ]
+}

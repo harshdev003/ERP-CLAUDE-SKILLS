@@ -1,0 +1,9 @@
+{
+  "name": "shared",
+  "version": "3.93.0",
+  "description": "Shared AuraHealth plugin \u2014 org-wide skills and commands available to all teams",
+  "author": {
+    "name": "AuraHealth",
+    "email": "<redacted-email>"
+  }
+}

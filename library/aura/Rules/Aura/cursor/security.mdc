@@ -1,0 +1,53 @@
+---
+description: Security and privacy requirements for Aura
+alwaysApply: true
+---
+
+# Security & Privacy
+
+## Sensitive Data
+
+- **Never log PII**: no user emails, names, IDs, health data, payment data, tokens, or passwords in `console.log`, `bugsnag.report` metadata, or `Trackings(...)` payloads.
+- **Never hardcode secrets**: API keys, tokens, and credentials live in the cask (`src/cask/meals.js`, plus the platform-specific config files like `Info.plist` / `gradle.properties`). `src/cask/` is gitignored in its entirety — see the cask rules below. There is **no repo-root `.env`** and no `react-native-dotenv`; both were removed in PROD-4975 because the only thing the file carried was two non-secret layout constants, now inlined in `src/styles/dimensions.js`. Don't reintroduce a `.env` to hold a secret — put it in the cask so the sample-mirroring rule below applies to it.
+- **Never check in real production credentials** — even in code comments or test fixtures.
+
+## Secure Storage
+
+- Use the platform secure storage (Keychain on iOS, Keystore on Android) for tokens, refresh tokens, and credentials. Don't put them in `AsyncStorage` (it's plaintext).
+- Existing modules to use: `react-native-sha256` for hashing; secure-storage usage is wrapped in helpers under `src/logic/` — extend those instead of rolling new storage.
+
+## Network
+
+- All HTTP calls go through `axios` via `src/api.js` (the `Api` object) and `src/requests/`. Don't use raw `fetch` from random screens. Some legacy stores (`ChannelsStore.js`, `ListController.js`, `NodeCacheController.js`, `VoipController.js`) still use raw `fetch` — match `Api` when extending, don't add new `fetch` callsites.
+- HTTPS only. Never disable TLS validation, even temporarily for debugging.
+- Token refresh and session lifecycle live in the Auth-related stores. Don't roll auth logic in screens or per-feature stores.
+
+## Authentication
+
+- Trust `__DEV__` for dev-only behavior; never gate security logic on `__DEV__` (a release build with `__DEV__ === false` would skip the gate).
+- On logout, clear user-scoped state in every relevant Reflux store. Don't leave user data behind in `seamless-immutable` collections. The same applies on an account switch: `ProfileStore` clears the global profile when the profile id changes, so code reading `getProfile().id` never sends the previous account's id.
+- Session expiry (HTTP 401) routes the user back to login — don't conflate it with "permission denied".
+
+## Privacy / Consent
+
+- Permissions requests (`react-native-permissions`) are **just-in-time**, not at app launch. Show the explainer modal that the design team has already specced before triggering the system prompt.
+- Tracking SDKs (AppsFlyer, IDFA, Branch attribution) follow ATT consent. Don't fire attribution events before the consent step.
+- Healthkit, contacts, calendar — same just-in-time rule. Always provide a usage description in `Info.plist`.
+
+## User Input
+
+- Sanitize user-generated text before sending to the API; the server should also sanitize but client-side validation prevents trivially bad payloads.
+- Never `eval` or `new Function` user input.
+- Deep links: validate every parameter before using it to navigate or fetch data — never trust the URL.
+
+## User-Facing Errors
+
+- Show friendly, translated copy (`t('errors.generic')`). Never show raw API error messages, stack traces, or internal IDs in the UI.
+- Detailed errors go to Bugsnag (with PII stripped); the user gets the friendly version.
+
+## Don't
+
+- Don't commit `.env` or any file containing real keys.
+- Don't log JWTs, even partially.
+- Don't pass credentials through route params.
+- Don't store anything sensitive in `AsyncStorage`.

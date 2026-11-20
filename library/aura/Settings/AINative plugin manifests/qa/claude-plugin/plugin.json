@@ -1,0 +1,9 @@
+{
+  "name": "qa",
+  "version": "3.19.0",
+  "description": "QA team plugin \u2014 skills, commands, and hooks for testing AuraHealth products end-to-end (Aurie conversations, regression sweeps, scripted user simulations)",
+  "author": {
+    "name": "AuraHealth QA",
+    "email": "<redacted-email>"
+  }
+}

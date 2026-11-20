@@ -1,0 +1,77 @@
+---
+description: iOS native conventions for Aura (CocoaPods, schemes, workspace)
+globs: ios/**,apple/**
+alwaysApply: false
+---
+
+# Native iOS
+
+The iOS project lives in `ios/` with a Widget extension under `apple/`.
+
+## Workspace, Not Project
+
+**Always open `ios/Aura.xcworkspace`** — never `ios/Aura.xcodeproj`. CocoaPods generates the workspace; opening the bare project will not link any pod dependencies.
+
+## Schemes
+
+- `Aura` — main app
+- `Aura WidgetExtension` — iOS Widget
+
+Both schemes are checked in under `ios/Aura.xcodeproj/xcshareddata/xcschemes/`.
+
+## Pod Install
+
+```bash
+cd ios && pod install --repo-update && cd ..
+```
+
+CocoaPods is pinned in the `Gemfile`: run `bundle install`, then call it as `bundle exec pod`.
+
+After **any** change to `package.json` that adds or upgrades a native module, run `pod install` again.
+
+## Common Failures + Recovery
+
+- **"No bundle URL present" on launch** → Metro isn't running. `npm run start` first.
+- **Pods out of sync after pull** → `cd ios && bundle exec pod install --repo-update && cd ..`.
+- **Build cache weirdness** → `npm run setup` (full clean reinstall, including pods).
+- **Widget extension fails to build** → check the `Aura WidgetExtension` scheme is checked in and that the App Group entitlement matches.
+- **`Build input file cannot be found: src/cask/GoogleService-Info.plist`** → the cask isn't seeded. `src/cask/` is gitignored, so a new worktree or clone has no config at all. `bash scripts/sync-cask.sh seed --apply` then `bash scripts/sync-cask.sh switch dev`.
+- **`rbenv: pod: command not found`** → run `bundle install`. CocoaPods is pinned in the `Gemfile`, and `.ruby-version` is `3.3.11`, so it has to be installed into that Ruby. **Ignore the follow-up hint** — rbenv helpfully lists the Ruby versions where `pod` *does* exist (`The 'pod' command exists in these Ruby versions: 3.2.0, 3.3.0`), which reads like "switch Ruby" and is the wrong fix. After `bundle install`, invoke it as `bundle exec pod`, not bare `pod`.
+
+## Building from CLI
+
+```bash
+# Smoke build (no signing) — useful from CI / agents
+xcodebuild -workspace ios/Aura.xcworkspace -scheme Aura \
+  -destination 'generic/platform=iOS Simulator' \
+  build -quiet -allowProvisioningUpdates
+
+# Archive (release)
+npm run archive
+```
+
+**Don't add `CODE_SIGNING_ALLOWED=NO` if you intend to launch the result.** It's
+tempting on an unsigned host, and it does make the compile succeed — but it also
+skips framework embedding, so the app builds and then dies at launch:
+
+```
+Library not loaded: @rpath/aosl.framework/aosl   (Agora)
+```
+
+The flag is fine for answering "does it compile" and useless for anything else.
+When you need a **runnable** app on a simulator, use
+`bash AuraSimTests/Scripts/sim_install.sh`, which builds and installs a
+release-config `Aura.app` with frameworks embedded.
+
+## Don't Touch Without Reason
+
+- `ios/Aura.xcodeproj/project.pbxproj` — generated/maintained alongside Pod installs and native module additions. Spurious diffs here usually mean someone ran `pod install` with a different RN-CLI version. Coordinate before committing changes here.
+- Manual changes to scheme XML (`*.xcscheme`) — Xcode rewrites them; if you must edit, do it through the Manage Schemes UI so the format stays canonical.
+
+## Native Module Linking
+
+React Native uses autolinking for most pods. If you add a native module and it isn't autolinked, check `react-native.config.js` and the module's own podspec. Avoid manual `Podfile` edits when autolinking can do it.
+
+## Bridging to JS
+
+Bridging code lives under `apple/` (and `ios/Aura/` for app-specific). Don't add new bridging modules without coordinating — most needs are already covered by an existing pod in `package.json`.

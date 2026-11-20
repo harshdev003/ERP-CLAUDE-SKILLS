@@ -1,0 +1,23 @@
+# Edge cases
+
+Troubleshooting catalogue for `analyze-user-conversations` — zero-match handling, PII discipline, re-run idempotency, Mode A URL failures, and the Cowork sandbox. Referenced from `SKILL.md`. The core PII rules also live inline in Step 5.
+
+**Zero OpenAI completions match the UID.** The script automatically retries against Braintrust before returning zero — if Braintrust also returns zero, *then* stop. Use the script's `hint` to walk the caller through the common causes: (1) wrong UID, (2) the user only used a prompter that lives in a different OpenAI project (the Conversation project hosts coach / quick-processing / insight-card / starters / guardrails-handler / etc., but not memory, journal, or summary — see `Tools/OpenAI` → "Prompter → app routing"), (3) the window predates 2026-05-12 (subscription-metadata tagging started then; pre-rollout traffic has no `metadata.user`). Before concluding zero usage, also try a wider window (`--window 90d`) — there is a known OpenAI storage bug where completions are not stored; Braintrust is the authoritative fallback.
+
+**Only one conversation but window is `60d`.** That's fine — produce the report for one conversation. The pattern section will be sparser (single-conversation patterns are weaker signal); call that out explicitly.
+
+**Cancellation feedback contradicts what the transcripts show.** Document the contradiction in **Patterns / hypotheses** rather than glossing over it. Example: user says "isn't very conversational" but transcripts show extended back-and-forth — the friction may be about *quality* of conversation (script-y phrasing, slow turns) rather than *quantity*. State the hypothesis explicitly so the team can validate.
+
+**OpenAI logs are NOT PII-masked at write time.** Unlike Braintrust (where IntelligenceService's `setMaskingFunction(maskPII)` injected `[USER_NAME]` / `[USER_EMAIL]` / `[USER_LAST_NAME]` placeholders before storage), OpenAI's stored completions contain the user's real first name, last name, and email exactly as typed in the conversation. The masking discipline therefore lives entirely in the synthesis layer — apply Compliance/Privacy rules before any transcript excerpt lands in the report, Slack draft, or Notion row. First name is OK to retain in the report body if Aurie naturally addressed the user that way (it carries voice signal worth analysing); never quote full email, full last name, phone, address, or payment info. When a friction moment turns on a piece of literal PII, paraphrase ("the user gave their email address") rather than quote.
+
+Note for analyses that span the 2026-06-05 BT→OpenAI cutover: older conversations may surface via different code paths (e.g. archived BT data); newer ones come through OpenAI. The PII shape differs — old: `[USER_NAME]` placeholders; new: real names. Apply the discipline to both.
+
+**Re-running on the same UID + window.** The analysis itself is regenerated cleanly (potentially with newer transcripts if more turns landed). The Step 8 record is safe on re-run: it dedups on `Conversation ID` (Recipe A2), so a second run updates the existing row in place rather than creating a duplicate. The Slack-reply offer in Step 7 is *not* idempotent — re-approving on a second run will post a second reply on the thread. Surface the prior reply's timestamp (if visible in the thread) when prompting so the caller can decide whether the re-post is meaningful.
+
+**Mode A: Slack URL points at a non-k8bot or differently-formatted message.** The URL is still a valid reply anchor — just stop trying to extract `user_id` / `conversation_id` from the message body. Ask the caller to provide UID or conversation_id directly, then continue with the analysis. Step 7's reply offer remains available because `channel_id` + `message_ts` were captured from the URL itself.
+
+**Mode A: Slack URL parse failure (malformed permalink, or `shared:read-slack` can't fetch the message).** Surface the error and ask the caller to either re-paste the URL or fall back to Mode B. Don't silently downgrade to Mode B and lose the reply-anchor — the caller pasted the URL for a reason.
+
+**Mode A: caller approves the post but the channel rejects it (bot not invited, archived channel).** Surface the error `shared:post-to-slack` returns verbatim. Common fixes: invite the AI Knowledge / data-analysis bot to the channel, or unarchive. Offer to retry once the caller resolves it.
+
+**Cowork sandbox.** Both `OPENAI_CONVERSATION_API_KEY` and `AURA_API_TOKEN` are blocked from `mcp__workspace__bash` (PROD-1305). Either use the per-session paste-export workaround in [`/CLAUDE.md`](../../../../../CLAUDE.md) → "Known Cowork constraints", or run from the host harness where env reaches subprocesses normally.

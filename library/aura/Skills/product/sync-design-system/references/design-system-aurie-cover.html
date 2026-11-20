@@ -1,0 +1,34 @@
+<!-- @dsCard height=288 -->
+<style>
+  html, body { margin: 0; height: 288px; background: var(--whiteAlphaBgLayout); overflow: hidden; }
+  .cover { position: relative; width: 960px; height: 288px; }
+  .pink { fill: var(--additionalPink); }
+  .blue { fill: var(--additionalBlue); }
+  .yellow { fill: var(--additionalYellow); }
+  .ink { fill: var(--blackPrimary); }
+  .glass { fill: var(--grayAlpha150); }
+  .text { position: absolute; left: 48px; bottom: 44px; width: 420px; }
+  .name { font-family: var(--font-display); font-weight: 300; font-size: 120px; line-height: .92; color: var(--blackPrimary); margin: 0; }
+  .tag { font-family: var(--font-ui); font-size: 14px; color: var(--grayAlpha600); margin: 12px 0 0; }
+  svg { position: absolute; left: 480px; top: 0; }
+</style>
+<div class="cover">
+  <svg width="480" height="288" viewBox="0 0 480 288" aria-hidden="true">
+    <!--
+      blocks: additionalPink disc 176, additionalBlue pill 200x72, additionalYellow disc 72, blackPrimary disc 40
+      arrangement: one large sun-like disc rising off the top edge, a pill horizon below it, small satellites
+      pattern: discs and pills from the radius scale, because the brand is warm, soft and sky-led ("Feel lighter today")
+      steps and radii: space-24 / space-32 gaps, radius-full on the pill, discs at half their size
+    -->
+    <circle class="pink" cx="208" cy="40" r="88" />
+    <rect class="blue" x="136" y="176" width="200" height="72" rx="36" />
+    <circle class="yellow" cx="392" cy="120" r="36" />
+    <circle class="ink" cx="416" cy="232" r="20" />
+    <circle class="glass" cx="80" cy="200" r="24" />
+    <circle class="glass" cx="352" cy="40" r="12" />
+  </svg>
+  <div class="text">
+    <p class="name">Aurie</p>
+    <p class="tag">Feel lighter today.</p>
+  </div>
+</div>

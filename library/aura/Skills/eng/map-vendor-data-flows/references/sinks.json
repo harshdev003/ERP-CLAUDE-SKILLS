@@ -1,0 +1,390 @@
+{
+  "_doc": "Where personal data leaves our code for a third party. `calls` are direct SDK writes; `wrappers` are our own functions that forward to one or more vendors (read the wrapper's body before adding one). `adds` are properties the wrapper adds to every call. `kind`: event (first argument is the event name), props (the argument is a property map), id (sets an identifier). Patterns are Python regexes matched against one source line; the match must end at the call's opening parenthesis. A wrapper applies to the repo it names, or to every repo of an `app`. `event_arg` is the index of the event-name argument and `skip_args` the leading arguments that are not properties (a user id). `skip_files` leaves the wrapper's own file to the direct patterns. `props_count` caps how many arguments after the event (or after `skip_args`) are property maps, so a trailing options map ({context}) is not read as properties.",
+  "vendors": {
+    "mixpanel": {
+      "label": "Mixpanel",
+      "calls": [
+        {
+          "kind": "event",
+          "re": "\\b[Mm]ixpanel\\??\\.(?:track|trackWithProperties|timeEvent)\\("
+        },
+        {
+          "kind": "event",
+          "re": "\\bmixpanel(?:Client|Instance)?\\??\\.track\\((?:event:\\s*)?"
+        },
+        {
+          "kind": "props",
+          "re": "\\b[Mm]ixpanel\\??\\.(?:set|setOnce|registerSuperProperties|registerSuperPropertiesOnce|register|register_once|increment)\\("
+        },
+        {
+          "kind": "props",
+          "re": "\\b[Mm]ixpanel\\??\\.people\\.(?:set|set_once|setOnce|increment|union|append)\\((?:properties:\\s*)?"
+        },
+        {
+          "kind": "props",
+          "re": "\\bmixpanel\\??\\.(?:registerSuperProperties|registerSuperPropertiesOnce)\\("
+        },
+        {
+          "kind": "id",
+          "re": "\\b[Mm]ixpanel\\??\\.(?:identify|alias|createAlias)\\("
+        }
+      ]
+    },
+    "firebase_analytics": {
+      "label": "Firebase Analytics",
+      "calls": [
+        {
+          "kind": "event",
+          "re": "\\banalytics\\(\\)\\.logEvent\\("
+        },
+        {
+          "kind": "event",
+          "re": "\\bAnalytics\\.logEvent\\("
+        },
+        {
+          "kind": "event",
+          "re": "\\blogEvent\\(\\s*(?:analytics|getAnalytics\\(\\))\\s*,\\s*"
+        },
+        {
+          "kind": "props",
+          "re": "\\banalytics\\(\\)\\.(?:setUserProperty|setUserProperties)\\("
+        },
+        {
+          "kind": "props",
+          "re": "\\bAnalytics\\.setUserProperty\\("
+        },
+        {
+          "kind": "id",
+          "re": "\\b(?:analytics\\(\\)|Analytics)\\.setUserI[dD]\\("
+        }
+      ]
+    },
+    "bugsnag": {
+      "label": "Bugsnag",
+      "calls": [
+        {
+          "kind": "event",
+          "re": "\\b[Bb]ugsnag\\.leaveBreadcrumb\\("
+        },
+        {
+          "kind": "props",
+          "re": "\\b[Bb]ugsnag\\.addMetadata\\("
+        },
+        {
+          "kind": "id",
+          "re": "\\b[Bb]ugsnag\\.setUser\\("
+        }
+      ]
+    },
+    "iterable": {
+      "label": "Iterable",
+      "calls": [
+        {
+          "kind": "event",
+          "re": "\\bIterable(?:API)?\\.track\\((?:event:\\s*)?"
+        },
+        {
+          "kind": "props",
+          "re": "\\bIterable(?:API)?\\.updateUser\\("
+        },
+        {
+          "kind": "id",
+          "re": "\\bIterable(?:API)?\\.(?:setEmail|setUserId|email\\s*=|userId\\s*=)"
+        }
+      ]
+    },
+    "appsflyer": {
+      "label": "AppsFlyer",
+      "calls": [
+        {
+          "kind": "event",
+          "re": "\\bappsFlyer\\.logEvent\\("
+        },
+        {
+          "kind": "event",
+          "re": "\\bAppsFlyerLib\\.shared\\(\\)\\.logEvent\\((?:name:\\s*|event:\\s*)?"
+        },
+        {
+          "kind": "id",
+          "re": "\\bappsFlyer\\.setCustomerUserId\\("
+        },
+        {
+          "kind": "id",
+          "re": "\\bAppsFlyerLib\\.shared\\(\\)\\.customerUserID\\s*="
+        }
+      ]
+    },
+    "facebook": {
+      "label": "Facebook (Meta)",
+      "calls": [
+        {
+          "kind": "event",
+          "re": "\\bAppEventsLogger\\.(?:logEvent|logPurchase)\\("
+        },
+        {
+          "kind": "event",
+          "re": "\\bAppEvents\\.shared\\.logEvent\\("
+        },
+        {
+          "kind": "event",
+          "re": "\\bfbq\\(\\s*['\"](?:track|trackCustom)['\"]\\s*,\\s*"
+        },
+        {
+          "kind": "props",
+          "re": "\\bAppEventsLogger\\.setUserData\\("
+        },
+        {
+          "kind": "id",
+          "re": "\\bAppEventsLogger\\.setUserID\\("
+        }
+      ]
+    },
+    "gtm": {
+      "label": "Google Tag Manager",
+      "calls": [
+        {
+          "kind": "props",
+          "re": "\\bdataLayer\\.push\\("
+        }
+      ]
+    },
+    "appstack": {
+      "label": "Appstack",
+      "calls": [
+        {
+          "kind": "event",
+          "re": "\\bAppstack(?:SDK|Service)?\\.(?:track|logEvent|sendEvent)\\("
+        },
+        {
+          "kind": "id",
+          "re": "\\bAppstack(?:SDK|Service)?\\.identify\\("
+        }
+      ]
+    },
+    "branch": {
+      "label": "Branch",
+      "calls": [
+        {
+          "kind": "event",
+          "re": "\\bBranchEvent\\((?:eventName:\\s*)?"
+        },
+        {
+          "kind": "event",
+          "re": "\\bbranch\\.logEvent\\("
+        },
+        {
+          "kind": "id",
+          "re": "\\b[Bb]ranch(?:\\.getInstance\\(\\))?\\.setIdentity\\("
+        }
+      ]
+    },
+    "onesignal": {
+      "label": "OneSignal",
+      "calls": [
+        {
+          "kind": "props",
+          "re": "\\bOneSignal\\.(?:User\\.addTag|User\\.addTags|sendTag|sendTags)\\("
+        },
+        {
+          "kind": "id",
+          "re": "\\bOneSignal\\.(?:login|setExternalUserId|User\\.addEmail|User\\.addSms|setEmail)\\("
+        }
+      ]
+    }
+  },
+  "wrappers": [
+    {
+      "repo": "Aura",
+      "re": "\\bTrackings\\(",
+      "kind": "event",
+      "vendors": [
+        "mixpanel",
+        "bugsnag",
+        "iterable"
+      ],
+      "adds": [
+        "Time",
+        "Day",
+        "Locale",
+        "Day N"
+      ],
+      "note": "src/logic/Trackings.js: Mixpanel trackWithProperties, Bugsnag breadcrumb, and Iterable only for event names listed in /iterableMobileEvents"
+    },
+    {
+      "repo": "AuraConsumerApp",
+      "re": "\\btrackEvent\\(name:\\s*",
+      "kind": "event",
+      "vendors": [
+        "mixpanel",
+        "iterable"
+      ],
+      "adds": [],
+      "note": "Services/Analytics/AnalyticsService.swift trackEvent: the Mixpanel provider, then Iterable when it is configured"
+    },
+    {
+      "repo": "AuraConsumerApp",
+      "re": "\\bfireFunnelEvent\\(",
+      "kind": "event",
+      "vendors": [
+        "mixpanel",
+        "iterable"
+      ],
+      "adds": [],
+      "note": "Paywall view models: forwards to trackEvent(name:parameters:)"
+    },
+    {
+      "repo": "AuraConsumerApp",
+      "re": "\\.trackCustomEvent\\((?:name:\\s*)?",
+      "kind": "event",
+      "vendors": [
+        "mixpanel",
+        "iterable"
+      ],
+      "adds": [],
+      "note": "AnalyticsManager.trackCustomEvent: forwards to AnalyticsService.trackEvent"
+    },
+    {
+      "repo": "AuraConsumerApp",
+      "re": "\\banalytics(?:Manager|Service)\\??\\.(?:setUserProperties|setUserPropertiesOnce|setSuperProperties|setSuperPropertiesOnce)\\(",
+      "kind": "props",
+      "vendors": [
+        "mixpanel"
+      ],
+      "adds": [],
+      "note": "AnalyticsService: Mixpanel people.set / registerSuperProperties"
+    },
+    {
+      "app": "services",
+      "re": "\\bmixpanel\\.track\\(",
+      "kind": "event",
+      "event_arg": 1,
+      "vendors": [
+        "mixpanel"
+      ],
+      "adds": [
+        "distinct_id"
+      ],
+      "skip_files": "services/mixpanel\\.js$",
+      "note": "src/services/mixpanel.js track(userId, event, properties): Mixpanel track with distinct_id = the user id",
+      "props_count": 1
+    },
+    {
+      "app": "services",
+      "re": "\\bmixpanel\\.(?:set|unset)\\(",
+      "kind": "props",
+      "skip_args": 1,
+      "vendors": [
+        "mixpanel"
+      ],
+      "adds": [],
+      "skip_files": "services/mixpanel\\.js$",
+      "note": "src/services/mixpanel.js set/unset(userId, properties): Mixpanel people.set / unset",
+      "props_count": 1
+    }
+  ],
+  "settings": [
+    {
+      "vendor": "mixpanel",
+      "flag": "automatic events",
+      "re": "\\b(trackAutomaticEvents|track_automatic_events|optOutTrackingByDefault)\\b"
+    },
+    {
+      "vendor": "mixpanel",
+      "flag": "IP geolocation",
+      "re": "\\b(useIpAddressForGeolocation|setUseIpAddressForGeolocation|ip\\s*=\\s*[01]\\b|\\$ip|ignore_dnt)\\b"
+    },
+    {
+      "vendor": "mixpanel",
+      "flag": "session replay",
+      "re": "\\b(MixpanelSessionReplay|record_sessions_percent|sessionReplay\\w*|recordSessionsPercent)\\b"
+    },
+    {
+      "vendor": "mixpanel",
+      "flag": "consent gating",
+      "re": "\\b(optOutTracking|opt_out_tracking|optInTracking|opt_in_tracking|hasOptedOutTracking)\\b"
+    },
+    {
+      "vendor": "firebase_analytics",
+      "flag": "automatic events",
+      "re": "\\b(FirebaseAutomaticScreenReportingEnabled|setAnalyticsCollectionEnabled|FIREBASE_ANALYTICS_COLLECTION_ENABLED|firebase_analytics_collection_enabled|google_analytics_automatic_screen_reporting_enabled)\\b"
+    },
+    {
+      "vendor": "firebase_analytics",
+      "flag": "device and advertising ids",
+      "re": "\\b(google_analytics_adid_collection_enabled|GOOGLE_ANALYTICS_IDFV_COLLECTION_ENABLED|GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS)\\b"
+    },
+    {
+      "vendor": "facebook",
+      "flag": "automatic events",
+      "re": "\\b(FacebookAutoLogAppEventsEnabled|setAutoLogAppEventsEnabled|autoLogAppEventsEnabled|com\\.facebook\\.sdk\\.AutoLogAppEventsEnabled)\\b"
+    },
+    {
+      "vendor": "facebook",
+      "flag": "device and advertising ids",
+      "re": "\\b(FacebookAdvertiserIDCollectionEnabled|setAdvertiserIDCollectionEnabled|setAdvertiserTrackingEnabled|isAdvertiserTrackingEnabled)\\b"
+    },
+    {
+      "vendor": "appsflyer",
+      "flag": "device and advertising ids",
+      "re": "\\b(anonymizeUser|disableAdvertisingIdentifier|disableIDFVCollection|setDisableAdvertisingIdentifiers)\\b"
+    },
+    {
+      "vendor": "any",
+      "flag": "consent gating",
+      "re": "\\b(requestTrackingAuthorization|ATTrackingManager|trackingAuthorizationStatus)\\b"
+    }
+  ],
+  "repos": {
+    "_doc": "Searched under --base or $AURA_REPOS_DIR, the folder holding Mobile/, Services/, Web/ and Functions/; there is no default. A clone is used when its origin URL ends with the repo name; copies named <repo>-<suffix> are skipped. src lists the source dirs searched and passed to git log -S.",
+    "Mobile/Aura": {
+      "app": "Aura",
+      "src": [
+        "src",
+        "app.js",
+        "android/app/src/main",
+        "ios/Aura"
+      ]
+    },
+    "Mobile/AuraConsumerApp": {
+      "app": "Aurie",
+      "src": [
+        "AuraConsumerApp",
+        "AuraConsumerAppWidget"
+      ]
+    },
+    "Services/*": {
+      "app": "services",
+      "src": [
+        "src"
+      ]
+    },
+    "Web/*": {
+      "app": "web",
+      "src": [
+        "src",
+        "pages",
+        "app",
+        "components",
+        "public",
+        "lib"
+      ]
+    },
+    "Functions/*": {
+      "app": "functions",
+      "src": [
+        "src",
+        "functions",
+        "index.js",
+        "lib"
+      ]
+    }
+  },
+  "libs": {
+    "_doc": "Mixpanel mp_lib to app, for reach percentages. React Native reports its native libs.",
+    "android": "Aura",
+    "iphone": "Aura",
+    "swift": "Aurie",
+    "node": "services",
+    "web": "web"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "product",
+  "version": "3.110.1",
+  "description": "Product team plugin - skills and commands for spec writing, ticket creation, and roadmap workflows at AuraHealth",
+  "author": {
+    "name": "AuraHealth Product",
+    "email": "<redacted-email>"
+  },
+  "repository": "https://github.com/AuraHealth/AINative",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Aura Product",
+    "shortDescription": "Product workflows for AuraHealth Codex users.",
+    "longDescription": "AuraHealth product workflows for spec writing, ticket management, roadmap planning, and turning product context into structured follow-up work.",
+    "developerName": "AuraHealth",
+    "category": "Productivity",
+    "capabilities": [
+      "Skills"
+    ],
+    "defaultPrompt": [
+      "Draft a product spec.",
+      "Create tickets from this plan.",
+      "Review this roadmap update."
+    ]
+  }
+}

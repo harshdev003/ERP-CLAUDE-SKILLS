@@ -1,0 +1,293 @@
+[
+  {
+    "insertId": "PII_insertId",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.identitytoolkit.logging.RequestLog",
+      "methodName": "google.cloud.identitytoolkit.v1.AuthenticationService.SignInWithCustomToken",
+      "request": {
+        "@type": "type.googleapis.com/google.cloud.identitytoolkit.v1.SignInWithCustomTokenRequest",
+        "returnSecureToken": true
+      },
+      "requestMetadata": {
+        "callerIp": "PII_callerIp",
+        "callerSuppliedUserAgent": "PII_callerSuppliedUserAgent"
+      },
+      "response": {
+        "@type": "type.googleapis.com/google.cloud.identitytoolkit.v1.SignInWithCustomTokenResponse",
+        "expiresIn": "3600",
+        "isNewUser": false,
+        "kind": "identitytoolkit#VerifyCustomTokenResponse"
+      },
+      "serviceName": "identitytoolkit.googleapis.com",
+      "status": {}
+    },
+    "logName": "projects/firebase-auratech16/logs/identitytoolkit.googleapis.com%2Frequests",
+    "resource": {
+      "labels": {
+        "project_id": "firebase-auratech16"
+      },
+      "type": "identitytoolkit_project"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-10-06T19:24:57.873Z"
+  },
+  {
+    "insertId": "PII_insertId",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.identitytoolkit.logging.RequestLog",
+      "metadata": {
+        "@type": "type.googleapis.com/google.cloud.identitytoolkit.logging.IdentitytoolkitMetadata",
+        "tokenInfo": {
+          "claims": {
+            "aud": "PII_aud",
+            "auth_time": 1791314697,
+            "email": "PII_email",
+            "email_verified": false,
+            "exp": 1791318297,
+            "firebase": {
+              "identities": {
+                "email": [
+                  "PII_email"
+                ]
+              },
+              "sign_in_provider": "custom"
+            },
+            "iat": 1791314697,
+            "iss": "PII_iss",
+            "sub": "TESTUIDaaaaaaaaaaaaaaaaaaaa01",
+            "user_id": "TESTUIDaaaaaaaaaaaaaaaaaaaa01"
+          }
+        }
+      },
+      "methodName": "google.cloud.identitytoolkit.v1.AccountManagementService.GetAccountInfo",
+      "numResponseItems": "PII_numResponseItems",
+      "requestMetadata": {
+        "callerIp": "PII_callerIp",
+        "callerSuppliedUserAgent": "PII_callerSuppliedUserAgent"
+      },
+      "serviceName": "identitytoolkit.googleapis.com",
+      "status": {}
+    },
+    "logName": "projects/firebase-auratech16/logs/identitytoolkit.googleapis.com%2Frequests",
+    "resource": {
+      "labels": {
+        "project_id": "firebase-auratech16"
+      },
+      "type": "identitytoolkit_project"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-10-06T19:24:57.707Z"
+  },
+  {
+    "insertId": "PII_insertId",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.identitytoolkit.logging.RequestLog",
+      "methodName": "google.cloud.identitytoolkit.v1.ProjectConfigService.GetProjectConfig",
+      "requestMetadata": {
+        "callerIp": "PII_callerIp",
+        "callerSuppliedUserAgent": "PII_callerSuppliedUserAgent"
+      },
+      "serviceName": "identitytoolkit.googleapis.com",
+      "status": {}
+    },
+    "logName": "projects/firebase-auratech16/logs/identitytoolkit.googleapis.com%2Frequests",
+    "resource": {
+      "labels": {
+        "project_id": "firebase-auratech16"
+      },
+      "type": "identitytoolkit_project"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-10-06T19:24:57.225Z"
+  },
+  {
+    "insertId": "PII_insertId",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.identitytoolkit.logging.RequestLog",
+      "metadata": {
+        "@type": "type.googleapis.com/google.cloud.identitytoolkit.logging.IdentitytoolkitMetadata",
+        "tokenInfo": {
+          "claims": {
+            "aud": "PII_aud",
+            "auth_time": 1791314658,
+            "exp": 1791318258,
+            "firebase": {
+              "identities": {
+                "apple.com": [
+                  "PII_apple.com"
+                ]
+              },
+              "sign_in_provider": "apple.com"
+            },
+            "iat": 1791314658,
+            "iss": "PII_iss",
+            "sub": "TESTUIDaaaaaaaaaaaaaaaaaaaa01",
+            "user_id": "TESTUIDaaaaaaaaaaaaaaaaaaaa01"
+          }
+        }
+      },
+      "methodName": "google.cloud.identitytoolkit.v1.AccountManagementService.DeleteAccount",
+      "request": {
+        "@type": "type.googleapis.com/google.cloud.identitytoolkit.v1.DeleteAccountRequest",
+        "localId": "TESTUIDaaaaaaaaaaaaaaaaaaaa01"
+      },
+      "requestMetadata": {
+        "callerIp": "PII_callerIp",
+        "callerSuppliedUserAgent": "PII_callerSuppliedUserAgent"
+      },
+      "response": {
+        "@type": "type.googleapis.com/google.cloud.identitytoolkit.v1.DeleteAccountResponse",
+        "kind": "identitytoolkit#DeleteAccountResponse"
+      },
+      "serviceName": "identitytoolkit.googleapis.com",
+      "status": {}
+    },
+    "logName": "projects/firebase-auratech16/logs/identitytoolkit.googleapis.com%2Frequests",
+    "resource": {
+      "labels": {
+        "project_id": "firebase-auratech16"
+      },
+      "type": "identitytoolkit_project"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-10-06T19:24:21.130Z"
+  },
+  {
+    "insertId": "PII_insertId",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.identitytoolkit.logging.RequestLog",
+      "methodName": "google.cloud.identitytoolkit.v1.AuthenticationService.SignInWithIdp",
+      "request": {
+        "@type": "type.googleapis.com/google.cloud.identitytoolkit.v1.SignInWithIdpRequest",
+        "autoCreate": true,
+        "returnIdpCredential": true,
+        "returnSecureToken": true
+      },
+      "requestMetadata": {
+        "callerIp": "PII_callerIp",
+        "callerSuppliedUserAgent": "PII_callerSuppliedUserAgent"
+      },
+      "response": {
+        "@type": "type.googleapis.com/google.cloud.identitytoolkit.v1.SignInWithIdpResponse",
+        "email": "PII_email",
+        "emailVerified": true,
+        "expiresIn": "3600",
+        "federatedId": "PII_federatedId",
+        "isNewUser": true,
+        "kind": "identitytoolkit#VerifyAssertionResponse",
+        "localId": "TESTUIDaaaaaaaaaaaaaaaaaaaa01",
+        "providerId": "apple.com"
+      },
+      "serviceName": "identitytoolkit.googleapis.com",
+      "status": {}
+    },
+    "logName": "projects/firebase-auratech16/logs/identitytoolkit.googleapis.com%2Frequests",
+    "resource": {
+      "labels": {
+        "project_id": "firebase-auratech16"
+      },
+      "type": "identitytoolkit_project"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-10-06T19:24:19.427Z"
+  },
+  {
+    "insertId": "PII_insertId",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.identitytoolkit.logging.RequestLog",
+      "methodName": "google.cloud.identitytoolkit.v1.AuthenticationService.CreateAuthUri",
+      "request": {
+        "@type": "type.googleapis.com/google.cloud.identitytoolkit.v1.CreateAuthUriRequest",
+        "continueUri": "PII_continueUri",
+        "oauthScope": "PII_oauthScope",
+        "providerId": "google.com"
+      },
+      "requestMetadata": {
+        "callerIp": "PII_callerIp",
+        "callerSuppliedUserAgent": "PII_callerSuppliedUserAgent"
+      },
+      "response": {
+        "@type": "type.googleapis.com/google.cloud.identitytoolkit.v1.CreateAuthUriResponse",
+        "authUri": "PII_authUri",
+        "kind": "identitytoolkit#CreateAuthUriResponse",
+        "providerId": "google.com"
+      },
+      "serviceName": "identitytoolkit.googleapis.com",
+      "status": {}
+    },
+    "logName": "projects/firebase-auratech16/logs/identitytoolkit.googleapis.com%2Frequests",
+    "resource": {
+      "labels": {
+        "project_id": "firebase-auratech16"
+      },
+      "type": "identitytoolkit_project"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-10-06T19:23:23.390Z"
+  },
+  {
+    "insertId": "PII_insertId",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.identitytoolkit.logging.RequestLog",
+      "methodName": "google.cloud.identitytoolkit.v1.AuthenticationService.SignInWithPassword",
+      "request": {
+        "@type": "type.googleapis.com/google.cloud.identitytoolkit.v1.SignInWithPasswordRequest",
+        "email": "PII_email",
+        "returnSecureToken": true
+      },
+      "requestMetadata": {
+        "callerIp": "PII_callerIp",
+        "callerSuppliedUserAgent": "PII_callerSuppliedUserAgent"
+      },
+      "response": {
+        "@type": "type.googleapis.com/google.cloud.identitytoolkit.v1.SignInWithPasswordResponse",
+        "displayName": "PII_displayName",
+        "email": "PII_email",
+        "expiresIn": "3600",
+        "kind": "identitytoolkit#VerifyPasswordResponse",
+        "localId": "TESTUIDaaaaaaaaaaaaaaaaaaaa01",
+        "registered": true
+      },
+      "serviceName": "identitytoolkit.googleapis.com",
+      "status": {}
+    },
+    "logName": "projects/firebase-auratech16/logs/identitytoolkit.googleapis.com%2Frequests",
+    "resource": {
+      "labels": {
+        "project_id": "firebase-auratech16"
+      },
+      "type": "identitytoolkit_project"
+    },
+    "severity": "INFO",
+    "timestamp": "2026-10-06T19:21:33.391Z"
+  },
+  {
+    "insertId": "PII_insertId",
+    "jsonPayload": {
+      "@type": "type.googleapis.com/google.cloud.identitytoolkit.logging.RequestLog",
+      "methodName": "google.cloud.identitytoolkit.v1.AuthenticationService.SignUp",
+      "request": {
+        "@type": "type.googleapis.com/google.cloud.identitytoolkit.v1.SignUpRequest",
+        "email": "PII_email"
+      },
+      "requestMetadata": {
+        "callerIp": "PII_callerIp",
+        "callerSuppliedUserAgent": "PII_callerSuppliedUserAgent"
+      },
+      "serviceName": "identitytoolkit.googleapis.com",
+      "status": {
+        "code": 3,
+        "message": "EMAIL_EXISTS"
+      }
+    },
+    "logName": "projects/aura-dev/logs/identitytoolkit.googleapis.com%2Frequests",
+    "resource": {
+      "labels": {
+        "project_id": "aura-dev"
+      },
+      "type": "identitytoolkit_project"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-10-06T12:54:29.004Z"
+  }
+]

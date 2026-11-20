@@ -1,0 +1,17 @@
+{
+  "description": "REPLACE: what this metric counts + (PROD-XXXX). The metric NAME is passed as the positional arg to `gcloud logging metrics create <NAME>`, not here.",
+  "filter": "resource.type=\"k8s_container\"\nresource.labels.cluster_name=\"aura-prod-cluster-a\"\nresource.labels.namespace_name=\"aura-ai\"\nresource.labels.container_name=\"REPLACE_CONTAINER\"\ntextPayload:\"REPLACE_STABLE_SUBSTRING\"",
+  "labelExtractors": {
+    "Service": "EXTRACT(resource.labels.container_name)"
+  },
+  "metricDescriptor": {
+    "labels": [
+      {
+        "key": "Service"
+      }
+    ],
+    "metricKind": "DELTA",
+    "unit": "1",
+    "valueType": "INT64"
+  }
+}

@@ -1,0 +1,36 @@
+name: AGENTS.md sync
+
+# Fails a PR that edits CLAUDE.md without regenerating AGENTS.md.
+#
+# AGENTS.md is the same project memory read by Codex rather than Claude Code. It
+# was hand-maintained alongside CLAUDE.md and drifted badly: 23 of 35 shared
+# sections diverged, 11 sections went missing entirely, and it carried no unique
+# content of its own. A second hand-maintained copy of the project memory is a
+# parallel source of truth, which Architecture principle 3 says produces drift.
+#
+# So it is generated. scripts/build-agents-md.py applies an explicit, counted rule
+# list — never a blanket s/Claude Code/Codex/, which is how AGENTS.md ended up on
+# main pointing at `.Codex-plugin/marketplace.json` and `~/.Codex/settings.json`.
+
+on:
+  pull_request:
+    paths:
+      - 'CLAUDE.md'
+      - 'AGENTS.md'
+      - 'scripts/build-agents-md.py'
+      - '.github/workflows/agents-md.yml'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check AGENTS.md matches CLAUDE.md
+        run: |
+          python3 scripts/build-agents-md.py --check

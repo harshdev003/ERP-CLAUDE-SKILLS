@@ -1,0 +1,305 @@
+
+
+########## Personalization Loading (1048:16546) ##########
+ FRAME 'Personalization Loa  | 402x874@(None,None) |  |  | fill: ['#131313'] | st: [] | r: 45.0 | fx: [] | 
+   INSTANCE 'Background'  | 1763x988@(-729.5,-23.1) |  |  | fill: [] | st: [] | r: None | fx: [] | 
+     RECTANGLE 'image 23'  | 1763x988@(0.0,0.0) |  |  | fill: ['IMG:55d645c11a', 'GRADIENT_RA:#000000@0.0@0.0>#000000@1.0'] | st: [] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r100.0)'] | 
+   INSTANCE 'Status bar'  | 402x62@(0.0,0.0) | FIXED/HUG |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap154.0 rgNone p[24.0,21.0,24.0,19.0] CENTER/CENTER wrap=NO_WRAP
+     FRAME 'Time'  | 100x22@(24.0,21.0) | FILL/FIXED |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap10.0 rgNone p[None,1.5,None,None] CENTER/CENTER wrap=NO_WRAP
+       TEXT 'Time' '9:41' | 37x22@(31.5,0.8) | HUG/HUG | SFPro-Semibold/17.0/lh22.0/CENTER | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+     FRAME 'Levels'  | 100x22@(278.0,21.0) | FILL/FIXED |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap7.0 rgNone p[None,1.0,1.0,None] CENTER/CENTER wrap=NO_WRAP
+       VECTOR 'Cellular Connection  | 19x12@(10.7,5.4) | FIXED/FIXED |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+       VECTOR 'Wifi'  | 17x12@(36.9,5.3) | FIXED/FIXED |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+       FRAME 'Frame'  | 27x13@(61.0,5.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+         RECTANGLE 'Border'  | 25x13@(0.0,0.0) |  |  | fill: [] | st: ['#FFFFFF'] | r: 4.300000190734863 | fx: [] | 
+         VECTOR 'Cap'  | 1x4@(26.0,4.5) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+         RECTANGLE 'Capacity'  | 21x9@(2.0,2.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: 2.5 | fx: [] | 
+   FRAME 'Frame 1184'  | 366x501@(18.0,85.0) | FIXED/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap48.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+     FRAME 'Frame 1185'  | 366x235@(0.0,0.0) | FILL/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap48.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+       FRAME 'Group 723'  | 115x115@(0.0,0.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+         BOOLEAN_OPERATION 'My Aura Track Rainb  | 101x101@(7.2,7.2) |  |  | fill: ['GRADIENT_AN:#F3FF69@0.0>#FF9473@0.24>#FFADF7@0.51>#84BCFF@0.74>#65FF3F@1.0'] | st: [] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r23.323331832885742)'] | 
+           ELLIPSE 'Oval'  | 101x101@(0.0,0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           ELLIPSE 'Oval'  | 77x77@(11.9,11.9) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+         BOOLEAN_OPERATION 'My Aura Track'  | 115x115@(0.0,-0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           ELLIPSE 'Oval'  | 115x115@(0.0,0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           ELLIPSE 'Oval'  | 102x102@(6.3,6.3) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+       GROUP 'Group 1192'  | 366x72@(0.0,163.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+         FRAME 'Frame 1185'  | 366x72@(0.0,0.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap8.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+           TEXT 'Today' 'Let’s personalize your Aura experience' | 366x72@(0.0,0.0) | FIXED/HUG | SeasonSerif-Regular-TRIAL/30.0/lh36.0/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+     FRAME 'Frame 1193'  | 366x218@(0.0,283.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap32.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+       FRAME 'Frame 1193'  | 366x73@(0.0,0.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap8.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+         FRAME 'Frame 1184'  | 366x23@(0.0,0.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap8.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+           TEXT 'Today' 'Your personalized plan has' | 366x23@(0.0,0.0) | FIXED/HUG | SeasonSans-Light-TRIAL/18.0/lh23.399999618530273/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           HIDDEN TEXT 'Today'
+         FRAME 'Frame 1187'  | 366x42@(0.0,31.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap8.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+           TEXT 'Today' 'We analyzed all your responses and have put together th | 366x42@(0.0,0.0) | FIXED/HUG | SeasonSans-Regular-TRIAL/16.0/lh20.799999237060547/LEFT | fill: ['#FFFFFF@0.7'] | st: [] | r: None | fx: [] | 
+           HIDDEN TEXT 'Today'
+       FRAME 'Component/Carousel/  | 366x113@(0.0,105.0) | FIXED/HUG |  | fill: ['#FFFFFF@0.05'] | st: [] | r: 18.0 | fx: ['INNER_SHAD(#FFFFFF@0.1 0.0,-2.0 r10.0)', 'INNER_SHAD(#FFFFFF@0.1 0.0,2.0 r10.0)'] | HORIZONTAL gapNone rgNone p[20.0,20.0,20.0,20.0] CENTER/CENTER wrap=NO_WRAP
+         FRAME 'Frame 1193'  | 111x68@(20.0,22.4) | FILL/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gapNone rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+           TEXT 'Emotions' '1000+' | 103x45@(0.0,0.0) | HUG/HUG | SeasonSans-Light-TRIAL/35.0/lh45.5/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           TEXT 'Emotions' '???' | 27x23@(0.0,45.0) | HUG/HUG | SeasonSans-Light-TRIAL/18.0/lh23.399999618530273/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+         LINE 'Line 51'  | 0x73@(186.5,20.0) | FILL/FIXED |  | fill: [] | st: ['#FFFFFF@0.1'] | r: None | fx: [] | 
+         FRAME 'Frame 1194'  | 104x68@(242.0,22.4) | FIXED/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gapNone rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+           TEXT 'Emotions' '50+' | 66x45@(0.0,0.0) | HUG/HUG | SeasonSans-Light-TRIAL/35.0/lh45.5/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           TEXT 'Emotions' '???' | 27x23@(0.0,45.0) | HUG/HUG | SeasonSans-Light-TRIAL/18.0/lh23.399999618530273/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+   RECTANGLE 'Rectangle 368'  | 51x6@(18.0,829.0) |  |  | fill: ['GRADIENT_LI:#F3FF69@0.0>#FF9473@0.24>#FFADF7@0.51>#84BCFF@0.74>#65FF3F@1.0'] | st: [] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r8.319999694824219)'] | 
+   FRAME 'Button'  | 314x6@(18.0,829.0) | FIXED/FIXED |  | fill: ['#D9D9D9@0.04'] | st: [] | r: 58.0 | fx: ['INNER_SHAD(#FFFFFF@0.1 0.0,-2.0 r10.0)', 'INNER_SHAD(#FFFFFF@0.1 0.0,2.0 r10.0)'] | HORIZONTAL gap10.0 rgNone p[None,21.0,None,21.0] None/CENTER wrap=NO_WRAP
+     RECTANGLE 'Rectangle 367'  | 51x6@(0.0,0.0) | FIXED/FIXED |  | fill: ['#FFFFFF'] | st: [] | r: 29.0 | fx: [] | 
+   TEXT 'Today' '15%' | 31x23@(355.0,820.5) |  | SeasonSans-Light-TRIAL/18.0/lh23.399999618530273/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+
+
+########## Personalized Topics (1048:16581) ##########
+ FRAME 'Personalized Topics  | 402x874@(None,None) |  |  | fill: ['#131313'] | st: [] | r: 45.0 | fx: [] | 
+   INSTANCE 'Background'  | 1763x988@(-729.5,-23.1) |  |  | fill: [] | st: [] | r: None | fx: [] | 
+     RECTANGLE 'image 23'  | 1763x988@(0.0,0.0) |  |  | fill: ['IMG:55d645c11a', 'GRADIENT_RA:#000000@0.0@0.0>#000000@1.0'] | st: [] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r100.0)'] | 
+   INSTANCE 'Status bar'  | 402x62@(0.0,0.0) | FIXED/HUG |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap154.0 rgNone p[24.0,21.0,24.0,19.0] CENTER/CENTER wrap=NO_WRAP
+     FRAME 'Time'  | 100x22@(24.0,21.0) | FILL/FIXED |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap10.0 rgNone p[None,1.5,None,None] CENTER/CENTER wrap=NO_WRAP
+       TEXT 'Time' '9:41' | 37x22@(31.5,0.8) | HUG/HUG | SFPro-Semibold/17.0/lh22.0/CENTER | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+     FRAME 'Levels'  | 100x22@(278.0,21.0) | FILL/FIXED |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap7.0 rgNone p[None,1.0,1.0,None] CENTER/CENTER wrap=NO_WRAP
+       VECTOR 'Cellular Connection  | 19x12@(10.7,5.4) | FIXED/FIXED |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+       VECTOR 'Wifi'  | 17x12@(36.9,5.3) | FIXED/FIXED |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+       FRAME 'Frame'  | 27x13@(61.0,5.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+         RECTANGLE 'Border'  | 25x13@(0.0,0.0) |  |  | fill: [] | st: ['#FFFFFF'] | r: 4.300000190734863 | fx: [] | 
+         VECTOR 'Cap'  | 1x4@(26.0,4.5) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+         RECTANGLE 'Capacity'  | 21x9@(2.0,2.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: 2.5 | fx: [] | 
+   FRAME 'Frame 1184'  | 366x633@(18.0,85.0) | FIXED/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap48.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+     FRAME 'Frame 1185'  | 366x235@(0.0,0.0) | FILL/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap48.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+       FRAME 'Group 723'  | 115x115@(0.0,0.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+         BOOLEAN_OPERATION 'My Aura Track Rainb  | 101x101@(7.2,7.2) |  |  | fill: ['GRADIENT_AN:#F3FF69@0.0>#FF9473@0.24>#FFADF7@0.51>#84BCFF@0.74>#65FF3F@1.0'] | st: [] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r23.323331832885742)'] | 
+           ELLIPSE 'Oval'  | 101x101@(0.0,0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           ELLIPSE 'Oval'  | 77x77@(11.9,11.9) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+         BOOLEAN_OPERATION 'My Aura Track'  | 115x115@(0.0,-0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           ELLIPSE 'Oval'  | 115x115@(0.0,0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           ELLIPSE 'Oval'  | 102x102@(6.3,6.3) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+       GROUP 'Group 1192'  | 366x72@(0.0,163.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+         FRAME 'Frame 1185'  | 366x72@(0.0,0.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap8.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+           TEXT 'Today' 'Let’s personalize your Aura experience' | 366x72@(0.0,0.0) | FIXED/HUG | SeasonSerif-Regular-TRIAL/30.0/lh36.0/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+     FRAME 'Frame 1193'  | 366x350@(0.0,283.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap32.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+       FRAME 'Frame 1193'  | 366x73@(0.0,0.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap8.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+         FRAME 'Frame 1184'  | 366x23@(0.0,0.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap8.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+           TEXT 'Today' 'Based on your preferences' | 366x23@(0.0,0.0) | FIXED/HUG | SeasonSans-Light-TRIAL/18.0/lh23.399999618530273/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           HIDDEN TEXT 'Today'
+         FRAME 'Frame 1187'  | 366x42@(0.0,31.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap8.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+           TEXT 'Today' 'We have personalized your Aura plan to focus on the fol | 366x42@(0.0,0.0) | FIXED/HUG | SeasonSans-Regular-TRIAL/16.0/lh20.799999237060547/LEFT | fill: ['#FFFFFF@0.7'] | st: [] | r: None | fx: [] | 
+           HIDDEN TEXT 'Today'
+       FRAME 'Frame 1186'  | 366x245@(0.0,105.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap12.0 rg15.0 p[None,None,None,None] None/None wrap=WRAP
+         FRAME 'Component/Carousel/  | 176x115@(0.0,0.0) | FIXED/FIXED |  | fill: ['#FFFFFF@0.05'] | st: ['#FFFFFF@0.3'] | r: 14.0 | fx: [] | VERTICAL gap6.0 rgNone p[20.0,20.0,20.0,20.0] SPACE_BETWEEN/None wrap=NO_WRAP
+           FRAME 'Frame 1184'  | 136x27@(20.0,20.0) | FILL/HUG |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap20.0 rgNone p[None,None,None,None] SPACE_BETWEEN/None wrap=NO_WRAP
+             FRAME 'Icons/ASMR'  | 27x27@(0.0,0.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+               FRAME 'IconEmojiSleep'  | 24x24@(1.1,1.4) |  |  | fill: [] | st: [] | r: None | fx: [] | 
+                 VECTOR 'Vector'  | 18x18@(2.8,2.8) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r2.655895948410034)'] | 
+                 VECTOR 'Vector'  | 4x0@(9.8,15.7) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r2.655895948410034)'] | 
+                 VECTOR 'Vector'  | 4x1@(6.8,10.2) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r2.655895948410034)'] | 
+                 VECTOR 'Vector'  | 4x1@(13.8,10.2) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r2.655895948410034)'] | 
+               FRAME 'IconEmojiSleep'  | 24x24@(1.1,1.4) |  |  | fill: [] | st: [] | r: None | fx: [] | 
+                 VECTOR 'Vector'  | 18x18@(2.8,2.8) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: [] | 
+                 VECTOR 'Vector'  | 4x0@(9.8,15.7) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: [] | 
+                 VECTOR 'Vector'  | 4x1@(6.8,10.2) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: [] | 
+                 VECTOR 'Vector'  | 4x1@(13.8,10.2) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: [] | 
+             FRAME 'IconCircleCheck'  | 24x24@(112.0,0.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+               VECTOR 'Vector'  | 20x20@(2.0,2.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           TEXT 'Emotions' 'Soothing' | 136x23@(20.0,72.0) | FILL/HUG | SeasonSans-Light-TRIAL/18.0/lh23.399999618530273/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+         FRAME 'Component/Carousel/  | 176x115@(188.0,0.0) | FIXED/FIXED |  | fill: ['#FFFFFF@0.05'] | st: ['#FFFFFF@0.3'] | r: 14.0 | fx: [] | VERTICAL gap6.0 rgNone p[20.0,20.0,20.0,20.0] None/None wrap=NO_WRAP
+           FRAME 'Frame 1184'  | 136x27@(20.0,20.0) | FILL/HUG |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap20.0 rgNone p[None,None,None,None] SPACE_BETWEEN/None wrap=NO_WRAP
+             FRAME 'Icons/ASMR'  | 27x27@(0.0,0.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+               GROUP 'Group'  | 20x20@(3.3,3.3) |  |  | fill: [] | st: [] | r: None | fx: [] | 
+                 VECTOR 'Vector'  | 20x20@(0.0,0.0) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r2.655895948410034)'] | 
+                 VECTOR 'Vector'  | 20x20@(0.0,0.0) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: [] | 
+             FRAME 'IconCircleCheck'  | 24x24@(112.0,0.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+               VECTOR 'Vector'  | 20x20@(2.0,2.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           TEXT 'Emotions' 'Restful Sleep' | 136x23@(20.0,52.6) | FILL/HUG | SeasonSans-Light-TRIAL/18.0/lh23.399999618530273/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+         FRAME 'Component/Carousel/  | 176x115@(0.0,130.0) | FIXED/FIXED |  | fill: ['#FFFFFF@0.05'] | st: ['#FFFFFF@0.3'] | r: 14.0 | fx: ['GLASS(#000000 0,0 rNone)'] | VERTICAL gap6.0 rgNone p[20.0,20.0,20.0,20.0] SPACE_BETWEEN/None wrap=NO_WRAP
+           FRAME 'Frame 1184'  | 136x24@(20.0,20.0) | FILL/HUG |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap20.0 rgNone p[None,None,None,None] SPACE_BETWEEN/None wrap=NO_WRAP
+             FRAME 'IconTargetArrow'  | 24x24@(0.0,0.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+               VECTOR 'Vector'  | 19x19@(2.5,2.2) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r2.655895948410034)'] | 
+               VECTOR 'Vector'  | 19x19@(2.5,2.2) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: [] | 
+             VECTOR 'Vector'  | 20x20@(116.0,0.0) | FIXED/FIXED |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           TEXT 'Emotions' 'Improve \nFocus' | 136x46@(20.0,49.0) | FILL/HUG | SeasonSans-Light-TRIAL/18.0/lh23.399999618530273/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+         FRAME 'Component/Carousel/  | 176x115@(188.0,130.0) | FIXED/FIXED |  | fill: ['#FFFFFF@0.05'] | st: ['#FFFFFF@0.3'] | r: 14.0 | fx: ['GLASS(#000000 0,0 rNone)'] | VERTICAL gap6.0 rgNone p[20.0,20.0,20.0,20.0] None/None wrap=NO_WRAP
+           FRAME 'Frame 1184'  | 136x24@(20.0,20.0) | FILL/HUG |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap20.0 rgNone p[None,None,None,None] SPACE_BETWEEN/None wrap=NO_WRAP
+             GROUP 'Group 1184'  | 24x24@(0.0,0.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+               FRAME 'IconImagine'  | 24x24@(0.0,0.5) |  |  | fill: [] | st: [] | r: None | fx: [] | 
+                 VECTOR 'Vector'  | 16x18@(3.8,2.8) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r2.655895948410034)'] | 
+                 VECTOR 'Vector'  | 7x7@(7.5,6.5) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r2.655895948410034)'] | 
+               FRAME 'IconImagine'  | 24x24@(0.0,0.0) |  |  | fill: [] | st: [] | r: None | fx: [] | 
+                 VECTOR 'Vector'  | 16x18@(3.8,2.8) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: [] | 
+                 VECTOR 'Vector'  | 7x7@(7.5,6.5) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: [] | 
+             FRAME 'IconFormCircle'  | 24x24@(112.0,0.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+               VECTOR 'Vector'  | 18x18@(2.8,2.8) |  |  | fill: [] | st: ['#FFFFFF@0.5'] | r: None | fx: [] | 
+           TEXT 'Emotions' 'Advanced Meditation' | 136x46@(20.0,50.5) | FILL/HUG | SeasonSans-Light-TRIAL/18.0/lh23.399999618530273/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+   RECTANGLE 'Rectangle 368'  | 117x6@(18.0,829.0) |  |  | fill: ['GRADIENT_LI:#F3FF69@0.0>#FF9473@0.24>#FFADF7@0.51>#84BCFF@0.74>#65FF3F@1.0'] | st: [] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r8.319999694824219)'] | 
+   FRAME 'Button'  | 314x6@(18.0,829.0) | FIXED/FIXED |  | fill: ['#D9D9D9@0.04'] | st: [] | r: 58.0 | fx: ['INNER_SHAD(#FFFFFF@0.1 0.0,-2.0 r10.0)', 'INNER_SHAD(#FFFFFF@0.1 0.0,2.0 r10.0)'] | HORIZONTAL gap10.0 rgNone p[None,21.0,None,21.0] None/CENTER wrap=NO_WRAP
+     RECTANGLE 'Rectangle 367'  | 117x6@(0.0,0.0) | FIXED/FIXED |  | fill: ['#FFFFFF'] | st: [] | r: 29.0 | fx: [] | 
+   TEXT 'Today' '15%' | 31x23@(355.0,820.5) |  | SeasonSans-Light-TRIAL/18.0/lh23.399999618530273/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+
+
+########## Content Type Highlight (1048:16653) ##########
+ FRAME 'Content Type Highli  | 402x874@(None,None) |  |  | fill: ['#131313'] | st: [] | r: 45.0 | fx: [] | 
+   INSTANCE 'Background'  | 1763x988@(-729.5,-23.1) |  |  | fill: [] | st: [] | r: None | fx: [] | 
+     RECTANGLE 'image 23'  | 1763x988@(0.0,0.0) |  |  | fill: ['IMG:55d645c11a', 'GRADIENT_RA:#000000@0.0@0.0>#000000@1.0'] | st: [] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r100.0)'] | 
+   INSTANCE 'Status bar'  | 402x62@(0.0,0.0) | FIXED/HUG |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap154.0 rgNone p[24.0,21.0,24.0,19.0] CENTER/CENTER wrap=NO_WRAP
+     FRAME 'Time'  | 100x22@(24.0,21.0) | FILL/FIXED |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap10.0 rgNone p[None,1.5,None,None] CENTER/CENTER wrap=NO_WRAP
+       TEXT 'Time' '9:41' | 37x22@(31.5,0.8) | HUG/HUG | SFPro-Semibold/17.0/lh22.0/CENTER | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+     FRAME 'Levels'  | 100x22@(278.0,21.0) | FILL/FIXED |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap7.0 rgNone p[None,1.0,1.0,None] CENTER/CENTER wrap=NO_WRAP
+       VECTOR 'Cellular Connection  | 19x12@(10.7,5.4) | FIXED/FIXED |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+       VECTOR 'Wifi'  | 17x12@(36.9,5.3) | FIXED/FIXED |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+       FRAME 'Frame'  | 27x13@(61.0,5.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+         RECTANGLE 'Border'  | 25x13@(0.0,0.0) |  |  | fill: [] | st: ['#FFFFFF'] | r: 4.300000190734863 | fx: [] | 
+         VECTOR 'Cap'  | 1x4@(26.0,4.5) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+         RECTANGLE 'Capacity'  | 21x9@(2.0,2.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: 2.5 | fx: [] | 
+   FRAME 'Frame 1184'  | 366x306@(18.0,85.0) | FIXED/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap48.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+     FRAME 'Frame 1185'  | 366x235@(0.0,0.0) | FILL/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap48.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+       FRAME 'Group 723'  | 115x115@(0.0,0.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+         BOOLEAN_OPERATION 'My Aura Track Rainb  | 101x101@(7.2,7.2) |  |  | fill: ['GRADIENT_AN:#F3FF69@0.0>#FF9473@0.24>#FFADF7@0.51>#84BCFF@0.74>#65FF3F@1.0'] | st: [] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r23.323331832885742)'] | 
+           ELLIPSE 'Oval'  | 101x101@(0.0,0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           ELLIPSE 'Oval'  | 77x77@(11.9,11.9) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+         BOOLEAN_OPERATION 'My Aura Track'  | 115x115@(0.0,-0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           ELLIPSE 'Oval'  | 115x115@(0.0,0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           ELLIPSE 'Oval'  | 102x102@(6.3,6.3) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+       GROUP 'Group 1192'  | 366x72@(0.0,163.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+         FRAME 'Frame 1185'  | 366x72@(0.0,0.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap8.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+           TEXT 'Today' 'Let’s personalize your Aura experience' | 366x72@(0.0,0.0) | FIXED/HUG | SeasonSerif-Regular-TRIAL/30.0/lh36.0/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+     FRAME 'Frame 1193'  | 366x23@(0.0,283.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap80.0 rgNone p[None,None,None,None] None/CENTER wrap=NO_WRAP
+       FRAME 'Frame 1193'  | 366x23@(0.0,0.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap8.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+         FRAME 'Frame 1184'  | 366x23@(0.0,0.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap8.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+           TEXT 'Today' 'Content will be tailored to include more' | 366x23@(0.0,0.0) | FIXED/HUG | SeasonSans-Light-TRIAL/18.0/lh23.399999618530273/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           HIDDEN TEXT 'Today'
+   RECTANGLE 'Rectangle 368'  | 177x6@(18.0,829.0) |  |  | fill: ['GRADIENT_LI:#F3FF69@0.0>#FF9473@0.24>#FFADF7@0.51>#84BCFF@0.74>#65FF3F@1.0'] | st: [] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r8.319999694824219)'] | 
+   FRAME 'Button'  | 314x6@(18.0,829.0) | FIXED/FIXED |  | fill: ['#D9D9D9@0.04'] | st: [] | r: 58.0 | fx: ['INNER_SHAD(#FFFFFF@0.1 0.0,-2.0 r10.0)', 'INNER_SHAD(#FFFFFF@0.1 0.0,2.0 r10.0)'] | HORIZONTAL gap10.0 rgNone p[None,21.0,None,21.0] None/CENTER wrap=NO_WRAP
+     RECTANGLE 'Rectangle 367'  | 177x6@(0.0,0.0) | FIXED/FIXED |  | fill: ['#FFFFFF'] | st: [] | r: 29.0 | fx: [] | 
+   TEXT 'Today' '15%' | 31x23@(355.0,820.5) |  | SeasonSans-Light-TRIAL/18.0/lh23.399999618530273/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+
+
+########## Session Length Highlight (1048:16693) ##########
+ FRAME 'Session Length High  | 402x874@(None,None) |  |  | fill: ['#131313'] | st: [] | r: 45.0 | fx: [] | 
+   INSTANCE 'Background'  | 1763x988@(-729.5,-23.1) |  |  | fill: [] | st: [] | r: None | fx: [] | 
+     RECTANGLE 'image 23'  | 1763x988@(0.0,0.0) |  |  | fill: ['IMG:55d645c11a', 'GRADIENT_RA:#000000@0.0@0.0>#000000@1.0'] | st: [] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r100.0)'] | 
+   INSTANCE 'Status bar'  | 402x62@(0.0,0.0) | FIXED/HUG |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap154.0 rgNone p[24.0,21.0,24.0,19.0] CENTER/CENTER wrap=NO_WRAP
+     FRAME 'Time'  | 100x22@(24.0,21.0) | FILL/FIXED |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap10.0 rgNone p[None,1.5,None,None] CENTER/CENTER wrap=NO_WRAP
+       TEXT 'Time' '9:41' | 37x22@(31.5,0.8) | HUG/HUG | SFPro-Semibold/17.0/lh22.0/CENTER | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+     FRAME 'Levels'  | 100x22@(278.0,21.0) | FILL/FIXED |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap7.0 rgNone p[None,1.0,1.0,None] CENTER/CENTER wrap=NO_WRAP
+       VECTOR 'Cellular Connection  | 19x12@(10.7,5.4) | FIXED/FIXED |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+       VECTOR 'Wifi'  | 17x12@(36.9,5.3) | FIXED/FIXED |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+       FRAME 'Frame'  | 27x13@(61.0,5.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+         RECTANGLE 'Border'  | 25x13@(0.0,0.0) |  |  | fill: [] | st: ['#FFFFFF'] | r: 4.300000190734863 | fx: [] | 
+         VECTOR 'Cap'  | 1x4@(26.0,4.5) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+         RECTANGLE 'Capacity'  | 21x9@(2.0,2.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: 2.5 | fx: [] | 
+   FRAME 'Frame 1184'  | 366x577@(18.0,85.0) | FIXED/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap48.0 rgNone p[None,None,None,None] None/CENTER wrap=NO_WRAP
+     FRAME 'Frame 1185'  | 366x235@(0.0,0.0) | FILL/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap48.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+       FRAME 'Group 723'  | 115x115@(0.0,0.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+         BOOLEAN_OPERATION 'My Aura Track Rainb  | 101x101@(7.2,7.2) |  |  | fill: ['GRADIENT_AN:#F3FF69@0.0>#FF9473@0.24>#FFADF7@0.51>#84BCFF@0.74>#65FF3F@1.0'] | st: [] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r23.323331832885742)'] | 
+           ELLIPSE 'Oval'  | 101x101@(0.0,0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           ELLIPSE 'Oval'  | 77x77@(11.9,11.9) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+         BOOLEAN_OPERATION 'My Aura Track'  | 115x115@(0.0,-0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           ELLIPSE 'Oval'  | 115x115@(0.0,0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           ELLIPSE 'Oval'  | 102x102@(6.3,6.3) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+       GROUP 'Group 1192'  | 366x72@(0.0,163.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+         FRAME 'Frame 1185'  | 366x72@(0.0,0.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap8.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+           TEXT 'Today' 'Let’s personalize your Aura experience' | 366x72@(0.0,0.0) | FIXED/HUG | SeasonSerif-Regular-TRIAL/30.0/lh36.0/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+     FRAME 'Frame 1193'  | 366x46@(0.0,283.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap32.0 rgNone p[None,None,None,None] None/CENTER wrap=NO_WRAP
+       FRAME 'Frame 1193'  | 366x46@(0.0,0.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap8.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+         FRAME 'Frame 1184'  | 366x46@(0.0,0.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap8.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+           TEXT 'Today' 'To better accommodate your schedule, we will recommend  | 366x46@(0.0,0.0) | FIXED/HUG | SeasonSans-Light-TRIAL/18.0/lh23.399999618530273/LEFT | fill: ['#FFFFFF@0.7'] | st: [] | r: None | fx: [] | 
+           HIDDEN TEXT 'Today'
+     FRAME 'Component/Carousel/  | 200x200@(83.0,377.0) | FIXED/FIXED |  | fill: ['#FFFFFF@0.05'] | st: [] | r: 24.0 | fx: ['INNER_SHAD(#FFFFFF@0.1 0.0,-2.0 r10.0)', 'INNER_SHAD(#FFFFFF@0.1 0.0,2.0 r10.0)'] | VERTICAL gap16.0 rgNone p[20.0,20.0,20.0,20.0] CENTER/CENTER wrap=NO_WRAP
+       RECTANGLE 'Rectangle 366'  | 200x200@(0.0,0.0) | FIXED/FIXED |  | fill: ['GRADIENT_RA:#3F3A6D@0.07>#6C5272@0.0@1.0'] | st: [] | r: None | fx: [] | 
+       FRAME 'Icons/ASMR'  | 47x47@(76.3,33.8) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+         FRAME 'IconTarget'  | 43x43@(1.9,3.0) |  |  | fill: [] | st: [] | r: None | fx: [] | 
+           VECTOR 'Vector'  | 34x34@(4.5,4.5) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r4.74299955368042)'] | 
+           VECTOR 'Vector'  | 18x18@(12.5,12.5) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r4.74299955368042)'] | 
+           VECTOR 'Vector'  | 2x2@(20.5,20.5) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r4.74299955368042)'] | 
+           VECTOR 'Vector'  | 34x34@(4.5,4.5) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: [] | 
+           VECTOR 'Vector'  | 18x18@(12.5,12.5) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: [] | 
+           VECTOR 'Vector'  | 2x2@(20.5,20.5) |  |  | fill: [] | st: ['#FFFFFF'] | r: None | fx: [] | 
+       FRAME 'Frame 1185'  | 160x69@(20.0,97.2) | FILL/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap12.0 rgNone p[None,None,None,None] CENTER/CENTER wrap=NO_WRAP
+         TEXT 'Emotions' 'Medium' | 107x36@(26.5,0.0) | HUG/HUG | SeasonSerif-Light-TRIAL/30.0/lh36.0/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: ['DROP_SHADO(#000000@0.25 0.0,4.20744514465332 r14.726058006286621)'] | 
+         TEXT 'Emotions' '10 - 20 minutes' | 160x21@(0.0,48.0) | FILL/HUG | SeasonSans-Regular-TRIAL/16.0/lh20.799999237060547/CENTER | fill: ['#FFFFFF@0.7'] | st: [] | r: None | fx: [] | 
+   RECTANGLE 'Rectangle 368'  | 246x6@(18.0,829.0) |  |  | fill: ['GRADIENT_LI:#F3FF69@0.0>#FF9473@0.24>#FFADF7@0.51>#84BCFF@0.74>#65FF3F@1.0'] | st: [] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r8.319999694824219)'] | 
+   FRAME 'Button'  | 314x6@(18.0,829.0) | FIXED/FIXED |  | fill: ['#D9D9D9@0.04'] | st: [] | r: 58.0 | fx: ['INNER_SHAD(#FFFFFF@0.1 0.0,-2.0 r10.0)', 'INNER_SHAD(#FFFFFF@0.1 0.0,2.0 r10.0)'] | HORIZONTAL gap10.0 rgNone p[None,21.0,None,21.0] None/CENTER wrap=NO_WRAP
+     RECTANGLE 'Rectangle 367'  | 246x6@(0.0,0.0) | FIXED/FIXED |  | fill: ['#FFFFFF'] | st: [] | r: 29.0 | fx: [] | 
+   TEXT 'Today' '15%' | 31x23@(355.0,820.5) |  | SeasonSans-Light-TRIAL/18.0/lh23.399999618530273/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+
+
+########## Personalized Plan Preview (1048:16730) ##########
+ FRAME 'Personalized Plan P  | 402x874@(None,None) |  |  | fill: ['#131313'] | st: [] | r: 45.0 | fx: [] | 
+   INSTANCE 'Background'  | 1763x988@(-729.5,-23.1) |  |  | fill: [] | st: [] | r: None | fx: [] | 
+     RECTANGLE 'image 23'  | 1763x988@(0.0,0.0) |  |  | fill: ['IMG:55d645c11a', 'GRADIENT_RA:#000000@0.0@0.0>#000000@1.0'] | st: [] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r100.0)'] | 
+   INSTANCE 'Status bar'  | 402x62@(0.0,0.0) | FIXED/HUG |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap154.0 rgNone p[24.0,21.0,24.0,19.0] CENTER/CENTER wrap=NO_WRAP
+     FRAME 'Time'  | 100x22@(24.0,21.0) | FILL/FIXED |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap10.0 rgNone p[None,1.5,None,None] CENTER/CENTER wrap=NO_WRAP
+       TEXT 'Time' '9:41' | 37x22@(31.5,0.8) | HUG/HUG | SFPro-Semibold/17.0/lh22.0/CENTER | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+     FRAME 'Levels'  | 100x22@(278.0,21.0) | FILL/FIXED |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap7.0 rgNone p[None,1.0,1.0,None] CENTER/CENTER wrap=NO_WRAP
+       VECTOR 'Cellular Connection  | 19x12@(10.7,5.4) | FIXED/FIXED |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+       VECTOR 'Wifi'  | 17x12@(36.9,5.3) | FIXED/FIXED |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+       FRAME 'Frame'  | 27x13@(61.0,5.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+         RECTANGLE 'Border'  | 25x13@(0.0,0.0) |  |  | fill: [] | st: ['#FFFFFF'] | r: 4.300000190734863 | fx: [] | 
+         VECTOR 'Cap'  | 1x4@(26.0,4.5) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+         RECTANGLE 'Capacity'  | 21x9@(2.0,2.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: 2.5 | fx: [] | 
+   FRAME 'Frame 1184'  | 366x641@(18.0,85.0) | FIXED/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap48.0 rgNone p[None,None,None,None] None/CENTER wrap=NO_WRAP
+     FRAME 'Frame 1185'  | 366x235@(0.0,0.0) | FILL/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap48.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+       FRAME 'Group 723'  | 115x115@(0.0,0.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+         BOOLEAN_OPERATION 'My Aura Track Rainb  | 101x101@(7.2,7.2) |  |  | fill: ['GRADIENT_AN:#F3FF69@0.0>#FF9473@0.24>#FFADF7@0.51>#84BCFF@0.74>#65FF3F@1.0'] | st: [] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r23.323331832885742)'] | 
+           ELLIPSE 'Oval'  | 101x101@(0.0,0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           ELLIPSE 'Oval'  | 77x77@(11.9,11.9) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+         BOOLEAN_OPERATION 'My Aura Track'  | 115x115@(0.0,-0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           ELLIPSE 'Oval'  | 115x115@(0.0,0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+           ELLIPSE 'Oval'  | 102x102@(6.3,6.3) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+       GROUP 'Group 1192'  | 366x72@(0.0,163.0) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+         FRAME 'Frame 1185'  | 366x72@(0.0,0.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap8.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+           TEXT 'Today' 'Let’s personalize your Aura experience' | 366x72@(0.0,0.0) | FIXED/HUG | SeasonSerif-Regular-TRIAL/30.0/lh36.0/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+     FRAME 'Frame 1194'  | 366x77@(0.0,283.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap8.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+       FRAME 'Frame 1184'  | 366x23@(0.0,0.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap8.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+         TEXT 'Today' 'Made for Alex' | 366x23@(0.0,0.0) | FIXED/HUG | SeasonSans-Light-TRIAL/18.0/lh23.399999618530273/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+         HIDDEN TEXT 'Today'
+       FRAME 'Frame 1187'  | 366x46@(0.0,31.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap8.0 rgNone p[None,None,None,None] None/None wrap=NO_WRAP
+         TEXT 'Today' 'Personalized plans for happiness, morning, sleep & more | 366x46@(0.0,0.0) | FIXED/HUG | SeasonSans-Light-TRIAL/18.0/lh23.399999618530273/LEFT | fill: ['#FFFFFF@0.7'] | st: [] | r: None | fx: [] | 
+         HIDDEN TEXT 'Today'
+     FRAME 'Frame 1183'  | 459x233@(-46.5,408.0) | FIXED/HUG |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap12.0 rgNone p[None,None,None,None] None/CENTER wrap=NO_WRAP
+       FRAME 'Frame 819'  | 243x233@(0.0,0.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: ['DROP_SHADO(#000000@0.25 0.0,4.0 r24.0)'] | VERTICAL gapNone rgNone p[None,None,None,None] None/CENTER wrap=NO_WRAP
+         GROUP 'Mask group'  | 243x233@(0.0,0.0) | FIXED/FIXED |  | fill: [] | st: [] | r: 23.140949249267578 | fx: [] | 
+           RECTANGLE 'Rectangle 357'  | 243x233@(0.0,0.0) |  |  | fill: ['IMG:2ddf50a17c'] | st: ['#FFFFFF@0.39'] | r: 23.140949249267578 | fx: [] | 
+           RECTANGLE 'Rectangle 356'  | 472x300@(-123.0,-63.7) |  |  | fill: ['IMG:329b35ffce', 'GRADIENT_LI:#000000@0.0>#070707@1.0'] | st: ['#FFFFFF@0.39'] | r: 23.140949249267578 | fx: ['LAYER_BLUR(#000000 0,0 r24.0)', 'TEXTURE(#000000 0,0 r24.0)'] | 
+           RECTANGLE 'Rectangle 358'  | 243x233@(0.0,0.0) |  |  | fill: [] | st: ['#FFFFFF@0.1'] | r: 23.140949249267578 | fx: [] | 
+         FRAME 'Frame 1183'  | 300x80@(18.9,131.1) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap12.0 rgNone p[None,None,None,None] CENTER/None wrap=NO_WRAP
+           TEXT 'Find Peace' 'Night Insect' | 300x32@(0.0,0.0) | FIXED/FIXED | SeasonSerif-Light-TRIAL/30.0/lh36.0/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: ['DROP_SHADO(#000000@0.25 0.0,4.20744514465332 r14.726058006286621)'] | 
+           FRAME 'Frame 1183'  | 144x36@(0.0,43.6) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap8.0 rgNone p[None,None,None,None] None/CENTER wrap=NO_WRAP
+             GROUP 'Group 1183'  | 28x28@(0.0,4.2) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+               ELLIPSE 'Ellipse 183'  | 28x28@(0.0,0.0) |  |  | fill: ['#000000@0.25'] | st: [] | r: None | fx: [] | 
+               GROUP 'Group 722'  | 22x22@(2.8,2.8) |  |  | fill: [] | st: [] | r: None | fx: [] | 
+                 BOOLEAN_OPERATION 'My Aura Track Rainb  | 19x19@(1.4,1.4) |  |  | fill: ['GRADIENT_AN:#F3FF69@0.0>#FF9473@0.24>#FFADF7@0.51>#84BCFF@0.74>#65FF3F@1.0'] | st: [] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r3.948725461959839)'] | 
+                   ELLIPSE 'Oval'  | 19x19@(0.0,0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+                   ELLIPSE 'Oval'  | 15x15@(2.3,2.3) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+                 BOOLEAN_OPERATION 'My Aura Track'  | 22x22@(0.0,0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+                   ELLIPSE 'Oval'  | 22x22@(0.0,0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+                   ELLIPSE 'Oval'  | 20x20@(1.2,1.2) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+             TEXT 'by Aura Meditation  'by Aura \nMeditation Coach' | 108x36@(35.5,0.0) | HUG/HUG | SeasonSans-Regular-TRIAL/14.0/lh18.19999885559082/LEFT | fill: ['#FFFFFF@0.7'] | st: [] | r: None | fx: ['DROP_SHADO(#69A6C8 0.0,2.10372257232666 r23.140949249267578)'] | 
+         GROUP 'Group 818'  | 109x34@(13.6,17.0) | FIXED/FIXED |  | fill: [] | st: [] | r: 38.91886901855469 | fx: [] | 
+           FRAME 'Frame 819'  | 109x34@(0.0,0.0) | HUG/HUG |  | fill: ['#000000@0.19'] | st: ['#FFFFFF@0.05'] | r: 38.91886901855469 | fx: ['BACKGROUND(#000000 0,0 r14.0)'] | HORIZONTAL gap12.0 rgNone p[16.0,8.0,16.0,8.0] CENTER/CENTER wrap=NO_WRAP
+             TEXT 'Soundscape' 'Soundscape' | 77x18@(16.0,8.0) | HUG/HUG | SeasonSans-Regular-TRIAL/14.0/lh18.19999885559082/CENTER | fill: ['#FFFFFF@0.7'] | st: [] | r: None | fx: ['DROP_SHADO(#A6C40B 0.0,2.10372257232666 r23.140949249267578)'] | 
+       FRAME 'Frame 820'  | 366x233@(255.2,0.0) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: ['DROP_SHADO(#000000@0.25 0.0,4.0 r24.0)'] | VERTICAL gapNone rgNone p[None,None,None,None] None/CENTER wrap=NO_WRAP
+         GROUP 'Mask group'  | 335x213@(17.3,40.0) | FIXED/FIXED |  | fill: [] | st: [] | r: 21.210744857788086 | fx: ['LAYER_BLUR(#000000 0,0 r34.0)'] | 
+           RECTANGLE 'Rectangle 357'  | 335x213@(0.0,0.0) |  |  | fill: ['IMG:2ddf50a17c'] | st: [] | r: 21.210744857788086 | fx: [] | 
+           RECTANGLE 'Rectangle 356'  | 433x275@(-144.6,-50.9) |  |  | fill: ['IMG:9269c0b1bf'] | st: [] | r: 21.210744857788086 | fx: ['LAYER_BLUR(#000000 0,0 r40.32992172241211)'] | 
+         GROUP 'Mask group'  | 366x233@(0.0,0.0) | FIXED/FIXED |  | fill: [] | st: [] | r: 23.140949249267578 | fx: ['DROP_SHADO(#000000@0.25 0.0,4.0 r24.0)'] | 
+           RECTANGLE 'Rectangle 357'  | 366x233@(0.0,0.0) |  |  | fill: ['IMG:2ddf50a17c'] | st: ['#FFFFFF@0.39'] | r: 23.140949249267578 | fx: [] | 
+           RECTANGLE 'Rectangle 356'  | 472x300@(-53.0,-33.7) |  |  | fill: ['IMG:329b35ffce', 'GRADIENT_LI:#000000@0.0>#070707@1.0'] | st: ['#FFFFFF@0.39'] | r: 23.140949249267578 | fx: ['LAYER_BLUR(#000000 0,0 r24.0)', 'TEXTURE(#000000 0,0 r24.0)'] | 
+           RECTANGLE 'Rectangle 358'  | 366x233@(0.0,0.0) |  |  | fill: [] | st: ['#FFFFFF@0.1'] | r: 23.140949249267578 | fx: [] | 
+         FRAME 'Frame 1183'  | 300x76@(18.9,136.2) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | VERTICAL gap8.0 rgNone p[None,None,None,None] CENTER/None wrap=NO_WRAP
+           TEXT 'Find Peace' 'Waves at night' | 300x32@(0.0,0.0) | FIXED/FIXED | SeasonSerif-Light-TRIAL/30.0/lh36.0/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: ['DROP_SHADO(#000000@0.25 0.0,4.20744514465332 r14.726058006286621)'] | 
+           FRAME 'Frame 1183'  | 144x36@(0.0,39.6) | HUG/HUG |  | fill: [] | st: [] | r: None | fx: [] | HORIZONTAL gap8.0 rgNone p[None,None,None,None] None/CENTER wrap=NO_WRAP
+             GROUP 'Group 1183'  | 28x28@(0.0,4.2) | FIXED/FIXED |  | fill: [] | st: [] | r: None | fx: [] | 
+               ELLIPSE 'Ellipse 183'  | 28x28@(0.0,0.0) |  |  | fill: ['#000000@0.25'] | st: [] | r: None | fx: [] | 
+               GROUP 'Group 722'  | 22x22@(2.8,2.8) |  |  | fill: [] | st: [] | r: None | fx: [] | 
+                 BOOLEAN_OPERATION 'My Aura Track Rainb  | 19x19@(1.4,1.4) |  |  | fill: ['GRADIENT_AN:#F3FF69@0.0>#FF9473@0.24>#FFADF7@0.51>#84BCFF@0.74>#65FF3F@1.0'] | st: [] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r3.948725461959839)'] | 
+                   ELLIPSE 'Oval'  | 19x19@(0.0,0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+                   ELLIPSE 'Oval'  | 15x15@(2.3,2.3) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+                 BOOLEAN_OPERATION 'My Aura Track'  | 22x22@(0.0,0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+                   ELLIPSE 'Oval'  | 22x22@(0.0,0.0) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+                   ELLIPSE 'Oval'  | 20x20@(1.2,1.2) |  |  | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
+             TEXT 'by Aura Meditation  'by Aura \nMeditation Coach' | 108x36@(35.5,0.0) | HUG/HUG | SeasonSans-Regular-TRIAL/14.0/lh18.19999885559082/LEFT | fill: ['#FFFFFF@0.7'] | st: [] | r: None | fx: ['DROP_SHADO(#69A6C8 0.0,2.10372257232666 r23.140949249267578)'] | 
+         GROUP 'Group 818'  | 109x34@(13.6,17.0) | FIXED/FIXED |  | fill: [] | st: [] | r: 38.91886901855469 | fx: [] | 
+           FRAME 'Frame 819'  | 109x34@(0.0,0.0) | HUG/HUG |  | fill: ['#000000@0.19'] | st: ['#FFFFFF@0.05'] | r: 38.91886901855469 | fx: ['BACKGROUND(#000000 0,0 r14.0)'] | HORIZONTAL gap12.0 rgNone p[16.0,8.0,16.0,8.0] CENTER/CENTER wrap=NO_WRAP
+             TEXT 'Soundscape' 'Soundscape' | 77x18@(16.0,8.0) | HUG/HUG | SeasonSans-Regular-TRIAL/14.0/lh18.19999885559082/CENTER | fill: ['#FFFFFF@0.7'] | st: [] | r: None | fx: [] | 
+   RECTANGLE 'Rectangle 368'  | 246x6@(18.0,829.0) |  |  | fill: ['GRADIENT_LI:#F3FF69@0.0>#FF9473@0.24>#FFADF7@0.51>#84BCFF@0.74>#65FF3F@1.0'] | st: [] | r: None | fx: ['LAYER_BLUR(#000000 0,0 r8.319999694824219)'] | 
+   FRAME 'Button'  | 314x6@(18.0,829.0) | FIXED/FIXED |  | fill: ['#D9D9D9@0.04'] | st: [] | r: 58.0 | fx: ['INNER_SHAD(#FFFFFF@0.1 0.0,-2.0 r10.0)', 'INNER_SHAD(#FFFFFF@0.1 0.0,2.0 r10.0)'] | HORIZONTAL gap10.0 rgNone p[None,21.0,None,21.0] None/CENTER wrap=NO_WRAP
+     RECTANGLE 'Rectangle 367'  | 246x6@(0.0,0.0) | FIXED/FIXED |  | fill: ['#FFFFFF'] | st: [] | r: 29.0 | fx: [] | 
+   TEXT 'Today' '15%' | 31x23@(355.0,820.5) |  | SeasonSans-Light-TRIAL/18.0/lh23.399999618530273/LEFT | fill: ['#FFFFFF'] | st: [] | r: None | fx: [] | 
