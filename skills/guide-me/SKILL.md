@@ -9,8 +9,7 @@ description: >
   me one step at a time", "guide me through my tasks one by one", "walk me through
   it", "what do I need to do next", "one item at a time", "go through the list with
   me", "next step", or "status" in a session that keeps a list of asks for the user.
-  Do NOT use for the daily standup (`daily-status`), for filing cards
-  (`add-linear-issues`), or when the user wants the whole list at once
+  Do NOT use for a daily standup, for filing new tickets, or when the user wants the whole list at once
   without being walked through it.
 metadata:
   version: "1.0.0"
