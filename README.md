@@ -52,6 +52,7 @@ bash ~/ERP-CLAUDE-SKILLS/scripts/publish.sh "Describe the change"
 | `convene-panel` | Multi-persona debate (incl. ERP compliance, finance controller, operator, data-integrity reviewers) |
 | `guide-me` | Walk through everything waiting on you, one step at a time |
 | `senior-frontend` | React/Next.js frontend patterns, scaffolding and bundle analysis |
+| `job-hunt` | Find recent matching jobs on LinkedIn and Naukri, tailor the resume truthfully, apply in approved batches, daily Naukri refresh; data stays in `~/job-hunt/`, never in Git |
 
 ## Agents
 

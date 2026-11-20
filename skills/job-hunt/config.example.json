@@ -1,0 +1,12 @@
+{
+  "lookback_days": 3,
+  "min_match_score": 60,
+  "max_applies_per_portal_per_day": 40,
+  "delay_between_applies_sec": [30, 60],
+  "research_interval_hours": 3,
+  "naukri_refresh_time": "09:30",
+  "timezone": "Asia/Kolkata",
+  "portals": ["linkedin", "naukri"],
+  "excluded_locations": [],
+  "excluded_companies": []
+}

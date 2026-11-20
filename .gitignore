@@ -1,0 +1,17 @@
+# Personal job-hunt data must never be committed (it lives in ~/job-hunt/).
+job-hunt-data/
+**/profile.json
+**/applied.csv
+**/run-state.md
+**/refresh-log.md
+**/master.docx
+**/resumes/
+*_Resume.pdf
+
+# Local secrets and junk
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.DS_Store
