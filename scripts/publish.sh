@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Commit and push changes in this repo to GitHub, then reinstall locally.
 # Usage:
-#   bash ~/erp-claude-skills/scripts/publish.sh "commit message" [skill-name ...]
+#   bash ~/ERP-CLAUDE-SKILLS/scripts/publish.sh "commit message" [skill-name ...]
 # Any skill names given are first imported from ~/.claude/skills/<name>
 # (useful when a skill was created there instead of in the repo).
 set -e

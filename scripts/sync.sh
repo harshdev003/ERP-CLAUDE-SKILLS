@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Pull the latest skills & rules from GitHub and install them into ~/.claude.
 # Runs automatically at every Claude Code session start (SessionStart hook).
-# Safe to run by hand:  bash ~/erp-claude-skills/scripts/sync.sh
+# Safe to run by hand:  bash ~/ERP-CLAUDE-SKILLS/scripts/sync.sh
 
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 CLAUDE_DIR="$HOME/.claude"
@@ -31,5 +31,5 @@ if [ -f "$REPO/rules/CLAUDE.md" ]; then
   cp "$REPO/rules/CLAUDE.md" "$CLAUDE_DIR/CLAUDE.md"
 fi
 
-echo "[erp-claude-skills sync] $status. Skills installed: ${installed[*]:-none}. Rules: rules/CLAUDE.md -> ~/.claude/CLAUDE.md"
+echo "[ERP-CLAUDE-SKILLS sync] $status. Skills installed: ${installed[*]:-none}. Rules: rules/CLAUDE.md -> ~/.claude/CLAUDE.md"
 exit 0
